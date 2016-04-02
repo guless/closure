@@ -41,17 +41,53 @@ var babelify   = require("babelify");
 var uglifyify  = require("uglifyify");
 var exorcist   = require("exorcist");
 var fs         = require("fs");
+var path       = require("path");
+var util       = require("util");
+var Transform  = require("stream").Transform;
+
+/// 版权声明文件。
+const __COPYRIGHT__ = fs.readFileSync("./COPYRIGHT.txt");
+/// 文件分隔符号。
+const __DELIMITER__ = new Buffer("\n");
+
+/// 用于在指定的流前面添加版权声明。
+function CopyrightWriter( options ) {
+    /// <summary>
+    /// CopyrightWriter 类定义用于写入版本声明的双向流对象。</summary>
+    /// <param name='options' type='Object'>
+    /// 可选，默认值：null，指定流的配置参数。</param>
+    if ( !(this instanceof CopyrightWriter) )
+        return new CopyrightWriter(options);
+        
+    /// 调用父类构造函数。
+    Transform.call(this, options);
+}
+
+/// CopyrightWriter 设置继承。
+util.inherits(CopyrightWriter, Transform);
+
+CopyrightWriter.prototype._transform = function transform( chunk, encoding, callback ) {
+    /// <summary>
+    /// 实现在管道中传输数据块方法。</summary>
+    this.push(Buffer.concat([__COPYRIGHT__, __DELIMITER__, chunk]));
+    callback();
+}
 
 /// 执行 `browserify` 编译过程。
-browserify(argv.input, { debug: argv.sourceMaps })
+browserify(argv.input, { "debug": argv.sourceMaps })
     /// 如果需要输出 `sourcemap`，在命令行加入参数 `--sourceMaps`。
-    .transform(babelify, { sourceMaps: argv.sourceMaps, presets:[ "es2015" ] })
+    .transform(babelify, { 
+        "sourceMaps": argv.sourceMaps, 
+        "presets"   : [ "es2015" ], 
+        "plugins"   : [ "transform-class-properties" ] 
+    })
     /// 压缩 JS 文件。
     .transform(uglifyify, { "compress": { "drop_console": false } })
     /// 将所有依赖项合并成一个单独的文件。
     .bundle()
     /// 将 `sourcemap` 从输出流中分离出来。
     .pipe(exorcist(argv.output + ".map"))
-    /// 输出对象是一个 `Transform` 对象，因此需要通过 `Writable` 或者 `Duplex` 类型
-    /// 的 `stream` 对象写入文件。
+    /// 追加版权声明。
+    .pipe(new CopyrightWriter())
+    /// 写入输出文件流。
     .pipe(fs.createWriteStream(argv.output));
