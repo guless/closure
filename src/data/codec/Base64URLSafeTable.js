@@ -36,7 +36,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-export const BASE64_URLSAFE_ENCODE_TABLE = [
+export const BASE64_URLSAFE_ENCODE_TABLE = new Int8Array([
     /// [0-25] UpperCase
     65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83,
     84, 85, 86, 87, 88, 89, 90,
@@ -47,9 +47,9 @@ export const BASE64_URLSAFE_ENCODE_TABLE = [
     48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
     /// [62-63] Minus(-), Underline(_)
     45, 95
-];
+]);
 
-export const BASE64_URLSAFE_DECODE_TABLE = [
+export const BASE64_URLSAFE_DECODE_TABLE = new Int8Array([
     /// [0-44] Invaild
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
@@ -76,4 +76,4 @@ export const BASE64_URLSAFE_DECODE_TABLE = [
     45, 46, 47, 48, 49, 50, 51,
     /// [123-127] Invaild
     -1, -1, -1, -1, -1
-];
+]);
