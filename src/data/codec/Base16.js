@@ -35,70 +35,27 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import { BASE16_LOWER_ENCODE_TABLE } from "./Base16LowerTable";
+import { BASE16_LOWER_DECODE_TABLE } from "./Base16LowerTable";
 
-const BASE16_LOWER_ENCODE_TABLE = new Int8Array([
-    /// [0-9] Numerics
-    48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-    /// [10-15] a-f
-    97, 98, 99, 100, 101, 102
-]);
-
-const BASE16_LOWER_DECODE_TABLE = new Int8Array([
-    /// [0-47] Invaild
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    /// [48-57] Numerics
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    /// [58-96] Invaild
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, 
-    /// [97-102] a-f
-    10, 11, 12, 13, 14, 15,
-    /// [102-127] Invaild
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1
-]);
-
-const BASE16_UPPER_ENCODE_TABLE = new Int8Array([
-    /// [0-9] Numerics
-    48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-    /// [10-15] A-F
-    65, 66, 67, 68, 69, 70
-]);
-
-const BASE16_UPPER_DECODE_TABLE = new Int8Array([
-    /// [0-47] Invaild
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    /// [48-57] Numerics
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    /// [58-64] Invaild
-    -1, -1, -1, -1, -1, -1, -1,
-    /// [65-70] A-F
-    10, 11, 12, 13, 14, 15,
-    /// [71-127] Invaild
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
-]);
 
 export default class Base16 {
-    constructor( isUpperCase = false ) {
+    constructor( encodeTable = BASE16_LOWER_ENCODE_TABLE, decodeTable = BASE16_LOWER_DECODE_TABLE ) {
         this._base16Offset = 0;
         this._base16Buffer = 0;
-        this._isUpperCase  = isUpperCase;
-        this._encodeTable  = this._isUpperCase ? BASE16_UPPER_ENCODE_TABLE : BASE16_LOWER_ENCODE_TABLE;
-        this._decodeTable  = this._isUpperCase ? BASE16_UPPER_DECODE_TABLE : BASE16_LOWER_DECODE_TABLE;
+        this._encodeTable  = encodeTable;
+        this._decodeTable  = decodeTable;
     }
     
-    get isUpperCase() {
-        return this._isUpperCase;
+    get encodeTable() {
+        return this._encodeTable;   
     }
     
-    encode( bytes, shared = null ) {
+    get decodeTable() {
+        return this._decodeTable;   
+    }
+    
+    encode( bytes, finals = true, shared = null ) {
         var length = bytes.length;
         var offset = 0;
         var buffer = shared || new Uint8Array(length * 2);
@@ -111,8 +68,48 @@ export default class Base16 {
         return shared ? shared.subarray(0, offset) : buffer;
     }
     
-    decode( base16, shared = null ) {
+    decode( base16, finals = true, shared = null ) {
+        if ( finals && ((this._base16Offset + base16.length) & 1) ) {
+            throw new Error("Invaild base16 data.");
+        }
+
+        var length = base16.length;
+        var buffer = shared || new Uint8Array(Math.floor((this._base16Offset + length) / 2));
+        var offset = 0;
         
+        if ( length > 0 ) {
+            var c0 = 0;
+            var c1 = 0;
+            
+            if ( this._base16Offset > 0 ) {
+                c0 = this._decodeTable[this._base16Buffer & 0x7F];
+                c1 = this._decodeTable[base16[0] & 0x7F];
+                
+                if ( c0 < 0 || c1 < 0 ) {
+                    throw new Error("Invaild base16 data.");
+                }
+                
+                buffer[offset++] = c0 << 4 | c1;
+            }
+            
+            for ( var start = this._base16Offset > 0 ? 1 : 0; start + 2 <= length; start += 2 ) {
+                c0 = this._decodeTable[base16[start    ] & 0x7F];
+                c1 = this._decodeTable[base16[start + 1] & 0x7F];
+                
+                if ( c0 < 0 || c1 < 0 ) {
+                    throw new Error("Invaild base16 data.");
+                }
+                
+                buffer[offset++] = c0 << 4 | c1;
+            }
+            
+            this._base16Offset = length - start;
+            
+            if ( this._base16Offset > 0 ) {
+                this._base16Buffer = base16[length - 1];
+            }
+        }
         
+        return shared ? shared.subarray(0, offset) : buffer;
     }
 }
