@@ -38,6 +38,8 @@
 import Base16 from "./data/codec/Base16";
 import Base32 from "./data/codec/Base32";
 import Base64 from "./data/codec/Base64";
+import { BASE16_UPPER_ENCODE_TABLE } from "./data/codec/Base16UpperTable";
+import { BASE16_UPPER_DECODE_TABLE } from "./data/codec/Base16UpperTable";
 
 function toBuffer( ascii ) {
     var buffer = new Uint8Array(ascii.length);
@@ -49,6 +51,10 @@ function toBuffer( ascii ) {
 
 function toString( buffer ) {
     return String.fromCharCode.apply(String, buffer);
+}
+
+function join( buffer ) {
+    return "[" + Array.prototype.join.call(buffer, ",") + "]";
 }
 
 var base64 = new Base64();
@@ -72,12 +78,23 @@ console.log("Base64-9:", toString(base64.decode(toBuffer("Zm9vYmE="))) );
 console.log("Base64-0:", toString(base64.decode(toBuffer("Zm9vYmFy"))) );
 
 
-import { BASE16_UPPER_ENCODE_TABLE } from "./data/codec/Base16UpperTable";
-import { BASE16_UPPER_DECODE_TABLE } from "./data/codec/Base16UpperTable";
-
 var base16 = new Base16(BASE16_UPPER_ENCODE_TABLE, BASE16_UPPER_DECODE_TABLE);
 /// \"Base16\" Test Vectors:
 ///   BASE16([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) == "000102030405060708090A0B0C0D0E0F"
 console.log( "Base16-1:", toString(base16.encode(new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]))) == "000102030405060708090A0B0C0D0E0F" );
-console.log( "Base16-2:", base16.decode(toBuffer("000102030405060708090A0B0C0D0E0F")) );
+console.log( "Base16-2:", join(base16.decode(toBuffer("000102030405060708090A0B0C0D0E0F"))) );
 
+
+var base32 = new Base32();
+/// \"Base32\" Test Vectors:
+///   BASE32("") = ""
+///   BASE32("foo") = "MZXW6==="
+///   BASE32("foob") = "MZXW6YQ="
+///   BASE32("fooba") = "MZXW6YTB"
+///   BASE32("foobar") = "MZXW6YTBOI======"
+console.log("Base32-1:", toString(base32.encode(toBuffer(""))) == "" );
+console.log("Base32-2:", toString(base32.encode(toBuffer("foo"))) == "MZXW6===" );
+console.log("Base32-3:", toString(base32.encode(toBuffer("foob"))) == "MZXW6YQ=" );
+console.log("Base32-4:", toString(base32.encode(toBuffer("fooba"))) == "MZXW6YTB" );
+console.log("Base32-5:", toString(base32.encode(toBuffer("foobar"))) == "MZXW6YTBOI======" );
+console.log("Base32-6:", toString(base32.encode(new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]))));
