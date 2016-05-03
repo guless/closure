@@ -1,3 +1,28 @@
+### API 概览 ###
+| [data/codec][_data_codec] | 说明描述 
+|---------------------------|-------------
+| [Base16][_base16] | 
+| [Base16LowerTable][_base16lowertable] | 
+| [Base16UpperTable][_base16uppertable] |
+| [Base32][_base32] |
+| [Base32DefaultTable][_base32defaulttable] |
+| [Base32ExtendedHexTable][_base32extendedhextable] |
+| [Base64][_base64] |
+| [Base64DefaultTable][_base64defaulttable] |
+| [Base64URLSafeTable][_base64urlsafetable] |
+
+[_data_codec]: https://github.com/guless/closure/blob/dev/src/data/codec/
+[_base16]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16.js
+[_base16lowertable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16LowerTable.js
+[_base16uppertable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16UpperTable.js
+[_base32]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32.js
+[_base32defaulttable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32DefaultTable.js
+[_base32extendedhextable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32ExtendedHexTable.js
+[_base64]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64.js
+[_base64defaulttable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64DefaultTable.js
+[_base64urlsafetable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64URLSafeTable.js
+
+
 ### 如何编译？###
 >通过在 `src/import.js` 引入你项目需要的模块，然后在命令行输入 `npm run build` 并回车执行编译命令。
 编译结果会输出至 `dist/bundle.js` 中，然后你可以执行 `npm run start` 命令运行 `dist/bundle.js`
