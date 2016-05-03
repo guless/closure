@@ -85,7 +85,7 @@ console.log( "Base16-1:", toString(base16.encode(new Uint8Array([0,1,2,3,4,5,6,7
 console.log( "Base16-2:", join(base16.decode(toBuffer("000102030405060708090A0B0C0D0E0F"))) );
 
 
-var base32 = new Base32();
+var base32 = new Base32(false);
 /// \"Base32\" Test Vectors:
 ///   BASE32("") = ""
 ///   BASE32("foo") = "MZXW6==="
@@ -93,8 +93,11 @@ var base32 = new Base32();
 ///   BASE32("fooba") = "MZXW6YTB"
 ///   BASE32("foobar") = "MZXW6YTBOI======"
 console.log("Base32-1:", toString(base32.encode(toBuffer(""))) == "" );
-console.log("Base32-2:", toString(base32.encode(toBuffer("foo"))) == "MZXW6===" );
-console.log("Base32-3:", toString(base32.encode(toBuffer("foob"))) == "MZXW6YQ=" );
+console.log("Base32-2:", toString(base32.encode(toBuffer("foo")))  == "MZXW6" );
+console.log("Base32-3:", toString(base32.encode(toBuffer("foob"))) == "MZXW6YQ" );
 console.log("Base32-4:", toString(base32.encode(toBuffer("fooba"))) == "MZXW6YTB" );
-console.log("Base32-5:", toString(base32.encode(toBuffer("foobar"))) == "MZXW6YTBOI======" );
+console.log("Base32-5:", toString(base32.encode(toBuffer("foobar"))) == "MZXW6YTBOI" );
+/// AAAQEAYEAUDAOCAJBIFQYDIOB4IBCEQTCQKRMFYYDENBWHA5DYPQ
 console.log("Base32-6:", toString(base32.encode(new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]))));
+console.log("Base32-7:", toString(base32.encode(base32.decode(toBuffer("AAAQEAYEAUDAOCAJBIFQYDIOB4IBCEQTCQKRMFYYDENBWHA5DYPQ====")))));
+console.log("Base32-8:", join(base32.decode(toBuffer("AAAQEAYEAUDAOCAJBIFQYDIOB4IBCEQTCQKRMFYYDENBWHA5DYPQ"))));
