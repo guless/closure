@@ -110,7 +110,7 @@ export default class Base64 {
             var bytesTotal = base64.length + this._base64Offset;
             
             if ( bytesTotal % 4 == 1 ) {
-                throw new Error("Invaild base64 data.");
+                throw new Error("Invalid base64 data.");
             }
             
             if ( bytesTotal % 4 == 0 && bytesTotal > 0 ) {
@@ -245,7 +245,7 @@ export default class Base64 {
             c3 = this._decodeTable[base64[start + 3] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 || c2 < 0 || c3 < 0 ) {
-                throw new Error("Invaild base64 data."); 
+                throw new Error("Invalid base64 data."); 
             }
             
             buffer[offset    ] = (c0 << 2) | (c1 >>> 4);
@@ -298,7 +298,7 @@ export default class Base64 {
             c1 = this._decodeTable[this._base64Buffer[1] & 0x7F];
             
             if ( c0 < 0 || c1 < 1 ) {
-                throw new Error("Invaild base64 data.");   
+                throw new Error("Invalid base64 data.");   
             }
             
             buffer[offset++] = (c0 << 2) | (c1 >>> 4);
@@ -310,7 +310,7 @@ export default class Base64 {
             c2 = this._decodeTable[this._base64Buffer[2] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 || c2 < 0 ) {
-                throw new Error("Invaild base64 data.");   
+                throw new Error("Invalid base64 data.");   
             }
             
             buffer[offset++] = (c0 << 2) | (c1 >>> 4);

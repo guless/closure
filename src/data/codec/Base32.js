@@ -142,7 +142,7 @@ export default class Base32 {
             }
             
             if ( bytesTotal % 8 == 1 || bytesTotal % 8 == 3 || bytesTotal % 8 == 6 ) {
-                throw new Error("Invaild base32 data.");
+                throw new Error("Invalid base32 data.");
             }
         }
         
@@ -254,7 +254,7 @@ export default class Base32 {
             c7 = this._decodeTable[base32[start + 7] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 || c2 < 0 || c3 < 0 || c4 < 0 || c5 < 0 || c6 < 0 || c7 < 0 ) {
-                throw new Error("Invaild base32 data."); 
+                throw new Error("Invalid base32 data."); 
             }
             
             buffer[offset    ] = (c0 << 3) | (c1 >>> 2);;
@@ -362,7 +362,7 @@ export default class Base32 {
             c1 = this._decodeTable[this._base32Buffer[1] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 ) {
-                throw new Error("Invaild base32 data."); 
+                throw new Error("Invalid base32 data."); 
             }
             
             buffer[offset++] = (c0 << 3) | (c1 >>> 2);;
@@ -375,7 +375,7 @@ export default class Base32 {
             c3 = this._decodeTable[this._base32Buffer[3] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 || c2 < 0 || c3 < 0 ) {
-                throw new Error("Invaild base32 data."); 
+                throw new Error("Invalid base32 data."); 
             }
             
             buffer[offset++] = (c0 << 3) | (c1 >>> 2);;
@@ -390,7 +390,7 @@ export default class Base32 {
             c4 = this._decodeTable[this._base32Buffer[4] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 || c2 < 0 || c3 < 0 || c4 < 0 ) {
-                throw new Error("Invaild base32 data."); 
+                throw new Error("Invalid base32 data."); 
             }
             
             buffer[offset++] = (c0 << 3) | (c1 >>> 2);;
@@ -408,7 +408,7 @@ export default class Base32 {
             c6 = this._decodeTable[this._base32Buffer[6] & 0x7F];
             
             if ( c0 < 0 || c1 < 0 || c2 < 0 || c3 < 0 || c4 < 0 || c5 < 0 || c6 < 0 ) {
-                throw new Error("Invaild base32 data."); 
+                throw new Error("Invalid base32 data."); 
             }
             
             buffer[offset++] = (c0 << 3) | (c1 >>> 2);;

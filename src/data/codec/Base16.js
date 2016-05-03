@@ -70,7 +70,7 @@ export default class Base16 {
     
     decode( base16, finals = true, shared = null ) {
         if ( finals && ((this._base16Offset + base16.length) & 1) ) {
-            throw new Error("Invaild base16 data.");
+            throw new Error("Invalid base16 data.");
         }
 
         var length = base16.length;
@@ -86,7 +86,7 @@ export default class Base16 {
                 c1 = this._decodeTable[base16[0] & 0x7F];
                 
                 if ( c0 < 0 || c1 < 0 ) {
-                    throw new Error("Invaild base16 data.");
+                    throw new Error("Invalid base16 data.");
                 }
                 
                 buffer[offset++] = c0 << 4 | c1;
@@ -97,7 +97,7 @@ export default class Base16 {
                 c1 = this._decodeTable[base16[start + 1] & 0x7F];
                 
                 if ( c0 < 0 || c1 < 0 ) {
-                    throw new Error("Invaild base16 data.");
+                    throw new Error("Invalid base16 data.");
                 }
                 
                 buffer[offset++] = c0 << 4 | c1;
