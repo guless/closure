@@ -37,11 +37,11 @@ if ( typeof window != "undefined" ) {
 ```
 
 #### 运行编译命令 `npm run build`，然后在页面中引用 `dist/bundle.js`。####
->编译命令会将 `src/import.js` 中导入的模块输出至 `dist/bundle.js` 中。
-
 ```shell
+# 编译命令会将 `src/import.js` 中导入的模块输出至 `dist/bundle.js` 中。
 npm run build # 编译 `src/import.js`
 ```
+在页面中引入 `dist/bundle.js`。
 ```html
 <script type="text/javascript" src="../dist/bundle.js"></script>
 ```
