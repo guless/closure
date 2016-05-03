@@ -35,15 +35,15 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16 from "./data/codec/Base16";
-import Base64 from "./data/codec/Base64";
+var ndst = require("node-static")
+var file = new ndst.Server(".");
+var http = require("http");
+var open = require("open");
 
-/// 如果需要在其他的 `script` 中使用模块，则可以这样注册全局的 `require()`。
-/// 具体原理请参考：https://github.com/substack/node-browserify
-if ( typeof window != "undefined" ) {
-    window.require = require;
-}
+http.createServer(function (request, response) {
+    request.addListener("end", function () { file.serve(request, response); }).resume();
 
-/// 可以直接在下面使用 ES6 的语法写具体的项目代码：
-// var base16 = new Base16();
-// var result = base16.encode([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+}).listen(8086, "127.0.0.1", function( done ) {
+    console.log("[NPM] start server at: \"http://127.0.0.1:8086/\"");
+    open("http://127.0.0.1:8086/index.html");
+});
