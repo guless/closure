@@ -9,7 +9,6 @@ npm run start # 执行 `dist/bundle.js`。
 npm run server # 启动一个简单的静态文件服务器。
 ```
 
-### 完整的示例 ###
 #### 从 Github 将仓库克隆至本地。####
 ```shell
 git clone https://github.com/guless/closure.git
