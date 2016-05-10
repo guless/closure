@@ -35,56 +35,7 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import EventDispatcher from "./events/EventDispatcher";
-import Event from "./events/Event";
-
-
-var event = new Event("click", true, false);
-var dispatcher = new EventDispatcher();
-var f4 = null;
-
-dispatcher.addEventListener("click", f4 = function( evt ) {
-    console.log("4");
-});
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("5");
-});
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("2");
-}, false, 1);
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("3:", "" + evt, "Phase:", evt.eventPhase);
-}, false, 1);
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("1");
-}, false, 2);
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("0");
-}, false, 3);
-
-dispatcher.addEventListener("click", { indenty: 10086,
-    handleEvent: function( evt ) {
-        console.log("6:", this);
-    }
-});
-
-dispatcher.removeEventListener("click", f4);
-
-///////////////////////////////////////////////////////////////////////////////
-var parent = dispatcher.parent = new EventDispatcher();
-
-parent.addEventListener("click", function onclick( evt ) {
-    console.log("bubble phase:", event.eventPhase);
-});
-
-parent.addEventListener("click", function ongetclick(evt) {
-    console.log("capture phase:", event.eventPhase);
-}, true);
-
-///////////////////////////////////////////////////////////////////////////////
-dispatcher.dispatchEvent(event);
+export const NONE = 0x00;
+export const CAPTURING_PHASE = 0x01;
+export const AT_TARGET = 0x02;
+export const BUBBLING_PHASE = 0x03;
