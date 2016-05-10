@@ -1,4 +1,10 @@
 ### API 概览 ###
+| [data][_data] | 说明描述 
+|---------------------------|-------------
+| [sizet][_sizet] |
+| [tobytes][_tobytes] |
+| [tochars][_tochars] |
+
 | [data/codec][_data_codec] | 说明描述 
 |---------------------------|-------------
 | [Base16][_base16] | 
@@ -18,6 +24,11 @@
 | [EventListener][_eventlistener] |
 | [EventPhase][_eventphase] | 
 | [EventPropagation][_eventpropagation] | 
+
+[_data]: https://github.com/guless/closure/blob/dev/src/data/
+[_sizet]: https://github.com/guless/closure/blob/dev/src/data/sizet.js
+[_tobytes]: https://github.com/guless/closure/blob/dev/src/data/tobytes.js
+[_tochars]: https://github.com/guless/closure/blob/dev/src/data/tochars.js
 
 [_data_codec]: https://github.com/guless/closure/blob/dev/src/data/codec/
 [_base16]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16.js
