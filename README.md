@@ -122,4 +122,4 @@ npm run build
 </script>
 ```
 
-完整 DEMO 源码: [starter.html](https://github.com/guless/closure/tree/dev/html/starter.html)
+完整 DEMO 源码: [beginner.html](https://github.com/guless/closure/tree/dev/html/beginner.html)
