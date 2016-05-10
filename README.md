@@ -1,12 +1,11 @@
 ### API 概览 ###
-| [data][_data] | 说明描述 
-|---------------------------|-------------
+| 包／类型 | 说明描述 
+|-----------------------------------------------|-------------
+| **:small_red_triangle_down:[data][_data]** | 包说明
 | [sizet][_sizet] |
 | [tobytes][_tobytes] |
 | [tochars][_tochars] |
-
-| [data/codec][_data_codec] | 说明描述 
-|---------------------------|-------------
+| **:small_red_triangle_down:[data/codec][_data_codec]** | 包说明
 | [Base16][_base16] | 
 | [Base16LowerTable][_base16lowertable] | 
 | [Base16UpperTable][_base16uppertable] |
@@ -16,9 +15,7 @@
 | [Base64][_base64] |
 | [Base64DefaultTable][_base64defaulttable] |
 | [Base64URLSafeTable][_base64urlsafetable] |
-
-| [events][_events] | 说明描述 
-|---------------------------|-------------
+| **:small_red_triangle_down:[events][_events]** | 包说明
 | [Event][_event] | 
 | [EventDispatcher][_eventdispatcher] | 
 | [EventListener][_eventlistener] |
