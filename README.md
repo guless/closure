@@ -11,6 +11,14 @@
 | [Base64DefaultTable][_base64defaulttable] |
 | [Base64URLSafeTable][_base64urlsafetable] |
 
+| [events][_events] | 说明描述 
+|---------------------------|-------------
+| [Event][_event] | 
+| [EventDispatcher][_eventdispatcher] | 
+| [EventListener][_eventlistener] |
+| [EventPhase][_eventphase] | 
+| [EventPropagation][_eventpropagation] | 
+
 [_data_codec]: https://github.com/guless/closure/blob/dev/src/data/codec/
 [_base16]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16.js
 [_base16lowertable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16LowerTable.js
@@ -21,6 +29,13 @@
 [_base64]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64.js
 [_base64defaulttable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64DefaultTable.js
 [_base64urlsafetable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64URLSafeTable.js
+
+[_events]: https://github.com/guless/closure/blob/dev/src/events/
+[_event]: https://github.com/guless/closure/blob/dev/src/events/Event.js
+[_eventdispatcher]: https://github.com/guless/closure/blob/dev/src/events/EventDispatcher.js
+[_eventlistener]: https://github.com/guless/closure/blob/dev/src/events/EventListener.js
+[_eventphase]: https://github.com/guless/closure/blob/dev/src/events/EventPhase.js
+[_eventpropagation]: https://github.com/guless/closure/blob/dev/src/events/EventPropagation.js
 
 
 ### 如何编译？###
