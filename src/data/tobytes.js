@@ -35,22 +35,22 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import { BYTE } from "./sizet";
-import { SHORT } from "./sizet";
-import { INT } from "./sizet";
+import { UNSIGNED_CHAR  } from "./sizet";
+import { UNSIGNED_SHORT } from "./sizet";
+import { UNSIGNED_INT   } from "./sizet";
 
-export default function tobytes( chars, size = BYTE ) {
+export default function tobytes( chars, size = UNSIGNED_CHAR ) {
     var bytes = null;
     
-    if ( size == INT ) {
+    if ( size == UNSIGNED_INT ) {
         bytes = new Uint8Array(chars.length);
     }
     
-    else if ( size == SHORT ) {
+    else if ( size == UNSIGNED_SHORT ) {
         bytes = new Uint16Array(chars.length);
     }
     
-    else if ( size == BYTE ) {
+    else if ( size == UNSIGNED_CHAR ) {
         bytes = new Uint8Array(chars.length);
     }
     
