@@ -2,7 +2,7 @@
 | 包／类型 | 说明描述 
 |-----------------------------------------------|-------------
 | **:small_red_triangle_down:[data][_data]** | 包说明
-| [sizet][_sizet] |
+| [sizedef][_sizedef] |
 | [tobytes][_tobytes] |
 | [tochars][_tochars] |
 | **:small_red_triangle_down:[data/codec][_data_codec]** | 包说明
@@ -23,7 +23,7 @@
 | [EventPropagation][_eventpropagation] | 
 
 [_data]: https://github.com/guless/closure/blob/dev/src/data/
-[_sizet]: https://github.com/guless/closure/blob/dev/src/data/sizet.js
+[_sizedef]: https://github.com/guless/closure/blob/dev/src/data/sizedef.js
 [_tobytes]: https://github.com/guless/closure/blob/dev/src/data/tobytes.js
 [_tochars]: https://github.com/guless/closure/blob/dev/src/data/tochars.js
 

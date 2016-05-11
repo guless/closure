@@ -35,12 +35,11 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-export const CHAR  = 0x01;
-export const SHORT = 0x02;
-export const INT   = 0x04;
-export const LONG  = 0x08;
-
-export const UNSIGNED_CHAR  = 0x01;
-export const UNSIGNED_SHORT = 0x02;
-export const UNSIGNED_INT   = 0x04;
-export const UNSIGNED_LONG  = 0x08;
+export const CHAR   = 0x01;
+export const SHORT  = 0x02;
+export const INT    = 0x04;
+export const LONG   = 0x08;
+export const UCHAR  = 0x01;
+export const USHORT = 0x02;
+export const UINT   = 0x04;
+export const ULONG  = 0x08;
