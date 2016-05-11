@@ -181,12 +181,12 @@ export default class EventDispatcher {
         
         for ( var i = 0; i < listeners.length && event._eventPropagation != EventPropagation.STOP_AT_TARGET; ++i ) {
             if ( typeof listeners[i].listener.handleEvent == "function" ) {
-                target = listeners[i].listener;
+                target  = listeners[i].listener;
                 handler = listeners[i].listener.handleEvent;
             }
             
             else {
-                target = this._eventTarget;
+                target  = this._eventTarget;
                 handler = listeners[i].listener;
             }
             
@@ -194,7 +194,13 @@ export default class EventDispatcher {
                 || EventPhase.BUBBLING_PHASE == event.eventPhase && !listeners[i].useCapture
                 || EventPhase.AT_TARGET == event.eventPhase ) {
                   
-                handler.call(target, event);
+                try { 
+                    handler.call(target, event); 
+                } 
+                
+                catch(e) { 
+                    console.error("" + e.stack); 
+                }
             }
         }
     }
