@@ -1,6 +1,9 @@
 ### API 概览 ###
 | 包／类型 | 说明描述 
 |-----------------------------------------------|-------------
+| **:small_red_triangle_down:[core][_core]** | 包说明
+| [assign][_assign] |
+| [derive][_derive] |
 | **:small_red_triangle_down:[data][_data]** | 包说明
 | [sizedef][_sizedef] |
 | [tobytes][_tobytes] |
@@ -21,6 +24,10 @@
 | [EventListener][_eventlistener] |
 | [EventPhase][_eventphase] | 
 | [EventPropagation][_eventpropagation] | 
+
+[_core]: https://github.com/guless/closure/blob/dev/src/core/
+[_assign]: https://github.com/guless/closure/blob/dev/src/data/assign.js
+[_derive]: https://github.com/guless/closure/blob/dev/src/data/derive.js
 
 [_data]: https://github.com/guless/closure/blob/dev/src/data/
 [_sizedef]: https://github.com/guless/closure/blob/dev/src/data/sizedef.js
