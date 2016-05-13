@@ -45,5 +45,5 @@ http.createServer(function (request, response) {
 
 }).listen(8086, "127.0.0.1", function( done ) {
     console.log("[NPM] start server at: \"http://127.0.0.1:8086/\"");
-    open("http://127.0.0.1:8086/index.html");
+    open("http://127.0.0.1:8086/html/debug.html");
 });

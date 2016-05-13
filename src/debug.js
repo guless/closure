@@ -35,56 +35,46 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import EventDispatcher from "./events/EventDispatcher";
-import Event from "./events/Event";
 
 
-var event = new Event("click", true, false);
-var dispatcher = new EventDispatcher();
-var f4 = null;
+const MAX = 10000000;
+/// Test1: 测试 Array 性能。
+console.time("Array Performance");
+var a = [];
+var b = null;
 
-dispatcher.addEventListener("click", f4 = function( evt ) {
-    console.log("4");
-});
+for ( var i = 0; i < MAX; ++i ) {
+    a[i] = i;
+}
 
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("5");
-});
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("2");
-}, false, 1);
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("3:", "" + evt, "Phase:", evt.eventPhase);
-}, false, 1);
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("1");
-}, false, 2);
-
-dispatcher.addEventListener("click", function( evt ) {
-    console.log("0");
-}, false, 3);
-
-dispatcher.addEventListener("click", { indenty: 10086,
-    handleEvent: function( evt ) {
-        console.log("6:", this);
+b = new Uint8Array(a);
+console.timeEnd("Array Performance");
+/// Test2: 测试 Buffer 性能。
+console.time("Buffer Performance");
+for ( var i = 0; i < MAX; ++i ) {
+    if ( i > 100 ) {
+        
     }
-});
+    
+    else if ( i > 1000 ) {
+        
+    }
+    
+    else {
+        
+    }
+}
 
-dispatcher.removeEventListener("click", f4);
+b = new Uint8Array(MAX);
+for ( var i = 0; i < MAX; ++i ) {
+    b[i] = i & 0xFF;
+}
+console.timeEnd("Buffer Performance");
+/// Test3: 测试4倍的 Buffer。
+console.time("Buffer x 4 Performance");
+var b = new Uint8Array(MAX * 4);
+for ( var i = 0; i < MAX; ++i ) {
+    b[i] = i & 0xFF;
+}
 
-///////////////////////////////////////////////////////////////////////////////
-var parent = dispatcher.parent = new EventDispatcher();
-
-parent.addEventListener("click", function onclick( evt ) {
-    console.log("bubble phase:", event.eventPhase);
-});
-
-parent.addEventListener("click", function ongetclick(evt) {
-    console.log("capture phase:", event.eventPhase);
-}, true);
-
-///////////////////////////////////////////////////////////////////////////////
-dispatcher.dispatchEvent(event);
+console.timeEnd("Buffer x 4 Performance");
