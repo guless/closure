@@ -26,8 +26,8 @@
 | [EventPropagation][_eventpropagation] | 
 
 [_core]: https://github.com/guless/closure/blob/dev/src/core/
-[_assign]: https://github.com/guless/closure/blob/dev/src/data/assign.js
-[_derive]: https://github.com/guless/closure/blob/dev/src/data/derive.js
+[_assign]: https://github.com/guless/closure/blob/dev/src/core/assign.js
+[_derive]: https://github.com/guless/closure/blob/dev/src/core/derive.js
 
 [_data]: https://github.com/guless/closure/blob/dev/src/data/
 [_sizedef]: https://github.com/guless/closure/blob/dev/src/data/sizedef.js
