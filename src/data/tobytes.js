@@ -39,19 +39,19 @@ import { UCHAR  } from "./sizedef";
 import { USHORT } from "./sizedef";
 import { UINT   } from "./sizedef";
 
-export default function tobytes( chars, size = UCHAR ) {
+export default function tobytes( chars, size = USHORT ) {
     var bytes = null;
     
-    if ( size == UINT ) {
-        bytes = new Uint32Array(chars.length);
-    }
-    
-    else if ( size == USHORT ) {
+    if ( size == USHORT ) {
         bytes = new Uint16Array(chars.length);
     }
     
     else if ( size == UCHAR ) {
         bytes = new Uint8Array(chars.length);
+    }
+    
+    else if ( size == UINT ) {
+        bytes = new Uint32Array(chars.length);
     }
     
     else {
