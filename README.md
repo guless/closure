@@ -92,6 +92,9 @@ if ( typeof window != "undefined" ) {
 
 #### 运行编译命令 `npm run build`，然后在页面中引用 `dist/bundle.js`。####
 ```shell
+# 首次运行编译命令之前，需要先安装依赖项。
+npm install
+
 # 编译命令会将 `src/import.js` 中导入的模块输出至 `dist/bundle.js` 中。
 npm run build
 ```
