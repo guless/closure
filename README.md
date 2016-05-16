@@ -18,6 +18,8 @@
 | [Base64][_base64] |
 | [Base64DefaultTable][_base64defaulttable] |
 | [Base64URLSafeTable][_base64urlsafetable] |
+| **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
+| [MD5][_md5] |
 | **:small_red_triangle_down:[events][_events]** | 包说明
 | [Event][_event] | 
 | [EventDispatcher][_eventdispatcher] | 
@@ -44,6 +46,9 @@
 [_base64]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64.js
 [_base64defaulttable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64DefaultTable.js
 [_base64urlsafetable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64URLSafeTable.js
+
+[_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
+[_md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
 
 [_events]: https://github.com/guless/closure/blob/dev/src/events/
 [_event]: https://github.com/guless/closure/blob/dev/src/events/Event.js

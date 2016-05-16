@@ -35,46 +35,35 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import tobytes from "./data/tobytes";
+import tochars from "./data/tochars";
+import Base16 from "./data/codec/Base16";
+import MD5 from "./data/crypto/MD5";
 
-
-const MAX = 10000000;
-/// Test1: 测试 Array 性能。
-console.time("Array Performance");
-var a = [];
-var b = null;
-
-for ( var i = 0; i < MAX; ++i ) {
-    a[i] = i;
-}
-
-b = new Uint8Array(a);
-console.timeEnd("Array Performance");
-/// Test2: 测试 Buffer 性能。
-console.time("Buffer Performance");
-for ( var i = 0; i < MAX; ++i ) {
-    if ( i > 100 ) {
-        
-    }
+function test( str, rlt ) {
+    var md5 = new MD5();
+    var b16 = new Base16();
+    var dat = tochars(b16.encode(md5.update(tobytes(str, 1)).digest()));
     
-    else if ( i > 1000 ) {
-        
-    }
-    
-    else {
-        
-    }
+    console.log("str:", str);
+    console.log("rlt:", rlt);
+    console.log("md5:", dat);
+    console.log("equals:", rlt === dat, "\n");
 }
 
-b = new Uint8Array(MAX);
-for ( var i = 0; i < MAX; ++i ) {
-    b[i] = i & 0xFF;
-}
-console.timeEnd("Buffer Performance");
-/// Test3: 测试4倍的 Buffer。
-console.time("Buffer x 4 Performance");
-var b = new Uint8Array(MAX * 4);
-for ( var i = 0; i < MAX; ++i ) {
-    b[i] = i & 0xFF;
-}
+// MD5 test suite:
+// MD5 ("") = d41d8cd98f00b204e9800998ecf8427e
+// MD5 ("a") = 0cc175b9c0f1b6a831c399e269772661
+// MD5 ("abc") = 900150983cd24fb0d6963f7d28e17f72
+// MD5 ("message digest") = f96b697d7cb7938d525a2f31aaf161d0
+// MD5 ("abcdefghijklmnopqrstuvwxyz") = c3fcd3d76192e4007dfb496cca67e13b
+// MD5 ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789") = d174ab98d277d9f5a5611c2c9f419d9f
+// MD5 ("12345678901234567890123456789012345678901234567890123456789012345678901234567890") = 57edf4a22be3c955ac49da2e2107b67a
 
-console.timeEnd("Buffer x 4 Performance");
+test("", "d41d8cd98f00b204e9800998ecf8427e");
+test("a", "0cc175b9c0f1b6a831c399e269772661");
+test("abc", "900150983cd24fb0d6963f7d28e17f72");
+test("message digest", "f96b697d7cb7938d525a2f31aaf161d0");
+test("abcdefghijklmnopqrstuvwxyz", "c3fcd3d76192e4007dfb496cca67e13b");
+test("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d174ab98d277d9f5a5611c2c9f419d9f");
+test("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "57edf4a22be3c955ac49da2e2107b67a");
