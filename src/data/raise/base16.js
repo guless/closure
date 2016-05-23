@@ -37,8 +37,8 @@
 /// THE SOFTWARE.
 import Base16  from "../codec/Base16";
 import UTF8    from "../codec/UTF8";
-import tobytes from "../../tobytes";
-import tochars from "../../tochars";
+import tobytes from "../tobytes";
+import tochars from "../tochars";
 
 export default class base16 {
     static encode( string ) {

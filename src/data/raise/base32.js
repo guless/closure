@@ -37,8 +37,8 @@
 /// THE SOFTWARE.
 import Base32  from "../codec/Base32";
 import UTF8    from "../codec/UTF8";
-import tobytes from "../../tobytes";
-import tochars from "../../tochars";
+import tobytes from "../tobytes";
+import tochars from "../tochars";
 
 export default class base32 {
     static encode( string ) {

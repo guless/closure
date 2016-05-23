@@ -37,9 +37,11 @@
 /// THE SOFTWARE.
 import MD5  from "../crypto/MD5";
 import UTF8 from "../codec/UTF8";
-import tobytes from "../../tobytes";
+import Base16 from "../codec/Base16";
+import tobytes from "../tobytes";
+import tochars from "../tochars";
 
 export default function md5( string ) {
     var buffer = typeof string == "string" ? tobytes(string) : string;
-    return (new MD5()).update((new UTF8()).encode(buffer)).digest();
+    return tochars((new Base16()).encode((new MD5()).update((new UTF8()).encode(buffer)).digest()));
 }

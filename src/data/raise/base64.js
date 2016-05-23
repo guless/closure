@@ -37,8 +37,8 @@
 /// THE SOFTWARE.
 import Base64  from "../codec/Base64";
 import UTF8    from "../codec/UTF8";
-import tobytes from "../../tobytes";
-import tochars from "../../tochars";
+import tobytes from "../tobytes";
+import tochars from "../tochars";
 
 export default class base64 {
     static encode( string ) {
