@@ -18,8 +18,14 @@
 | [Base64][_base64] |
 | [Base64DefaultTable][_base64defaulttable] |
 | [Base64URLSafeTable][_base64urlsafetable] |
+| [UTF8][_utf8] |
 | **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
 | [MD5][_md5] |
+| **:small_red_triangle_down:[data/raise][_data_raise]** | 包说明
+| [base16][_base16_raise] |
+| [base32][_base32_raise] | 
+| [base64][_base64_raise] | 
+| [md5][_md5_raise] |
 | **:small_red_triangle_down:[events][_events]** | 包说明
 | [Event][_event] | 
 | [EventDispatcher][_eventdispatcher] | 
@@ -46,9 +52,16 @@
 [_base64]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64.js
 [_base64defaulttable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64DefaultTable.js
 [_base64urlsafetable]: https://github.com/guless/closure/blob/dev/src/data/codec/Base64URLSafeTable.js
+[_utf8]: https://github.com/guless/closure/blob/dev/src/data/codec/UTF8.js
 
 [_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
 [_md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
+
+[_data_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/
+[_base16_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base16.js
+[_base32_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base32.js
+[_base64_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base64.js
+[_md5_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md5.js
 
 [_events]: https://github.com/guless/closure/blob/dev/src/events/
 [_event]: https://github.com/guless/closure/blob/dev/src/events/Event.js
