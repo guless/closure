@@ -202,45 +202,31 @@ export default class MD5 {
         
         this._status = DIGESTED;
         
-        if ( this._offset == 0 ) {
-            var dataview = new DataView(new ArrayBuffer(64));
-            
-            dataview.setUint8(0, 0x80);
-            dataview.setUint32(56, this._length[0], true);
-            dataview.setUint32(60, this._length[1], true);
-                
-            this._transform(dataview, 0);
+        if ( this._buffer.fill ) {
+            this._buffer.fill(0, this._offset);
         }
         
         else {
-            if ( this._buffer.fill ) {
-                this._buffer.fill(0, this._offset);
-            }
-            
-            else {
-                this._buffer.set(new Uint8Array(64 - this._offset), this._offset);
-            }
-            
-            var dataview = new DataView(this._buffer.buffer);
-                dataview.setUint8(this._offset, 0x80);
-            
-            if ( this._offset < 56 ) {
-                dataview.setUint32(56, this._length[0], true);
-                dataview.setUint32(60, this._length[1], true);
-                
-                this._transform(dataview, 0);
-            }
-            
-            else {
-                this._transform(dataview, 0);
-                
-                dataview = new DataView(new ArrayBuffer(64));
-                dataview.setUint32(56, this._length[0], true);
-                dataview.setUint32(60, this._length[1], true);
-                
-                this._transform(dataview, 0);
-            }
+            this._buffer.set(new Uint8Array(64 - this._offset), this._offset);
         }
+        
+        var dataview = new DataView(this._buffer.buffer);
+            dataview.setUint8(this._offset, 0x80);
+        
+        if ( this._offset < 56 ) {
+            dataview.setUint32(56, this._length[0], true);
+            dataview.setUint32(60, this._length[1], true);
+        }
+        
+        else {
+            this._transform(dataview, 0);
+            
+            dataview = new DataView(new ArrayBuffer(64));
+            dataview.setUint32(56, this._length[0], true);
+            dataview.setUint32(60, this._length[1], true);
+        }
+        
+        this._transform(dataview, 0);
             
         return new Uint8Array(this._digest.buffer);
     }
