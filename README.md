@@ -21,6 +21,9 @@
 | [UTF8][_utf8] |
 | **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
 | [MD5][_md5] |
+| [CRC32][_crc32] |
+| [CRC32Table][_crc32_table] |
+| [Status][_status] |
 | **:small_red_triangle_down:[data/raise][_data_raise]** | 包说明
 | [base16][_base16_raise] |
 | [base32][_base32_raise] | 
@@ -56,6 +59,9 @@
 
 [_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
 [_md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
+[_crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
+[_crc32_table]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32Table.js
+[_status]: https://github.com/guless/closure/blob/dev/src/data/crypto/Status.js
 
 [_data_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/
 [_base16_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base16.js

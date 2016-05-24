@@ -35,12 +35,41 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import tobytes from "./data/tobytes";
-import tochars from "./data/tochars";
-import CRC32 from "./data/crypto/CRC32";
+import { CRC32_TABLE } from "./CRC32Table";
+import { UPDATING, DIGESTED } from "./Status";
 
-function test( str ) {
-    console.log("CRC32:", (new CRC32()).update(tobytes(str, 1)).digest()); 
+export default class CRC32 {
+    /// Origin: https://github.com/brianloveswords/buffer-crc32/blob/master/index.js
+    constructor() {
+        this._init();
+    }
+    
+    _init() {
+        this._status = UPDATING;
+        this._digest = 0;
+    }
+    
+    update( bytes ) {
+        if ( this._status == DIGESTED ) {
+            this._init();
+        }
+        
+        var buffer = this._digest ^ -1;
+        
+        for ( var i = 0; i < bytes.length; ++i ) {
+            buffer = CRC32_TABLE[(buffer ^ bytes[i]) & 0xFF] ^ (buffer >>> 8);
+        }
+        
+        this._digest = buffer ^ -1;
+        return this;
+    }
+    
+    digest() {
+        if ( this._status == DIGESTED ) {
+            this._init();
+        }
+        
+        this._status = DIGESTED;
+        return this._digest >>> 0;
+    }
 }
-
-test("abc");
