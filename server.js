@@ -43,7 +43,7 @@ var open = require("open");
 http.createServer(function (request, response) {
     request.addListener("end", function () { file.serve(request, response); }).resume();
 
-}).listen(8086, "127.0.0.1", function( done ) {
+}).listen(8086, "0.0.0.0", function( done ) {
     console.log("[NPM] start server at: \"http://127.0.0.1:8086/\"");
     open("http://127.0.0.1:8086/html/debug.html");
 });
