@@ -2,6 +2,7 @@
 | 包／类型 | 说明描述 
 |-----------------------------------------------|-------------
 | **:small_red_triangle_down:[core][_core]** | 包说明
+| [assert][_assert] |
 | [assign][_assign] |
 | [derive][_derive] |
 | **:small_red_triangle_down:[data][_data]** | 包说明
@@ -20,6 +21,7 @@
 | [Base64URLSafeTable][_base64urlsafetable] |
 | [UTF8][_utf8] |
 | **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
+| [MD4][_md4] |
 | [MD5][_md5] |
 | [CRC32][_crc32] |
 | [CRC32Table][_crc32_table] |
@@ -37,6 +39,7 @@
 | [EventPropagation][_eventpropagation] | 
 
 [_core]: https://github.com/guless/closure/blob/dev/src/core/
+[_assert]: https://github.com/guless/closure/blob/dev/src/core/assert.js
 [_assign]: https://github.com/guless/closure/blob/dev/src/core/assign.js
 [_derive]: https://github.com/guless/closure/blob/dev/src/core/derive.js
 
@@ -58,6 +61,7 @@
 [_utf8]: https://github.com/guless/closure/blob/dev/src/data/codec/UTF8.js
 
 [_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
+[_md4]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD4.js
 [_md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
 [_crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
 [_crc32_table]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32Table.js
