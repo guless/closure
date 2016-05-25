@@ -21,6 +21,8 @@
 | [Base64URLSafeTable][_base64urlsafetable] |
 | [UTF8][_utf8] |
 | **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
+| [MD2][_md2] |
+| [MD2PITable][_md2pitable] |
 | [MD4][_md4] |
 | [MD5][_md5] |
 | [CRC32][_crc32] |
@@ -61,6 +63,8 @@
 [_utf8]: https://github.com/guless/closure/blob/dev/src/data/codec/UTF8.js
 
 [_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
+[_md2]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2.js
+[_md2pitable]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2PITable.js
 [_md4]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD4.js
 [_md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
 [_crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
