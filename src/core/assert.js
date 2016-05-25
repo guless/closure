@@ -38,6 +38,9 @@
 
 export default function assert( predicate, message = "predicate failure." ) {
     if ( !predicate ) {
-        throw new Error(`Assertion Exception: ${message}`);
+        var error = new Error(`${message}`); 
+            error.name = "Assertion Exception";
+            
+        throw error;
     }
 }
