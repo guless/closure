@@ -19,6 +19,7 @@ groups.start(filedesc);
 
 function test_md5( input, expect ) {
     var result = tochars((new Base16()).encode((new MD5()).update(tobytes(input,1)).digest()));
+    console.log( result == expect, result, input );
     assert( result === expect, `MD5 hash does not match. \n{\n    expect: "${expect}", \n    result: "${result}", \n    input : "${input}"\n}` );
 }
 

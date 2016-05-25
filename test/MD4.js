@@ -20,6 +20,7 @@ groups.start(filedesc);
 
 function test_md4( input, expect ) {
     var result = tochars((new Base16()).encode((new MD4()).update(tobytes(input,1)).digest()));
+    console.log( result == expect, result, input );
     assert( result === expect, `MD4 hash does not match. \n{\n    expect: "${expect}", \n    result: "${result}", \n    input : "${input}"\n}` );
 }
 
