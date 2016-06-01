@@ -12,13 +12,15 @@
         "COPYRIGHT.txt", 
         "LICENSE.txt", 
         "README.md", 
+        "API.md",
         "package.json", 
         "server.js", 
         "index.html", 
         "src/",
         "dist/", 
         "html/",
-        "task/"
+        "task/",
+        "test/"
     ],
     "devDependencies": {
         "open"       : "^0.0.5",
