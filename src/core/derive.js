@@ -38,10 +38,9 @@
 import assign from "./assign";
 
 export default function derive( base, constructor ) {
-    if ( !base ) {
-        return constructor;
+    if ( base ) {
+        constructor.prototype = assign(Object.create(base.prototype), constructor.prototype);
     }
     
-    constructor.prototype = assign(Object.create(base.prototype), constructor.prototype);
     return constructor;
 }
