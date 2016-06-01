@@ -82,7 +82,7 @@
 [_base32_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base32.js
 [_base64_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base64.js
 [_md2_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md2.js
-[_md3_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md4.js
+[_md4_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md4.js
 [_md5_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md5.js
 
 [_events]: https://github.com/guless/closure/blob/dev/src/events/
