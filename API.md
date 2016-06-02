@@ -8,6 +8,7 @@
 | [derive][_derive] |
 | **:small_red_triangle_down:[data][_data]** | 包说明
 | [sizedef][_sizedef] |
+| [strbin][_strbin]   |
 | [tobytes][_tobytes] |
 | [tochars][_tochars] |
 | **:small_red_triangle_down:[data/codec][_data_codec]** | 包说明
@@ -33,6 +34,7 @@
 | [base16][_base16_raise] |
 | [base32][_base32_raise] | 
 | [base64][_base64_raise] |
+| [crc32][_crc32] |
 | [md2][_md2_raise] |
 | [md4][_md4_raise] |
 | [md5][_md5_raise] |
@@ -53,6 +55,7 @@
 
 [_data]: https://github.com/guless/closure/blob/dev/src/data/
 [_sizedef]: https://github.com/guless/closure/blob/dev/src/data/sizedef.js
+[_strbin]: https://github.com/guless/closure/blob/dev/src/data/strbin.js
 [_tobytes]: https://github.com/guless/closure/blob/dev/src/data/tobytes.js
 [_tochars]: https://github.com/guless/closure/blob/dev/src/data/tochars.js
 
@@ -81,6 +84,7 @@
 [_base16_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base16.js
 [_base32_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base32.js
 [_base64_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base64.js
+[_crc32_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/crc32.js
 [_md2_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md2.js
 [_md4_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md4.js
 [_md5_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md5.js
