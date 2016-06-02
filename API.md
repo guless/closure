@@ -23,12 +23,13 @@
 | [Base64URLSafeTable][_base64urlsafetable] |
 | [UTF8][_utf8] |
 | **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
+| [CRC32][_crc32] |
+| [CRC32Table][_crc32_table] |
 | [MD2][_md2] |
 | [MD2PITable][_md2pitable] |
 | [MD4][_md4] |
 | [MD5][_md5] |
-| [CRC32][_crc32] |
-| [CRC32Table][_crc32_table] |
+| [SHA1][_sha1] |
 | [Status][_status] |
 | **:small_red_triangle_down:[data/raise][_data_raise]** | 包说明
 | [base16][_base16_raise] |
@@ -38,6 +39,7 @@
 | [md2][_md2_raise] |
 | [md4][_md4_raise] |
 | [md5][_md5_raise] |
+| [sha1][_sha1_raise] |
 | **:small_red_triangle_down:[events][_events]** | 包说明
 | [Event][_event] | 
 | [EventDispatcher][_eventdispatcher] | 
@@ -72,12 +74,13 @@
 [_utf8]: https://github.com/guless/closure/blob/dev/src/data/codec/UTF8.js
 
 [_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
+[_crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
+[_crc32_table]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32Table.js
 [_md2]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2.js
 [_md2pitable]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2PITable.js
 [_md4]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD4.js
 [_md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
-[_crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
-[_crc32_table]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32Table.js
+[_sha1]: https://github.com/guless/closure/blob/dev/src/data/crypto/SHA1.js
 [_status]: https://github.com/guless/closure/blob/dev/src/data/crypto/Status.js
 
 [_data_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/
@@ -88,6 +91,7 @@
 [_md2_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md2.js
 [_md4_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md4.js
 [_md5_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md5.js
+[_sha1_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/sha1.js
 
 [_events]: https://github.com/guless/closure/blob/dev/src/events/
 [_event]: https://github.com/guless/closure/blob/dev/src/events/Event.js

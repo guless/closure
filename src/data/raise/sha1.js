@@ -35,8 +35,13 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import "../test/MD2.js";
-import "../test/MD4.js";
-import "../test/MD5.js";
-import "../test/SHA1.js";
-import "../test/strbin.js";
+import SHA1 from "../crypto/SHA1";
+import UTF8 from "../codec/UTF8";
+import Base16 from "../codec/Base16";
+import tobytes from "../tobytes";
+import tochars from "../tochars";
+
+export default function SHA1( string ) {
+    var buffer = typeof string == "string" ? tobytes(string) : string;
+    return tochars((new Base16()).encode((new SHA1()).update((new UTF8()).encode(buffer)).digest()));
+}
