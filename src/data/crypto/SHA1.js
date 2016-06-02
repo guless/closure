@@ -36,8 +36,6 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import { UPDATING, DIGESTED } from "./Status";
-import strbin from "../strbin";
-import * as PADCHAR from "../strbin";
 
 const H0 = 0x67452301
 const H1 = 0xEFCDAB89;
@@ -76,11 +74,6 @@ export default class SHA1 {
         var C = this._digest[2];
         var D = this._digest[3];
         var E = this._digest[4];
-        
-        // K[0]: 0x5A827999
-        // K[1]: 0x6ED9EBA1
-        // K[2]: 0x8F1BBCDC
-        // K[3]: 0xCA62C1D6
         
         for ( var t = 0; t < 20; ++t ) {
             T = ((A << 5) | (A >>> 27)) + ((B & C) | ((~B) & D)) + E + W[t] + 0x5A827999;
