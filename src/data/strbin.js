@@ -36,11 +36,25 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+export const STRBIN_NO_PAD    = "";
+export const STRBIN_PAD2ZERO  = "00";
+export const STRBIN_PAD4ZERO  = "0000";
+export const STRBIN_PAD6ZERO  = "000000";
 export const STRBIN_PAD8ZERO  = "00000000";
 export const STRBIN_PAD16ZERO = "0000000000000000";
 export const STRBIN_PAD32ZERO = "00000000000000000000000000000000";
 
-export default function strbin( digital, padchar = STRBIN_PAD8ZERO ) {
-    var data = padchar + (digital >>> 0).toString(2);
-    return data.slice(data.length - padchar.length);
+export default function strbin( digital, radix = 16, padchar = STRBIN_PAD8ZERO ) {
+    var data = null;
+    
+    if ( padchar && padchar.length ) {
+        data = padchar + (digital >>> 0).toString(radix);
+        data = data.slice(data.length - padchar.length);
+    }
+    
+    else {
+        data = (digital >>> 0).toString(radix);
+    }
+    
+    return data;
 }

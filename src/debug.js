@@ -38,3 +38,4 @@
 import "../test/MD2.js";
 import "../test/MD4.js";
 import "../test/MD5.js";
+import "../test/strbin.js";
