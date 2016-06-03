@@ -23,6 +23,19 @@
 | [Base64URLSafeTable][_base64urlsafetable] |
 | [UTF8][_utf8] |
 | **:small_red_triangle_down:[data/crypto][_data_crypto]** | 包说明
+| [CRC1][_crc1] |
+| [CRC8][_crc8] |
+| [CRC8Dallas1WireTable][_crc8dallas1wiretable] |
+| [CRC8DefaultTable][_crc8defaulttable] |
+| [CRC8Type][_crc8type] |
+| [CRC16][_crc16] |
+| [CRC16CCITTTable][_crc16ccitttable] |
+| [CRC16DefaultTable][_crc16defaulttable] |
+| [CRC16KermitTable][_crc16kermittable] |
+| [CRC16ModBusTable][_crc16modbustable] |
+| [CRC16Type][_crc16type] |
+| [CRC24][_crc24] |
+| [CRC24Table][_crc24table] |
 | [CRC32][_crc32] |
 | [CRC32Table][_crc32_table] |
 | [MD2][_md2] |
@@ -35,7 +48,11 @@
 | [base16][_base16_raise] |
 | [base32][_base32_raise] | 
 | [base64][_base64_raise] |
-| [crc32][_crc32] |
+| [crc1][_crc1_raise] |
+| [crc8][_crc8_raise] |
+| [crc16][_crc16_raise] |
+| [crc24][_crc24_raise] |
+| [crc32][_crc32_raise] |
 | [md2][_md2_raise] |
 | [md4][_md4_raise] |
 | [md5][_md5_raise] |
@@ -74,6 +91,19 @@
 [_utf8]: https://github.com/guless/closure/blob/dev/src/data/codec/UTF8.js
 
 [_data_crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto/
+[_crc1]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC1.js
+[_crc8]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8.js
+[_crc8dallas1wiretable]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8Dallas1WireTable.js
+[_crc8defaulttable]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8DefaultTable.js
+[_crc8type]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8Type.js
+[_crc16]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16.js
+[_crc16ccitttable]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16CCITTTable.js
+[_crc16defaulttable]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16DefaultTable.js
+[_crc16kermittable]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16KermitTable.js
+[_crc16modbustable]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16ModBusTable.js
+[_crc16type]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16Type.js
+[_crc24]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC24.js
+[_crc24table]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC24Table.js
 [_crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
 [_crc32_table]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32Table.js
 [_md2]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2.js
@@ -87,6 +117,10 @@
 [_base16_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base16.js
 [_base32_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base32.js
 [_base64_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/base64.js
+[_crc1_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/crc1.js
+[_crc8_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/crc8.js
+[_crc16_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/crc16.js
+[_crc24_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/crc24.js
 [_crc32_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/crc32.js
 [_md2_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md2.js
 [_md4_raise]: https://github.com/guless/closure/blob/dev/src/data/raise/md4.js
