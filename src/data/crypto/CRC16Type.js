@@ -35,7 +35,9 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import "../test/MD2.js";
-import "../test/MD4.js";
-import "../test/MD5.js";
-import "../test/SHA1.js";
+
+export const CRC16_TYPE_DEFAULT = 0x00;
+export const CRC16_TYPE_CCITT   = 0x01;
+export const CRC16_TYPE_KERMIT  = 0x02;
+export const CRC16_TYPE_MODBUS  = 0x03;
+export const CRC16_TYPE_XMODEM  = 0x04;

@@ -35,7 +35,38 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import "../test/MD2.js";
-import "../test/MD4.js";
-import "../test/MD5.js";
-import "../test/SHA1.js";
+import { CRC24_TABLE } from "./CRC24Table";
+import { UPDATING, DIGESTED } from "./Status";
+
+export default class CRC24 {
+    /// Origin: https://github.com/alexgorbatchev/node-crc/blob/master/src/crc24.js
+    constructor() {
+        this._init();
+    }
+    
+    _init() {
+        this._status = UPDATING;
+        this._digest = 0xb704ce;
+    }
+    
+    update( bytes ) {
+        if ( this._status == DIGESTED ) {
+            this._init();
+        }
+        
+        for ( var i = 0; i < bytes.length; ++i ) {
+            this._digest = ((CRC24_TABLE[((this._digest >> 16) ^ bytes[i]) & 0xFF] ^ (this._digest << 8)) & 0xFFFFFF);
+        }
+        
+        return this;
+    }
+    
+    digest() {
+        if ( this._status == DIGESTED ) {
+            this._init();
+        }
+        
+        this._status = DIGESTED;
+        return this._digest >>> 0;
+    }
+}

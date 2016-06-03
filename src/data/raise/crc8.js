@@ -35,7 +35,13 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import "../test/MD2.js";
-import "../test/MD4.js";
-import "../test/MD5.js";
-import "../test/SHA1.js";
+import CRC8 from "../crypto/CRC8";
+import UTF8 from "../codec/UTF8";
+import Base16 from "../codec/Base16";
+import tobytes from "../tobytes";
+import strbin from "../strbin";
+
+export default function crc8( string ) {
+    var buffer = typeof string == "string" ? tobytes(string) : string;
+    return strbin((new CRC8()).update((new UTF8()).encode(buffer)).digest(), 16, "00");
+}

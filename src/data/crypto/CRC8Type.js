@@ -35,7 +35,6 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import "../test/MD2.js";
-import "../test/MD4.js";
-import "../test/MD5.js";
-import "../test/SHA1.js";
+
+export const CRC8_TYPE_DEFAULT = 0x00;
+export const CRC8_TYPE_DALLAS_1_WIRE = 0x01;
