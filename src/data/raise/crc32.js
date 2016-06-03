@@ -35,13 +35,13 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import CRC32  from "../crypto/CRC32";
+import CRC32 from "../crypto/CRC32";
 import UTF8 from "../codec/UTF8";
 import Base16 from "../codec/Base16";
 import tobytes from "../tobytes";
-import tochars from "../tochars";
+import strbin from "../strbin";
 
 export default function crc32( string ) {
     var buffer = typeof string == "string" ? tobytes(string) : string;
-    return tochars((new Base16()).encode((new crc32()).update((new UTF8()).encode(buffer)).digest()));
+    return strbin((new CRC32()).update((new UTF8()).encode(buffer)).digest());
 }
