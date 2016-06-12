@@ -36,26 +36,6 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-export const BASE16_UPPER_ENCODE_TABLE = new Int8Array([
-    /// [0-9] Numerics
-    48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-    /// [10-15] A-F
-    65, 66, 67, 68, 69, 70
-]);
-
-export const BASE16_UPPER_DECODE_TABLE = new Int8Array([
-    /// [0-47] Invalid
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    /// [48-57] Numerics
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    /// [58-64] Invalid
-    -1, -1, -1, -1, -1, -1, -1,
-    /// [65-70] A-F
-    10, 11, 12, 13, 14, 15,
-    /// [71-127] Invalid
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
-]);
+export default function strof( bytes ) {
+    return String.fromCharCode.apply(null, bytes);
+}

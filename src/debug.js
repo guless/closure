@@ -35,7 +35,25 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import "../test/MD2.js";
-import "../test/MD4.js";
-import "../test/MD5.js";
-import "../test/SHA1.js";
+import ascii from "./data/utils/ascii";
+import utf16 from "./data/utils/utf16";
+import strof from "./data/utils/strof";
+import copy  from "./data/utils/copy" ;
+
+console.log( ascii("abc") );
+console.log( utf16("abc") );
+console.log( strof(new Uint8Array([97, 98, 99])) );
+
+var a = new Uint8Array([97, 98, 99]);
+var b = copy(a, new Uint8Array(a.length));
+
+a[0] = 100;
+console.log(a);
+console.log(b);
+
+
+var a = new Uint8Array([97, 98, 99, 100, 101, 102]);
+var b = new Uint8Array(a.buffer).subarray(1, 4);
+
+a.set(b, 0);
+console.log(a);

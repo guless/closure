@@ -35,50 +35,26 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import { CRC8_TYPE_DEFAULT, CRC8_TYPE_DALLAS_1_WIRE } from "./CRC8Type";
-import { CRC8_DEFAULT_TABLE } from "./CRC8DefaultTable";
-import { CRC8_DALLAS_1_WIRE_TABLE } from "./CRC8Dallas1WireTable";
-import { UPDATING, DIGESTED } from "./Status";
 
-export default class CRC8 {
-    /// https://github.com/alexgorbatchev/node-crc
-    constructor( type = CRC8_TYPE_DEFAULT ) {
-        this._table = null;
-        
-        switch( type ) {
-            case CRC8_TYPE_DALLAS_1_WIRE : this._table = CRC8_DALLAS_1_WIRE_TABLE;
-                break;
-                
-            default: this._table = CRC8_DEFAULT_TABLE;
-                break;
-        }
-        
-        this._init();
+export default function copy( source, target = null, offset = 0 ) {
+    if ( !target ) {
+        return new source.constructor(source);
     }
     
-    _init() {
-        this._status = UPDATING;
-        this._digest = 0;
+    var remain = target.length - offset;
+    
+    if ( remain > 0 ) {
+        /// TypedArray.set: Thrown if the offset is set such as it would store beyond 
+        /// the end of the typed array.
+        if ( source.length > remain ) {
+            source = source.subarray(0, remain);
+        }
+        
+        /// If the source array is a typed array, the two arrays may share the same 
+        /// underlying ArrayBuffer; the browser will intelligently copy the source 
+        /// range of the buffer to the destination range.
+        target.set(source, offset);
     }
     
-    update( bytes ) {
-        if ( this._status == DIGESTED ) {
-            this._init();
-        }
-        
-        for ( var i = 0; i < bytes.length; ++i ) {
-            this._digest = (this._table[(this._digest ^ bytes[i]) & 0xFF] & 0xFF);
-        }
-        
-        return this;
-    }
-    
-    digest() {
-        if ( this._status == DIGESTED ) {
-            this._init();
-        }
-        
-        this._status = DIGESTED;
-        return this._digest >>> 0;
-    }
+    return target;
 }
