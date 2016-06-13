@@ -190,9 +190,9 @@ export default class EventDispatcher {
                 handler = listeners[i].listener;
             }
             
-            if ( EventPhase.CAPTURING_PHASE == event.eventPhase && listeners[i].useCapture
-                || EventPhase.BUBBLING_PHASE == event.eventPhase && !listeners[i].useCapture
-                || EventPhase.AT_TARGET == event.eventPhase ) {
+            if ( (EventPhase.CAPTURING_PHASE == event.eventPhase && listeners[i].useCapture)
+                || (EventPhase.BUBBLING_PHASE == event.eventPhase && !listeners[i].useCapture)
+                || (EventPhase.AT_TARGET == event.eventPhase) ) {
                   
                 try { 
                     handler.call(target, event); 
