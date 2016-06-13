@@ -40,8 +40,8 @@ import copy from "../utils/copy";
 export default class DataBuffer {
     constructor( buffer ) {
         this._buffer = buffer;
-        this._length = this._buffer.length;
         this._offset = 0;
+        this._length = this._buffer.length;
     }
     
     get buffer() {
