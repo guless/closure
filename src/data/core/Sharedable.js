@@ -37,10 +37,15 @@
 /// THE SOFTWARE.
 import Streamable from "./Streamable";
 
+const EMPTY_UINT8_ARRAY = new Uint8Array(0);
+
 export default class Sharedable extends Streamable {
     constructor( buffer = null, shared = null ) {
         super(buffer);
+        
         this._shared = shared;
+        this._offset = 0;
+        this._output = null;
     }
     
     get shared() {
@@ -56,8 +61,23 @@ export default class Sharedable extends Streamable {
         throw new Error("method does not implements.");
     }
     
+    _transfrom( bytes ) {
+        this._offset = this._transchunk(bytes, this._output, this._offset);
+    }
+    
+    _transchunk( bytes, output, offset ) {
+        return offset;
+    }
+    
     update( bytes ) {
-        var output = this._shared || this._initOutput(bytes);
-        return super.update(bytes, output);
+        this._output = this._shared || this._initOutput(bytes);
+        this._offset = 0;
+        
+        super.update(bytes);
+        return this._output === this._shared ? this._shared.subarray(0, this._offset) : this._output;
+    }
+    
+    final() {
+        return EMPTY_UINT8_ARRAY;
     }
 }

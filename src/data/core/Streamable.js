@@ -43,7 +43,7 @@ export default class Streamable {
         this._buffer = buffer ? new DataBuffer(buffer) : null;
     }
     
-    _transfrom( bytes, output = null, offset = 0 ) { 
+    _transfrom( bytes ) { 
         /* Protected */
         throw new Error("method does not implements.");
     }
@@ -53,10 +53,10 @@ export default class Streamable {
         throw new Error("method does not implements.");
     }
     
-    update( bytes, output = null ) {        
+    update( bytes ) {        
         if ( !(this._buffer && this._buffer.length > 0) ) {
-            this._transfrom(bytes, output);
-            return output;
+            this._transfrom(bytes);
+            return;
         }
         
         if ( bytes.length >= this._buffer.remain ) {
@@ -64,16 +64,16 @@ export default class Streamable {
                 copy(bytes, this._buffer.buffer, this._buffer.offset);
                 bytes = bytes.subarray(this._buffer.remain);
 
-                this._transfrom(bytes, output, this._transfrom(this._buffer.buffer, output));
+                this._transfrom(bytes);
+                this._transfrom(this._buffer.buffer);
             }
             
             else {
-                this._transfrom(bytes, output);
+                this._transfrom(bytes);
             }
         }
             
         this._buffer.restore(bytes);
-        return output;
     }
 
     reset() {

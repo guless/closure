@@ -35,28 +35,62 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD5Spec from "../test/MD5Spec";
+import assert        from "../src/core/assert";
+import Base16Encoder from "../src/data/codec/Base16Encoder";
+import Base16Decoder from "../src/data/codec/Base16Decoder";
+import ascii         from "../src/data/utils/ascii";
+import strof         from "../src/data/utils/strof";
+import passlog       from "./helper/passlog";
+import errorlog      from "./helper/errorlog";
+import arrayEqual    from "./helper/arrayEqual";
+import catchError    from "./helper/catchError";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const encoder = new Base16Encoder();
+const decoder = new Base16Decoder();
 
-testSuite.push( 
-    Base16Spec,
-    MD5Spec
-);
+const A1 = new Uint8Array(0);
+const B1 = "";
 
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+const A2 = new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+const B2 = "000102030405060708090a0b0c0d0e0f";
+
+export default function () {
+    console.log("[Start Base16 Test Suite]:");
     
-    console.log("");
+    test_encode_base16(A1, B1);
+    test_encode_base16(A2, B2);
+    
+    test_decode_base16(B1, A1);
+    test_decode_base16(B2, A2);
+    
+    /// decode error:
+    test_decode_error("ABC");
+    test_decode_error("abc");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
+function test_encode_base16( input, expect ) {
+    var result = strof(encoder.update(input));
+    
+    assert(result == expect, "base16 encode does not match." + ` { input=[${input}], expect="${expect}", result="${result}" }`);
+    passlog(`[${input}]`, `"${expect}"`);
+}
+
+function test_decode_base16( input, expect ) {
+    decoder.reset();
+    var result = decoder.update(ascii(input));
+    decoder.final();
+    
+    assert(arrayEqual(result, expect), "base16 encode does not match." + ` { input="${input}", expect=[${expect}], result=[${result}] }`);
+    passlog(`"${input}"`, `[${expect}]`);
+}
+
+function test_decode_error( input ) {
+    var message = catchError(function() {
+        decoder.reset();
+        decoder.update(ascii(input));
+        decoder.final();
+    });
+    
+    assert(message !== null, "base16 decode does not throw error." + ` { input="${input}" }`);
+    errorlog(`"${input}"`, `"${message}"`);
+}

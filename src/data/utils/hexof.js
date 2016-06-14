@@ -35,28 +35,17 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD5Spec from "../test/MD5Spec";
+import Base16Encoder from "../codec/Base16Encoder";
+import strof from "./strof";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const B16API = new Base16Encoder();
 
-testSuite.push( 
-    Base16Spec,
-    MD5Spec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+export default function hexof( bytes ) {
+    var result  = "";
+    
+    if ( bytes.length != bytes.byteLength ) {
+        bytes = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength);
     }
     
-    console.log("");
+    return strof(B16API.update(bytes));
 }
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);

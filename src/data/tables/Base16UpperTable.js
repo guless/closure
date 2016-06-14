@@ -35,28 +35,27 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD5Spec from "../test/MD5Spec";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+export const BASE16_UPPER_ENCODE_TABLE = new Int8Array([
+    /// [0-9] Numerics
+    48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
+    /// [10-15] A-F
+    65, 66, 67, 68, 69, 70
+]);
 
-testSuite.push( 
-    Base16Spec,
-    MD5Spec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
-    
-    console.log("");
-}
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
+export const BASE16_UPPER_DECODE_TABLE = new Int8Array([
+    /// [0-47] Invalid
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+    /// [48-57] Numerics
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+    /// [58-64] Invalid
+    -1, -1, -1, -1, -1, -1, -1,
+    /// [65-70] A-F
+    10, 11, 12, 13, 14, 15,
+    /// [71-127] Invalid
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
+]);

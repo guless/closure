@@ -35,28 +35,13 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD5Spec from "../test/MD5Spec";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    Base16Spec,
-    MD5Spec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
+export default function catchError( handle ) {
     try {
-        testSuite[i]();
+        handle();
+        return null;
     }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+    catch(e) {
+        return e.name + ": " + e.message;
     }
-    
-    console.log("");
 }
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);

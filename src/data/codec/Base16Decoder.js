@@ -35,28 +35,38 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD5Spec from "../test/MD5Spec";
+import TableBasedEncoder from "./TableBasedEncoder";
+import { BASE16_LOWER_DECODE_TABLE } from "../tables/Base16LowerTable";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    Base16Spec,
-    MD5Spec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+export default class Base16Decoder extends TableBasedEncoder {
+    constructor( table = BASE16_LOWER_DECODE_TABLE ) {
+        super(table, new Uint8Array(2));
     }
     
-    console.log("");
+    _initOutput( bytes ) {
+        return new Uint8Array( bytes.length >>> 1 );
+    }
+    
+    _transchunk( bytes, output, offset ) {
+        for ( var start = 0; start + 2 <= bytes.length; start += 2 ) {
+            var a = this._table[bytes[start] & 0x7F];
+            var b = this._table[bytes[start + 1] & 0x7F];
+            
+            if ( a < 0 || b < 0 ) {
+                throw new Error(`outof base16 character range. { offset=[${start},${start + 1}], character=[${bytes[start]},${bytes[start + 1]}] }`);
+            }
+            
+            output[offset++] = a << 4 | b;
+        }
+        
+        return offset;
+    }
+    
+    final() {
+        if ( this._buffer.offset & 1 ) {
+            throw new Error(`wrong size of base16 final chunk. { buffer=[${this._buffer.buffer}], offset=${this._buffer.offset} }`);
+        }
+        
+        return super.final();
+    }
 }
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);

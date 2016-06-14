@@ -35,28 +35,24 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD5Spec from "../test/MD5Spec";
+import TableBasedEncoder from "./TableBasedEncoder";
+import { BASE16_LOWER_ENCODE_TABLE } from "../tables/Base16LowerTable";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    Base16Spec,
-    MD5Spec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+export default class Base16Encoder extends TableBasedEncoder {
+    constructor( table = BASE16_LOWER_ENCODE_TABLE ) {
+        super(table);
     }
     
-    console.log("");
-}
+    _initOutput( bytes ) {
+        return new Uint8Array(bytes.length << 1 >>> 0);
+    }
+    
+    _transchunk( bytes, output, offset ) {
+        for ( var start = 0; start < bytes.length; ++start ) {
+            output[offset++] = this._table[bytes[start] >>> 4 & 0x0F];
+            output[offset++] = this._table[bytes[start] & 0x0F];
+        }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
+        return offset;
+    }
+}

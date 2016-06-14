@@ -1,46 +1,54 @@
 {
-    "name"       : "guless-closure",
-    "main"       : "dist/bundle.js",
-    "version"    : "1.0.0",
-    "description": "基于 ES6 语法实现的通用的底层 Javascript 模块。",
-    "author"     : "Samlv9 <Samlv9@live.com>",
-    "homepage"   : "https://github.com/guless/closure",
-    "license"    : "MIT",
-    "repository" : { "type": "git", "url": "https://github.com/guless/closure.git" },
-    "bugs"       : { "url": "https://github.com/guless/closure/issues" },
-    "files"      : [ 
-        "COPYRIGHT.txt", 
-        "LICENSE.txt", 
-        "README.md", 
-        "API.md",
-        "package.json", 
-        "server.js", 
-        "index.html", 
-        "src/",
-        "dist/", 
-        "html/",
-        "task/",
-        "test/"
-    ],
-    "devDependencies": {
-        "open"       : "^0.0.5",
-        "yargs"      : "^4.3.2",
-        "exorcist"   : "^0.4.0",
-        "babelify"   : "^7.2.0",
-        "browserify" : "^13.0.0",
-        "babel-core" : "^6.7.4",
-        "rimraf"     : "^2.5.2",
-        "uglify-js"  : "^2.6.2",
-        "uglifyify"  : "^3.0.1",
-        "node-static": "^0.7.7",
-        "babel-preset-es2015": "^6.6.0",
-        "babel-plugin-transform-class-properties": "^6.6.0"
-    },
-    "scripts": {
-        "server": "node ./server.js",
-        "clean": "./node_modules/.bin/rimraf ./dist/*",
-        "build": "node ./task/build.js --sourceMaps --input=./src/import.js --output=./dist/bundle.js",
-        "start": "node ./dist/bundle.js",
-        "debug": "node ./task/build.js --sourceMaps --input=./src/debug.js --output=./dist/debug.js && node ./dist/debug.js"
-    }
+  "name": "guless-closure",
+  "main": "dist/bundle.js",
+  "version": "1.0.0",
+  "description": "基于 ES6 语法实现的通用的底层 Javascript 模块。",
+  "author": "Samlv9 <Samlv9@live.com>",
+  "homepage": "https://github.com/guless/closure",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guless/closure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guless/closure/issues"
+  },
+  "files": [
+    "COPYRIGHT.txt",
+    "LICENSE.txt",
+    "README.md",
+    "API.md",
+    "package.json",
+    "server.js",
+    "index.html",
+    "src/",
+    "dist/",
+    "html/",
+    "task/",
+    "test/"
+  ],
+  "devDependencies": {
+    "open": "^0.0.5",
+    "yargs": "^4.3.2",
+    "cli-color": "^1.1.0",
+    "exorcist": "^0.4.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "babel-core": "^6.7.4",
+    "rimraf": "^2.5.2",
+    "uglify-js": "^2.6.2",
+    "uglifyify": "^3.0.1",
+    "node-static": "^0.7.7",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-plugin-transform-class-properties": "^6.6.0"
+  },
+  "scripts": {
+    "server": "node ./server.js",
+    "clean": "./node_modules/.bin/rimraf ./dist/*",
+    "build": "node ./task/build.js --sourceMaps --input=./src/import.js --output=./dist/bundle.js",
+    "start": "node ./dist/bundle.js",
+    "debug": "node ./task/build.js --sourceMaps --input=./src/debug.js --output=./dist/debug.js && node ./dist/debug.js"
+  },
+  "dependencies": {
+  }
 }
