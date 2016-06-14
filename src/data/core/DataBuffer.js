@@ -64,15 +64,15 @@ export default class DataBuffer {
         this._offset = 0;
     }
     
-    store( bytes ) {
+    restore( bytes ) {
         if ( bytes.length >= this._length - this._offset ) {
-            this._offset = (this._offset + bytes.length) % this.length;
+            this._offset = this._length > 0 ? (this._offset + bytes.length) % this._length : 0;
             this._offset && copy(bytes.subarray(-this._offset), this._buffer, 0);
         }
         
-        else {
+        else if ( bytes.length > 0 && this._length > 0 ) {
             copy(bytes, this._buffer, this._offset);
-            this._offset += bytes.length; 
+            this._offset += bytes.length;
         }
     }
 }

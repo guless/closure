@@ -35,50 +35,29 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import MD5 from "./data/crypto/MD5";
-import ascii from "./data/utils/ascii";
+import IStreamable from "./IStreamable";
 
-
-var MD5API = new MD5();
-
-function hex( bytes ) {
-    var s = "";
-    for ( var i = 0; i < bytes.length; ++i ) {
-        var a = ("00" + bytes[i].toString(16));
-        
-        s += a.slice(a.length - 2);
+export default class ISharedable extends IStreamable {
+    constructor( buffer = null, shared = null ) {
+        super(buffer);
+        this._shared = shared;
     }
-    return s;
-}
-
-function md5( str ) {
-    MD5API.reset();
-    MD5API.update( ascii(str) );
     
-    var digest = new Uint8Array(MD5API.final().buffer);
-    return hex(digest);
+    get shared() {
+        return this._shared;
+    }
+    
+    set shared( value ) {
+        this._shared = value;
+    }
+    
+    _initOutput( bytes ) {
+        /* Protected */
+        throw new Error("method does not implements.");
+    }
+    
+    update( bytes ) {
+        var output = this._shared || this._initOutput(bytes);
+        return super.update(bytes, output);
+    }
 }
-
-function test_md5( input, expect ) {
-    var result = md5(input);
-    console.log( result == expect, result, input );
-    // assert( result === expect, `MD5 hash does not match. \n{\n    expect: "${expect}", \n    result: "${result}", \n    input : "${input}"\n}` );
-}
-
-
-// var L = new Uint32Array([496, 0]);
-// var B = new Uint8Array(64);
-// var C = new DataView(B.buffer);
-
-// C.setUint32(56, L[0], true);
-// C.setUint32(60, L[1], true);
-// console.log("buffer =>", B.subarray(56));
-// console.log("length =>", new Uint8Array(L.buffer));
-
-test_md5("", "d41d8cd98f00b204e9800998ecf8427e");
-test_md5("a", "0cc175b9c0f1b6a831c399e269772661");
-test_md5("abc", "900150983cd24fb0d6963f7d28e17f72");
-test_md5("message digest", "f96b697d7cb7938d525a2f31aaf161d0");
-test_md5("abcdefghijklmnopqrstuvwxyz", "c3fcd3d76192e4007dfb496cca67e13b");
-test_md5("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d174ab98d277d9f5a5611c2c9f419d9f");
-test_md5("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "57edf4a22be3c955ac49da2e2107b67a");

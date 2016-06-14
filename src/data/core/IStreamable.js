@@ -36,32 +36,47 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import DataBuffer from "./DataBuffer";
+import copy       from "../utils/copy";
 
-export default class Streamable {
+export default class IStreamable {
     constructor( buffer = null ) {
-        this._buffer = !!buffer ? new DataBuffer(buffer) : null;
-        this._shared = null;
+        this._buffer = buffer ? new DataBuffer(buffer) : null;
     }
     
-    get shared() {
-        return this._shared;
-    }
-    
-    set shared( value ) {
-        this._shared = value;
-    }
-    
-    update( bytes ) {
+    _transfrom( bytes, output = null, offset = 0 ) { 
+        /* Protected */
         throw new Error("method does not implements.");
     }
     
     final() {
+        /* Protected */
         throw new Error("method does not implements.");
     }
     
-    reset() {
-        if ( !!this._buffer ) {
-            this._buffer.reset();
+    update( bytes, output = null ) {        
+        if ( !(this._buffer && this._buffer.length > 0) ) {
+            this._transfrom(bytes, output);
+            return output;
         }
+        
+        if ( bytes.length >= this._buffer.remain ) {
+            if ( this._buffer.offset != 0 ) {
+                copy(bytes, this._buffer.buffer, this._buffer.offset);
+                bytes = bytes.subarray(this._buffer.remain);
+
+                this._transfrom(bytes, output, this._transfrom(this._buffer.buffer, output));
+            }
+            
+            else {
+                this._transfrom(bytes, output);
+            }
+        }
+            
+        this._buffer.restore(bytes);
+        return output;
+    }
+
+    reset() {
+        this._buffer && this._buffer.reset();
     }
 }
