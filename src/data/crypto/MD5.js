@@ -35,8 +35,8 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import IStreamable from "../core/IStreamable";
-import copy        from "../utils/copy";
+import Streamable from "../core/Streamable";
+import copy       from "../utils/copy";
 
 const H1 = 0x67452301;
 const H2 = 0xEFCDAB89;
@@ -62,7 +62,7 @@ function GG( a, b, c, d, x, s, ac ) { a += ((b & d) | (c & (~d))) + x + ac; a  =
 function HH( a, b, c, d, x, s, ac ) { a += (b ^ c ^ d) + x + ac; a  = ((a << s) | (a >>> (32 - s))); return a + b; }
 function II( a, b, c, d, x, s, ac ) { a += (c ^ (b | (~d))) + x + ac; a  = ((a << s) | (a >>> (32 - s))); return a + b; }
 
-export default class MD5 extends IStreamable {
+export default class MD5 extends Streamable {
     constructor() {
         super(new Uint8Array(64));
         

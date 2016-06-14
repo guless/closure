@@ -38,7 +38,7 @@
 import DataBuffer from "./DataBuffer";
 import copy       from "../utils/copy";
 
-export default class IStreamable {
+export default class Streamable {
     constructor( buffer = null ) {
         this._buffer = buffer ? new DataBuffer(buffer) : null;
     }

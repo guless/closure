@@ -35,9 +35,9 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import IStreamable from "./IStreamable";
+import Streamable from "./Streamable";
 
-export default class ISharedable extends IStreamable {
+export default class Sharedable extends Streamable {
     constructor( buffer = null, shared = null ) {
         super(buffer);
         this._shared = shared;
