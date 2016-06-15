@@ -35,8 +35,27 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-var clc = require("cli-color");
+import Streamable from "../core/Streamable";
+import { CRC8_DALLAS_1_WIRE_TABLE } from "../tables/CRC8Dallas1WireTable";
 
-export default function passlog( input, expect ) {
-    console.log(clc.green(`\u2714`), "input/expect:", clc.xterm(74).underline(`${input}`), "=>", clc.white.underline(`${expect}`));
+export default class CRC8Dallas1Wire extends Streamable {
+    constructor() {
+        super(null);
+        this._digest = 0;
+        this._table = CRC8_DALLAS_1_WIRE_TABLE;
+    }
+    
+    reset() {
+        this._digest = 0;
+    }
+    
+    update( bytes ) {
+        for ( var i = 0; i < bytes.length; ++i ) {
+            this._digest = (this._table[(this._digest ^ bytes[i]) & 0xFF] & 0xFF);
+        }
+    }
+    
+    final() {
+        return this._digest >>> 0;
+    }
 }

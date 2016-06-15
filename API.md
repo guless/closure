@@ -15,12 +15,30 @@
 | [Sharedable][src/data/core/sharedable] |
 | [Streamable][src/data/core/streamable] |
 | **:small_red_triangle_down:[data/crypto][src/data/crypto]** | 包说明
+| [CRC1][src/data/crypto/crc1] |
+| [CRC16][src/data/crypto/crc16] |
+| [CRC16CCITT][src/data/crypto/crc16ccitt] |
+| [CRC16Kermit][src/data/crypto/crc16kermit] |
+| [CRC16ModBus][src/data/crypto/crc16modbus] |
+| [CRC16XModem][src/data/crypto/crc16xmodem] |
+| [CRC24][src/data/crypto/crc24] |
+| [CRC32][src/data/crypto/crc32] |
+| [CRC8][src/data/crypto/crc8] |
+| [CRC8Dallas1Wire][src/data/crypto/crc8dallas1wire] |
 | [MD5][src/data/crypto/md5] |
 | **:small_red_triangle_down:[data/tables][src/data/tables]** | 包说明
 | [Base16LowerCaseTable][src/data/tables/base16lowercasetable] |
 | [Base16UpperCaseTable][src/data/tables/base16uppercasetable] |
 | [Base64DefaultTable][src/data/tables/base64defaulttable] |
 | [Base64URLSafeTable][src/data/tables/base64urlsafetable] |
+| [CRC16CCITTTable][src/data/tables/crc16ccitttable] |
+| [CRC16DefaultTable][src/data/tables/crc16defaulttable] |
+| [CRC16KermitTable][src/data/tables/crc16kermittable] |
+| [CRC16ModBusTable][src/data/tables/crc16modbustable] |
+| [CRC24DefaultTable][src/data/tables/crc24defaulttable] |
+| [CRC32DefaultTable][src/data/tables/crc32defaulttable] |
+| [CRC8Dallas1WireTable][src/data/tables/crc8dallas1wiretable] |
+| [CRC8DefaultTable][src/data/tables/crc8defaulttable] |
 | **:small_red_triangle_down:[data/utils][src/data/utils]** | 包说明
 | [ascii][src/data/utils/ascii] |
 | [copy][src/data/utils/copy] |
@@ -51,12 +69,30 @@
 [src/data/core/sharedable]: https://github.com/guless/closure/blob/dev/src/data/core/Sharedable.js
 [src/data/core/streamable]: https://github.com/guless/closure/blob/dev/src/data/core/Streamable.js
 [src/data/crypto]: https://github.com/guless/closure/blob/dev/src/data/crypto
+[src/data/crypto/crc1]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC1.js
+[src/data/crypto/crc16]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16.js
+[src/data/crypto/crc16ccitt]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16CCITT.js
+[src/data/crypto/crc16kermit]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16Kermit.js
+[src/data/crypto/crc16modbus]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16ModBus.js
+[src/data/crypto/crc16xmodem]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC16XModem.js
+[src/data/crypto/crc24]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC24.js
+[src/data/crypto/crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
+[src/data/crypto/crc8]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8.js
+[src/data/crypto/crc8dallas1wire]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8Dallas1Wire.js
 [src/data/crypto/md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
 [src/data/tables]: https://github.com/guless/closure/blob/dev/src/data/tables
 [src/data/tables/base16lowercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16LowerCaseTable.js
 [src/data/tables/base16uppercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16UpperCaseTable.js
 [src/data/tables/base64defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base64DefaultTable.js
 [src/data/tables/base64urlsafetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base64URLSafeTable.js
+[src/data/tables/crc16ccitttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC16CCITTTable.js
+[src/data/tables/crc16defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC16DefaultTable.js
+[src/data/tables/crc16kermittable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC16KermitTable.js
+[src/data/tables/crc16modbustable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC16ModBusTable.js
+[src/data/tables/crc24defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC24DefaultTable.js
+[src/data/tables/crc32defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC32DefaultTable.js
+[src/data/tables/crc8dallas1wiretable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC8Dallas1WireTable.js
+[src/data/tables/crc8defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC8DefaultTable.js
 [src/data/utils]: https://github.com/guless/closure/blob/dev/src/data/utils
 [src/data/utils/ascii]: https://github.com/guless/closure/blob/dev/src/data/utils/ascii.js
 [src/data/utils/copy]: https://github.com/guless/closure/blob/dev/src/data/utils/copy.js

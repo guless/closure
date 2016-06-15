@@ -35,8 +35,36 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-var clc = require("cli-color");
+import Streamable from "../core/Streamable";
 
-export default function passlog( input, expect ) {
-    console.log(clc.green(`\u2714`), "input/expect:", clc.xterm(74).underline(`${input}`), "=>", clc.white.underline(`${expect}`));
+export default class CRC16XModem extends Streamable {
+    constructor() {
+        super(null);
+        this._digest = 0;
+    }
+    
+    reset() {
+        this._digest = 0;
+    }
+    
+    update( bytes ) {
+        for ( var i = 0; i < bytes.length; ++i ) {
+            var code = this._digest >>> 8 & 0xFF;
+
+            code ^= bytes[i] & 0xFF;
+            code ^= code >>> 4;
+            this._digest = this._digest << 8 & 0xFFFF;
+            this._digest ^= code;
+            
+            code = code << 5 & 0xFFFF;
+            this._digest ^= code;
+            
+            code = code << 7 & 0xFFFF;
+            this._digest ^= code;
+        }
+    }
+    
+    final() {
+        return this._digest >>> 0;
+    }
 }

@@ -37,6 +37,7 @@
 /// THE SOFTWARE.
 import Base16Spec from "../test/Base16Spec";
 import MD5Spec from "../test/MD5Spec";
+import CRCSpec from "../test/CRCSpec";
 
 var clc = require("cli-color");
 var testSuite = [];
@@ -44,7 +45,8 @@ var errorCount = 0;
 
 testSuite.push( 
     Base16Spec,
-    MD5Spec
+    MD5Spec,
+    CRCSpec
 );
 
 for ( var i = 0; i < testSuite.length; ++i ) {
@@ -60,3 +62,7 @@ for ( var i = 0; i < testSuite.length; ++i ) {
 }
 
 console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
+
+if ( errorCount > 0 ) {
+    throw new Error("One or more error occurs, See more detail from the error log above.");
+}

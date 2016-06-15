@@ -35,8 +35,27 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-var clc = require("cli-color");
+import Streamable from "../core/Streamable";
+import { CRC16_KERMIT_TABLE } from "../tables/CRC16KermitTable";
 
-export default function passlog( input, expect ) {
-    console.log(clc.green(`\u2714`), "input/expect:", clc.xterm(74).underline(`${input}`), "=>", clc.white.underline(`${expect}`));
+export default class CRC16Kermit extends Streamable {
+    constructor() {
+        super(null);
+        this._digest = 0;
+        this._table = CRC16_KERMIT_TABLE;
+    }
+    
+    reset() {
+        this._digest = 0;
+    }
+    
+    update( bytes ) {
+        for ( var i = 0; i < bytes.length; ++i ) {
+            this._digest = ((this._table[(this._digest ^ bytes[i]) & 0xFF] ^ (this._digest >> 8)) & 0xFFFF);
+        }
+    }
+    
+    final() {
+        return this._digest >>> 0;
+    }
 }
