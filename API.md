@@ -25,6 +25,8 @@
 | [CRC32][src/data/crypto/crc32] |
 | [CRC8][src/data/crypto/crc8] |
 | [CRC8Dallas1Wire][src/data/crypto/crc8dallas1wire] |
+| [MD2][src/data/crypto/md2] |
+| [MD4][src/data/crypto/md4] |
 | [MD5][src/data/crypto/md5] |
 | **:small_red_triangle_down:[data/tables][src/data/tables]** | 包说明
 | [Base16LowerCaseTable][src/data/tables/base16lowercasetable] |
@@ -39,6 +41,7 @@
 | [CRC32DefaultTable][src/data/tables/crc32defaulttable] |
 | [CRC8Dallas1WireTable][src/data/tables/crc8dallas1wiretable] |
 | [CRC8DefaultTable][src/data/tables/crc8defaulttable] |
+| [MD2PITable][src/data/tables/md2pitable] |
 | **:small_red_triangle_down:[data/utils][src/data/utils]** | 包说明
 | [ascii][src/data/utils/ascii] |
 | [copy][src/data/utils/copy] |
@@ -79,6 +82,8 @@
 [src/data/crypto/crc32]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC32.js
 [src/data/crypto/crc8]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8.js
 [src/data/crypto/crc8dallas1wire]: https://github.com/guless/closure/blob/dev/src/data/crypto/CRC8Dallas1Wire.js
+[src/data/crypto/md2]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2.js
+[src/data/crypto/md4]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD4.js
 [src/data/crypto/md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
 [src/data/tables]: https://github.com/guless/closure/blob/dev/src/data/tables
 [src/data/tables/base16lowercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16LowerCaseTable.js
@@ -93,6 +98,7 @@
 [src/data/tables/crc32defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC32DefaultTable.js
 [src/data/tables/crc8dallas1wiretable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC8Dallas1WireTable.js
 [src/data/tables/crc8defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC8DefaultTable.js
+[src/data/tables/md2pitable]: https://github.com/guless/closure/blob/dev/src/data/tables/MD2PITable.js
 [src/data/utils]: https://github.com/guless/closure/blob/dev/src/data/utils
 [src/data/utils/ascii]: https://github.com/guless/closure/blob/dev/src/data/utils/ascii.js
 [src/data/utils/copy]: https://github.com/guless/closure/blob/dev/src/data/utils/copy.js

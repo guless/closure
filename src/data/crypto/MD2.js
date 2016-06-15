@@ -35,38 +35,63 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import CRCSpec from "../test/CRCSpec";
+import Streamable from "../core/Streamable";
+import { MD2_PI_TABLE } from "../tables/MD2PITable";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    Base16Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+export default class MD2 extends Streamable {
+    constructor() {
+        super(new Uint8Array(16));
+        
+        this._digest   = new Uint8Array(48);
+        this._checksum = new Uint8Array(16);
     }
     
-    console.log("");
-}
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+    reset() {
+        super.reset();
+        
+        this._digest   = new Uint8Array(48);
+        this._checksum = new Uint8Array(16);
+    }
+    
+    update( bytes ) {
+        super.update(bytes);
+    }
+    
+    final() {
+        var buffer = this._buffer.buffer;
+        var offset = this._buffer.offset;
+        
+        for ( var i = offset; i < buffer.length; ++i ) {
+            buffer[i] = buffer.length - offset;
+        }
+        
+        this._transfrom(buffer, 0);
+        this._transfrom(this._checksum, 0);
+        
+        return this._digest.subarray(0, 16);
+    }
+    
+    _transfrom( bytes ) {
+        for ( var start = 0; start + 16 <= bytes.length; start += 16 ) {
+            var t = 0;
+            
+            for ( var i = 0; i < 16; ++i ) {
+                this._digest[i + 16] = bytes[start + i];
+                this._digest[i + 32] = bytes[start + i] ^ this._digest[i];
+            }
+            
+            for ( var j = 0; j < 18; ++j ) {
+                for ( var m = 0; m < 48; ++m ) {
+                    t = (this._digest[m] ^= MD2_PI_TABLE[t]);
+                }
+                t = (t + j) & 0xFF;
+            }
+            
+            t = this._checksum[15];
+            
+            for ( var k = 0; k < 16; ++k ) {
+                t = (this._checksum[k] ^= MD2_PI_TABLE[bytes[start + k] ^ t]);
+            }
+        }
+    }
 }

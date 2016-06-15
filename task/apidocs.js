@@ -38,6 +38,7 @@
 var fs   = require("fs");
 var path = require("path");
 var argv = require("yargs");
+var clc  = require("cli-color");
 
 function travel( dir ) {
     if ( !fs.statSync(dir).isDirectory() ) {
@@ -124,6 +125,7 @@ function generateAPITable( root, remote ) {
     }
     
     fs.writeFileSync("API.md", output.join("\n") + "\n\n" + urls.join("\n"));
+    console.log(clc.green("API.md: gererate api docs was successfully."));
 }
 
 generateAPITable("src", "https://github.com/guless/closure/blob/dev/");

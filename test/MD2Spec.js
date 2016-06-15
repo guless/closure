@@ -35,38 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import MD2 from "../src/data/crypto/MD2";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const MD2API = new MD2();
 
-testSuite.push( 
-    Base16Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start MD2 Test Suite]:");
     
-    console.log("");
+    test_md2("", "8350e5a3e24c153df2275c9f80692773");
+    test_md2("a", "32ec01ec4a6dac72c0ab96fb34c0b5d1");
+    test_md2("abc", "da853b0d3f88d99b30283a69e6ded6bb");
+    test_md2("message digest", "ab4f496bfb2a530b219ff33031fe06b0");
+    test_md2("abcdefghijklmnopqrstuvwxyz", "4e8ddff3650292ab5a4108c3aa47940b");
+    test_md2("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "da33def2a42df13975352846c30338cd");
+    test_md2("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "d5976f79d83d3a0dc9806c3c66f3efd8");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_md2( input, expect ) {
+    MD2API.reset();
+    MD2API.update( ascii(input) );
+    
+    var result = hexof(MD2API.final());
+    assert(result == expect, "MD2 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${expect}"`);
 }

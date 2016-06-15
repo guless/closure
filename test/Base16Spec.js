@@ -64,7 +64,7 @@ export default function () {
     test_decode_base16(B2, A2);
     
     /// decode error:
-    test_decode_error("ABC");
+    test_decode_error("XYZ");
     test_decode_error("abc");
 }
 
