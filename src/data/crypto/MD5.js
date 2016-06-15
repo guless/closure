@@ -88,7 +88,6 @@ export default class MD5 extends Streamable {
         this._length[1] += this._length[0] < L ? 1 + H : H;
         
         super.update(bytes);
-        return this;
     }
     
     final() {
