@@ -28,6 +28,7 @@
 | [MD2][src/data/crypto/md2] |
 | [MD4][src/data/crypto/md4] |
 | [MD5][src/data/crypto/md5] |
+| [SHA1][src/data/crypto/sha1] |
 | **:small_red_triangle_down:[data/tables][src/data/tables]** | 包说明
 | [Base16LowerCaseTable][src/data/tables/base16lowercasetable] |
 | [Base16UpperCaseTable][src/data/tables/base16uppercasetable] |
@@ -85,6 +86,7 @@
 [src/data/crypto/md2]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD2.js
 [src/data/crypto/md4]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD4.js
 [src/data/crypto/md5]: https://github.com/guless/closure/blob/dev/src/data/crypto/MD5.js
+[src/data/crypto/sha1]: https://github.com/guless/closure/blob/dev/src/data/crypto/SHA1.js
 [src/data/tables]: https://github.com/guless/closure/blob/dev/src/data/tables
 [src/data/tables/base16lowercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16LowerCaseTable.js
 [src/data/tables/base16uppercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16UpperCaseTable.js
