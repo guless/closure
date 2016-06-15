@@ -38,7 +38,6 @@
 import * as EventPhase from "./EventPhase";
 import * as EventPropagation from "./EventPropagation";
 
-
 export default class Event {
     constructor( type, bubbles = false, cancelable = false ) {
         this._type = type;

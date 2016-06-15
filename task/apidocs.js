@@ -35,38 +35,95 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import TableBasedEncoder from "./TableBasedEncoder";
-import { BASE16_LOWER_CASE_DECODE_TABLE } from "../tables/Base16LowerCaseTable";
+var fs   = require("fs");
+var path = require("path");
+var argv = require("yargs");
 
-export default class Base16Decoder extends TableBasedEncoder {
-    constructor( table = BASE16_LOWER_CASE_DECODE_TABLE ) {
-        super(table, new Uint8Array(2));
+function travel( dir ) {
+    if ( !fs.statSync(dir).isDirectory() ) {
+        throw new Error("travel path must be a directory.");
     }
     
-    _initOutput( bytes ) {
-        return new Uint8Array( bytes.length >>> 1 );
-    }
+    var result = [];
+    var files  = [];
+    var directories = [];
+    var elements = fs.readdirSync(dir);
     
-    _transchunk( bytes, output, offset ) {
-        for ( var start = 0; start + 2 <= bytes.length; start += 2 ) {
-            var a = this._table[bytes[start] & 0x7F];
-            var b = this._table[bytes[start + 1] & 0x7F];
-            
-            if ( a < 0 || b < 0 ) {
-                throw new Error(`outof base16 character range. { offset=[${start},${start + 1}], character=[${bytes[start]},${bytes[start + 1]}] }`);
-            }
-            
-            output[offset++] = a << 4 | b;
+    for ( var i = 0; i < elements.length; ++i ) {
+        var full = path.join(dir, elements[i]);
+        var stat = fs.statSync(full);
+        
+        if ( stat.isDirectory() ) {
+            directories.push(full);
         }
         
-        return offset;
+        if ( stat.isFile() && !filter(full) ) {
+            files.push(full);
+        }
     }
     
-    final() {
-        if ( this._buffer.offset & 1 ) {
-            throw new Error(`wrong size of base16 final chunk. { buffer=[${this._buffer.buffer}], offset=${this._buffer.offset} }`);
-        }
-        
-        return super.final();
+    if ( files.length ) {
+        result.push({ package: dir, classes: files });
     }
+    
+    for ( var i = 0; i < directories.length; ++i ) {
+        result = result.concat(travel(directories[i]));
+    }
+    
+    return result;
 }
+
+function filter( full ) {
+    if ( path.extname(full) != ".js" ) {
+        return true;
+    }
+    
+    if ( path.basename(full) == "import.js" || path.basename(full) == "debug.js" ) {
+        return true;
+    }
+    
+    return false;
+}
+
+
+function getName( element ) {
+    return path.basename(element, path.extname(element));
+}
+
+function getId( element ) {
+    return path.join(path.dirname(element), getName(element)).toLowerCase();
+}
+
+function getPkgName( element ) {
+    return element.split(path.sep).slice(1).join("/");
+}
+
+function generateAPITable( root, remote ) {
+    var result = travel(root);
+    var output = [ "| 包／类型 | 说明描述", "|----------|----------"];
+    var urls   = [];
+    
+    for ( var i = 0; i < result.length; ++i ) {
+        var item = result[i];
+        var name = getPkgName(item.package);
+        var id   = getId(item.package);
+        var url  = remote + item.package;
+        
+        output.push("| **:small_red_triangle_down:[{name}][{id}]** | 包说明".replace("{name}", name).replace("{id}", id));
+        urls.push("[{id}]: {url}".replace("{id}", id).replace("{url}", url));
+        
+        for ( var k = 0; k < item.classes.length; ++k ) {
+            var file = item.classes[k];
+            var name = getName(file);
+            var id   = getId(file);
+            var url  = remote + file;
+            
+            output.push("| [{name}][{id}] |".replace("{name}", name).replace("{id}", id));
+            urls.push("[{id}]: {url}".replace("{id}", id).replace("{url}", url));
+        }
+    }
+    
+    fs.writeFileSync("API.md", output.join("\n") + "\n\n" + urls.join("\n"));
+}
+
+generateAPITable("src", "https://github.com/guless/closure/blob/dev/");

@@ -35,9 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import assert from "../src/core/assert";
+import MD5 from "../src/data/crypto/MD5";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
+
+const MD5API = new MD5();
 
 export default function () {
     console.log("[Start MD5 Test Suite]:");
-    console.log("...");
-    throw new Error("MD5 test suite does not implements.");
+    
+    test_md5("", "d41d8cd98f00b204e9800998ecf8427e");
+    test_md5("a", "0cc175b9c0f1b6a831c399e269772661");
+    test_md5("abc", "900150983cd24fb0d6963f7d28e17f72");
+    test_md5("message digest", "f96b697d7cb7938d525a2f31aaf161d0");
+    test_md5("abcdefghijklmnopqrstuvwxyz", "c3fcd3d76192e4007dfb496cca67e13b");
+    test_md5("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d174ab98d277d9f5a5611c2c9f419d9f");
+    test_md5("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "57edf4a22be3c955ac49da2e2107b67a");
+}
+
+function test_md5( input, expect ) {
+    MD5API.reset();
+    MD5API.update( ascii(input) );
+    
+    var result = hexof(MD5API.final());
+    assert(result == expect, "MD5 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${expect}"`);
 }

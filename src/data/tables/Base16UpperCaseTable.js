@@ -36,14 +36,14 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-export const BASE16_UPPER_ENCODE_TABLE = new Int8Array([
+export const BASE16_UPPER_CASE_ENCODE_TABLE = new Int8Array([
     /// [0-9] Numerics
     48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
     /// [10-15] A-F
     65, 66, 67, 68, 69, 70
 ]);
 
-export const BASE16_UPPER_DECODE_TABLE = new Int8Array([
+export const BASE16_UPPER_CASE_DECODE_TABLE = new Int8Array([
     /// [0-47] Invalid
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
     -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,

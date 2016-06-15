@@ -36,10 +36,10 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import TableBasedEncoder from "./TableBasedEncoder";
-import { BASE16_LOWER_ENCODE_TABLE } from "../tables/Base16LowerTable";
+import { BASE16_LOWER_CASE_ENCODE_TABLE } from "../tables/Base16LowerCaseTable";
 
 export default class Base16Encoder extends TableBasedEncoder {
-    constructor( table = BASE16_LOWER_ENCODE_TABLE ) {
+    constructor( table = BASE16_LOWER_CASE_ENCODE_TABLE ) {
         super(table);
     }
     

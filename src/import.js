@@ -35,8 +35,9 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16 from "./data/codec/Base16";
-import Base64 from "./data/codec/Base64";
+import ascii from "./data/utils/ascii";
+import hexof from "./data/utils/hexof";
+import MD5   from "./data/crypto/MD5";
 
 /// 如果需要在其他的 `script` 中使用模块，则可以这样注册全局的 `require()`。
 /// 具体原理请参考：https://github.com/substack/node-browserify
@@ -45,5 +46,11 @@ if ( typeof window != "undefined" ) {
 }
 
 /// 可以直接在下面使用 ES6 的语法写具体的项目代码：
-// var base16 = new Base16();
-// var result = base16.encode([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+// var MD5API = new MD5();
+// function md5( string ) {
+//     MD5API.reset();
+//     MD5API.update( ascii(string) );
+    
+//     return hexof(MD5API.final());
+// }
+// console.log(md5("abcdefghijklmnopqrstuvwxyz")=="c3fcd3d76192e4007dfb496cca67e13b", md5("abcdefghijklmnopqrstuvwxyz"));

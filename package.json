@@ -47,8 +47,8 @@
     "clean": "./node_modules/.bin/rimraf ./dist/*",
     "build": "node ./task/build.js --sourceMaps --input=./src/import.js --output=./dist/bundle.js",
     "start": "node ./dist/bundle.js",
-    "debug": "node ./task/build.js --sourceMaps --input=./src/debug.js --output=./dist/debug.js && node ./dist/debug.js"
-  },
-  "dependencies": {
+    "debug": "node ./task/build.js --sourceMaps --input=./src/debug.js --output=./dist/debug.js && node ./dist/debug.js",
+    "test" : "npm install && npm run debug",
+    "apidocs" : "node ./task/apidocs.js"
   }
 }
