@@ -41,8 +41,6 @@ import strof from "./strof";
 const B16API = new Base16Encoder();
 
 export default function hexof( bytes ) {
-    var result  = "";
-    
     if ( bytes.length != bytes.byteLength ) {
         bytes = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength);
     }
