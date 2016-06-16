@@ -50,56 +50,51 @@ import ascii from "../src/data/utils/ascii";
 import strof from "../src/data/utils/strof";
 import passlog from "./helper/passlog";
 
-var crc = require("crc");
-
 export default function () {
     console.log("[Start 'CRC1,CRC8,CRC16,CRC24,CRC32' Test Suite]:");
     
-    test_crc1("");
-    test_crc1("0123456789");
-    test_crc1("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc1("", 0);
+    test_crc1("0123456789", 13);
+    test_crc1("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 11);
     
-    test_crc8("");
-    test_crc8("0123456789");
-    test_crc8("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc8("", 0);
+    test_crc8("0123456789", 69);
+    test_crc8("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 38);
     
-    test_crc8_dallas_1_wire("");
-    test_crc8_dallas_1_wire("0123456789");
-    test_crc8_dallas_1_wire("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc8_dallas_1_wire("", 0);
+    test_crc8_dallas_1_wire("0123456789", 117);
+    test_crc8_dallas_1_wire("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 97);
     
-    test_crc16("");
-    test_crc16("0123456789");
-    test_crc16("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc16("", 0);
+    test_crc16("0123456789", 17469);
+    test_crc16("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 22452);
     
-    test_crc16_ccitt("");
-    test_crc16_ccitt("0123456789");
-    test_crc16_ccitt("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc16_ccitt("", 65535);
+    test_crc16_ccitt("0123456789", 32097);
+    test_crc16_ccitt("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 46187);
     
-    test_crc16_kermit("");
-    test_crc16_kermit("0123456789");
-    test_crc16_kermit("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc16_kermit("", 0);
+    test_crc16_kermit("0123456789", 24430);
+    test_crc16_kermit("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 55253);
     
-    test_crc16_modbus("");
-    test_crc16_modbus("0123456789");
-    test_crc16_modbus("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc16_modbus("", 65535);
+    test_crc16_modbus("0123456789", 17229);
+    test_crc16_modbus("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 64693);
     
+    test_crc16_xmodem("", 0);
+    test_crc16_xmodem("0123456789", 40024);
+    test_crc16_xmodem("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 32176);
     
-    test_crc16_xmodem("");
-    test_crc16_xmodem("0123456789");
-    test_crc16_xmodem("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc24("", 11994318);
+    test_crc24("0123456789", 13668003);
+    test_crc24("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 4612813);
     
-    test_crc24("");
-    test_crc24("0123456789");
-    test_crc24("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
-    
-    
-    test_crc32("");
-    test_crc32("0123456789");
-    test_crc32("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    test_crc32("", 0);
+    test_crc32("0123456789", 2793719750);
+    test_crc32("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 532866770);
 }
 
-function test_crc1( input ) {
-    var expect = crc.crc1(input);
+function test_crc1( input, expect ) {
     var crcapi = new CRC1();
     
     crcapi.update( ascii(input) );
@@ -109,8 +104,7 @@ function test_crc1( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc1]`);
 }
 
-function test_crc8( input ) {
-    var expect = crc.crc8(input);
+function test_crc8( input, expect ) {
     var crcapi = new CRC8();
     
     crcapi.update( ascii(input) );
@@ -120,8 +114,7 @@ function test_crc8( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc8]`);
 }
 
-function test_crc8_dallas_1_wire( input ) {
-    var expect = crc.crc81wire(input);
+function test_crc8_dallas_1_wire( input, expect ) {
     var crcapi = new CRC8Dallas1Wire();
     
     crcapi.update( ascii(input) );
@@ -131,8 +124,7 @@ function test_crc8_dallas_1_wire( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc8-dallas-1-wire]`);
 }
 
-function test_crc16( input ) {
-    var expect = crc.crc16(input);
+function test_crc16( input, expect ) {
     var crcapi = new CRC16();
     
     crcapi.update( ascii(input) );
@@ -142,8 +134,7 @@ function test_crc16( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16]`);
 }
 
-function test_crc16_ccitt( input ) {
-    var expect = crc.crc16ccitt(input);
+function test_crc16_ccitt( input, expect ) {
     var crcapi = new CRC16CCITT();
     
     crcapi.update( ascii(input) );
@@ -153,8 +144,7 @@ function test_crc16_ccitt( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-ccitt]`);
 }
 
-function test_crc16_kermit( input ) {
-    var expect = crc.crc16kermit(input);
+function test_crc16_kermit( input, expect ) {
     var crcapi = new CRC16Kermit();
     
     crcapi.update( ascii(input) );
@@ -164,8 +154,7 @@ function test_crc16_kermit( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-kermit]`);
 }
 
-function test_crc16_modbus( input ) {
-    var expect = crc.crc16modbus(input);
+function test_crc16_modbus( input, expect ) {
     var crcapi = new CRC16ModBus();
     
     crcapi.update( ascii(input) );
@@ -175,8 +164,7 @@ function test_crc16_modbus( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-modbus]`);
 }
 
-function test_crc16_xmodem( input ) {
-    var expect = crc.crc16xmodem(input);
+function test_crc16_xmodem( input, expect ) {
     var crcapi = new CRC16XModem();
     
     crcapi.update( ascii(input) );
@@ -186,8 +174,7 @@ function test_crc16_xmodem( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-xmodem]`);
 }
 
-function test_crc24( input ) {
-    var expect = crc.crc24(input);
+function test_crc24( input, expect ) {
     var crcapi = new CRC24();
     
     crcapi.update( ascii(input) );
@@ -197,8 +184,7 @@ function test_crc24( input ) {
     passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc24]`);
 }
 
-function test_crc32( input ) {
-    var expect = crc.crc32(input);
+function test_crc32( input, expect ) {
     var crcapi = new CRC32();
     
     crcapi.update( ascii(input) );
