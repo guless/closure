@@ -35,31 +35,63 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import assert from "../src/core/assert";
-import MD4 from "../src/data/crypto/MD4";
-import hexof from "../src/data/utils/hexof";
-import ascii from "../src/data/utils/ascii";
-import passlog from "./helper/passlog";
+import Sharedable from "../core/Sharedable";
 
-const MD4API = new MD4();
+const PADCHAR = 61;
 
-export default function () {
-    console.log("[Start MD4 Test Suite]:");
+export default class TableBasedEncoding extends Sharedable {
+    constructor( table = null, buffer = null, padchar = PADCHAR ) {
+        super(buffer);
+        
+        this._table   = table;
+        this._padchar = padchar;
+        this._omitpad = false;
+    }
     
-    test_md4("", "31d6cfe0d16ae931b73c59d7e0c089c0");
-    test_md4("a", "bde52cb31de33e46245e05fbdbd6fb24");
-    test_md4("abc", "a448017aaf21d8525fc10ae87aa6729d");
-    test_md4("message digest", "d9130a8164549fe818874806e1c7014b");
-    test_md4("abcdefghijklmnopqrstuvwxyz", "d79e1c308aa5bbcdeea8ed63df412da9");
-    test_md4("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "043f8582f241db351ce627e153e7f0e4");
-    test_md4("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "e33b4ddc9c38f2199c3e7b164fcc0536");
-}
-
-function test_md4( input, expect ) {
-    MD4API.reset();
-    MD4API.update( ascii(input) );
+    setConfigs( options ) {
+        if ( options ) {
+            this.table   = options.table   || this._table;
+            this.padchar = options.padchar || this._padchar;
+            this.omitpad = options.omitpad || this._omitpad;
+        }
+    }
     
-    var result = hexof(MD4API.final());
-    assert(result == expect, "MD4 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
-    passlog(`"${input}"`, `"${result}"`);
+    dropPadchar( bytes, max = Number.MAX_VALUE ) {
+        var length = bytes.length;
+        var total  = 0;
+        
+        while ( length-- && total < max ) {
+            if ( bytes[length] !== this._padchar ) {
+                break;
+            }
+            
+            ++total;
+        }
+        
+        return total > 0 ? bytes.subarray(0, bytes.length - total) : bytes;
+    }
+    
+    get omitpad() {
+        return this._omitpad;
+    }
+    
+    set omitpad( value ) {
+        this._omitpad = value;
+    }
+    
+    get padchar() {
+        return this._padchar;
+    }
+    
+    set padchar( value ) {
+        this._padchar = value >>> 0;
+    }
+    
+    get table() {
+        return this._table;
+    }
+    
+    set table( value ) {
+        this._table = value;
+    }
 }

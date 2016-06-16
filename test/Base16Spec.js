@@ -38,6 +38,8 @@
 import assert        from "../src/core/assert";
 import Base16Encoder from "../src/data/codec/Base16Encoder";
 import Base16Decoder from "../src/data/codec/Base16Decoder";
+import Base16UpperCaseEncoder from "../src/data/codec/Base16UpperCaseEncoder";
+import Base16UpperCaseDecoder from "../src/data/codec/Base16UpperCaseDecoder";
 import ascii         from "../src/data/utils/ascii";
 import strof         from "../src/data/utils/strof";
 import passlog       from "./helper/passlog";
@@ -48,20 +50,34 @@ import catchError    from "./helper/catchError";
 const encoder = new Base16Encoder();
 const decoder = new Base16Decoder();
 
+const upEncoder = new Base16UpperCaseEncoder();
+const upDecoder = new Base16UpperCaseDecoder();
+
 const A1 = new Uint8Array(0);
 const B1 = "";
 
 const A2 = new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
 const B2 = "000102030405060708090a0b0c0d0e0f";
 
+const A3 = new Uint8Array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+const B3 = "000102030405060708090A0B0C0D0E0F";
+
 export default function () {
     console.log("[Start Base16 Test Suite]:");
     
+    /// lower case:
     test_encode_base16(A1, B1);
     test_encode_base16(A2, B2);
     
     test_decode_base16(B1, A1);
     test_decode_base16(B2, A2);
+
+    /// upper case:
+    test_encode_base16_upper(A1, B1);
+    test_encode_base16_upper(A3, B3);
+    
+    test_decode_base16_upper(B1, A1);
+    test_decode_base16_upper(B3, A3);
     
     /// decode error:
     test_decode_error("XYZ");
@@ -72,7 +88,7 @@ function test_encode_base16( input, expect ) {
     var result = strof(encoder.update(input));
     
     assert(result == expect, "base16 encode does not match." + ` { input=[${input}], expect="${expect}", result="${result}" }`);
-    passlog(`[${input}]`, `"${expect}"`);
+    passlog(`[${input}]`, `"${result}"`);
 }
 
 function test_decode_base16( input, expect ) {
@@ -80,8 +96,24 @@ function test_decode_base16( input, expect ) {
     var result = decoder.update(ascii(input));
     decoder.final();
     
-    assert(arrayEqual(result, expect), "base16 encode does not match." + ` { input="${input}", expect=[${expect}], result=[${result}] }`);
-    passlog(`"${input}"`, `[${expect}]`);
+    assert(arrayEqual(result, expect), "base16 decode does not match." + ` { input="${input}", expect=[${expect}], result=[${result}] }`);
+    passlog(`"${input}"`, `[${result}]`);
+}
+
+function test_encode_base16_upper( input, expect ) {
+    var result = strof(upEncoder.update(input));
+    
+    assert(result == expect, "base16-upper encode does not match." + ` { input=[${input}], expect="${expect}", result="${result}" }`);
+    passlog(`[${input}]`, `"${result}"`);
+}
+
+function test_decode_base16_upper( input, expect ) {
+    decoder.reset();
+    var result = upDecoder.update(ascii(input));
+    decoder.final();
+    
+    assert(arrayEqual(result, expect), "base16-upper decode does not match." + ` { input="${input}", expect=[${expect}], result=[${result}] }`);
+    passlog(`"${input}"`, `[${result}]`);
 }
 
 function test_decode_error( input ) {

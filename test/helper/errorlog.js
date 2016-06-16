@@ -38,5 +38,5 @@
 var clc = require("cli-color");
 
 export default function errorlog( input, message ) {
-    console.log(clc.green(`\u2714`), "input/message:", clc.xterm(74).underline(`${input}`), clc.blackBright.underline(`${message}`));
+    console.log(clc.green(`\u2714`), "input/error:", clc.xterm(74).underline(`${input}`), clc.blackBright.underline(`${message}`));
 }

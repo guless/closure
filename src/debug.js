@@ -36,6 +36,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import Base16Spec from "../test/Base16Spec";
+import Base32Spec from "../test/Base32Spec";
 import MD2Spec from "../test/MD2Spec";
 import MD4Spec from "../test/MD4Spec";
 import MD5Spec from "../test/MD5Spec";
@@ -48,6 +49,7 @@ var errorCount = 0;
 
 testSuite.push( 
     Base16Spec,
+    Base32Spec,
     MD2Spec,
     MD4Spec,
     MD5Spec,

@@ -106,7 +106,7 @@ function test_crc1( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC1 does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc1]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc1]`);
 }
 
 function test_crc8( input ) {
@@ -117,7 +117,7 @@ function test_crc8( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC8 does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc8]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc8]`);
 }
 
 function test_crc8_dallas_1_wire( input ) {
@@ -128,7 +128,7 @@ function test_crc8_dallas_1_wire( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC8_dallas_1_wire does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc8-dallas-1-wire]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc8-dallas-1-wire]`);
 }
 
 function test_crc16( input ) {
@@ -139,7 +139,7 @@ function test_crc16( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC16 does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc16]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16]`);
 }
 
 function test_crc16_ccitt( input ) {
@@ -150,7 +150,7 @@ function test_crc16_ccitt( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC16_ccitt does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc16-ccitt]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-ccitt]`);
 }
 
 function test_crc16_kermit( input ) {
@@ -161,7 +161,7 @@ function test_crc16_kermit( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC16_kermit does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc16-kermit]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-kermit]`);
 }
 
 function test_crc16_modbus( input ) {
@@ -172,7 +172,7 @@ function test_crc16_modbus( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC16_modbus does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc16-modbus]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-modbus]`);
 }
 
 function test_crc16_xmodem( input ) {
@@ -183,7 +183,7 @@ function test_crc16_xmodem( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC16_xmodem does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc16-xmodem]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc16-xmodem]`);
 }
 
 function test_crc24( input ) {
@@ -194,7 +194,7 @@ function test_crc24( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC24 does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc24]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc24]`);
 }
 
 function test_crc32( input ) {
@@ -205,5 +205,5 @@ function test_crc32( input ) {
     var result = crcapi.final();
     
     assert(result === expect, "CRC32 does not match." + ` { input="${input}", expect=${expect}, result=${result} }`);
-    passlog(`"${input}"`, `${expect}(0x${expect.toString(16)}) [crc32]`);
+    passlog(`"${input}"`, `${result}(0x${result.toString(16)}) [crc32]`);
 }

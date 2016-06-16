@@ -61,5 +61,5 @@ function test_md5( input, expect ) {
     
     var result = hexof(MD5API.final());
     assert(result == expect, "MD5 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
-    passlog(`"${input}"`, `"${expect}"`);
+    passlog(`"${input}"`, `"${result}"`);
 }

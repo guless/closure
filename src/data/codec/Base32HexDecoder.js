@@ -35,20 +35,11 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Sharedable from "../core/Sharedable";
+import Base32Decoder from "./Base32Decoder";
+import { BASE32_EXTENDED_HEX_DECODE_TABLE } from "../tables/Base32ExtendedHexTable";
 
-export default class TableBasedEncoder extends Sharedable {
-    constructor( table = null, buffer = null ) {
-        super(buffer);
-        
-        this._table = table;
-    }
-    
-    get table() {
-        return this._table;
-    }
-    
-    set table( value ) {
-        this._table = value;
+export default class Base32HexDecoder extends Base32Decoder {
+    constructor( table = BASE32_EXTENDED_HEX_DECODE_TABLE ) {
+        super(table);
     }
 }

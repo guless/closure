@@ -9,7 +9,13 @@
 | **:small_red_triangle_down:[data/codec][src/data/codec]** | 包说明
 | [Base16Decoder][src/data/codec/base16decoder] |
 | [Base16Encoder][src/data/codec/base16encoder] |
-| [TableBasedEncoder][src/data/codec/tablebasedencoder] |
+| [Base16UpperCaseDecoder][src/data/codec/base16uppercasedecoder] |
+| [Base16UpperCaseEncoder][src/data/codec/base16uppercaseencoder] |
+| [Base32Decoder][src/data/codec/base32decoder] |
+| [Base32Encoder][src/data/codec/base32encoder] |
+| [Base32HexDecoder][src/data/codec/base32hexdecoder] |
+| [Base32HexEncoder][src/data/codec/base32hexencoder] |
+| [TableBasedEncoding][src/data/codec/tablebasedencoding] |
 | **:small_red_triangle_down:[data/core][src/data/core]** | 包说明
 | [DataBuffer][src/data/core/databuffer] |
 | [Sharedable][src/data/core/sharedable] |
@@ -32,6 +38,8 @@
 | **:small_red_triangle_down:[data/tables][src/data/tables]** | 包说明
 | [Base16LowerCaseTable][src/data/tables/base16lowercasetable] |
 | [Base16UpperCaseTable][src/data/tables/base16uppercasetable] |
+| [Base32DefaultTable][src/data/tables/base32defaulttable] |
+| [Base32ExtendedHexTable][src/data/tables/base32extendedhextable] |
 | [Base64DefaultTable][src/data/tables/base64defaulttable] |
 | [Base64URLSafeTable][src/data/tables/base64urlsafetable] |
 | [CRC16CCITTTable][src/data/tables/crc16ccitttable] |
@@ -67,7 +75,13 @@
 [src/data/codec]: https://github.com/guless/closure/blob/dev/src/data/codec
 [src/data/codec/base16decoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16Decoder.js
 [src/data/codec/base16encoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16Encoder.js
-[src/data/codec/tablebasedencoder]: https://github.com/guless/closure/blob/dev/src/data/codec/TableBasedEncoder.js
+[src/data/codec/base16uppercasedecoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16UpperCaseDecoder.js
+[src/data/codec/base16uppercaseencoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base16UpperCaseEncoder.js
+[src/data/codec/base32decoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32Decoder.js
+[src/data/codec/base32encoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32Encoder.js
+[src/data/codec/base32hexdecoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32HexDecoder.js
+[src/data/codec/base32hexencoder]: https://github.com/guless/closure/blob/dev/src/data/codec/Base32HexEncoder.js
+[src/data/codec/tablebasedencoding]: https://github.com/guless/closure/blob/dev/src/data/codec/TableBasedEncoding.js
 [src/data/core]: https://github.com/guless/closure/blob/dev/src/data/core
 [src/data/core/databuffer]: https://github.com/guless/closure/blob/dev/src/data/core/DataBuffer.js
 [src/data/core/sharedable]: https://github.com/guless/closure/blob/dev/src/data/core/Sharedable.js
@@ -90,6 +104,8 @@
 [src/data/tables]: https://github.com/guless/closure/blob/dev/src/data/tables
 [src/data/tables/base16lowercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16LowerCaseTable.js
 [src/data/tables/base16uppercasetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base16UpperCaseTable.js
+[src/data/tables/base32defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base32DefaultTable.js
+[src/data/tables/base32extendedhextable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base32ExtendedHexTable.js
 [src/data/tables/base64defaulttable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base64DefaultTable.js
 [src/data/tables/base64urlsafetable]: https://github.com/guless/closure/blob/dev/src/data/tables/Base64URLSafeTable.js
 [src/data/tables/crc16ccitttable]: https://github.com/guless/closure/blob/dev/src/data/tables/CRC16CCITTTable.js

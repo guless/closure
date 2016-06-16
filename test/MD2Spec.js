@@ -61,5 +61,5 @@ function test_md2( input, expect ) {
     
     var result = hexof(MD2API.final());
     assert(result == expect, "MD2 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
-    passlog(`"${input}"`, `"${expect}"`);
+    passlog(`"${input}"`, `"${result}"`);
 }

@@ -56,28 +56,79 @@ export default class Sharedable extends Streamable {
         this._shared = value;
     }
     
-    _initOutput( bytes ) {
+    get output() {
+        return this._output;
+    }
+    
+    get offset() {
+        return this._offset;
+    }
+    
+    _initTransOutput( bytes ) {
         /* Protected */
         throw new Error("method does not implements.");
     }
     
-    _transfrom( bytes ) {
-        this._offset = this._transchunk(bytes, this._output, this._offset);
+    _initFinalOutput() {
+        /* Protected */
+        throw new Error("method does not implements.");
     }
     
     _transchunk( bytes, output, offset ) {
+        /* Protected */
+        return offset;
+    }
+    
+    _finalchunk( output, offset ) {
+        /* Protected */
         return offset;
     }
     
     update( bytes ) {
-        this._output = this._shared || this._initOutput(bytes);
+        this._output = this._shared || this._initTransOutput(bytes);
         this._offset = 0;
         
         super.update(bytes);
-        return this._output === this._shared ? this._shared.subarray(0, this._offset) : this._output;
+        
+        if ( this._offset > this._output.length ) {
+            if ( this._shared ) {
+                throw new Error("no enough shared memory.");
+            }
+            
+            else {
+                throw new Error("the offset was outof output range.");
+            }
+        }
+        
+        return this._offset == this._output.length ? this._output : (this._output = this._output.subarray(0, this._offset));
     }
     
     final() {
-        return EMPTY_UINT8_ARRAY;
+        if ( !this._buffer || this._buffer.offset == 0 ) {
+            this._output = EMPTY_UINT8_ARRAY;
+            this._offset = 0;
+        }
+        
+        else {
+            this._output = this._shared || this._initFinalOutput();
+            this._offset = this._finalchunk(this._output, 0);
+        }
+        
+        if ( this._offset > this._output.length ) {
+            if ( this._shared ) {
+                throw new Error("no enough shared memory.");
+            }
+            
+            else {
+                throw new Error("the offset was outof output range.");
+            }
+        }
+        
+        return this._offset == this._output.length ? this._output : (this._output = this._output.subarray(0, this._offset));
+    }
+    
+    _transfrom( bytes ) {
+        /* Override */
+        this._offset = this._transchunk(bytes, this._output, this._offset);
     }
 }

@@ -61,5 +61,5 @@ function test_sha1( input, expect ) {
     
     var result = hexof(SHA1API.final());
     assert(result == expect, "SHA1 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
-    passlog(`"${input}"`, `"${expect}"`);
+    passlog(`"${input}"`, `"${result}"`);
 }

@@ -35,16 +35,16 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import TableBasedEncoder from "./TableBasedEncoder";
+import TableBasedEncoding from "./TableBasedEncoding";
 import { BASE16_LOWER_CASE_DECODE_TABLE } from "../tables/Base16LowerCaseTable";
 
-export default class Base16Decoder extends TableBasedEncoder {
+export default class Base16Decoder extends TableBasedEncoding {
     constructor( table = BASE16_LOWER_CASE_DECODE_TABLE ) {
         super(table, new Uint8Array(2));
     }
     
-    _initOutput( bytes ) {
-        return new Uint8Array( bytes.length >>> 1 );
+    _initTransOutput( bytes ) {
+        return new Uint8Array((this._buffer.offset + bytes.length) >>> 1);
     }
     
     _transchunk( bytes, output, offset ) {
