@@ -61,11 +61,7 @@ CopyrightWriter.prototype._transform = function transform( chunk, encoding, call
 }
 
 browserify(argv.input, { "debug": argv.sourceMaps })
-    .transform(babelify, { 
-        "sourceMaps": argv.sourceMaps, 
-        "presets"   : [ "es2015" ], 
-        "plugins"   : [ "transform-class-properties" ] 
-    })
+    .transform(babelify, { "sourceMaps": argv.sourceMaps })
     .transform(uglifyify, { "compress": { "drop_console": false } })
     .bundle()
     .pipe(exorcist(argv.output + ".map"))

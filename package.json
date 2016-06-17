@@ -36,6 +36,7 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "babel-core": "^6.7.4",
+    "babel-cli": "^6.10.1",
     "rimraf": "^2.5.2",
     "uglify-js": "^2.6.2",
     "uglifyify": "^3.0.1",
@@ -48,7 +49,7 @@
     "clean": "./node_modules/.bin/rimraf ./dist/*",
     "build": "node ./task/build.js --sourceMaps --input=./src/import.js --output=./dist/bundle.js",
     "start": "node ./dist/bundle.js",
-    "debug": "node ./task/build.js --sourceMaps --input=./src/debug.js --output=./dist/debug.js && node ./dist/debug.js",
+    "debug": "babel-node ./src/debug.js",
     "test": "npm install && npm run debug",
     "apidocs": "node ./task/apidocs.js"
   },
