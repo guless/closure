@@ -901,13 +901,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#padchar",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-padchar",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-padchar",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#padchar",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#padchar",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-padchar",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-padchar",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#padchar",
     "member"
   ],
@@ -1009,13 +1009,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1605,12 +1605,6 @@ window.esdocSearchIndex = [
     "src/data/utils/utf16.js",
     "file/src/data/utils/utf16.js.html",
     "src/data/utils/utf16.js",
-    "file"
-  ],
-  [
-    "src/debug.js",
-    "file/src/debug.js.html",
-    "src/debug.js",
     "file"
   ],
   [
