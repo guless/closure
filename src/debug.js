@@ -35,6 +35,7 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import UTF8Spec from "../test/UTF8Spec";
 import Base16Spec from "../test/Base16Spec";
 import Base32Spec from "../test/Base32Spec";
 import Base64Spec from "../test/Base64Spec";
@@ -49,6 +50,7 @@ var testSuite = [];
 var errorCount = 0;
 
 testSuite.push( 
+    UTF8Spec,
     Base16Spec,
     Base32Spec,
     Base64Spec,

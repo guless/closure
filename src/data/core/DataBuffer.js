@@ -63,6 +63,14 @@ export default class DataBuffer {
     reset() {
         this._offset = 0;
     }
+
+    write( value ) {
+        if ( this._offset >= this._length ) {
+            throw new Error(`outof buffer max length. { offset=${this._offset}, length=${this._length} }`);
+        }
+
+        this._buffer[this._offset++] = value;
+    }
     
     restore( bytes ) {
         if ( bytes.length >= this._length - this._offset ) {

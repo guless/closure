@@ -35,50 +35,16 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import DataBuffer from "./DataBuffer";
-import copy       from "../utils/copy";
+import utf16 from "./utf16";
+import UTF8Encoder from "../codec/UTF8Encoder";
 
-export default class Streamable {
-    constructor( buffer = null ) {
-        this._buffer = buffer ? new DataBuffer(buffer) : null;
-        /* Protected */
-        this._autoRestore = true;
-    }
-    
-    _transfrom( bytes ) { 
-        /* Protected */
-        throw new Error("method does not implements.");
-    }
-    
-    final() {
-        /* Protected */
-        throw new Error("method does not implements.");
-    }
-    
-    update( bytes ) {        
-        if ( !(this._buffer && this._buffer.length > 0 && this._autoRestore) ) {
-            this._transfrom(bytes);
-            return;
-        }
+const utf8Encoder = new UTF8Encoder();
+
+export default function utf8( string ) {
+    utf8Encoder.reset();
+
+    var result = utf8Encoder.update(utf16(string));
+    utf8Encoder.final();
         
-        if ( bytes.length >= this._buffer.remain ) {
-            if ( this._buffer.offset != 0 ) {
-                copy(bytes, this._buffer.buffer, this._buffer.offset);
-                bytes = bytes.subarray(this._buffer.remain);
-
-                this._transfrom(bytes);
-                this._transfrom(this._buffer.buffer);
-            }
-            
-            else {
-                this._transfrom(bytes);
-            }
-        }
-            
-        this._buffer.restore(bytes);
-    }
-
-    reset() {
-        this._buffer && this._buffer.reset();
-    }
+    return result;
 }

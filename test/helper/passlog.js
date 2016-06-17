@@ -38,5 +38,5 @@
 var clc = require("cli-color");
 
 export default function passlog( input, expect ) {
-    console.log(clc.green(`\u2714`), "input/expect:", clc.xterm(74).underline(`${input}`), "=>", clc.white.underline(`${expect}`));
+    console.log(clc.green(`\u2714`), "input/result:", clc.xterm(74).underline(`${input}`), "=>", clc.white.underline(`${expect}`));
 }
