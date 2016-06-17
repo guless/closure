@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/data/crypto/CRC16.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/guless/closure.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">array</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assert">assert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-derive">derive</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Decoder.js~Base16Decoder.html">Base16Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16UpperCaseDecoder.js~Base16UpperCaseDecoder.html">Base16UpperCaseDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16UpperCaseEncoder.js~Base16UpperCaseEncoder.html">Base16UpperCaseEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Decoder.js~Base32Decoder.html">Base32Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Encoder.js~Base32Encoder.html">Base32Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32HexDecoder.js~Base32HexDecoder.html">Base32HexDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32HexEncoder.js~Base32HexEncoder.html">Base32HexEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Decoder.js~Base64Decoder.html">Base64Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Encoder.js~Base64Encoder.html">Base64Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder.html">Base64URLSafeDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder.html">Base64URLSafeEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html">TableBasedEncoding</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html">UTF8Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html">UTF8Encoder</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/DataBuffer.js~DataBuffer.html">DataBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/Sharedable.js~Sharedable.html">Sharedable</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/crypto</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16.js~CRC16.html">CRC16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html">CRC16CCITT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html">CRC16Kermit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html">CRC16ModBus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16XModem.js~CRC16XModem.html">CRC16XModem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC24.js~CRC24.html">CRC24</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC32.js~CRC32.html">CRC32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html">CRC8</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html">CRC8Dallas1Wire</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_ENCODE_TABLE">BASE16_UPPER_CASE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_DECODE_TABLE">BASE32_DEFAULT_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_ENCODE_TABLE">BASE32_DEFAULT_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_DECODE_TABLE">BASE32_EXTENDED_HEX_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_ENCODE_TABLE">BASE32_EXTENDED_HEX_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_DECODE_TABLE">BASE64_DEFAULT_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_ENCODE_TABLE">BASE64_DEFAULT_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_DECODE_TABLE">BASE64_URLSAFE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_ENCODE_TABLE">BASE64_URLSAFE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_CCITT_TABLE">CRC16_CCITT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_DEFAULT_TABLE">CRC16_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_KERMIT_TABLE">CRC16_KERMIT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_MODBUS_TABLE">CRC16_MODBUS_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC24_DEFAULT_TABLE">CRC24_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC32_DEFAULT_TABLE">CRC32_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DALLAS_1_WIRE_TABLE">CRC8_DALLAS_1_WIRE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-copy">copy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexof">hexof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap16">swap16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf16">utf16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf8">utf8</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">events</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/Event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html">EventDispatcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/EventListener.js~EventListener.html">EventListener</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AT_TARGET">AT_TARGET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BUBBLING_PHASE">BUBBLING_PHASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CAPTURING_PHASE">CAPTURING_PHASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NONE">NONE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ALWAYS">ALWAYS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STOP_AT_PARENT">STOP_AT_PARENT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STOP_AT_TARGET">STOP_AT_TARGET</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/data/crypto/CRC16.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/// @Copyright ~2016 &#x261C;Samlv9&#x261E; and other contributors
+/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
+/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+///                                              }|
+///                                              }|
+///                                              }|     &#x3000; &#x3078;&#x3000;&#x3000;&#x3000; &#xFF0F;|    
+///      _______     _______         ______      }|      /&#x3000;&#x2502;&#x3000;&#x3000; &#xFF0F; &#xFF0F;
+///     /  ___  |   |_   __ \      .&apos; ____ &apos;.    }|     &#x2502;&#x3000;Z &#xFF3F;,&#xFF1C;&#x3000;&#xFF0F;&#x3000;&#x3000; /`&#x30FD;
+///    |  (__ \_|     | |__) |     | (____) |    }|     &#x2502;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x30FD;&#x3000;&#x3000; /&#x3000;&#x3000;&#x3009;
+///     &apos;.___`-.      |  __ /      &apos;_.____. |    }|      Y&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;`&#x3000; /&#x3000;&#x3000;/
+///    |`\____) |    _| |  \ \_    | \____| |    }|    &#xFF72;&#x25CF;&#x3000;&#xFF64;&#x3000;&#x25CF;&#x3000;&#x3000;&#x2282;&#x2283;&#x3008;&#x3000;&#x3000;/
+///    |_______.&apos;   |____| |___|    \______,&apos;    }|    ()&#x3000; v&#x3000;&#x3000;&#x3000;&#x3000;|&#x3000;&#xFF3C;&#x3008;
+///    |=========================================\|    &#x3000;&gt;&#xFF70; &#xFF64;_&#x3000; &#x30A3;&#x3000; &#x2502; &#xFF0F;&#xFF0F;
+///    |&gt; LESS IS MORE                           ||     / &#x3078;&#x3000;&#x3000; /&#x3000;&#xFF89;&#xFF1C;|&#xFF3C;&#xFF3C;
+///    `=========================================/|    &#x30FD;_&#xFF89;&#x3000;&#x3000;(_&#xFF0F;&#x3000; &#x2502;&#xFF0F;&#xFF0F;
+///                                              }|     7&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;  |&#xFF0F;
+///                                              }|     &#xFF1E;&#x2015;r&#xFFE3;&#xFFE3;`&#xFF70;&#x2015;&#xFF3F;`
+///                                              }|
+///                                              }|
+/// Permission is hereby granted, free of charge, to any person obtaining a copy
+/// of this software and associated documentation files (the &quot;Software&quot;), to deal
+/// in the Software without restriction, including without limitation the rights
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+/// copies of the Software, and to permit persons to whom the Software is
+/// furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in all
+/// copies or substantial portions of the Software.
+///
+/// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+/// THE SOFTWARE.
+import Streamable from &quot;../core/Streamable&quot;;
+import { CRC16_DEFAULT_TABLE } from &quot;../tables/CRC16DefaultTable&quot;;
+
+export default class CRC16 extends Streamable {
+    constructor() {
+        super(null);
+        this._digest = 0;
+        this._table = CRC16_DEFAULT_TABLE;
+    }
+    
+    reset() {
+        this._digest = 0;
+    }
+    
+    update( bytes ) {
+        for ( var i = 0; i &lt; bytes.length; ++i ) {
+            this._digest = ((this._table[(this._digest ^ bytes[i]) &amp; 0xFF] ^ (this._digest &gt;&gt; 8)) &amp; 0xFFFF);
+        }
+    }
+    
+    final() {
+        return this._digest &gt;&gt;&gt; 0;
+    }
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

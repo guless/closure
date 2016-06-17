@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="">
+  <title data-ice="title">Source | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/guless/closure.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">array</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assert">assert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-derive">derive</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Decoder.js~Base16Decoder.html">Base16Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16UpperCaseDecoder.js~Base16UpperCaseDecoder.html">Base16UpperCaseDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16UpperCaseEncoder.js~Base16UpperCaseEncoder.html">Base16UpperCaseEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Decoder.js~Base32Decoder.html">Base32Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Encoder.js~Base32Encoder.html">Base32Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32HexDecoder.js~Base32HexDecoder.html">Base32HexDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32HexEncoder.js~Base32HexEncoder.html">Base32HexEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Decoder.js~Base64Decoder.html">Base64Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Encoder.js~Base64Encoder.html">Base64Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder.html">Base64URLSafeDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder.html">Base64URLSafeEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html">TableBasedEncoding</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html">UTF8Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html">UTF8Encoder</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/DataBuffer.js~DataBuffer.html">DataBuffer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/Sharedable.js~Sharedable.html">Sharedable</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/crypto</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16.js~CRC16.html">CRC16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html">CRC16CCITT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html">CRC16Kermit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html">CRC16ModBus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16XModem.js~CRC16XModem.html">CRC16XModem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC24.js~CRC24.html">CRC24</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC32.js~CRC32.html">CRC32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html">CRC8</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html">CRC8Dallas1Wire</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_ENCODE_TABLE">BASE16_UPPER_CASE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_DECODE_TABLE">BASE32_DEFAULT_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_ENCODE_TABLE">BASE32_DEFAULT_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_DECODE_TABLE">BASE32_EXTENDED_HEX_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_ENCODE_TABLE">BASE32_EXTENDED_HEX_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_DECODE_TABLE">BASE64_DEFAULT_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_ENCODE_TABLE">BASE64_DEFAULT_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_DECODE_TABLE">BASE64_URLSAFE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_ENCODE_TABLE">BASE64_URLSAFE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_CCITT_TABLE">CRC16_CCITT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_DEFAULT_TABLE">CRC16_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_KERMIT_TABLE">CRC16_KERMIT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_MODBUS_TABLE">CRC16_MODBUS_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC24_DEFAULT_TABLE">CRC24_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC32_DEFAULT_TABLE">CRC32_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DALLAS_1_WIRE_TABLE">CRC8_DALLAS_1_WIRE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-copy">copy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexof">hexof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap16">swap16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf16">utf16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf8">utf8</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">events</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/Event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html">EventDispatcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/events/EventListener.js~EventListener.html">EventListener</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AT_TARGET">AT_TARGET</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BUBBLING_PHASE">BUBBLING_PHASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CAPTURING_PHASE">CAPTURING_PHASE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-NONE">NONE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-ALWAYS">ALWAYS</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STOP_AT_PARENT">STOP_AT_PARENT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STOP_AT_TARGET">STOP_AT_TARGET</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">0/203</span></h1>
+
+<table class="files-summary" data-ice="files" data-use-coverage="true">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Identifier</td>
+      <td class="coverage">Document</td>
+      <td style="display: none;">Size</td>
+      <td style="display: none;">Lines</td>
+      <td style="display: none;">Updated</td>
+    </tr>
+  </thead>
+  <tbody>
+    
+  <tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/array/shuffle.js.html#errorLines=39">src/array/shuffle.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">3009 byte</td>
+      <td style="display: none;" data-ice="lines">52</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/core/assert.js.html#errorLines=39">src/core/assert.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-assert">assert</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2842 byte</td>
+      <td style="display: none;" data-ice="lines">45</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/core/assign.js.html#errorLines=39">src/core/assign.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-assign">assign</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">3472 byte</td>
+      <td style="display: none;" data-ice="lines">70</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/core/derive.js.html#errorLines=40">src/core/derive.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-derive">derive</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2838 byte</td>
+      <td style="display: none;" data-ice="lines">45</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base16Decoder.js.html#errorLines=41,42,65">src/data/codec/Base16Decoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base16Decoder.js~Base16Decoder.html">Base16Decoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
+      <td style="display: none;" data-ice="size">3827 byte</td>
+      <td style="display: none;" data-ice="lines">71</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base16Encoder.js.html#errorLines=41,42">src/data/codec/Base16Encoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3280 byte</td>
+      <td style="display: none;" data-ice="lines">57</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base16UpperCaseDecoder.js.html#errorLines=41,42">src/data/codec/Base16UpperCaseDecoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base16UpperCaseDecoder.js~Base16UpperCaseDecoder.html">Base16UpperCaseDecoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2888 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base16UpperCaseEncoder.js.html#errorLines=41,42">src/data/codec/Base16UpperCaseEncoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base16UpperCaseEncoder.js~Base16UpperCaseEncoder.html">Base16UpperCaseEncoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2888 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base32Decoder.js.html#errorLines=43,44,48">src/data/codec/Base32Decoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base32Decoder.js~Base32Decoder.html">Base32Decoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
+      <td style="display: none;" data-ice="size">7931 byte</td>
+      <td style="display: none;" data-ice="lines">172</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base32Encoder.js.html#errorLines=41,42">src/data/codec/Base32Encoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base32Encoder.js~Base32Encoder.html">Base32Encoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">7063 byte</td>
+      <td style="display: none;" data-ice="lines">156</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base32HexDecoder.js.html#errorLines=41,42">src/data/codec/Base32HexDecoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base32HexDecoder.js~Base32HexDecoder.html">Base32HexDecoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2888 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base32HexEncoder.js.html#errorLines=41,42">src/data/codec/Base32HexEncoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base32HexEncoder.js~Base32HexEncoder.html">Base32HexEncoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2888 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base64Decoder.js.html#errorLines=43,44,48">src/data/codec/Base64Decoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base64Decoder.js~Base64Decoder.html">Base64Decoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
+      <td style="display: none;" data-ice="size">5474 byte</td>
+      <td style="display: none;" data-ice="lines">122</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base64Encoder.js.html#errorLines=41,42">src/data/codec/Base64Encoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base64Encoder.js~Base64Encoder.html">Base64Encoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">4687 byte</td>
+      <td style="display: none;" data-ice="lines">102</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base64URLSafeDecoder.js.html#errorLines=41,42">src/data/codec/Base64URLSafeDecoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder.html">Base64URLSafeDecoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2878 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/Base64URLSafeEncoder.js.html#errorLines=41,42">src/data/codec/Base64URLSafeEncoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder.html">Base64URLSafeEncoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">2878 byte</td>
+      <td style="display: none;" data-ice="lines">44</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/TableBasedEncoding.js.html#errorLines=42,43,51,59,74,78,82,86,90,94">src/data/codec/TableBasedEncoding.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html">TableBasedEncoding</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/10</span></td>
+      <td style="display: none;" data-ice="size">3970 byte</td>
+      <td style="display: none;" data-ice="lines">96</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/UTF8Decoder.js.html#errorLines=157,40,41,47">src/data/codec/UTF8Decoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html">UTF8Decoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/4</span></td>
+      <td style="display: none;" data-ice="size">7016 byte</td>
+      <td style="display: none;" data-ice="lines">163</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/codec/UTF8Encoder.js.html#errorLines=134,40,41,47">src/data/codec/UTF8Encoder.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html">UTF8Encoder</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/4</span></td>
+      <td style="display: none;" data-ice="size">6234 byte</td>
+      <td style="display: none;" data-ice="lines">140</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/core/DataBuffer.js.html#errorLines=40,41,47,51,55,59,63,67,75">src/data/core/DataBuffer.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/core/DataBuffer.js~DataBuffer.html">DataBuffer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/9</span></td>
+      <td style="display: none;" data-ice="size">3806 byte</td>
+      <td style="display: none;" data-ice="lines">85</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/core/Sharedable.js.html#errorLines=106,42,43,51,55,59,63,87">src/data/core/Sharedable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/core/Sharedable.js~Sharedable.html">Sharedable</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/8</span></td>
+      <td style="display: none;" data-ice="size">5095 byte</td>
+      <td style="display: none;" data-ice="lines">134</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/core/Streamable.js.html#errorLines=41,42,53,58,81">src/data/core/Streamable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3854 byte</td>
+      <td style="display: none;" data-ice="lines">83</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC1.js.html#errorLines=40,41,46,50,56">src/data/crypto/CRC1.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3037 byte</td>
+      <td style="display: none;" data-ice="lines">58</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC16.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC16.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC16.js~CRC16.html">CRC16</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3196 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC16CCITT.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC16CCITT.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html">CRC16CCITT</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3210 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC16Kermit.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC16Kermit.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html">CRC16Kermit</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3199 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC16ModBus.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC16ModBus.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html">CRC16ModBus</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3209 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC16XModem.js.html#errorLines=40,41,46,50,67">src/data/crypto/CRC16XModem.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC16XModem.js~CRC16XModem.html">CRC16XModem</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3364 byte</td>
+      <td style="display: none;" data-ice="lines">69</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC24.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC24.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC24.js~CRC24.html">CRC24</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3220 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC32.js.html#errorLines=41,42,48,52,62">src/data/crypto/CRC32.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC32.js~CRC32.html">CRC32</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3260 byte</td>
+      <td style="display: none;" data-ice="lines">64</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC8.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC8.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html">CRC8</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3166 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/CRC8Dallas1Wire.js.html#errorLines=41,42,48,52,58">src/data/crypto/CRC8Dallas1Wire.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html">CRC8Dallas1Wire</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3193 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/MD2.js.html#errorLines=41,42,49,56,60">src/data/crypto/MD2.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">4279 byte</td>
+      <td style="display: none;" data-ice="lines">96</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/MD4.js.html#errorLines=64,65,72,82,92">src/data/crypto/MD4.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/MD4.js~MD5.html">MD5</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">9418 byte</td>
+      <td style="display: none;" data-ice="lines">182</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/MD5.js.html#errorLines=65,66,73,83,93">src/data/crypto/MD5.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">11690 byte</td>
+      <td style="display: none;" data-ice="lines">201</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/crypto/SHA1.js.html#errorLines=62,63,71,83,93">src/data/crypto/SHA1.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">7303 byte</td>
+      <td style="display: none;" data-ice="lines">189</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/Base16LowerCaseTable.js.html#errorLines=39,46">src/data/tables/Base16LowerCaseTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span>
+<span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3519 byte</td>
+      <td style="display: none;" data-ice="lines">61</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/Base16UpperCaseTable.js.html#errorLines=39,46">src/data/tables/Base16UpperCaseTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span>
+<span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_ENCODE_TABLE">BASE16_UPPER_CASE_ENCODE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3508 byte</td>
+      <td style="display: none;" data-ice="lines">60</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/Base32DefaultTable.js.html#errorLines=39,47">src/data/tables/Base32DefaultTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_DECODE_TABLE">BASE32_DEFAULT_DECODE_TABLE</a></span>
+<span><a href="variable/index.html#static-variable-BASE32_DEFAULT_ENCODE_TABLE">BASE32_DEFAULT_ENCODE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3559 byte</td>
+      <td style="display: none;" data-ice="lines">61</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/Base32ExtendedHexTable.js.html#errorLines=39,47">src/data/tables/Base32ExtendedHexTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_DECODE_TABLE">BASE32_EXTENDED_HEX_DECODE_TABLE</a></span>
+<span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_ENCODE_TABLE">BASE32_EXTENDED_HEX_ENCODE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3581 byte</td>
+      <td style="display: none;" data-ice="lines">62</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/Base64DefaultTable.js.html#errorLines=39,52">src/data/tables/Base64DefaultTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_DECODE_TABLE">BASE64_DEFAULT_DECODE_TABLE</a></span>
+<span><a href="variable/index.html#static-variable-BASE64_DEFAULT_ENCODE_TABLE">BASE64_DEFAULT_ENCODE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3945 byte</td>
+      <td style="display: none;" data-ice="lines">76</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/Base64URLSafeTable.js.html#errorLines=39,52">src/data/tables/Base64URLSafeTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_DECODE_TABLE">BASE64_URLSAFE_DECODE_TABLE</a></span>
+<span><a href="variable/index.html#static-variable-BASE64_URLSAFE_ENCODE_TABLE">BASE64_URLSAFE_ENCODE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/2</span></td>
+      <td style="display: none;" data-ice="size">3982 byte</td>
+      <td style="display: none;" data-ice="lines">78</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC16CCITTTable.js.html#errorLines=40">src/data/tables/CRC16CCITTTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC16_CCITT_TABLE">CRC16_CCITT_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4920 byte</td>
+      <td style="display: none;" data-ice="lines">72</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC16DefaultTable.js.html#errorLines=40">src/data/tables/CRC16DefaultTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC16_DEFAULT_TABLE">CRC16_DEFAULT_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4916 byte</td>
+      <td style="display: none;" data-ice="lines">72</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC16KermitTable.js.html#errorLines=40">src/data/tables/CRC16KermitTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC16_KERMIT_TABLE">CRC16_KERMIT_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4922 byte</td>
+      <td style="display: none;" data-ice="lines">72</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC16ModBusTable.js.html#errorLines=40">src/data/tables/CRC16ModBusTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC16_MODBUS_TABLE">CRC16_MODBUS_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4922 byte</td>
+      <td style="display: none;" data-ice="lines">72</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC24DefaultTable.js.html#errorLines=40">src/data/tables/CRC24DefaultTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC24_DEFAULT_TABLE">CRC24_DEFAULT_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">5428 byte</td>
+      <td style="display: none;" data-ice="lines">72</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC32DefaultTable.js.html#errorLines=40">src/data/tables/CRC32DefaultTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC32_DEFAULT_TABLE">CRC32_DEFAULT_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">6021 byte</td>
+      <td style="display: none;" data-ice="lines">92</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC8Dallas1WireTable.js.html#errorLines=40">src/data/tables/CRC8Dallas1WireTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC8_DALLAS_1_WIRE_TABLE">CRC8_DALLAS_1_WIRE_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4349 byte</td>
+      <td style="display: none;" data-ice="lines">56</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/CRC8DefaultTable.js.html#errorLines=40">src/data/tables/CRC8DefaultTable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4337 byte</td>
+      <td style="display: none;" data-ice="lines">56</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/tables/MD2PITable.js.html#errorLines=40">src/data/tables/MD2PITable.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">4611 byte</td>
+      <td style="display: none;" data-ice="lines">61</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/ascii.js.html#errorLines=39">src/data/utils/ascii.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-ascii">ascii</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2712 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/copy.js.html#errorLines=39">src/data/utils/copy.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-copy">copy</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">3351 byte</td>
+      <td style="display: none;" data-ice="lines">59</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/hexof.js.html#errorLines=43">src/data/utils/hexof.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-hexof">hexof</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2944 byte</td>
+      <td style="display: none;" data-ice="lines">48</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/strof.js.html#errorLines=39">src/data/utils/strof.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-strof">strof</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2698 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/swap16.js.html#errorLines=39">src/data/utils/swap16.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-swap16">swap16</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2703 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/swap32.js.html#errorLines=39">src/data/utils/swap32.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-swap32">swap32</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2748 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/utf16.js.html#errorLines=39">src/data/utils/utf16.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-utf16">utf16</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2713 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/data/utils/utf8.js.html#errorLines=43">src/data/utils/utf8.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="function/index.html#static-function-utf8">utf8</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">2895 byte</td>
+      <td style="display: none;" data-ice="lines">49</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/events/Event.js.html#errorLines=41,42,55,59,63,67,71,75,79,83,87,91,95,99">src/events/Event.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/events/Event.js~Event.html">Event</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/14</span></td>
+      <td style="display: none;" data-ice="size">4097 byte</td>
+      <td style="display: none;" data-ice="lines">101</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/events/EventDispatcher.js.html#errorLines=115,43,44,49,60,68,72">src/events/EventDispatcher.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html">EventDispatcher</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/7</span></td>
+      <td style="display: none;" data-ice="size">8453 byte</td>
+      <td style="display: none;" data-ice="lines">206</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/events/EventListener.js.html#errorLines=38,39,45,49,53">src/events/EventListener.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/events/EventListener.js~EventListener.html">EventListener</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">3014 byte</td>
+      <td style="display: none;" data-ice="lines">55</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/events/EventPhase.js.html#errorLines=38,39,40,41">src/events/EventPhase.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-AT_TARGET">AT_TARGET</a></span>
+<span><a href="variable/index.html#static-variable-BUBBLING_PHASE">BUBBLING_PHASE</a></span>
+<span><a href="variable/index.html#static-variable-CAPTURING_PHASE">CAPTURING_PHASE</a></span>
+<span><a href="variable/index.html#static-variable-NONE">NONE</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/4</span></td>
+      <td style="display: none;" data-ice="size">2733 byte</td>
+      <td style="display: none;" data-ice="lines">40</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/events/EventPropagation.js.html#errorLines=38,39,40">src/events/EventPropagation.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-ALWAYS">ALWAYS</a></span>
+<span><a href="variable/index.html#static-variable-STOP_AT_PARENT">STOP_AT_PARENT</a></span>
+<span><a href="variable/index.html#static-variable-STOP_AT_TARGET">STOP_AT_TARGET</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/3</span></td>
+      <td style="display: none;" data-ice="size">2703 byte</td>
+      <td style="display: none;" data-ice="lines">39</td>
+      <td style="display: none;" data-ice="updated">2016-06-06 09:10:00 (UTC)</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

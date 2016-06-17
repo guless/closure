@@ -1,0 +1,594 @@
+{
+  "coverage": "0%",
+  "expectCount": 203,
+  "actualCount": 0,
+  "files": {
+    "src/events/EventPropagation.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        38,
+        39,
+        40
+      ]
+    },
+    "src/events/EventPhase.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        39,
+        38
+      ]
+    },
+    "src/data/tables/Base16LowerCaseTable.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        46,
+        39
+      ]
+    },
+    "src/data/tables/Base16UpperCaseTable.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        46,
+        39
+      ]
+    },
+    "src/data/tables/Base32DefaultTable.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        47,
+        39
+      ]
+    },
+    "src/data/tables/Base32ExtendedHexTable.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        47,
+        39
+      ]
+    },
+    "src/data/tables/Base64DefaultTable.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        52,
+        39
+      ]
+    },
+    "src/data/tables/Base64URLSafeTable.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        52,
+        39
+      ]
+    },
+    "src/data/codec/Base16Decoder.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        65
+      ]
+    },
+    "src/data/codec/Base16Encoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base16UpperCaseDecoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base16UpperCaseEncoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base32Decoder.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        43,
+        44,
+        48
+      ]
+    },
+    "src/data/codec/Base32Encoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base32HexDecoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base32HexEncoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base64Decoder.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        43,
+        44,
+        48
+      ]
+    },
+    "src/data/codec/Base64Encoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base64URLSafeDecoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base64URLSafeEncoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/crypto/CRC1.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        56,
+        46,
+        50
+      ]
+    },
+    "src/data/crypto/CRC16.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/CRC16CCITT.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/CRC16Kermit.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/CRC16ModBus.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/CRC16XModem.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        67,
+        46,
+        50
+      ]
+    },
+    "src/data/tables/CRC16CCITTTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/tables/CRC16DefaultTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/tables/CRC16KermitTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/tables/CRC16ModBusTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/crypto/CRC24.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/tables/CRC24DefaultTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/crypto/CRC32.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        62,
+        48,
+        52
+      ]
+    },
+    "src/data/tables/CRC32DefaultTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/crypto/CRC8.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/CRC8Dallas1Wire.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        58,
+        48,
+        52
+      ]
+    },
+    "src/data/tables/CRC8Dallas1WireTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/tables/CRC8DefaultTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/core/DataBuffer.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        47,
+        41,
+        51,
+        55,
+        59,
+        63,
+        75,
+        67
+      ]
+    },
+    "src/events/Event.js": {
+      "expectCount": 14,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        59,
+        63,
+        42,
+        75,
+        79,
+        67,
+        83,
+        87,
+        95,
+        91,
+        71,
+        99,
+        55
+      ]
+    },
+    "src/events/EventDispatcher.js": {
+      "expectCount": 7,
+      "actualCount": 0,
+      "undocumentLines": [
+        43,
+        49,
+        44,
+        115,
+        68,
+        60,
+        72
+      ]
+    },
+    "src/events/EventListener.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        38,
+        39,
+        45,
+        53,
+        49
+      ]
+    },
+    "src/data/crypto/MD2.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        60,
+        49,
+        56
+      ]
+    },
+    "src/data/tables/MD2PITable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/crypto/MD4.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        64,
+        65,
+        92,
+        72,
+        82
+      ]
+    },
+    "src/data/crypto/MD5.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        65,
+        66,
+        93,
+        73,
+        83
+      ]
+    },
+    "src/data/crypto/SHA1.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        62,
+        63,
+        93,
+        71,
+        83
+      ]
+    },
+    "src/data/core/Sharedable.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        42,
+        43,
+        106,
+        63,
+        59,
+        51,
+        55,
+        87
+      ]
+    },
+    "src/data/core/Streamable.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        53,
+        81,
+        58
+      ]
+    },
+    "src/data/codec/TableBasedEncoding.js": {
+      "expectCount": 10,
+      "actualCount": 0,
+      "undocumentLines": [
+        42,
+        43,
+        59,
+        78,
+        74,
+        82,
+        86,
+        51,
+        90,
+        94
+      ]
+    },
+    "src/data/codec/UTF8Decoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        157,
+        47
+      ]
+    },
+    "src/data/codec/UTF8Encoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        134,
+        47
+      ]
+    },
+    "src/data/utils/ascii.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/core/assert.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/core/assign.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/copy.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/core/derive.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/data/utils/hexof.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        43
+      ]
+    },
+    "src/array/shuffle.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/strof.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/swap16.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/swap32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/utf16.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/utf8.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        43
+      ]
+    }
+  }
+}

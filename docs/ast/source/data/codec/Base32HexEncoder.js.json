@@ -1,0 +1,1814 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "Base32Encoder",
+            "range": [
+              2403,
+              2416
+            ],
+            "loc": {
+              "start": {
+                "line": 38,
+                "column": 7
+              },
+              "end": {
+                "line": 38,
+                "column": 20
+              }
+            }
+          },
+          "range": [
+            2403,
+            2416
+          ],
+          "loc": {
+            "start": {
+              "line": 38,
+              "column": 7
+            },
+            "end": {
+              "line": 38,
+              "column": 20
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./Base32Encoder",
+        "raw": "\"./Base32Encoder\"",
+        "range": [
+          2422,
+          2439
+        ],
+        "loc": {
+          "start": {
+            "line": 38,
+            "column": 26
+          },
+          "end": {
+            "line": 38,
+            "column": 43
+          }
+        }
+      },
+      "range": [
+        2396,
+        2440
+      ],
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 0
+        },
+        "end": {
+          "line": 38,
+          "column": 44
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Line",
+          "value": "/ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+          "range": [
+            0,
+            78
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 78
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ @Copyright ~2016 ☜Samlv9☞ and other contributors",
+          "range": [
+            79,
+            131
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 52
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/",
+          "range": [
+            132,
+            184
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 52
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+          "range": [
+            185,
+            263
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 78
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|",
+          "range": [
+            264,
+            315
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 51
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|",
+          "range": [
+            316,
+            367
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 6,
+              "column": 51
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|     　 へ　　　 ／|    ",
+          "range": [
+            368,
+            437
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 69
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/      _______     _______         ______      }|      /　│　　 ／ ／",
+          "range": [
+            438,
+            504
+          ],
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 0
+            },
+            "end": {
+              "line": 8,
+              "column": 66
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ",
+          "range": [
+            505,
+            576
+          ],
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 0
+            },
+            "end": {
+              "line": 9,
+              "column": 71
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉",
+          "range": [
+            577,
+            647
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 10,
+              "column": 70
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/",
+          "range": [
+            648,
+            718
+          ],
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 11,
+              "column": 70
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/",
+          "range": [
+            719,
+            788
+          ],
+          "loc": {
+            "start": {
+              "line": 12,
+              "column": 0
+            },
+            "end": {
+              "line": 12,
+              "column": 69
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈",
+          "range": [
+            789,
+            857
+          ],
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 0
+            },
+            "end": {
+              "line": 13,
+              "column": 68
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／",
+          "range": [
+            858,
+            928
+          ],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 0
+            },
+            "end": {
+              "line": 14,
+              "column": 70
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼",
+          "range": [
+            929,
+            998
+          ],
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 0
+            },
+            "end": {
+              "line": 15,
+              "column": 69
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/    `=========================================/|    ヽ_ﾉ　　(_／　 │／／",
+          "range": [
+            999,
+            1067
+          ],
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 0
+            },
+            "end": {
+              "line": 16,
+              "column": 68
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|     7　　　　　　  |／",
+          "range": [
+            1068,
+            1135
+          ],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 0
+            },
+            "end": {
+              "line": 17,
+              "column": 67
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|     ＞―r￣￣`ｰ―＿`",
+          "range": [
+            1136,
+            1202
+          ],
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 0
+            },
+            "end": {
+              "line": 18,
+              "column": 66
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|",
+          "range": [
+            1203,
+            1254
+          ],
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 0
+            },
+            "end": {
+              "line": 19,
+              "column": 51
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/                                              }|",
+          "range": [
+            1255,
+            1306
+          ],
+          "loc": {
+            "start": {
+              "line": 20,
+              "column": 0
+            },
+            "end": {
+              "line": 20,
+              "column": 51
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ Permission is hereby granted, free of charge, to any person obtaining a copy",
+          "range": [
+            1307,
+            1387
+          ],
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 0
+            },
+            "end": {
+              "line": 21,
+              "column": 80
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ of this software and associated documentation files (the \"Software\"), to deal",
+          "range": [
+            1388,
+            1469
+          ],
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 0
+            },
+            "end": {
+              "line": 22,
+              "column": 81
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ in the Software without restriction, including without limitation the rights",
+          "range": [
+            1470,
+            1550
+          ],
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 0
+            },
+            "end": {
+              "line": 23,
+              "column": 80
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+          "range": [
+            1551,
+            1628
+          ],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 77
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ copies of the Software, and to permit persons to whom the Software is",
+          "range": [
+            1629,
+            1702
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 0
+            },
+            "end": {
+              "line": 25,
+              "column": 73
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ furnished to do so, subject to the following conditions:",
+          "range": [
+            1703,
+            1763
+          ],
+          "loc": {
+            "start": {
+              "line": 26,
+              "column": 0
+            },
+            "end": {
+              "line": 26,
+              "column": 60
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/",
+          "range": [
+            1764,
+            1767
+          ],
+          "loc": {
+            "start": {
+              "line": 27,
+              "column": 0
+            },
+            "end": {
+              "line": 27,
+              "column": 3
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ The above copyright notice and this permission notice shall be included in all",
+          "range": [
+            1768,
+            1850
+          ],
+          "loc": {
+            "start": {
+              "line": 28,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 82
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ copies or substantial portions of the Software.",
+          "range": [
+            1851,
+            1902
+          ],
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 0
+            },
+            "end": {
+              "line": 29,
+              "column": 51
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/",
+          "range": [
+            1903,
+            1906
+          ],
+          "loc": {
+            "start": {
+              "line": 30,
+              "column": 0
+            },
+            "end": {
+              "line": 30,
+              "column": 3
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+          "range": [
+            1907,
+            1985
+          ],
+          "loc": {
+            "start": {
+              "line": 31,
+              "column": 0
+            },
+            "end": {
+              "line": 31,
+              "column": 78
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+          "range": [
+            1986,
+            2062
+          ],
+          "loc": {
+            "start": {
+              "line": 32,
+              "column": 0
+            },
+            "end": {
+              "line": 32,
+              "column": 76
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+          "range": [
+            2063,
+            2142
+          ],
+          "loc": {
+            "start": {
+              "line": 33,
+              "column": 0
+            },
+            "end": {
+              "line": 33,
+              "column": 79
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+          "range": [
+            2143,
+            2217
+          ],
+          "loc": {
+            "start": {
+              "line": 34,
+              "column": 0
+            },
+            "end": {
+              "line": 34,
+              "column": 74
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+          "range": [
+            2218,
+            2299
+          ],
+          "loc": {
+            "start": {
+              "line": 35,
+              "column": 0
+            },
+            "end": {
+              "line": 35,
+              "column": 81
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN",
+          "range": [
+            2300,
+            2377
+          ],
+          "loc": {
+            "start": {
+              "line": 36,
+              "column": 0
+            },
+            "end": {
+              "line": 36,
+              "column": 77
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "/ THE SOFTWARE.",
+          "range": [
+            2378,
+            2395
+          ],
+          "loc": {
+            "start": {
+              "line": 37,
+              "column": 0
+            },
+            "end": {
+              "line": 37,
+              "column": 17
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "BASE32_EXTENDED_HEX_ENCODE_TABLE",
+            "range": [
+              2450,
+              2482
+            ],
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 9
+              },
+              "end": {
+                "line": 39,
+                "column": 41
+              }
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "name": "BASE32_EXTENDED_HEX_ENCODE_TABLE",
+            "range": [
+              2450,
+              2482
+            ],
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 9
+              },
+              "end": {
+                "line": 39,
+                "column": 41
+              }
+            }
+          },
+          "range": [
+            2450,
+            2482
+          ],
+          "loc": {
+            "start": {
+              "line": 39,
+              "column": 9
+            },
+            "end": {
+              "line": 39,
+              "column": 41
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "../tables/Base32ExtendedHexTable",
+        "raw": "\"../tables/Base32ExtendedHexTable\"",
+        "range": [
+          2490,
+          2524
+        ],
+        "loc": {
+          "start": {
+            "line": 39,
+            "column": 49
+          },
+          "end": {
+            "line": 39,
+            "column": 83
+          }
+        }
+      },
+      "range": [
+        2441,
+        2525
+      ],
+      "loc": {
+        "start": {
+          "line": 39,
+          "column": 0
+        },
+        "end": {
+          "line": 39,
+          "column": 84
+        }
+      }
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "ClassDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "Base32HexEncoder",
+          "range": [
+            2548,
+            2564
+          ],
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 21
+            },
+            "end": {
+              "line": 41,
+              "column": 37
+            }
+          }
+        },
+        "superClass": {
+          "type": "Identifier",
+          "name": "Base32Encoder",
+          "range": [
+            2573,
+            2586
+          ],
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 46
+            },
+            "end": {
+              "line": 41,
+              "column": 59
+            }
+          }
+        },
+        "body": {
+          "type": "ClassBody",
+          "body": [
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "constructor",
+                "range": [
+                  2593,
+                  2604
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 15
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "AssignmentPattern",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "table",
+                      "range": [
+                        2606,
+                        2611
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 42,
+                          "column": 17
+                        },
+                        "end": {
+                          "line": 42,
+                          "column": 22
+                        }
+                      }
+                    },
+                    "right": {
+                      "type": "Identifier",
+                      "name": "BASE32_EXTENDED_HEX_ENCODE_TABLE",
+                      "range": [
+                        2614,
+                        2646
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 42,
+                          "column": 25
+                        },
+                        "end": {
+                          "line": 42,
+                          "column": 57
+                        }
+                      }
+                    },
+                    "range": [
+                      2606,
+                      2646
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 42,
+                        "column": 17
+                      },
+                      "end": {
+                        "line": 42,
+                        "column": 57
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Super",
+                          "range": [
+                            2659,
+                            2664
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 43,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 43,
+                              "column": 13
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "table",
+                            "range": [
+                              2665,
+                              2670
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 43,
+                                "column": 14
+                              },
+                              "end": {
+                                "line": 43,
+                                "column": 19
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          2659,
+                          2671
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 43,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 43,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "range": [
+                        2659,
+                        2672
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 43,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 43,
+                          "column": 21
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    2649,
+                    2678
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 42,
+                      "column": 60
+                    },
+                    "end": {
+                      "line": 44,
+                      "column": 5
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2604,
+                  2678
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 15
+                  },
+                  "end": {
+                    "line": 44,
+                    "column": 5
+                  }
+                }
+              },
+              "kind": "constructor",
+              "computed": false,
+              "range": [
+                2593,
+                2678
+              ],
+              "loc": {
+                "start": {
+                  "line": 42,
+                  "column": 4
+                },
+                "end": {
+                  "line": 44,
+                  "column": 5
+                }
+              },
+              "static": false
+            }
+          ],
+          "range": [
+            2587,
+            2680
+          ],
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 60
+            },
+            "end": {
+              "line": 45,
+              "column": 1
+            }
+          }
+        },
+        "range": [
+          2542,
+          2680
+        ],
+        "loc": {
+          "start": {
+            "line": 41,
+            "column": 15
+          },
+          "end": {
+            "line": 45,
+            "column": 1
+          }
+        },
+        "leadingComments": [],
+        "trailingComments": []
+      },
+      "range": [
+        2527,
+        2680
+      ],
+      "loc": {
+        "start": {
+          "line": 41,
+          "column": 0
+        },
+        "end": {
+          "line": 45,
+          "column": 1
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    2396,
+    2680
+  ],
+  "loc": {
+    "start": {
+      "line": 38,
+      "column": 0
+    },
+    "end": {
+      "line": 45,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Line",
+      "value": "/ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+      "range": [
+        0,
+        78
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ @Copyright ~2016 ☜Samlv9☞ and other contributors",
+      "range": [
+        79,
+        131
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/",
+      "range": [
+        132,
+        184
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+      "range": [
+        185,
+        263
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|",
+      "range": [
+        264,
+        315
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|",
+      "range": [
+        316,
+        367
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|     　 へ　　　 ／|    ",
+      "range": [
+        368,
+        437
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/      _______     _______         ______      }|      /　│　　 ／ ／",
+      "range": [
+        438,
+        504
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 66
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ",
+      "range": [
+        505,
+        576
+      ],
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 71
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉",
+      "range": [
+        577,
+        647
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 70
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/",
+      "range": [
+        648,
+        718
+      ],
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 70
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/",
+      "range": [
+        719,
+        788
+      ],
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈",
+      "range": [
+        789,
+        857
+      ],
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／",
+      "range": [
+        858,
+        928
+      ],
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 70
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼",
+      "range": [
+        929,
+        998
+      ],
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/    `=========================================/|    ヽ_ﾉ　　(_／　 │／／",
+      "range": [
+        999,
+        1067
+      ],
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|     7　　　　　　  |／",
+      "range": [
+        1068,
+        1135
+      ],
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 67
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|     ＞―r￣￣`ｰ―＿`",
+      "range": [
+        1136,
+        1202
+      ],
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 66
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|",
+      "range": [
+        1203,
+        1254
+      ],
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/                                              }|",
+      "range": [
+        1255,
+        1306
+      ],
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 20,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ Permission is hereby granted, free of charge, to any person obtaining a copy",
+      "range": [
+        1307,
+        1387
+      ],
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
+          "column": 80
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ of this software and associated documentation files (the \"Software\"), to deal",
+      "range": [
+        1388,
+        1469
+      ],
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 0
+        },
+        "end": {
+          "line": 22,
+          "column": 81
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ in the Software without restriction, including without limitation the rights",
+      "range": [
+        1470,
+        1550
+      ],
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 80
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+      "range": [
+        1551,
+        1628
+      ],
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 77
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ copies of the Software, and to permit persons to whom the Software is",
+      "range": [
+        1629,
+        1702
+      ],
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 0
+        },
+        "end": {
+          "line": 25,
+          "column": 73
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ furnished to do so, subject to the following conditions:",
+      "range": [
+        1703,
+        1763
+      ],
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 0
+        },
+        "end": {
+          "line": 26,
+          "column": 60
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/",
+      "range": [
+        1764,
+        1767
+      ],
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ The above copyright notice and this permission notice shall be included in all",
+      "range": [
+        1768,
+        1850
+      ],
+      "loc": {
+        "start": {
+          "line": 28,
+          "column": 0
+        },
+        "end": {
+          "line": 28,
+          "column": 82
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ copies or substantial portions of the Software.",
+      "range": [
+        1851,
+        1902
+      ],
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 29,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/",
+      "range": [
+        1903,
+        1906
+      ],
+      "loc": {
+        "start": {
+          "line": 30,
+          "column": 0
+        },
+        "end": {
+          "line": 30,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+      "range": [
+        1907,
+        1985
+      ],
+      "loc": {
+        "start": {
+          "line": 31,
+          "column": 0
+        },
+        "end": {
+          "line": 31,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+      "range": [
+        1986,
+        2062
+      ],
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 0
+        },
+        "end": {
+          "line": 32,
+          "column": 76
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+      "range": [
+        2063,
+        2142
+      ],
+      "loc": {
+        "start": {
+          "line": 33,
+          "column": 0
+        },
+        "end": {
+          "line": 33,
+          "column": 79
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+      "range": [
+        2143,
+        2217
+      ],
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 0
+        },
+        "end": {
+          "line": 34,
+          "column": 74
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+      "range": [
+        2218,
+        2299
+      ],
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 0
+        },
+        "end": {
+          "line": 35,
+          "column": 81
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN",
+      "range": [
+        2300,
+        2377
+      ],
+      "loc": {
+        "start": {
+          "line": 36,
+          "column": 0
+        },
+        "end": {
+          "line": 36,
+          "column": 77
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "/ THE SOFTWARE.",
+      "range": [
+        2378,
+        2395
+      ],
+      "loc": {
+        "start": {
+          "line": 37,
+          "column": 0
+        },
+        "end": {
+          "line": 37,
+          "column": 17
+        }
+      }
+    }
+  ]
+}
