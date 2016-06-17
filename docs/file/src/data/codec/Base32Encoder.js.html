@@ -44,6 +44,10 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Encoder.js~Base32Encoder.html">Base32Encoder</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32HexDecoder.js~Base32HexDecoder.html">Base32HexDecoder</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32HexEncoder.js~Base32HexEncoder.html">Base32HexEncoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Decoder.js~Base64Decoder.html">Base64Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Encoder.js~Base64Encoder.html">Base64Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder.html">Base64URLSafeDecoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder.html">Base64URLSafeEncoder</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html">TableBasedEncoding</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/DataBuffer.js~DataBuffer.html">DataBuffer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/core/Sharedable.js~Sharedable.html">Sharedable</a></span></span></li>
@@ -151,7 +155,7 @@ export default class Base32Encoder extends TableBasedEncoding {
     }
     
     _initTransOutput( bytes ) {
-        return new Uint8Array((this._buffer.offset + bytes.length) / 5 &lt;&lt; 3);
+        return new Uint8Array((this._buffer.offset + bytes.length) / 5 &lt;&lt; 3 &gt;&gt;&gt; 0);
     }
     
     _initFinalOutput() {

@@ -53,7 +53,7 @@
     "start": "node ./dist/bundle.js",
     "debug": "babel-node ./src/debug.js",
     "test": "npm install && npm run debug",
-    "apidocs": "node ./task/apidocs.js && esdoc -c ./esdoc.json"
+    "apidocs": "esdoc -c ./esdoc.json"
   },
   "dependencies": {}
 }

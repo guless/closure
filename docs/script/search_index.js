@@ -138,6 +138,30 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/codec/base64decoder.js~base64decoder",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html",
+    "<span>Base64Decoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base64Decoder.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/codec/base64encoder.js~base64encoder",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html",
+    "<span>Base64Encoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base64Encoder.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/codec/base64urlsafedecoder.js~base64urlsafedecoder",
+    "class/src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder.html",
+    "<span>Base64URLSafeDecoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base64URLSafeDecoder.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/codec/base64urlsafeencoder.js~base64urlsafeencoder",
+    "class/src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder.html",
+    "<span>Base64URLSafeEncoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base64URLSafeEncoder.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/events/eventphase.js~capturing_phase",
     "variable/index.html#static-variable-CAPTURING_PHASE",
     "<span>CAPTURING_PHASE</span> <span class=\"search-result-import-path\">guless-closure/src/events/EventPhase.js</span>",
@@ -870,6 +894,60 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/codec/base64decoder.js",
+    "file/src/data/codec/Base64Decoder.js.html",
+    "src/data/codec/Base64Decoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#constructor",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-constructor-constructor",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#update",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-method-update",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#update",
+    "method"
+  ],
+  [
+    "src/data/codec/base64encoder.js",
+    "file/src/data/codec/Base64Encoder.js.html",
+    "src/data/codec/Base64Encoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#constructor",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-constructor-constructor",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/base64urlsafedecoder.js",
+    "file/src/data/codec/Base64URLSafeDecoder.js.html",
+    "src/data/codec/Base64URLSafeDecoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base64urlsafedecoder.js~base64urlsafedecoder#constructor",
+    "class/src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder.html#instance-constructor-constructor",
+    "src/data/codec/Base64URLSafeDecoder.js~Base64URLSafeDecoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/base64urlsafeencoder.js",
+    "file/src/data/codec/Base64URLSafeEncoder.js.html",
+    "src/data/codec/Base64URLSafeEncoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base64urlsafeencoder.js~base64urlsafeencoder#constructor",
+    "class/src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder.html#instance-constructor-constructor",
+    "src/data/codec/Base64URLSafeEncoder.js~Base64URLSafeEncoder#constructor",
+    "method"
+  ],
+  [
     "src/data/codec/tablebasedencoding.js",
     "file/src/data/codec/TableBasedEncoding.js.html",
     "src/data/codec/TableBasedEncoding.js",
@@ -919,13 +997,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],

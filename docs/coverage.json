@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 184,
+  "expectCount": 193,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -129,6 +129,39 @@
       ]
     },
     "src/data/codec/Base32HexEncoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base64Decoder.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        43,
+        44,
+        48
+      ]
+    },
+    "src/data/codec/Base64Encoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base64URLSafeDecoder.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42
+      ]
+    },
+    "src/data/codec/Base64URLSafeEncoder.js": {
       "expectCount": 2,
       "actualCount": 0,
       "undocumentLines": [
@@ -378,17 +411,6 @@
         40
       ]
     },
-    "src/data/crypto/MD4.js": {
-      "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        64,
-        65,
-        92,
-        72,
-        82
-      ]
-    },
     "src/data/crypto/MD5.js": {
       "expectCount": 5,
       "actualCount": 0,
@@ -398,6 +420,17 @@
         93,
         73,
         83
+      ]
+    },
+    "src/data/crypto/MD4.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        64,
+        65,
+        92,
+        72,
+        82
       ]
     },
     "src/data/crypto/SHA1.js": {
@@ -443,10 +476,10 @@
         42,
         43,
         59,
-        78,
         74,
-        86,
+        78,
         82,
+        86,
         51,
         94,
         90
