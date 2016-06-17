@@ -366,6 +366,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/codec/utf8decoder.js~utf8decoder",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html",
+    "<span>UTF8Decoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/UTF8Decoder.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/codec/utf8encoder.js~utf8encoder",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html",
+    "<span>UTF8Encoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/UTF8Encoder.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/utils/ascii.js~ascii",
     "function/index.html#static-function-ascii",
     "<span>ascii</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/ascii.js</span>",
@@ -429,6 +441,12 @@ window.esdocSearchIndex = [
     "guless-closure/src/data/utils/utf16.js~utf16",
     "function/index.html#static-function-utf16",
     "<span>utf16</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/utf16.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/utf8.js~utf8",
+    "function/index.html#static-function-utf8",
+    "<span>utf8</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/utf8.js</span>",
     "function"
   ],
   [
@@ -997,15 +1015,63 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
+  ],
+  [
+    "src/data/codec/utf8decoder.js",
+    "file/src/data/codec/UTF8Decoder.js.html",
+    "src/data/codec/UTF8Decoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/utf8decoder.js~utf8decoder#constructor",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html#instance-constructor-constructor",
+    "src/data/codec/UTF8Decoder.js~UTF8Decoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8decoder.js~utf8decoder#final",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html#instance-method-final",
+    "src/data/codec/UTF8Decoder.js~UTF8Decoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8decoder.js~utf8decoder#sizeof",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Decoder.html#instance-method-sizeof",
+    "src/data/codec/UTF8Decoder.js~UTF8Decoder#sizeof",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8encoder.js",
+    "file/src/data/codec/UTF8Encoder.js.html",
+    "src/data/codec/UTF8Encoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/utf8encoder.js~utf8encoder#constructor",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html#instance-constructor-constructor",
+    "src/data/codec/UTF8Encoder.js~UTF8Encoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8encoder.js~utf8encoder#final",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html#instance-method-final",
+    "src/data/codec/UTF8Encoder.js~UTF8Encoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8encoder.js~utf8encoder#sizeof",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html#instance-method-sizeof",
+    "src/data/codec/UTF8Encoder.js~UTF8Encoder#sizeof",
+    "method"
   ],
   [
     "src/data/core/databuffer.js",
@@ -1056,6 +1122,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/core/databuffer.js~databuffer#write",
+    "class/src/data/core/DataBuffer.js~DataBuffer.html#instance-method-write",
+    "src/data/core/DataBuffer.js~DataBuffer#write",
+    "method"
+  ],
+  [
     "src/data/core/sharedable.js",
     "file/src/data/core/Sharedable.js.html",
     "src/data/core/Sharedable.js",
@@ -1087,13 +1159,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1683,6 +1755,12 @@ window.esdocSearchIndex = [
     "src/data/utils/utf16.js",
     "file/src/data/utils/utf16.js.html",
     "src/data/utils/utf16.js",
+    "file"
+  ],
+  [
+    "src/data/utils/utf8.js",
+    "file/src/data/utils/utf8.js.html",
+    "src/data/utils/utf8.js",
     "file"
   ],
   [

@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 193,
+  "expectCount": 203,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -336,7 +336,7 @@
       ]
     },
     "src/data/core/DataBuffer.js": {
-      "expectCount": 8,
+      "expectCount": 9,
       "actualCount": 0,
       "undocumentLines": [
         40,
@@ -346,6 +346,7 @@
         55,
         59,
         63,
+        75,
         67
       ]
     },
@@ -411,17 +412,6 @@
         40
       ]
     },
-    "src/data/crypto/MD5.js": {
-      "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        65,
-        66,
-        93,
-        73,
-        83
-      ]
-    },
     "src/data/crypto/MD4.js": {
       "expectCount": 5,
       "actualCount": 0,
@@ -431,6 +421,17 @@
         92,
         72,
         82
+      ]
+    },
+    "src/data/crypto/MD5.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        65,
+        66,
+        93,
+        73,
+        83
       ]
     },
     "src/data/crypto/SHA1.js": {
@@ -464,9 +465,9 @@
       "undocumentLines": [
         41,
         42,
-        51,
-        79,
-        56
+        53,
+        81,
+        58
       ]
     },
     "src/data/codec/TableBasedEncoding.js": {
@@ -476,13 +477,33 @@
         42,
         43,
         59,
-        74,
         78,
+        74,
         82,
         86,
         51,
-        94,
-        90
+        90,
+        94
+      ]
+    },
+    "src/data/codec/UTF8Decoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        157,
+        47
+      ]
+    },
+    "src/data/codec/UTF8Encoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        134,
+        47
       ]
     },
     "src/data/utils/ascii.js": {
@@ -560,6 +581,13 @@
       "actualCount": 0,
       "undocumentLines": [
         39
+      ]
+    },
+    "src/data/utils/utf8.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        43
       ]
     }
   }
