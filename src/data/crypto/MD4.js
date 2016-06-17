@@ -61,7 +61,7 @@ function FF( a, b, c, d, x, s ) { a += ((b & c) | ((~b) & d)) + x; return ((a <<
 function GG( a, b, c, d, x, s ) { a += ((b & c) | (b & d) | (c & d)) + x + 0x5a827999; return ((a << s) | (a >>> (32 - s))); }
 function HH( a, b, c, d, x, s ) { a += (b ^ c ^ d) + x + 0x6ed9eba1; return ((a << s) | (a >>> (32 - s))); }
 
-export default class MD5 extends Streamable {
+export default class MD4 extends Streamable {
     constructor() {
         super(new Uint8Array(64));
         
