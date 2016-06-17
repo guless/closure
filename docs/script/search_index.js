@@ -396,6 +396,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "guless-closure/src/data/utils/base32.js~base32",
+    "function/index.html#static-function-base32",
+    "<span>base32</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/base32.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/base64.js~base64",
+    "function/index.html#static-function-base64",
+    "<span>base64</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/base64.js</span>",
+    "function"
+  ],
+  [
     "guless-closure/src/data/utils/copy.js~copy",
     "function/index.html#static-function-copy",
     "<span>copy</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/copy.js</span>",
@@ -1159,13 +1171,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1719,6 +1731,18 @@ window.esdocSearchIndex = [
     "src/data/utils/ascii.js",
     "file/src/data/utils/ascii.js.html",
     "src/data/utils/ascii.js",
+    "file"
+  ],
+  [
+    "src/data/utils/base32.js",
+    "file/src/data/utils/base32.js.html",
+    "src/data/utils/base32.js",
+    "file"
+  ],
+  [
+    "src/data/utils/base64.js",
+    "file/src/data/utils/base64.js.html",
+    "src/data/utils/base64.js",
     "file"
   ],
   [

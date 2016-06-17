@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 203,
+  "expectCount": 205,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -477,13 +477,13 @@
         42,
         43,
         59,
-        78,
         74,
-        82,
+        78,
         86,
+        82,
         51,
-        90,
-        94
+        94,
+        90
       ]
     },
     "src/data/codec/UTF8Decoder.js": {
@@ -525,6 +525,20 @@
       "actualCount": 0,
       "undocumentLines": [
         39
+      ]
+    },
+    "src/data/utils/base32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        43
+      ]
+    },
+    "src/data/utils/base64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        43
       ]
     },
     "src/data/utils/copy.js": {

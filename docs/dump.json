@@ -7463,6 +7463,134 @@
     "kind": "file",
     "static": true,
     "variation": null,
+    "name": "src/data/utils/base32.js",
+    "memberof": null,
+    "longname": "src/data/utils/base32.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 38,
+    "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nimport Base32Encoder from \"../codec/Base32Encoder\";\nimport strof from \"./strof\";\n\nconst B32API = new Base32Encoder();\n\nexport default function base32( bytes ) {\n    if ( bytes.length != bytes.byteLength ) {\n        bytes = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength);\n    }\n    \n    B32API.reset();\n    \n    var result  = strof(B32API.update(bytes));\n        result += strof(B32API.final());\n    \n    return result;\n}"
+  },
+  {
+    "__docId__": 365,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "B32API",
+    "memberof": "src/data/utils/base32.js",
+    "longname": "src/data/utils/base32.js~B32API",
+    "access": null,
+    "export": false,
+    "importPath": "guless-closure/src/data/utils/base32.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 41,
+    "undocument": true,
+    "type": {
+      "types": [
+        "src/data/codec/Base32Encoder.js~Base32Encoder"
+      ]
+    }
+  },
+  {
+    "__docId__": 366,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "base32",
+    "memberof": "src/data/utils/base32.js",
+    "longname": "src/data/utils/base32.js~base32",
+    "access": null,
+    "export": true,
+    "importPath": "guless-closure/src/data/utils/base32.js",
+    "importStyle": "base32",
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "params": [
+      {
+        "name": "bytes",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 367,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/data/utils/base64.js",
+    "memberof": null,
+    "longname": "src/data/utils/base64.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 38,
+    "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nimport Base64Encoder from \"../codec/Base64Encoder\";\nimport strof from \"./strof\";\n\nconst B64API = new Base64Encoder();\n\nexport default function base64( bytes ) {\n    if ( bytes.length != bytes.byteLength ) {\n        bytes = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength);\n    }\n    \n    B64API.reset();\n    \n    var result  = strof(B64API.update(bytes));\n        result += strof(B64API.final());\n    \n    return result;\n}"
+  },
+  {
+    "__docId__": 368,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "B64API",
+    "memberof": "src/data/utils/base64.js",
+    "longname": "src/data/utils/base64.js~B64API",
+    "access": null,
+    "export": false,
+    "importPath": "guless-closure/src/data/utils/base64.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 41,
+    "undocument": true,
+    "type": {
+      "types": [
+        "src/data/codec/Base64Encoder.js~Base64Encoder"
+      ]
+    }
+  },
+  {
+    "__docId__": 369,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "base64",
+    "memberof": "src/data/utils/base64.js",
+    "longname": "src/data/utils/base64.js~base64",
+    "access": null,
+    "export": true,
+    "importPath": "guless-closure/src/data/utils/base64.js",
+    "importStyle": "base64",
+    "description": null,
+    "lineNumber": 43,
+    "undocument": true,
+    "params": [
+      {
+        "name": "bytes",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 370,
+    "kind": "file",
+    "static": true,
+    "variation": null,
     "name": "src/data/utils/copy.js",
     "memberof": null,
     "longname": "src/data/utils/copy.js",
@@ -7472,7 +7600,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\n\nexport default function copy( source, target = null, offset = 0 ) {\n    if ( !target ) {\n        return new source.constructor(source);\n    }\n    \n    var remain = target.length - offset;\n    \n    if ( remain > 0 ) {\n        /// TypedArray.set: Thrown if the offset is set such as it would store beyond \n        /// the end of the typed array.\n        if ( source.length > remain ) {\n            source = source.subarray(0, remain);\n        }\n        \n        /// If the source array is a typed array, the two arrays may share the same \n        /// underlying ArrayBuffer; the browser will intelligently copy the source \n        /// range of the buffer to the destination range.\n        target.set(source, offset);\n    }\n    \n    return target;\n}"
   },
   {
-    "__docId__": 365,
+    "__docId__": 371,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7520,7 +7648,7 @@
     "generator": false
   },
   {
-    "__docId__": 366,
+    "__docId__": 372,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7533,7 +7661,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nimport Base16Encoder from \"../codec/Base16Encoder\";\nimport strof from \"./strof\";\n\nconst B16API = new Base16Encoder();\n\nexport default function hexof( bytes ) {\n    if ( bytes.length != bytes.byteLength ) {\n        bytes = new Uint8Array(bytes.buffer, bytes.byteOffset, bytes.byteLength);\n    }\n    \n    return strof(B16API.update(bytes));\n}"
   },
   {
-    "__docId__": 367,
+    "__docId__": 373,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7554,7 +7682,7 @@
     }
   },
   {
-    "__docId__": 368,
+    "__docId__": 374,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7584,7 +7712,7 @@
     "generator": false
   },
   {
-    "__docId__": 369,
+    "__docId__": 375,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7597,7 +7725,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\n\nexport default function strof( bytes ) {\n    return String.fromCharCode.apply(null, bytes);\n}"
   },
   {
-    "__docId__": 370,
+    "__docId__": 376,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7627,7 +7755,7 @@
     "generator": false
   },
   {
-    "__docId__": 371,
+    "__docId__": 377,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7640,7 +7768,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\n\nexport default function swap16( value ) {\n    return (value >>> 8 & 0xFF) | (value & 0xFF << 8);\n}"
   },
   {
-    "__docId__": 372,
+    "__docId__": 378,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7670,7 +7798,7 @@
     "generator": false
   },
   {
-    "__docId__": 373,
+    "__docId__": 379,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7683,7 +7811,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\n\nexport default function swap32( value ) {\n    return ((value << 8 | value >>> 24) & 0x00FF00FF) | ((value << 24 | value >>> 8) & 0xFF00FF00);\n}"
   },
   {
-    "__docId__": 374,
+    "__docId__": 380,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7713,7 +7841,7 @@
     "generator": false
   },
   {
-    "__docId__": 375,
+    "__docId__": 381,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7726,7 +7854,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\n\nexport default function utf16( string ) {\n    return Uint16Array.from(string, item => item.charCodeAt(0));\n}"
   },
   {
-    "__docId__": 376,
+    "__docId__": 382,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7756,7 +7884,7 @@
     "generator": false
   },
   {
-    "__docId__": 377,
+    "__docId__": 383,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7769,7 +7897,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nimport utf16 from \"./utf16\";\nimport UTF8Encoder from \"../codec/UTF8Encoder\";\n\nconst utf8Encoder = new UTF8Encoder();\n\nexport default function utf8( string ) {\n    utf8Encoder.reset();\n\n    var result = utf8Encoder.update(utf16(string));\n    utf8Encoder.final();\n        \n    return result;\n}"
   },
   {
-    "__docId__": 378,
+    "__docId__": 384,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7790,7 +7918,7 @@
     }
   },
   {
-    "__docId__": 379,
+    "__docId__": 385,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7820,7 +7948,7 @@
     "generator": false
   },
   {
-    "__docId__": 380,
+    "__docId__": 386,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7833,7 +7961,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nimport * as EventPhase from \"./EventPhase\";\nimport * as EventPropagation from \"./EventPropagation\";\n\nexport default class Event {\n    constructor( type, bubbles = false, cancelable = false ) {\n        this._type = type;\n        this._bubbles = bubbles;\n        this._cancelable = cancelable;\n        \n        this._target = null;\n        this._currentTarget = null;\n        this._eventPhase = EventPhase.NONE;\n        \n        this._defaultPrevented = false;\n        this._eventPropagation = EventPropagation.ALWAYS;\n    }\n    \n    get type() {\n        return this._type;\n    }\n    \n    get bubbles() {\n        return this._bubbles;\n    }\n    \n    get cancelable() {\n        return this._cancelable;\n    }\n    \n    get eventPhase() {\n        return this._eventPhase;\n    }\n    \n    get target() {\n        return this._target;\n    }\n    \n    get currentTarget() {\n        return this._currentTarget;\n    }\n    \n    get defaultPrevented() {\n        return this._defaultPrevented;\n    }\n    \n    get eventPropagation() {\n        return this._eventPropagation;\n    }\n    \n    preventDefault() {\n        this._defaultPrevented = this._cancelable;\n    }\n    \n    stopPropagation() {\n        this._eventPropagation = EventPropagation.STOP_AT_PARENT;\n    }\n    \n    stopImmediatePropagation() {\n        this._eventPropagation = EventPropagation.STOP_AT_TARGET;\n    }\n    \n    toString() {\n        return `[Event type=\"${this._type}\", bubbles=${this._bubbles}, cancelable=${this._cancelable}]`;\n    }\n}"
   },
   {
-    "__docId__": 381,
+    "__docId__": 387,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -7850,7 +7978,7 @@
     "interface": false
   },
   {
-    "__docId__": 382,
+    "__docId__": 388,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -7890,7 +8018,7 @@
     "generator": false
   },
   {
-    "__docId__": 383,
+    "__docId__": 389,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7908,7 +8036,7 @@
     }
   },
   {
-    "__docId__": 384,
+    "__docId__": 390,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7926,7 +8054,7 @@
     }
   },
   {
-    "__docId__": 385,
+    "__docId__": 391,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7944,7 +8072,7 @@
     }
   },
   {
-    "__docId__": 386,
+    "__docId__": 392,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7962,7 +8090,7 @@
     }
   },
   {
-    "__docId__": 387,
+    "__docId__": 393,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7980,7 +8108,7 @@
     }
   },
   {
-    "__docId__": 388,
+    "__docId__": 394,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -7998,7 +8126,7 @@
     }
   },
   {
-    "__docId__": 389,
+    "__docId__": 395,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8016,7 +8144,7 @@
     }
   },
   {
-    "__docId__": 390,
+    "__docId__": 396,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8034,7 +8162,7 @@
     }
   },
   {
-    "__docId__": 391,
+    "__docId__": 397,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8053,7 +8181,7 @@
     "generator": false
   },
   {
-    "__docId__": 392,
+    "__docId__": 398,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8072,7 +8200,7 @@
     "generator": false
   },
   {
-    "__docId__": 393,
+    "__docId__": 399,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8091,7 +8219,7 @@
     "generator": false
   },
   {
-    "__docId__": 394,
+    "__docId__": 400,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8110,7 +8238,7 @@
     "generator": false
   },
   {
-    "__docId__": 395,
+    "__docId__": 401,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8129,7 +8257,7 @@
     "generator": false
   },
   {
-    "__docId__": 396,
+    "__docId__": 402,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8148,7 +8276,7 @@
     "generator": false
   },
   {
-    "__docId__": 397,
+    "__docId__": 403,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8167,7 +8295,7 @@
     "generator": false
   },
   {
-    "__docId__": 398,
+    "__docId__": 404,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8186,7 +8314,7 @@
     "generator": false
   },
   {
-    "__docId__": 399,
+    "__docId__": 405,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8201,7 +8329,7 @@
     "generator": false
   },
   {
-    "__docId__": 400,
+    "__docId__": 406,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8219,7 +8347,7 @@
     }
   },
   {
-    "__docId__": 401,
+    "__docId__": 407,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8234,7 +8362,7 @@
     "generator": false
   },
   {
-    "__docId__": 402,
+    "__docId__": 408,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8252,7 +8380,7 @@
     }
   },
   {
-    "__docId__": 403,
+    "__docId__": 409,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8267,7 +8395,7 @@
     "generator": false
   },
   {
-    "__docId__": 404,
+    "__docId__": 410,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8285,7 +8413,7 @@
     }
   },
   {
-    "__docId__": 405,
+    "__docId__": 411,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8305,7 +8433,7 @@
     "generator": false
   },
   {
-    "__docId__": 406,
+    "__docId__": 412,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8318,7 +8446,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nimport Event from \"./Event\";\nimport EventListener from \"./EventListener\";\nimport * as EventPhase from \"./EventPhase\";\nimport * as EventPropagation from \"./EventPropagation\";\n\nexport default class EventDispatcher {\n    constructor( target ) {\n        this._eventTarget = target || this;\n        this._eventListeners = {};\n    }\n    \n    addEventListener( type, listener, useCapture = false, priority = 0 ) {\n        if ( !this._eventListeners.hasOwnProperty(type) ) {\n            this._eventListeners[type] = [new EventListener(listener, useCapture, priority)];\n        }\n        \n        else {\n            this._dropListener(this._eventListeners[type], listener, useCapture);\n            this._pushListener(this._eventListeners[type], listener, useCapture, priority);\n        }\n    }\n    \n    removeEventListener( type, listener, useCapture = false ) {\n        if ( !this._eventListeners.hasOwnProperty(type) ) {\n            return;\n        }\n        \n        this._dropListener(this._eventListeners[type], listener, useCapture);\n    }\n    \n    hasEventListener( type ) {\n        return ((this._eventListeners.hasOwnProperty(type) && this._eventListeners[type].length >= 1));\n    }\n    \n    willTrigger( type ) {\n        var node = this;\n        \n        do {\n            if ( node.hasEventListener(type) ) {\n                return true;\n            }\n            \n            if ( !node.parent || node === node.parent ) {\n                break;\n            }\n        }\n        \n        while ( node = node.parent )\n        \n        return false;\n    }\n    \n    _pushListener( typeListeners, listener, useCapture = false, priority = 0) {\n        if ( ! (typeListeners.length >= 1)\n            || (priority <= typeListeners[typeListeners.length - 1].priority) ) {\n            \n            typeListeners.push(new EventListener(listener, useCapture, priority));\n            return;\n        }\n        \n        for ( var i = 0; i < typeListeners.length; ++i ) {\n            if ( priority > typeListeners[i].priority ) {\n                typeListeners.splice(i, 0, new EventListener(listener, useCapture, priority));\n                break;\n            }\n        }\n    }\n    \n    _dropListener( typeListeners, listener, useCapture = false ) {\n        for ( var i = 0; i < typeListeners.length; ++i ) {\n            if ( typeListeners[i].listener === listener && typeListeners[i].useCapture === useCapture ) {\n                typeListeners.splice(i, 1);\n                break;\n            }\n        }\n    }\n    \n    dispatchEvent( event ) {\n        if ( event.eventPhase != EventPhase.NONE ) {\n            throw new Error(\"the event has been dispatch before.\");\n        }\n        \n        /// 当前对象没有冒泡链或者当前事件不参与冒泡行为。\n        if ( !event.bubbles || !this.parent || this === this.parent ) {\n            event._target = this._eventTarget;\n            event._currentTarget = this._eventTarget;\n            event._eventPhase = EventPhase.AT_TARGET;\n            \n            this._dispatchEvent(event);\n            return !event.defaultPrevented;\n        }\n        \n        /// 获取事件传递链。\n        var node = this.parent;\n        var chain = [];\n        \n        do {\n            chain.push(node);\n            \n            if ( !node.parent || node === node.parent ) {\n                break;\n            }\n        }\n        \n        while ( node = node.parent );\n        /// 捕获阶段。\n        for ( var i = chain.length - 1; i >= 0 && event._eventPropagation == EventPropagation.ALWAYS; --i ) {\n            event._target = this._eventTarget;\n            event._currentTarget = chain[i]._eventTarget;\n            event._eventPhase = EventPhase.CAPTURING_PHASE;\n            \n            chain[i]._dispatchEvent(event);\n        }\n        /// 目标阶段\n        if ( event._eventPropagation == EventPropagation.ALWAYS ) {\n            event._target = this._eventTarget;\n            event._currentTarget = this._eventTarget;\n            event._eventPhase = EventPhase.AT_TARGET;\n            \n            this._dispatchEvent(event);\n        }\n        /// 冒泡阶段。\n        if ( event._eventPropagation == EventPropagation.ALWAYS ) {\n            for ( var i = 0; i < chain.length && event._eventPropagation == EventPropagation.ALWAYS; ++i ) {\n                event._target = this._eventTarget;\n                event._currentTarget = chain[i]._eventTarget;\n                event._eventPhase = EventPhase.BUBBLING_PHASE;\n                \n                chain[i]._dispatchEvent(event);\n            }\n        }\n        \n        return !event.defaultPrevented;\n    }\n    \n    _dispatchEvent( event ) {\n        if ( !this.hasEventListener(event.type) ) {\n            return;\n        }\n        \n        var listeners = this._eventListeners[event.type].slice(0);\n        var target = null;\n        var handler = null;\n        \n        for ( var i = 0; i < listeners.length && event._eventPropagation != EventPropagation.STOP_AT_TARGET; ++i ) {\n            if ( typeof listeners[i].listener.handleEvent == \"function\" ) {\n                target  = listeners[i].listener;\n                handler = listeners[i].listener.handleEvent;\n            }\n            \n            else {\n                target  = this._eventTarget;\n                handler = listeners[i].listener;\n            }\n            \n            if ( (EventPhase.CAPTURING_PHASE == event.eventPhase && listeners[i].useCapture)\n                || (EventPhase.BUBBLING_PHASE == event.eventPhase && !listeners[i].useCapture)\n                || (EventPhase.AT_TARGET == event.eventPhase) ) {\n                  \n                try { \n                    handler.call(target, event); \n                } \n                \n                catch(e) { \n                    console.error(\"\" + e.stack); \n                }\n            }\n        }\n    }\n}"
   },
   {
-    "__docId__": 407,
+    "__docId__": 413,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8335,7 +8463,7 @@
     "interface": false
   },
   {
-    "__docId__": 408,
+    "__docId__": 414,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -8357,7 +8485,7 @@
     "generator": false
   },
   {
-    "__docId__": 409,
+    "__docId__": 415,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8375,7 +8503,7 @@
     }
   },
   {
-    "__docId__": 410,
+    "__docId__": 416,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8393,7 +8521,7 @@
     }
   },
   {
-    "__docId__": 411,
+    "__docId__": 417,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8439,7 +8567,7 @@
     "generator": false
   },
   {
-    "__docId__": 412,
+    "__docId__": 418,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8476,7 +8604,7 @@
     "generator": false
   },
   {
-    "__docId__": 413,
+    "__docId__": 419,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8503,7 +8631,7 @@
     "generator": false
   },
   {
-    "__docId__": 414,
+    "__docId__": 420,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8530,7 +8658,7 @@
     "generator": false
   },
   {
-    "__docId__": 415,
+    "__docId__": 421,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8576,7 +8704,7 @@
     "generator": false
   },
   {
-    "__docId__": 416,
+    "__docId__": 422,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8613,7 +8741,7 @@
     "generator": false
   },
   {
-    "__docId__": 417,
+    "__docId__": 423,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8640,7 +8768,7 @@
     "generator": false
   },
   {
-    "__docId__": 418,
+    "__docId__": 424,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -8662,7 +8790,7 @@
     "generator": false
   },
   {
-    "__docId__": 419,
+    "__docId__": 425,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8675,7 +8803,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nexport default class EventListener {\n    constructor( listener, useCapture = false, priority = 0 ) {\n        this._listener = listener;\n        this._useCapture = useCapture;\n        this._priority = priority;\n    }\n    \n    get listener() {\n        return this._listener;\n    }\n    \n    get useCapture() {\n        return this._useCapture;\n    }\n    \n    get priority() {\n        return this._priority;\n    }\n}"
   },
   {
-    "__docId__": 420,
+    "__docId__": 426,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -8692,7 +8820,7 @@
     "interface": false
   },
   {
-    "__docId__": 421,
+    "__docId__": 427,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -8732,7 +8860,7 @@
     "generator": false
   },
   {
-    "__docId__": 422,
+    "__docId__": 428,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8750,7 +8878,7 @@
     }
   },
   {
-    "__docId__": 423,
+    "__docId__": 429,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8768,7 +8896,7 @@
     }
   },
   {
-    "__docId__": 424,
+    "__docId__": 430,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -8786,7 +8914,7 @@
     }
   },
   {
-    "__docId__": 425,
+    "__docId__": 431,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8805,7 +8933,7 @@
     "generator": false
   },
   {
-    "__docId__": 426,
+    "__docId__": 432,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8824,7 +8952,7 @@
     "generator": false
   },
   {
-    "__docId__": 427,
+    "__docId__": 433,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -8843,7 +8971,7 @@
     "generator": false
   },
   {
-    "__docId__": 428,
+    "__docId__": 434,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8856,7 +8984,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nexport const NONE = 0x00;\nexport const CAPTURING_PHASE = 0x01;\nexport const AT_TARGET = 0x02;\nexport const BUBBLING_PHASE = 0x03;"
   },
   {
-    "__docId__": 429,
+    "__docId__": 435,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8877,7 +9005,7 @@
     }
   },
   {
-    "__docId__": 430,
+    "__docId__": 436,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8898,7 +9026,7 @@
     }
   },
   {
-    "__docId__": 431,
+    "__docId__": 437,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8919,7 +9047,7 @@
     }
   },
   {
-    "__docId__": 432,
+    "__docId__": 438,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8940,7 +9068,7 @@
     }
   },
   {
-    "__docId__": 433,
+    "__docId__": 439,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8953,7 +9081,7 @@
     "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\nexport const ALWAYS = 0x00;\nexport const STOP_AT_PARENT = 0x01;\nexport const STOP_AT_TARGET = 0x02;"
   },
   {
-    "__docId__": 434,
+    "__docId__": 440,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8974,7 +9102,7 @@
     }
   },
   {
-    "__docId__": 435,
+    "__docId__": 441,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8995,7 +9123,7 @@
     }
   },
   {
-    "__docId__": 436,
+    "__docId__": 442,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -9016,7 +9144,7 @@
     }
   },
   {
-    "__docId__": 438,
+    "__docId__": 444,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9029,7 +9157,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 439,
+    "__docId__": 445,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9042,7 +9170,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 440,
+    "__docId__": 446,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9055,7 +9183,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 441,
+    "__docId__": 447,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9068,7 +9196,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 442,
+    "__docId__": 448,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9081,7 +9209,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 443,
+    "__docId__": 449,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9094,7 +9222,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 444,
+    "__docId__": 450,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9107,7 +9235,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 445,
+    "__docId__": 451,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9120,7 +9248,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 446,
+    "__docId__": 452,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9133,7 +9261,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 447,
+    "__docId__": 453,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9146,7 +9274,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 448,
+    "__docId__": 454,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9159,7 +9287,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 449,
+    "__docId__": 455,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9172,7 +9300,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 450,
+    "__docId__": 456,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9185,7 +9313,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 451,
+    "__docId__": 457,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9198,7 +9326,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 452,
+    "__docId__": 458,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9211,7 +9339,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 453,
+    "__docId__": 459,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9224,7 +9352,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 454,
+    "__docId__": 460,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9237,7 +9365,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 455,
+    "__docId__": 461,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9250,7 +9378,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 456,
+    "__docId__": 462,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9263,7 +9391,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 457,
+    "__docId__": 463,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9276,7 +9404,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 458,
+    "__docId__": 464,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9289,7 +9417,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 459,
+    "__docId__": 465,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9302,7 +9430,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 460,
+    "__docId__": 466,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9315,7 +9443,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 461,
+    "__docId__": 467,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9328,7 +9456,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 462,
+    "__docId__": 468,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9341,7 +9469,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 463,
+    "__docId__": 469,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9354,7 +9482,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 464,
+    "__docId__": 470,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9367,7 +9495,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 465,
+    "__docId__": 471,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9380,7 +9508,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 466,
+    "__docId__": 472,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9393,7 +9521,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 467,
+    "__docId__": 473,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9406,7 +9534,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 468,
+    "__docId__": 474,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9419,7 +9547,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 469,
+    "__docId__": 475,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9432,7 +9560,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 470,
+    "__docId__": 476,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9445,7 +9573,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 471,
+    "__docId__": 477,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9458,7 +9586,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 472,
+    "__docId__": 478,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9471,7 +9599,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 473,
+    "__docId__": 479,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9484,7 +9612,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 474,
+    "__docId__": 480,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9497,7 +9625,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 475,
+    "__docId__": 481,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9510,7 +9638,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 476,
+    "__docId__": 482,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9523,7 +9651,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 477,
+    "__docId__": 483,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9536,7 +9664,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 478,
+    "__docId__": 484,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9549,7 +9677,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 479,
+    "__docId__": 485,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9562,7 +9690,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 480,
+    "__docId__": 486,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9575,7 +9703,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 481,
+    "__docId__": 487,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9588,7 +9716,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 482,
+    "__docId__": 488,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9601,7 +9729,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 483,
+    "__docId__": 489,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9614,7 +9742,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 484,
+    "__docId__": 490,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9627,7 +9755,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 486,
+    "__docId__": 492,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9640,7 +9768,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 487,
+    "__docId__": 493,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9653,7 +9781,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 488,
+    "__docId__": 494,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9666,7 +9794,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 489,
+    "__docId__": 495,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9679,7 +9807,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 490,
+    "__docId__": 496,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9692,7 +9820,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 491,
+    "__docId__": 497,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9705,7 +9833,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 492,
+    "__docId__": 498,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9718,7 +9846,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 493,
+    "__docId__": 499,
     "kind": "external",
     "static": true,
     "variation": null,
