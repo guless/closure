@@ -16,7 +16,7 @@ then
 fi
 
 mv ./tmp/docs ./
-git add --all
+git add ./docs
 git commit -m "Update api docs."
 git push
 git checkout dev
