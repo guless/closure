@@ -1,5 +1,5 @@
 {
   "source": "./src",
-  "excludes": [ "debug.js" ],
+  "excludes": [ "debug.js", "import.js" ],
   "destination": "./docs"
 }
