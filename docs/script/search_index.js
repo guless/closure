@@ -312,9 +312,9 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "guless-closure/src/data/crypto/md4.js~md5",
-    "class/src/data/crypto/MD4.js~MD5.html",
-    "<span>MD5</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/MD4.js</span>",
+    "guless-closure/src/data/crypto/md4.js~md4",
+    "class/src/data/crypto/MD4.js~MD4.html",
+    "<span>MD4</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/MD4.js</span>",
     "class"
   ],
   [
@@ -1554,27 +1554,27 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/data/crypto/md4.js~md5#constructor",
-    "class/src/data/crypto/MD4.js~MD5.html#instance-constructor-constructor",
-    "src/data/crypto/MD4.js~MD5#constructor",
+    "src/data/crypto/md4.js~md4#constructor",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-constructor-constructor",
+    "src/data/crypto/MD4.js~MD4#constructor",
     "method"
   ],
   [
-    "src/data/crypto/md4.js~md5#final",
-    "class/src/data/crypto/MD4.js~MD5.html#instance-method-final",
-    "src/data/crypto/MD4.js~MD5#final",
+    "src/data/crypto/md4.js~md4#final",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-method-final",
+    "src/data/crypto/MD4.js~MD4#final",
     "method"
   ],
   [
-    "src/data/crypto/md4.js~md5#reset",
-    "class/src/data/crypto/MD4.js~MD5.html#instance-method-reset",
-    "src/data/crypto/MD4.js~MD5#reset",
+    "src/data/crypto/md4.js~md4#reset",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-method-reset",
+    "src/data/crypto/MD4.js~MD4#reset",
     "method"
   ],
   [
-    "src/data/crypto/md4.js~md5#update",
-    "class/src/data/crypto/MD4.js~MD5.html#instance-method-update",
-    "src/data/crypto/MD4.js~MD5#update",
+    "src/data/crypto/md4.js~md4#update",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-method-update",
+    "src/data/crypto/MD4.js~MD4#update",
     "method"
   ],
   [

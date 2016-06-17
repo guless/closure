@@ -5583,7 +5583,7 @@
         "type": "ClassDeclaration",
         "id": {
           "type": "Identifier",
-          "name": "MD5",
+          "name": "MD4",
           "range": [
             3440,
             3443
