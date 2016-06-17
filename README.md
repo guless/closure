@@ -1,5 +1,7 @@
 ### API 概览 ###
-请移步： [API 参考](./API.md)
+请移步： 
+- [API 列表](./API.md)
+- [API 参考文档](http://guless.github.io/closure/docs/)
 
 ### 如何编译？###
 >通过在 `src/import.js` 引入你项目需要的模块，然后在命令行输入 `npm run build` 并回车执行编译命令。
