@@ -1,6 +1,5 @@
 ### API 概览 ###
 请移步： 
-- [API 列表](https://github.com/guless/closure/blob/dev/API.md)
 - [API 参考文档](http://guless.github.io/closure/docs/)
 
 ### 如何编译？###
@@ -13,7 +12,7 @@ npm run clean # 用于清空输出目录 `dist/*`。
 npm run build # 编译 `src/import.js`。
 npm run start # 执行 `dist/bundle.js`。
 npm run server # 启动一个简单的静态文件服务器。
-npm run apidocs # 重新生成 API.md。
+npm run apidocs # 生成 API 参考文档。
 ```
 
 #### 从 Github 将仓库克隆至本地。####
