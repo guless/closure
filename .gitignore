@@ -3,4 +3,5 @@ npm-debug.log
 .vscode/
 .backup/
 docs/
+tmp/
 
