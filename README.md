@@ -1,6 +1,6 @@
 ### API 概览 ###
 请移步： 
-- [API 列表](./API.md)
+- [API 列表](https://github.com/guless/closure/blob/dev/API.md)
 - [API 参考文档](http://guless.github.io/closure/docs/)
 
 ### 如何编译？###
