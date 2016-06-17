@@ -35,44 +35,11 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import CRCSpec from "../test/CRCSpec";
+import Base64Decoder from "./Base64Decoder";
+import { BASE64_URLSAFE_DECODE_TABLE } from "../tables/Base64URLSafeTable";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA1Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
+export default class Base64URLSafeDecoder extends Base64Decoder {
+    constructor( table = BASE64_URLSAFE_DECODE_TABLE ) {
+        super(table);
     }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
-    
-    console.log("");
-}
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
 }

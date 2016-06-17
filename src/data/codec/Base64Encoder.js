@@ -35,44 +35,69 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import CRCSpec from "../test/CRCSpec";
+import TableBasedEncoding from "./TableBasedEncoding";
+import { BASE64_DEFAULT_ENCODE_TABLE } from "../tables/Base64DefaultTable";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA1Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
+export default class Base64Encoder extends TableBasedEncoding {
+    constructor( table = BASE64_DEFAULT_ENCODE_TABLE ) {
+        super(table, new Uint8Array(3));
     }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+
+    _initTransOutput( bytes ) {
+        return new Uint8Array((this._buffer.offset + bytes.length) / 3 << 2 >>> 0);
     }
     
-    console.log("");
-}
+    _initFinalOutput() {
+        return new Uint8Array(4);
+    }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
+    _transchunk( bytes, output, offset ) {
+        for ( var start = 0; start + 3 <= bytes.length; start += 3 ) {
+            var b0 = bytes[start    ];
+            var b1 = bytes[start + 1];
+            var b2 = bytes[start + 2];
+            
+            output[offset++] = this._table[(b0 >>> 2) & 0x3F];
+            output[offset++] = this._table[((b0 & 0x03) << 4) | ((b1 >>> 4) & 0x0F)];
+            output[offset++] = this._table[((b1 & 0x0F) << 2) | ((b2 >>> 6) & 0x03)];
+            output[offset++] = this._table[b2 & 0x3F];
+        }
 
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+        return offset;
+    }
+
+    _finalchunk( output, offset ) {
+        var buffer = this._buffer.buffer;
+        var remain = this._buffer.offset;
+
+        var b0 = 0;
+        var b1 = 0;
+
+        if ( remain == 1 ) {
+            b0 = buffer[0];
+            
+            output[offset++] = this._table[(b0 >>> 2) & 0x3F];
+            output[offset++] = this._table[(b0 & 0x03) << 4];
+            
+            if ( !this.omitpad ) {
+                output[offset++] = this.padchar;
+                output[offset++] = this.padchar;
+            }
+        }
+        
+        else if ( remain == 2 ) {
+            b0 = buffer[0];
+            b1 = buffer[1];
+            
+            output[offset++] = this._table[((b0 >>> 2) & 0x3F)];
+            output[offset++] = this._table[((b0 & 0x03) << 4) | ((b1 >>> 4) & 0x0F)];
+            output[offset++] = this._table[((b1 & 0x0F) << 2)];
+            
+            if ( !this.omitpad ) {
+                output[offset++] = this.padchar;
+            }
+        }
+        
+        return offset;
+    }
 }
