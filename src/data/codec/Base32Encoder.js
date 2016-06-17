@@ -44,7 +44,7 @@ export default class Base32Encoder extends TableBasedEncoding {
     }
     
     _initTransOutput( bytes ) {
-        return new Uint8Array((this._buffer.offset + bytes.length) / 5 << 3);
+        return new Uint8Array((this._buffer.offset + bytes.length) / 5 << 3 >>> 0);
     }
     
     _initFinalOutput() {
