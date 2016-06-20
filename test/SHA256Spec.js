@@ -35,50 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import SHA256 from "../src/data/crypto/SHA256";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const SHA256API = new SHA256();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA256Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start SHA256 Test Suite]:");
     
-    console.log("");
+    test_sha256("", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
+    test_sha256("a", "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb");
+    test_sha256("abc", "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
+    test_sha256("Secure Hash Algorithm", "42cf1ce9880d7f211c3d30d3bd376d20b26aaf6a929471108025c8e99b751c89");
+    test_sha256("abcdefghijklmnopqrstuvwxyz", "71c480df93d6ae2f1efad1447c66c9525e316218cf51fc8d9ed832f2daf18b73");
+    test_sha256("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "db4bfcbd4da0cd85a60c3c37d3fbd8805c77f15fc6b1fdfe614ee0a7c8fdb4c0");
+    test_sha256("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "f371bc4a311f2b009eef952dd83ca80e2b60026c8e935592d0f9c308453c813e");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_sha256( input, expect ) {
+    SHA256API.reset();
+    SHA256API.update( ascii(input) );
+    
+    var result = hexof(SHA256API.final());
+    assert(result == expect, "SHA256 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
