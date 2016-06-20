@@ -35,52 +35,45 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import CRCSpec from "../test/CRCSpec";
+import SHA256 from "./SHA256";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const H1 = 0xC1059ED8;
+const H2 = 0x367CD507;
+const H3 = 0x3070DD17;
+const H4 = 0xF70E5939;
+const H5 = 0xFFC00B31;
+const H6 = 0x68581511;
+const H7 = 0x64F98FA7;
+const H8 = 0xBEFA4FA4;
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+export default class SHA224 extends SHA256 {
+    constructor() {
+        super();
+        
+        this._digest[0] = H1;
+        this._digest[1] = H2;
+        this._digest[2] = H3;
+        this._digest[3] = H4;
+        this._digest[4] = H5;
+        this._digest[5] = H6;
+        this._digest[6] = H7;
+        this._digest[7] = H8;
     }
     
-    console.log("");
-}
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+    reset() {
+        super.reset();
+        
+        this._digest[0] = H1;
+        this._digest[1] = H2;
+        this._digest[2] = H3;
+        this._digest[3] = H4;
+        this._digest[4] = H5;
+        this._digest[5] = H6;
+        this._digest[6] = H7;
+        this._digest[7] = H8;
+    }
+    
+    final() {
+        return super.final().subarray(0, 7);
+    }
 }

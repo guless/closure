@@ -35,52 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import SHA224 from "../src/data/crypto/SHA224";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const SHA224API = new SHA224();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start SHA224 Test Suite]:");
     
-    console.log("");
+    test_sha224("", "d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f");
+    test_sha224("a", "abd37534c7d9a2efb9465de931cd7055ffdb8879563ae98078d6d6d5");
+    test_sha224("abc", "23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7");
+    test_sha224("Secure Hash Algorithm", "78f121a4b578b9420fa00f6d4505eb1d878c34bedc360826b752febd");
+    test_sha224("abcdefghijklmnopqrstuvwxyz", "45a5f72c39c5cff2522eb3429799e49e5f44b356ef926bcf390dccc2");
+    test_sha224("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "bff72b4fcb7d75e5632900ac5f90d219e05e97a7bde72e740db393d9");
+    test_sha224("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "b50aecbe4e9bb0b57bc5f3ae760a8e01db24f203fb3cdcd13148046e");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_sha224( input, expect ) {
+    SHA224API.reset();
+    SHA224API.update( ascii(input) );
+    
+    var result = hexof(SHA224API.final());
+    assert(result == expect, "SHA224 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
