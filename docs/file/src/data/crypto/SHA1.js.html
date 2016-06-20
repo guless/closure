@@ -69,6 +69,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html">SHA0</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
@@ -90,6 +92,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DALLAS_1_WIRE_TABLE">CRC8_DALLAS_1_WIRE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA256_PRIME_TABLE">SHA256_PRIME_TABLE</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base32">base32</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base64">base64</a></span></span></li>
@@ -156,7 +159,7 @@ import Streamable from &quot;../core/Streamable&quot;;
 import copy       from &quot;../utils/copy&quot;;
 import swap32     from &quot;../utils/swap32&quot;;
 
-const H1 = 0x67452301
+const H1 = 0x67452301;
 const H2 = 0xEFCDAB89;
 const H3 = 0x98BADCFE;
 const H4 = 0x10325476;
@@ -176,7 +179,7 @@ const APPENDIX = new Uint8Array([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ]);
 
-const SWAPER = new Uint32Array(80);
+const W = new Uint32Array(80);
 
 export default class SHA1 extends Streamable {
     constructor() {
@@ -245,12 +248,12 @@ export default class SHA1 extends Streamable {
         
         for ( var start = 0; start + 64 &lt;= bytes.length; start += 64 ) {
             for ( var t = 0; t &lt; 16; ++t ) {
-                SWAPER[t] = dataview.getUint32(start + 4 * t, false);
+                W[t] = dataview.getUint32(start + 4 * t, false);
             }
             
             for ( var t = 16; t &lt; 80; ++t ) {
-                SWAPER[t] = SWAPER[t - 3] ^ SWAPER[t - 8] ^ SWAPER[t - 14] ^ SWAPER[t - 16];
-                SWAPER[t] = ((SWAPER[t] &lt;&lt; 1) | (SWAPER[t] &gt;&gt;&gt; 31));
+                W[t] = W[t - 3] ^ W[t - 8] ^ W[t - 14] ^ W[t - 16];
+                W[t] = ((W[t] &lt;&lt; 1) | (W[t] &gt;&gt;&gt; 31));
             }
 
             var T = 0;
@@ -261,7 +264,7 @@ export default class SHA1 extends Streamable {
             var E = this._digest[4];
             
             for ( var t = 0; t &lt; 20; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | ((~B) &amp; D)) + E + SWAPER[t] + 0x5A827999;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | ((~B) &amp; D)) + E + W[t] + 0x5A827999;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
@@ -270,7 +273,7 @@ export default class SHA1 extends Streamable {
             }
 
             for ( var t = 20; t &lt; 40; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + SWAPER[t] + 0x6ED9EBA1;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + W[t] + 0x6ED9EBA1;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
@@ -279,7 +282,7 @@ export default class SHA1 extends Streamable {
             }
             
             for ( var t = 40; t &lt; 60; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | (B &amp; D) | (C &amp; D)) + E + SWAPER[t] + 0x8F1BBCDC;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | (B &amp; D) | (C &amp; D)) + E + W[t] + 0x8F1BBCDC;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
@@ -288,7 +291,7 @@ export default class SHA1 extends Streamable {
             }
             
             for ( var t = 60; t &lt; 80; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + SWAPER[t] + 0xCA62C1D6;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + W[t] + 0xCA62C1D6;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
