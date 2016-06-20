@@ -1,4 +1,3 @@
-
 /// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /// @Copyright ~2016 ☜Samlv9☞ and other contributors
 /// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
