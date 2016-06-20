@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">EventDispatcher | API Document</title>
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">SHA0 | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -115,23 +115,23 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import EventDispatcher from &apos;<span><a href="file/src/events/EventDispatcher.js.html#lineNumber43">guless-closure/src/events/EventDispatcher.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SHA0 from &apos;<span><a href="file/src/data/crypto/SHA0.js.html#lineNumber42">guless-closure/src/data/crypto/SHA0.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/events/EventDispatcher.js.html#lineNumber43">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/data/crypto/SHA0.js.html#lineNumber42">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">EventDispatcher</h1>
+  <h1 data-ice="name">SHA0</h1>
 
   
 
   
   
-  
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span> &#x2192; <span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span> &#x2192; SHA0</div></div>
   
   
   
@@ -169,7 +169,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(target: <span>*</span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html#instance-constructor-constructor">constructor</a></span></span>
         </p>
       </div>
       <div>
@@ -187,8 +187,10 @@
 </table>
 </div>
 
-<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+
+
+<div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span></td></tr></thead>
   <tbody>
   
   <tr data-ice="target">
@@ -202,7 +204,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html#instance-method-addEventListener">addEventListener</a></span></span><span data-ice="signature">(type: <span>*</span>, listener: <span>*</span>, useCapture: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, priority: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-final">final</a></span></span><span data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -227,7 +229,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html#instance-method-dispatchEvent">dispatchEvent</a></span></span><span data-ice="signature">(event: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -252,7 +254,39 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html#instance-method-hasEventListener">hasEventListener</a></span></span><span data-ice="signature">(type: <span>*</span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html#instance-method-final">final</a></span></span><span data-ice="signature">(): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -277,7 +311,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html#instance-method-removeEventListener">removeEventListener</a></span></span><span data-ice="signature">(type: <span>*</span>, listener: <span>*</span>, useCapture: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -302,7 +336,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/events/EventDispatcher.js~EventDispatcher.html#instance-method-willTrigger">willTrigger</a></span></span><span data-ice="signature">(type: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -322,8 +356,6 @@
 
 
 
-
-
 <div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
 
 <div class="detail" data-ice="detail">
@@ -333,11 +365,11 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(target: <span>*</span>)</span>
+    <span data-ice="name">constructor</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/events/EventDispatcher.js.html#lineNumber44">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/crypto/SHA0.js.html#lineNumber43">source</a></span></span>
     </span>
   </h3>
 
@@ -346,25 +378,9 @@
   
   
 
-  
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/SHA1.js~SHA1.html#instance-constructor-constructor">SHA1#constructor</a></span></div>
 
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">target</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
+  <div data-ice="properties">
 </div>
 
   
@@ -384,352 +400,7 @@
 </div>
 </div>
 
-<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-addEventListener">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">addEventListener</span><span data-ice="signature">(type: <span>*</span>, listener: <span>*</span>, useCapture: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>, priority: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/events/EventDispatcher.js.html#lineNumber49">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">type</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">listener</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">useCapture</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: false</li></ul></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">priority</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: 0</li></ul></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-dispatchEvent">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">dispatchEvent</span><span data-ice="signature">(event: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/events/EventDispatcher.js.html#lineNumber115">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">event</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-hasEventListener">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">hasEventListener</span><span data-ice="signature">(type: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/events/EventDispatcher.js.html#lineNumber68">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">type</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-removeEventListener">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">removeEventListener</span><span data-ice="signature">(type: <span>*</span>, listener: <span>*</span>, useCapture: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/events/EventDispatcher.js.html#lineNumber60">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">type</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">listener</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">useCapture</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: false</li></ul></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-willTrigger">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">willTrigger</span><span data-ice="signature">(type: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/events/EventDispatcher.js.html#lineNumber72">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">type</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-</div>
 </div>
 
 <footer class="footer">

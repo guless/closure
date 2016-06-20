@@ -330,6 +330,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/sha0.js~sha0",
+    "class/src/data/crypto/SHA0.js~SHA0.html",
+    "<span>SHA0</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA0.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/crypto/sha1.js~sha1",
     "class/src/data/crypto/SHA1.js~SHA1.html",
     "<span>SHA1</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA1.js</span>",
@@ -997,13 +1003,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#omitpad",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-omitpad",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-omitpad",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#omitpad",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#omitpad",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-omitpad",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-omitpad",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#omitpad",
     "member"
   ],
@@ -1027,13 +1033,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],
@@ -1605,6 +1611,18 @@ window.esdocSearchIndex = [
     "src/data/crypto/md5.js~md5#update",
     "class/src/data/crypto/MD5.js~MD5.html#instance-method-update",
     "src/data/crypto/MD5.js~MD5#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha0.js",
+    "file/src/data/crypto/SHA0.js.html",
+    "src/data/crypto/SHA0.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/sha0.js~sha0#constructor",
+    "class/src/data/crypto/SHA0.js~SHA0.html#instance-constructor-constructor",
+    "src/data/crypto/SHA0.js~SHA0#constructor",
     "method"
   ],
   [

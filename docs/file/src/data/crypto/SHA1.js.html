@@ -67,6 +67,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html">MD4</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html">SHA0</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
@@ -175,12 +176,13 @@ const APPENDIX = new Uint8Array([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ]);
 
+const SWAPER = new Uint32Array(80);
+
 export default class SHA1 extends Streamable {
     constructor() {
         super(new Uint8Array(64));
         
         this._length = new Uint32Array(2);
-        this._swaper = new Uint32Array(80);
         this._digest = new Uint32Array([ H1, H2, H3, H4, H5 ]);
     }
     
@@ -188,7 +190,6 @@ export default class SHA1 extends Streamable {
         super.reset();
         
         this._length[0] = this._length[1] = 0;
-        this._swaper    = new Uint32Array(80); 
         this._digest[0] = H1;
         this._digest[1] = H2;
         this._digest[2] = H3;
@@ -244,16 +245,15 @@ export default class SHA1 extends Streamable {
         
         for ( var start = 0; start + 64 &lt;= bytes.length; start += 64 ) {
             for ( var t = 0; t &lt; 16; ++t ) {
-                this._swaper[t] = dataview.getUint32(start + 4 * t, false);
+                SWAPER[t] = dataview.getUint32(start + 4 * t, false);
             }
             
             for ( var t = 16; t &lt; 80; ++t ) {
-                this._swaper[t] = this._swaper[t - 3] ^ this._swaper[t - 8] ^ this._swaper[t - 14] ^ this._swaper[t - 16]
-                this._swaper[t] = ((this._swaper[t] &lt;&lt; 1) | (this._swaper[t] &gt;&gt;&gt; 31));
+                SWAPER[t] = SWAPER[t - 3] ^ SWAPER[t - 8] ^ SWAPER[t - 14] ^ SWAPER[t - 16];
+                SWAPER[t] = ((SWAPER[t] &lt;&lt; 1) | (SWAPER[t] &gt;&gt;&gt; 31));
             }
 
             var T = 0;
-            var W = this._swaper;
             var A = this._digest[0];
             var B = this._digest[1];
             var C = this._digest[2];
@@ -261,7 +261,7 @@ export default class SHA1 extends Streamable {
             var E = this._digest[4];
             
             for ( var t = 0; t &lt; 20; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | ((~B) &amp; D)) + E + W[t] + 0x5A827999;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | ((~B) &amp; D)) + E + SWAPER[t] + 0x5A827999;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
@@ -270,7 +270,7 @@ export default class SHA1 extends Streamable {
             }
 
             for ( var t = 20; t &lt; 40; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + W[t] + 0x6ED9EBA1;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + SWAPER[t] + 0x6ED9EBA1;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
@@ -279,7 +279,7 @@ export default class SHA1 extends Streamable {
             }
             
             for ( var t = 40; t &lt; 60; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | (B &amp; D) | (C &amp; D)) + E + W[t] + 0x8F1BBCDC;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + ((B &amp; C) | (B &amp; D) | (C &amp; D)) + E + SWAPER[t] + 0x8F1BBCDC;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
@@ -288,7 +288,7 @@ export default class SHA1 extends Streamable {
             }
             
             for ( var t = 60; t &lt; 80; ++t ) {
-                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + W[t] + 0xCA62C1D6;
+                T = ((A &lt;&lt; 5) | (A &gt;&gt;&gt; 27)) + (B ^ C ^ D) + E + SWAPER[t] + 0xCA62C1D6;
                 E = D;
                 D = C;
                 C = ((B &lt;&lt; 30) | (B &gt;&gt;&gt; 2));
