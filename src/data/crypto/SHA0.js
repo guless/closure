@@ -35,92 +35,13 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Streamable from "../core/Streamable";
-import copy       from "../utils/copy";
-import swap32     from "../utils/swap32";
-
-const H1 = 0x67452301
-const H2 = 0xEFCDAB89;
-const H3 = 0x98BADCFE;
-const H4 = 0x10325476;
-const H5 = 0xC3D2E1F0;
-
-const PADDING = new Uint8Array([
-    0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-]);
-
-const APPENDIX = new Uint8Array([
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-]);
+import SHA1 from "./SHA1";
 
 const SWAPER = new Uint32Array(80);
 
-export default class SHA1 extends Streamable {
+export default class SHA0 extends SHA1 {
     constructor() {
-        super(new Uint8Array(64));
-        
-        this._length = new Uint32Array(2);
-        this._digest = new Uint32Array([ H1, H2, H3, H4, H5 ]);
-    }
-    
-    reset() {
-        super.reset();
-        
-        this._length[0] = this._length[1] = 0;
-        this._digest[0] = H1;
-        this._digest[1] = H2;
-        this._digest[2] = H3;
-        this._digest[3] = H4;
-        this._digest[4] = H5;
-    }
-    
-    update( bytes ) {
-        var L = bytes.length << 3 >>> 0;
-        var H = bytes.length >>> 29;
-        
-        this._length[0] += L;
-        this._length[1] += this._length[0] < L ? 1 + H : H;
-        
-        super.update(bytes);
-    }
-    
-    final() {
-        var buffer = this._buffer.buffer;
-        var offset = this._buffer.offset;
-
-        copy(PADDING, buffer, offset);
-        
-        this._length[0] = swap32(this._length[0]);
-        this._length[1] = swap32(this._length[1]);
-        
-        this._length[0] ^= this._length[1];
-        this._length[1] ^= this._length[0];
-        this._length[0] ^= this._length[1];
-        
-        if ( offset < 56 ) {
-            copy(new Uint8Array(this._length.buffer), buffer, 56);
-            
-            this._transfrom(buffer);
-        }
-        
-        else {
-            copy(new Uint8Array(this._length.buffer), APPENDIX, 56);
-
-            this._transfrom(buffer);
-            this._transfrom(APPENDIX);
-        }
-        
-        for ( var i = 0; i < this._digest.length; ++i ) {
-            this._digest[i] = swap32(this._digest[i]);
-        }
-
-        return this._digest;
+        super();
     }
     
     _transfrom( bytes ) {
@@ -133,7 +54,8 @@ export default class SHA1 extends Streamable {
             
             for ( var t = 16; t < 80; ++t ) {
                 SWAPER[t] = SWAPER[t - 3] ^ SWAPER[t - 8] ^ SWAPER[t - 14] ^ SWAPER[t - 16];
-                SWAPER[t] = ((SWAPER[t] << 1) | (SWAPER[t] >>> 31));
+                /// #NOTICE: This is only difference between SHA-0 and SHA-1 algorithm.
+                /// SWAPER[t] = ((SWAPER[t] << 1) | (SWAPER[t] >>> 31));
             }
 
             var T = 0;

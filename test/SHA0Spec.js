@@ -35,48 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import SHA0 from "../src/data/crypto/SHA0";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const SHA0API = new SHA0();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start SHA0 Test Suite]:");
     
-    console.log("");
+    test_sha0("", "f96cea198ad1dd5617ac084a3d92c6107708c0ef");
+    test_sha0("a", "37f297772fae4cb1ba39b6cf9cf0381180bd62f2");
+    test_sha0("abc", "0164b8a914cd2a5e74c4f7ff082c4d97f1edf880");
+    test_sha0("Secure Hash Algorithm", "7437cfb9498f2cd5b4e47458125eeaa1b70f46e0");
+    test_sha0("abcdefghijklmnopqrstuvwxyz", "b40ce07a430cfd3c033039b9fe9afec95dc1bdcd");
+    test_sha0("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "79e966f7a3a990df33e40e3d7f8f18d2caebadfa");
+    test_sha0("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "4aa29d14d171522ece47bee8957e35a41f3e9cff");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_sha0( input, expect ) {
+    SHA0API.reset();
+    SHA0API.update( ascii(input) );
+    
+    var result = hexof(SHA0API.final());
+    assert(result == expect, "SHA0 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
