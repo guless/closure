@@ -66,7 +66,7 @@ const APPENDIX = new Uint8Array([
 const W = new Uint32Array(80);
 
 function CH ( x, y, z ) { return ((x & y) ^ (~x & z)); }
-function Maj( x, y, z ) { return ((x & y) ^ (x & z) ^ (y & z)); }
+function MAJ( x, y, z ) { return ((x & y) ^ (x & z) ^ (y & z)); }
 
 function SIGMA10( n ) { return ((n >>>  7 | n << 25) ^ (n >>> 18 | n << 14) ^ (n >>>  3)); }
 function SIGMA11( n ) { return ((n >>> 17 | n << 15) ^ (n >>> 19 | n << 13) ^ (n >>> 10)); }
@@ -166,7 +166,7 @@ export default class SHA256 extends Streamable {
             
             for ( var t = 0; t < 64; ++t ) {
                 T1 = H + SIGMA21(E) + CH(E, F, G) + SHA256_PRIME_TABLE[t] + W[t];
-                T2 = SIGMA20(A) + Maj(A, B, C);
+                T2 = SIGMA20(A) + MAJ(A, B, C);
                 H = G;
                 G = F;
                 F = E;
