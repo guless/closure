@@ -4614,7 +4614,7 @@
       "type": "FunctionDeclaration",
       "id": {
         "type": "Identifier",
-        "name": "Maj",
+        "name": "MAJ",
         "range": [
           3372,
           3375
@@ -16927,7 +16927,7 @@
                                         "type": "CallExpression",
                                         "callee": {
                                           "type": "Identifier",
-                                          "name": "Maj",
+                                          "name": "MAJ",
                                           "range": [
                                             6717,
                                             6720
