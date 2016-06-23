@@ -80,6 +80,110 @@ const APPENDIX = new Uint8Array([
 ]);
 
 const W = new Uint32Array(160);
+const S = new Uint32Array(16);
+const T = new Uint32Array(4);
+const U = new Uint32Array(2);
+const V = new Uint32Array(2);
+
+const ROTR_T1 = new Uint32Array(2);
+const ROTR_T2 = new Uint32Array(2);
+
+const SIGMA10_T1 = new Uint32Array(2);
+const SIGMA10_T2 = new Uint32Array(2);
+const SIGMA10_T3 = new Uint32Array(2);
+
+const SIGMA11_T1 = new Uint32Array(2);
+const SIGMA11_T2 = new Uint32Array(2);
+const SIGMA11_T3 = new Uint32Array(2);
+
+const SIGMA20_T1 = new Uint32Array(2);
+const SIGMA20_T2 = new Uint32Array(2);
+const SIGMA20_T3 = new Uint32Array(2);
+
+const SIGMA21_T1 = new Uint32Array(2);
+const SIGMA21_T2 = new Uint32Array(2);
+const SIGMA21_T3 = new Uint32Array(2);
+
+const ATL = new Uint32Array(2);
+
+function ADDTOLENGTH( R, H, L ) {
+    ATL[0] = R[2];
+    ATL[1] = R[1];
+    
+    R[3] += L;
+    R[2] += H + (R[3] < L);
+    R[1] += R[2] < ATL[0];
+    R[0] += R[1] < ATL[1];
+}
+
+function CH( R, x, i, y, j, z, k ) { 
+    R[0] = ((x[i] & y[j]) ^ (~x[i] & z[k]));
+    R[1] = ((x[i + 1] & y[j + 1]) ^ (~x[i + 1] & z[k + 1]));
+}
+
+function MAJ( R, x, i, y, j, z, k ) { 
+    R[0] = ((x[i] & y[j]) ^ (x[i] & z[k]) ^ (y[j] & z[k]));
+    R[1] = ((x[i + 1] & y[j + 1]) ^ (x[i + 1] & z[k + 1]) ^ (y[j + 1] & z[k + 1]));
+}
+
+function SHR( R, bits, w, i ) {
+    R[0] = (bits < 32 && bits >= 0) ? w[i] >>> bits : 0;
+    R[1] = (bits > 32 ? w[i] >>> (bits - 32) : bits == 32 ? w[i] : bits >= 0 ? (w[i] << (32 - bits)) | (w[i + 1] >>> bits) : 0);
+}
+
+function SHL( R, bits, w, i ) {
+    R[0] = (bits > 32 ? w[i + 1] << (bits - 32) : bits == 32 ? w[i + 1] : bits >= 0 ? (w[i] << bits) | (w[i + 1] >>> (32 - bits)) : 0);
+    R[1] = (bits < 32 && bits >= 0) ? w[i + 1] << bits : 0;
+}
+
+function ADDTO( x, i, y, j ) {
+    x[i + 1] += y[j + 1];
+    x[i] += y[j] + (x[i + 1] < y[j + 1]);
+}
+
+function ROTR( R, bits, w, i ) {
+    SHR(ROTR_T1, bits, w, i);
+    SHL(ROTR_T2, 64 - bits, w, i);
+    
+    R[0] = ROTR_T1[0] | ROTR_T2[0];
+    R[1] = ROTR_T1[1] | ROTR_T2[1];
+}
+
+function SIGMA10( R, w, i ) {
+    ROTR(SIGMA10_T1, 1, w, i);
+    ROTR(SIGMA10_T2, 8, w, i);
+    SHR (SIGMA10_T3, 7, w, i);
+    
+    R[0] = SIGMA10_T1[0] ^ SIGMA10_T2[0] ^ SIGMA10_T3[0];
+    R[1] = SIGMA10_T1[1] ^ SIGMA10_T2[1] ^ SIGMA10_T3[1];
+}
+
+function SIGMA11( R, w, i ) {
+    ROTR(SIGMA11_T1, 19, w, i);
+    ROTR(SIGMA11_T2, 61, w, i);
+    SHR (SIGMA11_T3,  6, w, i);
+    
+    R[0] = SIGMA11_T1[0] ^ SIGMA11_T2[0] ^ SIGMA11_T3[0];
+    R[1] = SIGMA11_T1[1] ^ SIGMA11_T2[1] ^ SIGMA11_T3[1];
+}
+
+function SIGMA20( R, w, i ) {
+    ROTR(SIGMA20_T1, 28, w, i);
+    ROTR(SIGMA20_T2, 34, w, i);
+    ROTR(SIGMA20_T3, 39, w, i);
+    
+    R[0] = SIGMA20_T1[0] ^ SIGMA20_T2[0] ^ SIGMA20_T3[0];
+    R[1] = SIGMA20_T1[1] ^ SIGMA20_T2[1] ^ SIGMA20_T3[1];
+}
+
+function SIGMA21( R, w, i ) {
+    ROTR(SIGMA21_T1, 14, w, i);
+    ROTR(SIGMA21_T2, 18, w, i);
+    ROTR(SIGMA21_T3, 41, w, i);
+    
+    R[0] = SIGMA21_T1[0] ^ SIGMA21_T2[0] ^ SIGMA21_T3[0];
+    R[1] = SIGMA21_T1[1] ^ SIGMA21_T2[1] ^ SIGMA21_T3[1];
+}
 
 export default class SHA512 extends Streamable {
     // bash: arr=([0]="a" [1]="abc" [2]="Secure Hash Algorithm")
@@ -115,16 +219,7 @@ export default class SHA512 extends Streamable {
     }
     
     update( bytes ) {
-        var L = bytes.length << 3 >>> 0;
-        var H = bytes.length >>> 29;
-        var U = this._length[0];
-        var V = this._length[1];
-        
-        this._length[0] += L;
-        this._length[1] += H + (this._length[0] < U); U = this._length[2];
-        this._length[2] += (this._length[1] < V);
-        this._length[3] += (this._length[2] < U);
-        
+        ADDTOLENGTH(this._length, bytes.length >>> 29, bytes.length << 3 >>> 0);
         super.update(bytes);
     }
     
@@ -138,14 +233,6 @@ export default class SHA512 extends Streamable {
         this._length[1] = swap32(this._length[1]);
         this._length[2] = swap32(this._length[2]);
         this._length[3] = swap32(this._length[3]);
-        
-        this._length[0] ^= this._length[3];
-        this._length[3] ^= this._length[0];
-        this._length[0] ^= this._length[3];
-        
-        this._length[1] ^= this._length[2];
-        this._length[2] ^= this._length[1];
-        this._length[1] ^= this._length[2];
         
         if ( offset < 112 ) {
             copy(new Uint8Array(this._length.buffer), buffer, 112);
@@ -175,40 +262,70 @@ export default class SHA512 extends Streamable {
                 W[t] = dataview.getUint32(start + 4 * t, false);
             }
             
-            // for (t = 16; t < 80; t++)
-            //     W[t] = SHA512_sigma1(W[t-2]) + W[t-7] +
-            //         SHA512_sigma0(W[t-15]) + W[t-16];
-
-            // A = context->Intermediate_Hash[0];
-            // B = context->Intermediate_Hash[1];
-            // C = context->Intermediate_Hash[2];
-            // D = context->Intermediate_Hash[3];
-            // E = context->Intermediate_Hash[4];
-            // F = context->Intermediate_Hash[5];
-            // G = context->Intermediate_Hash[6];
-            // H = context->Intermediate_Hash[7];
-
-            // for (t = 0; t < 80; t++) {
-            //     temp1 = H + SHA512_SIGMA1(E) + SHA_Ch(E,F,G) + K[t] + W[t];
-            //     temp2 = SHA512_SIGMA0(A) + SHA_Maj(A,B,C);
-            //     H = G;
-            //     G = F;
-            //     F = E;
-            //     E = D + temp1;
-            //     D = C;
-            //     C = B;
-            //     B = A;
-            //     A = temp1 + temp2;
-            // }
-
-            // context->Intermediate_Hash[0] += A;
-            // context->Intermediate_Hash[1] += B;
-            // context->Intermediate_Hash[2] += C;
-            // context->Intermediate_Hash[3] += D;
-            // context->Intermediate_Hash[4] += E;
-            // context->Intermediate_Hash[5] += F;
-            // context->Intermediate_Hash[6] += G;
-            // context->Intermediate_Hash[7] += H;
+            for ( var t = 32; t < 160; t += 2 ) {
+                SIGMA11(U, W, t - 4);
+                SIGMA10(V, W, t - 30);
+                
+                ADDTO(U, 0, V, 0);
+                ADDTO(U, 0, W, t - 14);
+                ADDTO(U, 0, W, t - 32);
+                
+                W[t] = U[0];
+                W[t + 1] = U[1];
+            }
+            
+            copy(this._digest, S);
+            
+            for ( var t = 0; t < 160; t += 2 ) {
+                T[0] = T[1] = T[2] = T[3] = 0;
+                
+                SIGMA21(U, S, 8);
+                CH(V, S, 8, S, 10, S, 12);
+                
+                ADDTO(T, 0, S, 14);
+                ADDTO(T, 0, U, 0);
+                ADDTO(T, 0, V, 0);
+                ADDTO(T, 0, SHA512_PRIME_TABLE, t);
+                ADDTO(T, 0, W, t);
+                
+                SIGMA20(U, S, 0);
+                MAJ(V, S, 0, S, 2, S, 4);
+                
+                ADDTO(T, 2, U, 0);
+                ADDTO(T, 2, V, 0);
+                
+                S[14] = S[12];
+                S[15] = S[13];
+                S[12] = S[10];
+                S[13] = S[11];
+                S[10] = S[ 8];
+                S[11] = S[ 9];
+                
+                ADDTO(S, 6, T, 0);
+                
+                S[ 8] = S[ 6];
+                S[ 9] = S[ 7];
+                S[ 6] = S[ 4];
+                S[ 7] = S[ 5];
+                S[ 4] = S[ 2];
+                S[ 5] = S[ 3];
+                S[ 2] = S[ 0];
+                S[ 3] = S[ 1];
+                
+                ADDTO(T, 0, T, 2);
+                
+                S[ 0] = T[ 0];
+                S[ 1] = T[ 1];
+            }
+            
+            ADDTO(this._digest,  0, S,  0);
+            ADDTO(this._digest,  2, S,  2);
+            ADDTO(this._digest,  4, S,  4);
+            ADDTO(this._digest,  6, S,  6);
+            ADDTO(this._digest,  8, S,  8);
+            ADDTO(this._digest, 10, S, 10);
+            ADDTO(this._digest, 12, S, 12);
+            ADDTO(this._digest, 14, S, 14);
         }
     }
 }
