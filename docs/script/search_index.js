@@ -360,6 +360,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/sha384.js~sha384",
+    "class/src/data/crypto/SHA384.js~SHA384.html",
+    "<span>SHA384</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA384.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/crypto/sha512.js~sha512",
     "class/src/data/crypto/SHA512.js~SHA512.html",
     "<span>SHA512</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA512.js</span>",
@@ -1033,13 +1039,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#omitpad",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-omitpad",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-omitpad",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#omitpad",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#omitpad",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-omitpad",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-omitpad",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#omitpad",
     "member"
   ],
@@ -1063,13 +1069,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#table",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-table",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-table",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#table",
     "member"
   ],
@@ -1737,6 +1743,30 @@ window.esdocSearchIndex = [
     "src/data/crypto/sha256.js~sha256#update",
     "class/src/data/crypto/SHA256.js~SHA256.html#instance-method-update",
     "src/data/crypto/SHA256.js~SHA256#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha384.js",
+    "file/src/data/crypto/SHA384.js.html",
+    "src/data/crypto/SHA384.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/sha384.js~sha384#constructor",
+    "class/src/data/crypto/SHA384.js~SHA384.html#instance-constructor-constructor",
+    "src/data/crypto/SHA384.js~SHA384#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha384.js~sha384#final",
+    "class/src/data/crypto/SHA384.js~SHA384.html#instance-method-final",
+    "src/data/crypto/SHA384.js~SHA384#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha384.js~sha384#reset",
+    "class/src/data/crypto/SHA384.js~SHA384.html#instance-method-reset",
+    "src/data/crypto/SHA384.js~SHA384#reset",
     "method"
   ],
   [

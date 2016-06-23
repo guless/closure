@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 223,
+  "expectCount": 227,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -459,8 +459,8 @@
       "undocumentLines": [
         49,
         50,
-        76,
-        63
+        71,
+        66
       ]
     },
     "src/data/crypto/SHA256.js": {
@@ -479,6 +479,16 @@
       "actualCount": 0,
       "undocumentLines": [
         38
+      ]
+    },
+    "src/data/crypto/SHA384.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        57,
+        58,
+        87,
+        82
       ]
     },
     "src/data/crypto/SHA512.js": {
@@ -508,8 +518,8 @@
         106,
         63,
         59,
-        55,
         51,
+        55,
         87
       ]
     },
@@ -531,13 +541,13 @@
         42,
         43,
         59,
-        78,
         74,
-        82,
+        78,
         86,
+        82,
         51,
-        94,
-        90
+        90,
+        94
       ]
     },
     "src/data/codec/UTF8Decoder.js": {

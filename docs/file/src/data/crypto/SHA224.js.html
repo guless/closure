@@ -71,6 +71,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA384.js~SHA384.html">SHA384</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html">SHA512</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
@@ -171,7 +172,10 @@ const H8 = 0xBEFA4FA4;
 export default class SHA224 extends SHA256 {
     constructor() {
         super();
-        
+        this._resetDigest();
+    }
+    
+    _resetDigest() {
         this._digest[0] = H1;
         this._digest[1] = H2;
         this._digest[2] = H3;
@@ -184,15 +188,7 @@ export default class SHA224 extends SHA256 {
     
     reset() {
         super.reset();
-        
-        this._digest[0] = H1;
-        this._digest[1] = H2;
-        this._digest[2] = H3;
-        this._digest[3] = H4;
-        this._digest[4] = H5;
-        this._digest[5] = H6;
-        this._digest[6] = H7;
-        this._digest[7] = H8;
+        this._resetDigest();
     }
     
     final() {
