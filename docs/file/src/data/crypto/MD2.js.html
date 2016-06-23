@@ -71,6 +71,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html">SHA512</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
@@ -93,6 +94,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA256_PRIME_TABLE">SHA256_PRIME_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA512_PRIME_TABLE">SHA512_PRIME_TABLE</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base32">base32</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base64">base64</a></span></span></li>
@@ -162,15 +164,15 @@ export default class MD2 extends Streamable {
     constructor() {
         super(new Uint8Array(16));
         
-        this._digest   = new Uint8Array(48);
-        this._checksum = new Uint8Array(16);
+        this._digest = new Uint8Array(48);
+        this._chksum = new Uint8Array(16);
     }
     
     reset() {
         super.reset();
         
-        this._digest   = new Uint8Array(48);
-        this._checksum = new Uint8Array(16);
+        this._digest = new Uint8Array(48);
+        this._chksum = new Uint8Array(16);
     }
     
     update( bytes ) {
@@ -186,7 +188,7 @@ export default class MD2 extends Streamable {
         }
         
         this._transfrom(buffer, 0);
-        this._transfrom(this._checksum, 0);
+        this._transfrom(this._chksum, 0);
         
         return this._digest.subarray(0, 16);
     }
@@ -207,10 +209,10 @@ export default class MD2 extends Streamable {
                 t = (t + j) &amp; 0xFF;
             }
             
-            t = this._checksum[15];
+            t = this._chksum[15];
             
             for ( var k = 0; k &lt; 16; ++k ) {
-                t = (this._checksum[k] ^= MD2_PI_TABLE[bytes[start + k] ^ t]);
+                t = (this._chksum[k] ^= MD2_PI_TABLE[bytes[start + k] ^ t]);
             }
         }
     }

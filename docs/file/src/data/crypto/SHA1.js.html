@@ -71,6 +71,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html">SHA512</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
@@ -93,6 +94,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA256_PRIME_TABLE">SHA256_PRIME_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA512_PRIME_TABLE">SHA512_PRIME_TABLE</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base32">base32</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base64">base64</a></span></span></li>
@@ -181,6 +183,8 @@ const APPENDIX = new Uint8Array([
 
 const W = new Uint32Array(80);
 
+function ADDTOLENGTH( R, H, L ) { R[1] += L; R[0] += H + (R[1] &lt; L); }
+
 export default class SHA1 extends Streamable {
     constructor() {
         super(new Uint8Array(64));
@@ -201,12 +205,7 @@ export default class SHA1 extends Streamable {
     }
     
     update( bytes ) {
-        var L = bytes.length &lt;&lt; 3 &gt;&gt;&gt; 0;
-        var H = bytes.length &gt;&gt;&gt; 29;
-        
-        this._length[0] += L;
-        this._length[1] += this._length[0] &lt; L ? 1 + H : H;
-        
+        ADDTOLENGTH(this._length, bytes.length &gt;&gt;&gt; 29, bytes.length &lt;&lt; 3 &gt;&gt;&gt; 0);
         super.update(bytes);
     }
     
@@ -218,10 +217,6 @@ export default class SHA1 extends Streamable {
         
         this._length[0] = swap32(this._length[0]);
         this._length[1] = swap32(this._length[1]);
-        
-        this._length[0] ^= this._length[1];
-        this._length[1] ^= this._length[0];
-        this._length[0] ^= this._length[1];
         
         if ( offset &lt; 56 ) {
             copy(new Uint8Array(this._length.buffer), buffer, 56);
@@ -244,9 +239,7 @@ export default class SHA1 extends Streamable {
     }
     
     _transfrom( bytes ) {
-        var dataview = new DataView(bytes.buffer, bytes.byteOffset);
-        
-        for ( var start = 0; start + 64 &lt;= bytes.length; start += 64 ) {
+        for ( var start = 0, dataview = new DataView(bytes.buffer, bytes.byteOffset); start + 64 &lt;= bytes.length; start += 64 ) {
             for ( var t = 0; t &lt; 16; ++t ) {
                 W[t] = dataview.getUint32(start + 4 * t, false);
             }

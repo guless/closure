@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/data/crypto/SHA224.js | API Document</title>
+  <title data-ice="title">SHA512 | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -119,87 +119,440 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/data/crypto/SHA224.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/// @Copyright ~2016 &#x261C;Samlv9&#x261E; and other contributors
-/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
-/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-///                                              }|
-///                                              }|
-///                                              }|     &#x3000; &#x3078;&#x3000;&#x3000;&#x3000; &#xFF0F;|    
-///      _______     _______         ______      }|      /&#x3000;&#x2502;&#x3000;&#x3000; &#xFF0F; &#xFF0F;
-///     /  ___  |   |_   __ \      .&apos; ____ &apos;.    }|     &#x2502;&#x3000;Z &#xFF3F;,&#xFF1C;&#x3000;&#xFF0F;&#x3000;&#x3000; /`&#x30FD;
-///    |  (__ \_|     | |__) |     | (____) |    }|     &#x2502;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x30FD;&#x3000;&#x3000; /&#x3000;&#x3000;&#x3009;
-///     &apos;.___`-.      |  __ /      &apos;_.____. |    }|      Y&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;`&#x3000; /&#x3000;&#x3000;/
-///    |`\____) |    _| |  \ \_    | \____| |    }|    &#xFF72;&#x25CF;&#x3000;&#xFF64;&#x3000;&#x25CF;&#x3000;&#x3000;&#x2282;&#x2283;&#x3008;&#x3000;&#x3000;/
-///    |_______.&apos;   |____| |___|    \______,&apos;    }|    ()&#x3000; v&#x3000;&#x3000;&#x3000;&#x3000;|&#x3000;&#xFF3C;&#x3008;
-///    |=========================================\|    &#x3000;&gt;&#xFF70; &#xFF64;_&#x3000; &#x30A3;&#x3000; &#x2502; &#xFF0F;&#xFF0F;
-///    |&gt; LESS IS MORE                           ||     / &#x3078;&#x3000;&#x3000; /&#x3000;&#xFF89;&#xFF1C;|&#xFF3C;&#xFF3C;
-///    `=========================================/|    &#x30FD;_&#xFF89;&#x3000;&#x3000;(_&#xFF0F;&#x3000; &#x2502;&#xFF0F;&#xFF0F;
-///                                              }|     7&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;  |&#xFF0F;
-///                                              }|     &#xFF1E;&#x2015;r&#xFFE3;&#xFFE3;`&#xFF70;&#x2015;&#xFF3F;`
-///                                              }|
-///                                              }|
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the &quot;Software&quot;), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in all
-/// copies or substantial portions of the Software.
-///
-/// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-import SHA256 from &quot;./SHA256&quot;;
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SHA512 from &apos;<span><a href="file/src/data/crypto/SHA512.js.html#lineNumber188">guless-closure/src/data/crypto/SHA512.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/data/crypto/SHA512.js.html#lineNumber188">source</a></span></span>
+</div>
 
-const H1 = 0xC1059ED8;
-const H2 = 0x367CD507;
-const H3 = 0x3070DD17;
-const H4 = 0xF70E5939;
-const H5 = 0xFFC00B31;
-const H6 = 0x68581511;
-const H7 = 0x64F98FA7;
-const H8 = 0xBEFA4FA4;
+<div class="self-detail detail">
+  <h1 data-ice="name">SHA512</h1>
 
-export default class SHA224 extends SHA256 {
-    constructor() {
-        super();
+  
+
+  
+  
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span> &#x2192; SHA512</div></div>
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+
+
+
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html#instance-constructor-constructor">constructor</a></span></span>
+        </p>
+      </div>
+      <div>
         
-        this._digest[0] = H1;
-        this._digest[1] = H2;
-        this._digest[2] = H3;
-        this._digest[3] = H4;
-        this._digest[4] = H5;
-        this._digest[5] = H6;
-        this._digest[6] = H7;
-        this._digest[7] = H8;
-    }
-    
-    reset() {
-        super.reset();
         
-        this._digest[0] = H1;
-        this._digest[1] = H2;
-        this._digest[2] = H3;
-        this._digest[3] = H4;
-        this._digest[4] = H5;
-        this._digest[5] = H6;
-        this._digest[6] = H7;
-        this._digest[7] = H8;
-    }
-    
-    final() {
-        return super.final().subarray(0, 7);
-    }
-}</code></pre>
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
 
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html#instance-method-final">final</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/data/core/Streamable.js~Streamable.html">Streamable</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-final">final</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">constructor</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/data/crypto/SHA512.js.html#lineNumber191">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-constructor-constructor">Streamable#constructor</a></span></div>
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-final">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">final</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/data/crypto/SHA512.js.html#lineNumber226">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-final">Streamable#final</a></span></div>
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-reset">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">reset</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/data/crypto/SHA512.js.html#lineNumber198">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-reset">Streamable#reset</a></span></div>
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-update">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">update</span><span data-ice="signature">(bytes: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/data/crypto/SHA512.js.html#lineNumber221">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/core/Streamable.js~Streamable.html#instance-method-update">Streamable#update</a></span></div>
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">bytes</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
 </div>
 
 <footer class="footer">

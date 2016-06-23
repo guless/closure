@@ -71,6 +71,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html">SHA512</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
@@ -93,6 +94,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA256_PRIME_TABLE">SHA256_PRIME_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA512_PRIME_TABLE">SHA512_PRIME_TABLE</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base32">base32</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base64">base64</a></span></span></li>
@@ -177,6 +179,8 @@ const APPENDIX = new Uint8Array([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ]);
 
+function ADDTOLENGTH( R, H, L ) { R[0] += L; R[1] += H + (R[0] &lt; L); }
+
 function FF( a, b, c, d, x, s ) { a += ((b &amp; c) | ((~b) &amp; d)) + x; return ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); }
 function GG( a, b, c, d, x, s ) { a += ((b &amp; c) | (b &amp; d) | (c &amp; d)) + x + 0x5a827999; return ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); }
 function HH( a, b, c, d, x, s ) { a += (b ^ c ^ d) + x + 0x6ed9eba1; return ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); }
@@ -200,12 +204,7 @@ export default class MD4 extends Streamable {
     }
     
     update( bytes ) {
-        var L = bytes.length &lt;&lt; 3 &gt;&gt;&gt; 0;
-        var H = bytes.length &gt;&gt;&gt; 29;
-        
-        this._length[0] += L;
-        this._length[1] += this._length[0] &lt; L ? 1 + H : H;
-        
+        ADDTOLENGTH(this._length, bytes.length &gt;&gt;&gt; 29, bytes.length &lt;&lt; 3 &gt;&gt;&gt; 0);
         super.update(bytes);
     }
     
@@ -232,9 +231,7 @@ export default class MD4 extends Streamable {
     }
     
     _transfrom( bytes ) {
-        var dataview = new DataView(bytes.buffer, bytes.byteOffset);
-        
-        for ( var start = 0; start + 64 &lt;= bytes.length; start += 64 ) {
+        for ( var start = 0, dataview = new DataView(bytes.buffer, bytes.byteOffset); start + 64 &lt;= bytes.length; start += 64 ) {
             var a = this._digest[0];
             var b = this._digest[1];
             var c = this._digest[2];

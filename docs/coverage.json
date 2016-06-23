@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 217,
+  "expectCount": 223,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -416,22 +416,22 @@
       "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
-        64,
-        65,
-        92,
-        72,
-        82
+        66,
+        67,
+        89,
+        74,
+        84
       ]
     },
     "src/data/crypto/MD5.js": {
       "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
-        65,
-        66,
-        93,
-        73,
-        83
+        67,
+        68,
+        90,
+        75,
+        85
       ]
     },
     "src/data/crypto/SHA0.js": {
@@ -446,11 +446,11 @@
       "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
-        64,
-        65,
-        93,
-        72,
-        83
+        66,
+        67,
+        90,
+        74,
+        85
       ]
     },
     "src/data/crypto/SHA224.js": {
@@ -467,14 +467,32 @@
       "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
-        76,
-        79,
-        110,
-        86,
-        100
+        78,
+        81,
+        107,
+        88,
+        102
       ]
     },
     "src/data/tables/SHA256PrimeTable.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        38
+      ]
+    },
+    "src/data/crypto/SHA512.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        188,
+        191,
+        226,
+        198,
+        221
+      ]
+    },
+    "src/data/tables/SHA512PrimeTable.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -490,8 +508,8 @@
         106,
         63,
         59,
-        51,
         55,
+        51,
         87
       ]
     },
@@ -513,13 +531,13 @@
         42,
         43,
         59,
-        74,
         78,
-        86,
+        74,
         82,
+        86,
         51,
-        90,
-        94
+        94,
+        90
       ]
     },
     "src/data/codec/UTF8Decoder.js": {
