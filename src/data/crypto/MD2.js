@@ -42,15 +42,15 @@ export default class MD2 extends Streamable {
     constructor() {
         super(new Uint8Array(16));
         
-        this._digest   = new Uint8Array(48);
-        this._checksum = new Uint8Array(16);
+        this._digest = new Uint8Array(48);
+        this._chksum = new Uint8Array(16);
     }
     
     reset() {
         super.reset();
         
-        this._digest   = new Uint8Array(48);
-        this._checksum = new Uint8Array(16);
+        this._digest = new Uint8Array(48);
+        this._chksum = new Uint8Array(16);
     }
     
     update( bytes ) {
@@ -66,7 +66,7 @@ export default class MD2 extends Streamable {
         }
         
         this._transfrom(buffer, 0);
-        this._transfrom(this._checksum, 0);
+        this._transfrom(this._chksum, 0);
         
         return this._digest.subarray(0, 16);
     }
@@ -87,10 +87,10 @@ export default class MD2 extends Streamable {
                 t = (t + j) & 0xFF;
             }
             
-            t = this._checksum[15];
+            t = this._chksum[15];
             
             for ( var k = 0; k < 16; ++k ) {
-                t = (this._checksum[k] ^= MD2_PI_TABLE[bytes[start + k] ^ t]);
+                t = (this._chksum[k] ^= MD2_PI_TABLE[bytes[start + k] ^ t]);
             }
         }
     }
