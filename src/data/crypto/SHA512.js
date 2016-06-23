@@ -255,9 +255,7 @@ export default class SHA512 extends Streamable {
     }
     
     _transfrom( bytes ) {
-        var dataview = new DataView(bytes.buffer, bytes.byteOffset);
-        
-        for ( var start = 0; start + 128 <= bytes.length; start += 128 ) {
+        for ( var start = 0, dataview = new DataView(bytes.buffer, bytes.byteOffset); start + 128 <= bytes.length; start += 128 ) {
             for ( var t = 0; t < 32; ++t ) {
                 W[t] = dataview.getUint32(start + 4 * t, false);
             }

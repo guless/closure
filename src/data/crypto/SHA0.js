@@ -45,9 +45,7 @@ export default class SHA0 extends SHA1 {
     }
     
     _transfrom( bytes ) {
-        var dataview = new DataView(bytes.buffer, bytes.byteOffset);
-        
-        for ( var start = 0; start + 64 <= bytes.length; start += 64 ) {
+        for ( var start = 0, dataview = new DataView(bytes.buffer, bytes.byteOffset); start + 64 <= bytes.length; start += 64 ) {
             for ( var t = 0; t < 16; ++t ) {
                 SWAPER[t] = dataview.getUint32(start + 4 * t, false);
             }

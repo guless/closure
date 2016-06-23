@@ -110,9 +110,7 @@ export default class MD5 extends Streamable {
     }
     
     _transfrom( bytes ) {
-        var dataview = new DataView(bytes.buffer, bytes.byteOffset);
-        
-        for ( var start = 0; start + 64 <= bytes.length; start += 64 ) {
+        for ( var start = 0, dataview = new DataView(bytes.buffer, bytes.byteOffset); start + 64 <= bytes.length; start += 64 ) {
             var a = this._digest[0];
             var b = this._digest[1];
             var c = this._digest[2];
