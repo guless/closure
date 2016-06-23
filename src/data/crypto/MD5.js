@@ -57,6 +57,8 @@ const APPENDIX = new Uint8Array([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ]);
 
+function ADDTOLENGTH( R, H, L ) { R[0] += L; R[1] += H + (R[0] < L); }
+
 function FF( a, b, c, d, x, s, ac ) { a += ((b & c) | ((~b) & d)) + x + ac; a  = ((a << s) | (a >>> (32 - s))); return a + b; }
 function GG( a, b, c, d, x, s, ac ) { a += ((b & d) | (c & (~d))) + x + ac; a  = ((a << s) | (a >>> (32 - s))); return a + b; }
 function HH( a, b, c, d, x, s, ac ) { a += (b ^ c ^ d) + x + ac; a  = ((a << s) | (a >>> (32 - s))); return a + b; }
@@ -81,12 +83,7 @@ export default class MD5 extends Streamable {
     }
     
     update( bytes ) {
-        var L = bytes.length << 3 >>> 0;
-        var H = bytes.length >>> 29;
-        
-        this._length[0] += L;
-        this._length[1] += this._length[0] < L ? 1 + H : H;
-        
+        ADDTOLENGTH(this._length, bytes.length >>> 29, bytes.length << 3 >>> 0);
         super.update(bytes);
     }
     
