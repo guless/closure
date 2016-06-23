@@ -61,6 +61,8 @@ const APPENDIX = new Uint8Array([
 
 const W = new Uint32Array(80);
 
+function ADDTOLENGTH( R, H, L ) { R[1] += L; R[0] += H + (R[1] < L); }
+
 export default class SHA1 extends Streamable {
     constructor() {
         super(new Uint8Array(64));
@@ -81,12 +83,7 @@ export default class SHA1 extends Streamable {
     }
     
     update( bytes ) {
-        var L = bytes.length << 3 >>> 0;
-        var H = bytes.length >>> 29;
-        
-        this._length[0] += L;
-        this._length[1] += this._length[0] < L ? 1 + H : H;
-        
+        ADDTOLENGTH(this._length, bytes.length >>> 29, bytes.length << 3 >>> 0);
         super.update(bytes);
     }
     
@@ -98,10 +95,6 @@ export default class SHA1 extends Streamable {
         
         this._length[0] = swap32(this._length[0]);
         this._length[1] = swap32(this._length[1]);
-        
-        this._length[0] ^= this._length[1];
-        this._length[1] ^= this._length[0];
-        this._length[0] ^= this._length[1];
         
         if ( offset < 56 ) {
             copy(new Uint8Array(this._length.buffer), buffer, 56);
