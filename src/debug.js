@@ -47,6 +47,7 @@ import SHA0Spec from "../test/SHA0Spec";
 import SHA224Spec from "../test/SHA224Spec";
 import SHA256Spec from "../test/SHA256Spec";
 import SHA512Spec from "../test/SHA512Spec";
+import SHA384Spec from "../test/SHA384Spec";
 import CRCSpec from "../test/CRCSpec";
 
 var clc = require("cli-color");
@@ -65,6 +66,7 @@ testSuite.push(
     SHA1Spec,
     SHA224Spec,
     SHA256Spec,
+    SHA384Spec,
     SHA512Spec,
     CRCSpec
 );

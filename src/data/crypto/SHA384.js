@@ -35,32 +35,48 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import SHA256 from "./SHA256";
-
-const H1 = 0xC1059ED8;
-const H2 = 0x367CD507;
-const H3 = 0x3070DD17;
-const H4 = 0xF70E5939;
-const H5 = 0xFFC00B31;
-const H6 = 0x68581511;
-const H7 = 0x64F98FA7;
-const H8 = 0xBEFA4FA4;
-
-export default class SHA224 extends SHA256 {
+import SHA512 from "./SHA512";
+    
+const H1_0 = 0xCBBB9D5D;
+const H1_1 = 0xC1059ED8;
+const H2_0 = 0x629A292A;
+const H2_1 = 0x367CD507;
+const H3_0 = 0x9159015A;
+const H3_1 = 0x3070DD17;
+const H4_0 = 0x152FECD8;
+const H4_1 = 0xF70E5939;
+const H5_0 = 0x67332667;
+const H5_1 = 0xFFC00B31;
+const H6_0 = 0x8EB44A87;
+const H6_1 = 0x68581511;
+const H7_0 = 0xDB0C2E0D;
+const H7_1 = 0x64F98FA7;
+const H8_0 = 0x47B5481D;
+const H8_1 = 0xBEFA4FA4;
+    
+export default class SHA384 extends SHA512 {
     constructor() {
         super();
         this._resetDigest();
     }
     
     _resetDigest() {
-        this._digest[0] = H1;
-        this._digest[1] = H2;
-        this._digest[2] = H3;
-        this._digest[3] = H4;
-        this._digest[4] = H5;
-        this._digest[5] = H6;
-        this._digest[6] = H7;
-        this._digest[7] = H8;
+        this._digest[ 0] = H1_0;
+        this._digest[ 1] = H1_1;
+        this._digest[ 2] = H2_0;
+        this._digest[ 3] = H2_1;
+        this._digest[ 4] = H3_0;
+        this._digest[ 5] = H3_1;
+        this._digest[ 6] = H4_0;
+        this._digest[ 7] = H4_1;
+        this._digest[ 8] = H5_0;
+        this._digest[ 9] = H5_1;
+        this._digest[10] = H6_0;
+        this._digest[11] = H6_1;
+        this._digest[12] = H7_0;
+        this._digest[13] = H7_1;
+        this._digest[14] = H8_0;
+        this._digest[15] = H8_1;
     }
     
     reset() {
@@ -69,6 +85,6 @@ export default class SHA224 extends SHA256 {
     }
     
     final() {
-        return super.final().subarray(0, 7);
+        return super.final().subarray(0, 12);
     }
 }
