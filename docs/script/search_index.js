@@ -378,6 +378,18 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/sha512t224.js~sha512t224",
+    "class/src/data/crypto/SHA512t224.js~SHA512t224.html",
+    "<span>SHA512t224</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA512t224.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/sha512t256.js~sha512t256",
+    "class/src/data/crypto/SHA512t256.js~SHA512t256.html",
+    "<span>SHA512t256</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA512t256.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/events/eventpropagation.js~stop_at_parent",
     "variable/index.html#static-variable-STOP_AT_PARENT",
     "<span>STOP_AT_PARENT</span> <span class=\"search-result-import-path\">guless-closure/src/events/EventPropagation.js</span>",
@@ -1051,13 +1063,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#padchar",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-padchar",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-padchar",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#padchar",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#padchar",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-padchar",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-padchar",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#padchar",
     "member"
   ],
@@ -1213,13 +1225,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1797,6 +1809,54 @@ window.esdocSearchIndex = [
     "src/data/crypto/sha512.js~sha512#update",
     "class/src/data/crypto/SHA512.js~SHA512.html#instance-method-update",
     "src/data/crypto/SHA512.js~SHA512#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha512t224.js",
+    "file/src/data/crypto/SHA512t224.js.html",
+    "src/data/crypto/SHA512t224.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/sha512t224.js~sha512t224#constructor",
+    "class/src/data/crypto/SHA512t224.js~SHA512t224.html#instance-constructor-constructor",
+    "src/data/crypto/SHA512t224.js~SHA512t224#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha512t224.js~sha512t224#final",
+    "class/src/data/crypto/SHA512t224.js~SHA512t224.html#instance-method-final",
+    "src/data/crypto/SHA512t224.js~SHA512t224#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha512t224.js~sha512t224#reset",
+    "class/src/data/crypto/SHA512t224.js~SHA512t224.html#instance-method-reset",
+    "src/data/crypto/SHA512t224.js~SHA512t224#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha512t256.js",
+    "file/src/data/crypto/SHA512t256.js.html",
+    "src/data/crypto/SHA512t256.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/sha512t256.js~sha512t256#constructor",
+    "class/src/data/crypto/SHA512t256.js~SHA512t256.html#instance-constructor-constructor",
+    "src/data/crypto/SHA512t256.js~SHA512t256#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha512t256.js~sha512t256#final",
+    "class/src/data/crypto/SHA512t256.js~SHA512t256.html#instance-method-final",
+    "src/data/crypto/SHA512t256.js~SHA512t256#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha512t256.js~sha512t256#reset",
+    "class/src/data/crypto/SHA512t256.js~SHA512t256.html#instance-method-reset",
+    "src/data/crypto/SHA512t256.js~SHA512t256#reset",
     "method"
   ],
   [

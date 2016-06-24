@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 227,
+  "expectCount": 235,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -509,6 +509,26 @@
         38
       ]
     },
+    "src/data/crypto/SHA512t224.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        57,
+        58,
+        87,
+        82
+      ]
+    },
+    "src/data/crypto/SHA512t256.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        57,
+        58,
+        87,
+        82
+      ]
+    },
     "src/data/core/Sharedable.js": {
       "expectCount": 8,
       "actualCount": 0,
@@ -541,13 +561,13 @@
         42,
         43,
         59,
-        74,
         78,
+        74,
         86,
         82,
         51,
-        90,
-        94
+        94,
+        90
       ]
     },
     "src/data/codec/UTF8Decoder.js": {
