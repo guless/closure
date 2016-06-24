@@ -261,15 +261,18 @@ export default class SHA512 extends Streamable {
             }
             
             for ( var t = 32; t < 160; t += 2 ) {
+                T[0] = T[1] = 0;
+                
                 SIGMA11(U, W, t - 4);
                 SIGMA10(V, W, t - 30);
                 
-                ADDTO(U, 0, V, 0);
-                ADDTO(U, 0, W, t - 14);
-                ADDTO(U, 0, W, t - 32);
+                ADDTO(T, 0, U, 0);
+                ADDTO(T, 0, V, 0);
+                ADDTO(T, 0, W, t - 14);
+                ADDTO(T, 0, W, t - 32);
                 
-                W[t] = U[0];
-                W[t + 1] = U[1];
+                W[t] = T[0];
+                W[t + 1] = T[1];
             }
             
             copy(this._digest, S);
