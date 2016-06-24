@@ -35,60 +35,56 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import SHA384Spec from "../test/SHA384Spec";
-import SHA512Spec from "../test/SHA512Spec";
-import SHA512t224Spec from "../test/SHA512t224Spec";
-import SHA512t256Spec from "../test/SHA512t256Spec";
-import CRCSpec from "../test/CRCSpec";
-
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
-
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    SHA384Spec,
-    SHA512Spec,
-    SHA512t224Spec,
-    SHA512t256Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
+import SHA512 from "./SHA512";
+    
+const H1_0 = 0x8C3D37C8;
+const H1_1 = 0x19544DA2;
+const H2_0 = 0x73E19966;
+const H2_1 = 0x89DCD4D6;
+const H3_0 = 0x1DFAB7AE;
+const H3_1 = 0x32FF9C82;
+const H4_0 = 0x679DD514;
+const H4_1 = 0x582F9FCF;
+const H5_0 = 0x0F6D2B69;
+const H5_1 = 0x7BD44DA8;
+const H6_0 = 0x77E36F73;
+const H6_1 = 0x04C48942;
+const H7_0 = 0x3F9D85A8;
+const H7_1 = 0x6A1D36C8;
+const H8_0 = 0x1112E6AD;
+const H8_1 = 0x91D692A1;
+    
+export default class SHA512t224 extends SHA512 {
+    constructor() {
+        super();
+        this._resetDigest();
     }
     
-    console.log("");
-}
-
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+    _resetDigest() {
+        this._digest[ 0] = H1_0;
+        this._digest[ 1] = H1_1;
+        this._digest[ 2] = H2_0;
+        this._digest[ 3] = H2_1;
+        this._digest[ 4] = H3_0;
+        this._digest[ 5] = H3_1;
+        this._digest[ 6] = H4_0;
+        this._digest[ 7] = H4_1;
+        this._digest[ 8] = H5_0;
+        this._digest[ 9] = H5_1;
+        this._digest[10] = H6_0;
+        this._digest[11] = H6_1;
+        this._digest[12] = H7_0;
+        this._digest[13] = H7_1;
+        this._digest[14] = H8_0;
+        this._digest[15] = H8_1;
+    }
+    
+    reset() {
+        super.reset();
+        this._resetDigest();
+    }
+    
+    final() {
+        return super.final().subarray(0, 7);
+    }
 }

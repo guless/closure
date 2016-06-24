@@ -35,60 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import SHA384Spec from "../test/SHA384Spec";
-import SHA512Spec from "../test/SHA512Spec";
-import SHA512t224Spec from "../test/SHA512t224Spec";
-import SHA512t256Spec from "../test/SHA512t256Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import SHA512t224 from "../src/data/crypto/SHA512t224";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+var SHA512t224API = new SHA512t224();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    SHA384Spec,
-    SHA512Spec,
-    SHA512t224Spec,
-    SHA512t256Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start SHA512t224 Test Suite]:");
     
-    console.log("");
+    test_SHA512t224("", "6ed0dd02806fa89e25de060c19d3ac86cabb87d6a0ddd05c333b84f4");
+    test_SHA512t224("a", "d5cdb9ccc769a5121d4175f2bfdd13d6310e0d3d361ea75d82108327");
+    test_SHA512t224("abc", "4634270f707b6a54daae7530460842e20e37ed265ceee9a43e8924aa");
+    test_SHA512t224("Secure Hash Algorithm", "4a2eab100da5b86c9e88f94bc5b009d7e4edcd1ebad3b571016cae8e");
+    test_SHA512t224("abcdefghijklmnopqrstuvwxyz", "ff83148aa07ec30655c1b40aff86141c0215fe2a54f767d3f38743d8");
+    test_SHA512t224("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "a8b4b9174b99ffc67d6f49be9981587b96441051e16e6dd036b140d3");
+    test_SHA512t224("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "ae988faaa47e401a45f704d1272d99702458fea2ddc6582827556dd2");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_SHA512t224( input, expect ) {
+    SHA512t224API = new SHA512t224();
+    SHA512t224API.update( ascii(input) );
+    
+    var result = hexof(SHA512t224API.final());
+    assert(result == expect, "SHA512t224 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
