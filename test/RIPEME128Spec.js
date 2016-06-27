@@ -35,64 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import SHA384Spec from "../test/SHA384Spec";
-import SHA512Spec from "../test/SHA512Spec";
-import SHA512t224Spec from "../test/SHA512t224Spec";
-import SHA512t256Spec from "../test/SHA512t256Spec";
-import RIPEME128Spec from "../test/RIPEME128Spec";
-import RIPEME160Spec from "../test/RIPEME160Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import RIPEMD128 from "../src/data/crypto/RIPEMD128";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const RIPEMD128API = new RIPEMD128();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    SHA384Spec,
-    SHA512Spec,
-    SHA512t224Spec,
-    SHA512t256Spec,
-    RIPEME128Spec,
-    RIPEME160Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start RIPEMD128 Test Suite]:");
     
-    console.log("");
+    test_repimd128("", "cdf26213a150dc3ecb610f18f6b38b46");
+    test_repimd128("a", "86be7afa339d0fc7cfc785e72f578d33");
+    test_repimd128("abc", "c14a12199c66e4ba84636b0f69144c77");
+    test_repimd128("message digest", "9e327b3d6e523062afc1132d7df9d1b8");
+    test_repimd128("abcdefghijklmnopqrstuvwxyz", "fd2aa607f71dc8f510714922b371834e");
+    test_repimd128("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d1e959eb179c911faea4624c60c5c702");
+    test_repimd128("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "3f45ef194732c2dbb2c4a2c769795fa3");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_repimd128( input, expect ) {
+    RIPEMD128API.reset();
+    RIPEMD128API.update( ascii(input) );
+    
+    var result = hexof(RIPEMD128API.final());
+    assert(result == expect, "RIPEMD128 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
