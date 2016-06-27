@@ -330,6 +330,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/ripemd160.js~ripemd160",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html",
+    "<span>RIPEMD160</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD160.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/crypto/sha0.js~sha0",
     "class/src/data/crypto/SHA0.js~SHA0.html",
     "<span>SHA0</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA0.js</span>",
@@ -1225,13 +1231,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1659,6 +1665,36 @@ window.esdocSearchIndex = [
     "src/data/crypto/md5.js~md5#update",
     "class/src/data/crypto/MD5.js~MD5.html#instance-method-update",
     "src/data/crypto/MD5.js~MD5#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js",
+    "file/src/data/crypto/RIPEMD160.js.html",
+    "src/data/crypto/RIPEMD160.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#constructor",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#final",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-final",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#reset",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-reset",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#update",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-update",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#update",
     "method"
   ],
   [

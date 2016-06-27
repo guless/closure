@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 235,
+  "expectCount": 240,
   "actualCount": 0,
   "files": {
     "src/events/EventPropagation.js": {
@@ -434,6 +434,17 @@
         85
       ]
     },
+    "src/data/crypto/RIPEMD160.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        74,
+        75,
+        98,
+        82,
+        93
+      ]
+    },
     "src/data/crypto/SHA0.js": {
       "expectCount": 2,
       "actualCount": 0,
@@ -561,13 +572,13 @@
         42,
         43,
         59,
-        78,
         74,
-        86,
+        78,
         82,
+        86,
         51,
-        94,
-        90
+        90,
+        94
       ]
     },
     "src/data/codec/UTF8Decoder.js": {

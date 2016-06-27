@@ -67,6 +67,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html">MD4</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD160.js~RIPEMD160.html">RIPEMD160</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html">SHA0</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
@@ -386,15 +387,18 @@ export default class SHA512 extends Streamable {
             }
             
             for ( var t = 32; t &lt; 160; t += 2 ) {
+                T[0] = T[1] = 0;
+                
                 SIGMA11(U, W, t - 4);
                 SIGMA10(V, W, t - 30);
                 
-                ADDTO(U, 0, V, 0);
-                ADDTO(U, 0, W, t - 14);
-                ADDTO(U, 0, W, t - 32);
+                ADDTO(T, 0, U, 0);
+                ADDTO(T, 0, V, 0);
+                ADDTO(T, 0, W, t - 14);
+                ADDTO(T, 0, W, t - 32);
                 
-                W[t] = U[0];
-                W[t + 1] = U[1];
+                W[t] = T[0];
+                W[t + 1] = T[1];
             }
             
             copy(this._digest, S);
