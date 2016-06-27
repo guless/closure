@@ -330,6 +330,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/ripemd128.js~ripemd128",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html",
+    "<span>RIPEMD128</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD128.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/crypto/ripemd160.js~ripemd160",
     "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html",
     "<span>RIPEMD160</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD160.js</span>",
@@ -1057,13 +1063,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#omitpad",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-omitpad",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-omitpad",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#omitpad",
     "member"
   ],
   [
     "src/data/codec/tablebasedencoding.js~tablebasedencoding#omitpad",
-    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-get-omitpad",
+    "class/src/data/codec/TableBasedEncoding.js~TableBasedEncoding.html#instance-set-omitpad",
     "src/data/codec/TableBasedEncoding.js~TableBasedEncoding#omitpad",
     "member"
   ],
@@ -1231,13 +1237,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1665,6 +1671,36 @@ window.esdocSearchIndex = [
     "src/data/crypto/md5.js~md5#update",
     "class/src/data/crypto/MD5.js~MD5.html#instance-method-update",
     "src/data/crypto/MD5.js~MD5#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js",
+    "file/src/data/crypto/RIPEMD128.js.html",
+    "src/data/crypto/RIPEMD128.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#constructor",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#final",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-method-final",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#reset",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-method-reset",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#update",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-method-update",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#update",
     "method"
   ],
   [

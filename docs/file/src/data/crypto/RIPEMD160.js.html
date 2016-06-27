@@ -67,6 +67,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html">MD4</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD128.js~RIPEMD128.html">RIPEMD128</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD160.js~RIPEMD160.html">RIPEMD160</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html">SHA0</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
@@ -348,94 +349,94 @@ export default class RIPEMD160 extends Streamable {
             bb = JJ(bb, cc, dd, ee, aa, dataview.getUint32(52, true),  6); dd = ((dd &lt;&lt; 10) | (dd &gt;&gt;&gt; 22));
             
             /* parallel round 1 */
-            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 5 * 4, true),  8); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = JJJ(eee, aaa, bbb, ccc, ddd, dataview.getUint32(14 * 4, true),  9); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = JJJ(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 7 * 4, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = JJJ(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 0 * 4, true), 11); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = JJJ(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 9 * 4, true), 13); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 2 * 4, true), 15); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = JJJ(eee, aaa, bbb, ccc, ddd, dataview.getUint32(11 * 4, true), 15); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = JJJ(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 4 * 4, true),  5); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = JJJ(ccc, ddd, eee, aaa, bbb, dataview.getUint32(13 * 4, true),  7); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = JJJ(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 6 * 4, true),  7); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32(15 * 4, true),  8); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = JJJ(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 8 * 4, true), 11); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = JJJ(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 1 * 4, true), 14); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = JJJ(ccc, ddd, eee, aaa, bbb, dataview.getUint32(10 * 4, true), 14); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = JJJ(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 3 * 4, true), 12); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32(12 * 4, true),  6); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32(20, true),  8); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = JJJ(eee, aaa, bbb, ccc, ddd, dataview.getUint32(56, true),  9); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = JJJ(ddd, eee, aaa, bbb, ccc, dataview.getUint32(28, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = JJJ(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 0, true), 11); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = JJJ(bbb, ccc, ddd, eee, aaa, dataview.getUint32(36, true), 13); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 8, true), 15); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = JJJ(eee, aaa, bbb, ccc, ddd, dataview.getUint32(44, true), 15); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = JJJ(ddd, eee, aaa, bbb, ccc, dataview.getUint32(16, true),  5); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = JJJ(ccc, ddd, eee, aaa, bbb, dataview.getUint32(52, true),  7); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = JJJ(bbb, ccc, ddd, eee, aaa, dataview.getUint32(24, true),  7); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32(60, true),  8); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = JJJ(eee, aaa, bbb, ccc, ddd, dataview.getUint32(32, true), 11); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = JJJ(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 4, true), 14); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = JJJ(ccc, ddd, eee, aaa, bbb, dataview.getUint32(40, true), 14); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = JJJ(bbb, ccc, ddd, eee, aaa, dataview.getUint32(12, true), 12); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = JJJ(aaa, bbb, ccc, ddd, eee, dataview.getUint32(48, true),  6); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
             
             /* parallel round 2 */
-            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 6 * 4, true),  9); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = III(ddd, eee, aaa, bbb, ccc, dataview.getUint32(11 * 4, true), 13); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = III(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 3 * 4, true), 15); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = III(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 7 * 4, true),  7); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = III(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 0 * 4, true), 12); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32(13 * 4, true),  8); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = III(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 5 * 4, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = III(ccc, ddd, eee, aaa, bbb, dataview.getUint32(10 * 4, true), 11); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = III(bbb, ccc, ddd, eee, aaa, dataview.getUint32(14 * 4, true),  7); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = III(aaa, bbb, ccc, ddd, eee, dataview.getUint32(15 * 4, true),  7); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 8 * 4, true), 12); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = III(ddd, eee, aaa, bbb, ccc, dataview.getUint32(12 * 4, true),  7); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = III(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 4 * 4, true),  6); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = III(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 9 * 4, true), 15); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = III(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 1 * 4, true), 13); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 2 * 4, true), 11); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32(24, true),  9); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = III(ddd, eee, aaa, bbb, ccc, dataview.getUint32(44, true), 13); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = III(ccc, ddd, eee, aaa, bbb, dataview.getUint32(12, true), 15); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = III(bbb, ccc, ddd, eee, aaa, dataview.getUint32(28, true),  7); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = III(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 0, true), 12); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32(52, true),  8); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = III(ddd, eee, aaa, bbb, ccc, dataview.getUint32(20, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = III(ccc, ddd, eee, aaa, bbb, dataview.getUint32(40, true), 11); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = III(bbb, ccc, ddd, eee, aaa, dataview.getUint32(56, true),  7); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = III(aaa, bbb, ccc, ddd, eee, dataview.getUint32(60, true),  7); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32(32, true), 12); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = III(ddd, eee, aaa, bbb, ccc, dataview.getUint32(48, true),  7); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = III(ccc, ddd, eee, aaa, bbb, dataview.getUint32(16, true),  6); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = III(bbb, ccc, ddd, eee, aaa, dataview.getUint32(36, true), 15); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = III(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 4, true), 13); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = III(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 8, true), 11); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
             
             /* parallel round 3 */
-            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(15 * 4, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = HHH(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 5 * 4, true),  7); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = HHH(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 1 * 4, true), 15); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = HHH(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 3 * 4, true), 11); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = HHH(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 7 * 4, true),  8); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(14 * 4, true),  6); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = HHH(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 6 * 4, true),  6); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = HHH(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 9 * 4, true), 14); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = HHH(aaa, bbb, ccc, ddd, eee, dataview.getUint32(11 * 4, true), 12); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = HHH(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 8 * 4, true), 13); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(12 * 4, true),  5); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = HHH(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 2 * 4, true), 14); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = HHH(bbb, ccc, ddd, eee, aaa, dataview.getUint32(10 * 4, true), 13); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = HHH(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 0 * 4, true), 13); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = HHH(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 4 * 4, true),  7); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(13 * 4, true),  5); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(60, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = HHH(ccc, ddd, eee, aaa, bbb, dataview.getUint32(20, true),  7); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = HHH(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 4, true), 15); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = HHH(aaa, bbb, ccc, ddd, eee, dataview.getUint32(12, true), 11); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = HHH(eee, aaa, bbb, ccc, ddd, dataview.getUint32(28, true),  8); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(56, true),  6); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = HHH(ccc, ddd, eee, aaa, bbb, dataview.getUint32(24, true),  6); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = HHH(bbb, ccc, ddd, eee, aaa, dataview.getUint32(36, true), 14); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = HHH(aaa, bbb, ccc, ddd, eee, dataview.getUint32(44, true), 12); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = HHH(eee, aaa, bbb, ccc, ddd, dataview.getUint32(32, true), 13); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(48, true),  5); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = HHH(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 8, true), 14); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = HHH(bbb, ccc, ddd, eee, aaa, dataview.getUint32(40, true), 13); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = HHH(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 0, true), 13); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = HHH(eee, aaa, bbb, ccc, ddd, dataview.getUint32(16, true),  7); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = HHH(ddd, eee, aaa, bbb, ccc, dataview.getUint32(52, true),  5); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
             
             /* parallel round 4 */   
-            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 8 * 4, true), 15); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = GGG(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 6 * 4, true),  5); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = GGG(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 4 * 4, true),  8); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = GGG(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 1 * 4, true), 11); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = GGG(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 3 * 4, true), 14); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32(11 * 4, true), 14); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = GGG(bbb, ccc, ddd, eee, aaa, dataview.getUint32(15 * 4, true),  6); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = GGG(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 0 * 4, true), 14); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = GGG(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 5 * 4, true),  6); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = GGG(ddd, eee, aaa, bbb, ccc, dataview.getUint32(12 * 4, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 2 * 4, true), 12); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = GGG(bbb, ccc, ddd, eee, aaa, dataview.getUint32(13 * 4, true),  9); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = GGG(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 9 * 4, true), 12); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = GGG(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 7 * 4, true),  5); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = GGG(ddd, eee, aaa, bbb, ccc, dataview.getUint32(10 * 4, true), 15); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32(14 * 4, true),  8); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32(32, true), 15); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = GGG(bbb, ccc, ddd, eee, aaa, dataview.getUint32(24, true),  5); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = GGG(aaa, bbb, ccc, ddd, eee, dataview.getUint32(16, true),  8); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = GGG(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 4, true), 11); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = GGG(ddd, eee, aaa, bbb, ccc, dataview.getUint32(12, true), 14); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32(44, true), 14); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = GGG(bbb, ccc, ddd, eee, aaa, dataview.getUint32(60, true),  6); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = GGG(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 0, true), 14); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = GGG(eee, aaa, bbb, ccc, ddd, dataview.getUint32(20, true),  6); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = GGG(ddd, eee, aaa, bbb, ccc, dataview.getUint32(48, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 8, true), 12); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = GGG(bbb, ccc, ddd, eee, aaa, dataview.getUint32(52, true),  9); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = GGG(aaa, bbb, ccc, ddd, eee, dataview.getUint32(36, true), 12); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = GGG(eee, aaa, bbb, ccc, ddd, dataview.getUint32(28, true),  5); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = GGG(ddd, eee, aaa, bbb, ccc, dataview.getUint32(40, true), 15); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = GGG(ccc, ddd, eee, aaa, bbb, dataview.getUint32(56, true),  8); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
             
             /* parallel round 5 */
-            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(12 * 4, true),  8); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = FFF(aaa, bbb, ccc, ddd, eee, dataview.getUint32(15 * 4, true),  5); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = FFF(eee, aaa, bbb, ccc, ddd, dataview.getUint32(10 * 4, true), 12); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = FFF(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 4 * 4, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = FFF(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 1 * 4, true), 12); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32( 5 * 4, true),  5); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = FFF(aaa, bbb, ccc, ddd, eee, dataview.getUint32( 8 * 4, true), 14); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = FFF(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 7 * 4, true),  6); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = FFF(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 6 * 4, true),  8); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = FFF(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 2 * 4, true), 13); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(13 * 4, true),  6); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
-            aaa = FFF(aaa, bbb, ccc, ddd, eee, dataview.getUint32(14 * 4, true),  5); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
-            eee = FFF(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 0 * 4, true), 15); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
-            ddd = FFF(ddd, eee, aaa, bbb, ccc, dataview.getUint32( 3 * 4, true), 13); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
-            ccc = FFF(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 9 * 4, true), 11); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
-            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(11 * 4, true), 11); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(48, true),  8); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = FFF(aaa, bbb, ccc, ddd, eee, dataview.getUint32(60, true),  5); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = FFF(eee, aaa, bbb, ccc, ddd, dataview.getUint32(40, true), 12); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = FFF(ddd, eee, aaa, bbb, ccc, dataview.getUint32(16, true),  9); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = FFF(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 4, true), 12); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(20, true),  5); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = FFF(aaa, bbb, ccc, ddd, eee, dataview.getUint32(32, true), 14); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = FFF(eee, aaa, bbb, ccc, ddd, dataview.getUint32(28, true),  6); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = FFF(ddd, eee, aaa, bbb, ccc, dataview.getUint32(24, true),  8); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = FFF(ccc, ddd, eee, aaa, bbb, dataview.getUint32( 8, true), 13); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(52, true),  6); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
+            aaa = FFF(aaa, bbb, ccc, ddd, eee, dataview.getUint32(56, true),  5); ccc = ((ccc &lt;&lt; 10) | (ccc &gt;&gt;&gt; 22));
+            eee = FFF(eee, aaa, bbb, ccc, ddd, dataview.getUint32( 0, true), 15); bbb = ((bbb &lt;&lt; 10) | (bbb &gt;&gt;&gt; 22));
+            ddd = FFF(ddd, eee, aaa, bbb, ccc, dataview.getUint32(12, true), 13); aaa = ((aaa &lt;&lt; 10) | (aaa &gt;&gt;&gt; 22));
+            ccc = FFF(ccc, ddd, eee, aaa, bbb, dataview.getUint32(36, true), 11); eee = ((eee &lt;&lt; 10) | (eee &gt;&gt;&gt; 22));
+            bbb = FFF(bbb, ccc, ddd, eee, aaa, dataview.getUint32(44, true), 11); ddd = ((ddd &lt;&lt; 10) | (ddd &gt;&gt;&gt; 22));
             
             /* combine results */
             ddd += cc + this._digest[1];
