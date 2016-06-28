@@ -35,68 +35,31 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import SHA384Spec from "../test/SHA384Spec";
-import SHA512Spec from "../test/SHA512Spec";
-import SHA512t224Spec from "../test/SHA512t224Spec";
-import SHA512t256Spec from "../test/SHA512t256Spec";
-import RIPEMD128Spec from "../test/RIPEMD128Spec";
-import RIPEMD160Spec from "../test/RIPEMD160Spec";
-import RIPEMD256Spec from "../test/RIPEMD256Spec";
-import RIPEMD320Spec from "../test/RIPEMD320Spec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import RIPEMD256 from "../src/data/crypto/RIPEMD256";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const RIPEMD256API = new RIPEMD256();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    SHA384Spec,
-    SHA512Spec,
-    SHA512t224Spec,
-    SHA512t256Spec,
-    RIPEMD128Spec,
-    RIPEMD160Spec,
-    RIPEMD256Spec,
-    RIPEMD320Spec,
-    CRCSpec
-);
-
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
+export default function () {
+    console.log("[Start RIPEMD256 Test Suite]:");
     
-    console.log("");
+    test_repimd256("", "02ba4c4e5f8ecd1877fc52d64d30e37a2d9774fb1e5d026380ae0168e3c5522d");
+    test_repimd256("a", "f9333e45d857f5d90a91bab70a1eba0cfb1be4b0783c9acfcd883a9134692925");
+    test_repimd256("abc", "afbd6e228b9d8cbbcef5ca2d03e6dba10ac0bc7dcbe4680e1e42d2e975459b65");
+    test_repimd256("message digest", "87e971759a1ce47a514d5c914c392c9018c7c46bc14465554afcdf54a5070c0e");
+    test_repimd256("abcdefghijklmnopqrstuvwxyz", "649d3034751ea216776bf9a18acc81bc7896118a5197968782dd1fd97d8d5133");
+    test_repimd256("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "5740a408ac16b720b84424ae931cbb1fe363d1d0bf4017f1a89f7ea6de77a0b8");
+    test_repimd256("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "06fdcc7a409548aaf91368c06a6275b553e3f099bf0ea4edfd6778df89a890dd");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_repimd256( input, expect ) {
+    RIPEMD256API.reset();
+    RIPEMD256API.update( ascii(input) );
+    
+    var result = hexof(RIPEMD256API.final());
+    assert(result == expect, "RIPEMD256 does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
