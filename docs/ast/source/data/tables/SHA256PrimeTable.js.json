@@ -55,91 +55,35 @@
                       "value": 1116352408,
                       "raw": "0x428a2f98",
                       "range": [
-                        2601,
-                        2611
+                        2452,
+                        2462
                       ],
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 39,
                           "column": 4
                         },
                         "end": {
-                          "line": 42,
+                          "line": 39,
                           "column": 14
                         }
-                      },
-                      "leadingComments": [
-                        {
-                          "type": "Line",
-                          "value": "/ P[i] = [2, 3, 5, 7, 11, ..., 311];",
-                          "range": [
-                            2452,
-                            2490
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 39,
-                              "column": 4
-                            },
-                            "end": {
-                              "line": 39,
-                              "column": 42
-                            }
-                          }
-                        },
-                        {
-                          "type": "Line",
-                          "value": "/ K[i] = Math.pow(P[i], 1/3).toString(16);",
-                          "range": [
-                            2495,
-                            2539
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 40,
-                              "column": 4
-                            },
-                            "end": {
-                              "line": 40,
-                              "column": 48
-                            }
-                          }
-                        },
-                        {
-                          "type": "Line",
-                          "value": "/ K[i] = parseInt(K[i].split(\".\")[1].slice(0, 8));",
-                          "range": [
-                            2544,
-                            2596
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 41,
-                              "column": 4
-                            },
-                            "end": {
-                              "line": 41,
-                              "column": 56
-                            }
-                          }
-                        }
-                      ]
+                      }
                     },
                     {
                       "type": "Literal",
                       "value": 1899447441,
                       "raw": "0x71374491",
                       "range": [
-                        2613,
-                        2623
+                        2464,
+                        2474
                       ],
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 39,
                           "column": 16
                         },
                         "end": {
-                          "line": 42,
+                          "line": 39,
                           "column": 26
                         }
                       }
@@ -149,16 +93,16 @@
                       "value": 3049323471,
                       "raw": "0xb5c0fbcf",
                       "range": [
-                        2625,
-                        2635
+                        2476,
+                        2486
                       ],
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 39,
                           "column": 28
                         },
                         "end": {
-                          "line": 42,
+                          "line": 39,
                           "column": 38
                         }
                       }
@@ -168,16 +112,16 @@
                       "value": 3921009573,
                       "raw": "0xe9b5dba5",
                       "range": [
-                        2637,
-                        2647
+                        2488,
+                        2498
                       ],
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 39,
                           "column": 40
                         },
                         "end": {
-                          "line": 42,
+                          "line": 39,
                           "column": 50
                         }
                       }
@@ -187,16 +131,16 @@
                       "value": 961987163,
                       "raw": "0x3956c25b",
                       "range": [
-                        2654,
-                        2664
+                        2505,
+                        2515
                       ],
                       "loc": {
                         "start": {
-                          "line": 43,
+                          "line": 40,
                           "column": 4
                         },
                         "end": {
-                          "line": 43,
+                          "line": 40,
                           "column": 14
                         }
                       }
@@ -206,16 +150,16 @@
                       "value": 1508970993,
                       "raw": "0x59f111f1",
                       "range": [
-                        2666,
-                        2676
+                        2517,
+                        2527
                       ],
                       "loc": {
                         "start": {
-                          "line": 43,
+                          "line": 40,
                           "column": 16
                         },
                         "end": {
-                          "line": 43,
+                          "line": 40,
                           "column": 26
                         }
                       }
@@ -225,16 +169,16 @@
                       "value": 2453635748,
                       "raw": "0x923f82a4",
                       "range": [
-                        2678,
-                        2688
+                        2529,
+                        2539
                       ],
                       "loc": {
                         "start": {
-                          "line": 43,
+                          "line": 40,
                           "column": 28
                         },
                         "end": {
-                          "line": 43,
+                          "line": 40,
                           "column": 38
                         }
                       }
@@ -244,16 +188,16 @@
                       "value": 2870763221,
                       "raw": "0xab1c5ed5",
                       "range": [
-                        2690,
-                        2700
+                        2541,
+                        2551
                       ],
                       "loc": {
                         "start": {
-                          "line": 43,
+                          "line": 40,
                           "column": 40
                         },
                         "end": {
-                          "line": 43,
+                          "line": 40,
                           "column": 50
                         }
                       }
@@ -263,16 +207,16 @@
                       "value": 3624381080,
                       "raw": "0xd807aa98",
                       "range": [
-                        2707,
-                        2717
+                        2558,
+                        2568
                       ],
                       "loc": {
                         "start": {
-                          "line": 44,
+                          "line": 41,
                           "column": 4
                         },
                         "end": {
-                          "line": 44,
+                          "line": 41,
                           "column": 14
                         }
                       }
@@ -282,16 +226,16 @@
                       "value": 310598401,
                       "raw": "0x12835b01",
                       "range": [
-                        2719,
-                        2729
+                        2570,
+                        2580
                       ],
                       "loc": {
                         "start": {
-                          "line": 44,
+                          "line": 41,
                           "column": 16
                         },
                         "end": {
-                          "line": 44,
+                          "line": 41,
                           "column": 26
                         }
                       }
@@ -301,16 +245,16 @@
                       "value": 607225278,
                       "raw": "0x243185be",
                       "range": [
-                        2731,
-                        2741
+                        2582,
+                        2592
                       ],
                       "loc": {
                         "start": {
-                          "line": 44,
+                          "line": 41,
                           "column": 28
                         },
                         "end": {
-                          "line": 44,
+                          "line": 41,
                           "column": 38
                         }
                       }
@@ -320,16 +264,16 @@
                       "value": 1426881987,
                       "raw": "0x550c7dc3",
                       "range": [
-                        2743,
-                        2753
+                        2594,
+                        2604
                       ],
                       "loc": {
                         "start": {
-                          "line": 44,
+                          "line": 41,
                           "column": 40
                         },
                         "end": {
-                          "line": 44,
+                          "line": 41,
                           "column": 50
                         }
                       }
@@ -339,16 +283,16 @@
                       "value": 1925078388,
                       "raw": "0x72be5d74",
                       "range": [
-                        2760,
-                        2770
+                        2611,
+                        2621
                       ],
                       "loc": {
                         "start": {
-                          "line": 45,
+                          "line": 42,
                           "column": 4
                         },
                         "end": {
-                          "line": 45,
+                          "line": 42,
                           "column": 14
                         }
                       }
@@ -358,16 +302,16 @@
                       "value": 2162078206,
                       "raw": "0x80deb1fe",
                       "range": [
-                        2772,
-                        2782
+                        2623,
+                        2633
                       ],
                       "loc": {
                         "start": {
-                          "line": 45,
+                          "line": 42,
                           "column": 16
                         },
                         "end": {
-                          "line": 45,
+                          "line": 42,
                           "column": 26
                         }
                       }
@@ -377,16 +321,16 @@
                       "value": 2614888103,
                       "raw": "0x9bdc06a7",
                       "range": [
-                        2784,
-                        2794
+                        2635,
+                        2645
                       ],
                       "loc": {
                         "start": {
-                          "line": 45,
+                          "line": 42,
                           "column": 28
                         },
                         "end": {
-                          "line": 45,
+                          "line": 42,
                           "column": 38
                         }
                       }
@@ -396,16 +340,16 @@
                       "value": 3248222580,
                       "raw": "0xc19bf174",
                       "range": [
-                        2796,
-                        2806
+                        2647,
+                        2657
                       ],
                       "loc": {
                         "start": {
-                          "line": 45,
+                          "line": 42,
                           "column": 40
                         },
                         "end": {
-                          "line": 45,
+                          "line": 42,
                           "column": 50
                         }
                       }
@@ -415,16 +359,16 @@
                       "value": 3835390401,
                       "raw": "0xe49b69c1",
                       "range": [
-                        2813,
-                        2823
+                        2664,
+                        2674
                       ],
                       "loc": {
                         "start": {
-                          "line": 46,
+                          "line": 43,
                           "column": 4
                         },
                         "end": {
-                          "line": 46,
+                          "line": 43,
                           "column": 14
                         }
                       }
@@ -434,16 +378,16 @@
                       "value": 4022224774,
                       "raw": "0xefbe4786",
                       "range": [
-                        2825,
-                        2835
+                        2676,
+                        2686
                       ],
                       "loc": {
                         "start": {
-                          "line": 46,
+                          "line": 43,
                           "column": 16
                         },
                         "end": {
-                          "line": 46,
+                          "line": 43,
                           "column": 26
                         }
                       }
@@ -453,16 +397,16 @@
                       "value": 264347078,
                       "raw": "0x0fc19dc6",
                       "range": [
-                        2837,
-                        2847
+                        2688,
+                        2698
                       ],
                       "loc": {
                         "start": {
-                          "line": 46,
+                          "line": 43,
                           "column": 28
                         },
                         "end": {
-                          "line": 46,
+                          "line": 43,
                           "column": 38
                         }
                       }
@@ -472,16 +416,16 @@
                       "value": 604807628,
                       "raw": "0x240ca1cc",
                       "range": [
-                        2849,
-                        2859
+                        2700,
+                        2710
                       ],
                       "loc": {
                         "start": {
-                          "line": 46,
+                          "line": 43,
                           "column": 40
                         },
                         "end": {
-                          "line": 46,
+                          "line": 43,
                           "column": 50
                         }
                       }
@@ -491,16 +435,16 @@
                       "value": 770255983,
                       "raw": "0x2de92c6f",
                       "range": [
-                        2865,
-                        2875
+                        2716,
+                        2726
                       ],
                       "loc": {
                         "start": {
-                          "line": 47,
+                          "line": 44,
                           "column": 4
                         },
                         "end": {
-                          "line": 47,
+                          "line": 44,
                           "column": 14
                         }
                       }
@@ -510,16 +454,16 @@
                       "value": 1249150122,
                       "raw": "0x4a7484aa",
                       "range": [
-                        2877,
-                        2887
+                        2728,
+                        2738
                       ],
                       "loc": {
                         "start": {
-                          "line": 47,
+                          "line": 44,
                           "column": 16
                         },
                         "end": {
-                          "line": 47,
+                          "line": 44,
                           "column": 26
                         }
                       }
@@ -529,16 +473,16 @@
                       "value": 1555081692,
                       "raw": "0x5cb0a9dc",
                       "range": [
-                        2889,
-                        2899
+                        2740,
+                        2750
                       ],
                       "loc": {
                         "start": {
-                          "line": 47,
+                          "line": 44,
                           "column": 28
                         },
                         "end": {
-                          "line": 47,
+                          "line": 44,
                           "column": 38
                         }
                       }
@@ -548,16 +492,16 @@
                       "value": 1996064986,
                       "raw": "0x76f988da",
                       "range": [
-                        2901,
-                        2911
+                        2752,
+                        2762
                       ],
                       "loc": {
                         "start": {
-                          "line": 47,
+                          "line": 44,
                           "column": 40
                         },
                         "end": {
-                          "line": 47,
+                          "line": 44,
                           "column": 50
                         }
                       }
@@ -567,16 +511,16 @@
                       "value": 2554220882,
                       "raw": "0x983e5152",
                       "range": [
-                        2918,
-                        2928
+                        2769,
+                        2779
                       ],
                       "loc": {
                         "start": {
-                          "line": 48,
+                          "line": 45,
                           "column": 4
                         },
                         "end": {
-                          "line": 48,
+                          "line": 45,
                           "column": 14
                         }
                       }
@@ -586,16 +530,16 @@
                       "value": 2821834349,
                       "raw": "0xa831c66d",
                       "range": [
-                        2930,
-                        2940
+                        2781,
+                        2791
                       ],
                       "loc": {
                         "start": {
-                          "line": 48,
+                          "line": 45,
                           "column": 16
                         },
                         "end": {
-                          "line": 48,
+                          "line": 45,
                           "column": 26
                         }
                       }
@@ -605,16 +549,16 @@
                       "value": 2952996808,
                       "raw": "0xb00327c8",
                       "range": [
-                        2942,
-                        2952
+                        2793,
+                        2803
                       ],
                       "loc": {
                         "start": {
-                          "line": 48,
+                          "line": 45,
                           "column": 28
                         },
                         "end": {
-                          "line": 48,
+                          "line": 45,
                           "column": 38
                         }
                       }
@@ -624,16 +568,16 @@
                       "value": 3210313671,
                       "raw": "0xbf597fc7",
                       "range": [
-                        2954,
-                        2964
+                        2805,
+                        2815
                       ],
                       "loc": {
                         "start": {
-                          "line": 48,
+                          "line": 45,
                           "column": 40
                         },
                         "end": {
-                          "line": 48,
+                          "line": 45,
                           "column": 50
                         }
                       }
@@ -643,16 +587,16 @@
                       "value": 3336571891,
                       "raw": "0xc6e00bf3",
                       "range": [
-                        2971,
-                        2981
+                        2822,
+                        2832
                       ],
                       "loc": {
                         "start": {
-                          "line": 49,
+                          "line": 46,
                           "column": 4
                         },
                         "end": {
-                          "line": 49,
+                          "line": 46,
                           "column": 14
                         }
                       }
@@ -662,16 +606,16 @@
                       "value": 3584528711,
                       "raw": "0xd5a79147",
                       "range": [
-                        2983,
-                        2993
+                        2834,
+                        2844
                       ],
                       "loc": {
                         "start": {
-                          "line": 49,
+                          "line": 46,
                           "column": 16
                         },
                         "end": {
-                          "line": 49,
+                          "line": 46,
                           "column": 26
                         }
                       }
@@ -681,16 +625,16 @@
                       "value": 113926993,
                       "raw": "0x06ca6351",
                       "range": [
-                        2995,
-                        3005
+                        2846,
+                        2856
                       ],
                       "loc": {
                         "start": {
-                          "line": 49,
+                          "line": 46,
                           "column": 28
                         },
                         "end": {
-                          "line": 49,
+                          "line": 46,
                           "column": 38
                         }
                       }
@@ -700,16 +644,16 @@
                       "value": 338241895,
                       "raw": "0x14292967",
                       "range": [
-                        3007,
-                        3017
+                        2858,
+                        2868
                       ],
                       "loc": {
                         "start": {
-                          "line": 49,
+                          "line": 46,
                           "column": 40
                         },
                         "end": {
-                          "line": 49,
+                          "line": 46,
                           "column": 50
                         }
                       }
@@ -719,16 +663,16 @@
                       "value": 666307205,
                       "raw": "0x27b70a85",
                       "range": [
-                        3024,
-                        3034
+                        2875,
+                        2885
                       ],
                       "loc": {
                         "start": {
-                          "line": 50,
+                          "line": 47,
                           "column": 4
                         },
                         "end": {
-                          "line": 50,
+                          "line": 47,
                           "column": 14
                         }
                       }
@@ -738,16 +682,16 @@
                       "value": 773529912,
                       "raw": "0x2e1b2138",
                       "range": [
-                        3036,
-                        3046
+                        2887,
+                        2897
                       ],
                       "loc": {
                         "start": {
-                          "line": 50,
+                          "line": 47,
                           "column": 16
                         },
                         "end": {
-                          "line": 50,
+                          "line": 47,
                           "column": 26
                         }
                       }
@@ -757,16 +701,16 @@
                       "value": 1294757372,
                       "raw": "0x4d2c6dfc",
                       "range": [
-                        3048,
-                        3058
+                        2899,
+                        2909
                       ],
                       "loc": {
                         "start": {
-                          "line": 50,
+                          "line": 47,
                           "column": 28
                         },
                         "end": {
-                          "line": 50,
+                          "line": 47,
                           "column": 38
                         }
                       }
@@ -776,16 +720,16 @@
                       "value": 1396182291,
                       "raw": "0x53380d13",
                       "range": [
-                        3060,
-                        3070
+                        2911,
+                        2921
                       ],
                       "loc": {
                         "start": {
-                          "line": 50,
+                          "line": 47,
                           "column": 40
                         },
                         "end": {
-                          "line": 50,
+                          "line": 47,
                           "column": 50
                         }
                       }
@@ -795,16 +739,16 @@
                       "value": 1695183700,
                       "raw": "0x650a7354",
                       "range": [
-                        3077,
-                        3087
+                        2928,
+                        2938
                       ],
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 48,
                           "column": 4
                         },
                         "end": {
-                          "line": 51,
+                          "line": 48,
                           "column": 14
                         }
                       }
@@ -814,16 +758,16 @@
                       "value": 1986661051,
                       "raw": "0x766a0abb",
                       "range": [
-                        3089,
-                        3099
+                        2940,
+                        2950
                       ],
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 48,
                           "column": 16
                         },
                         "end": {
-                          "line": 51,
+                          "line": 48,
                           "column": 26
                         }
                       }
@@ -833,16 +777,16 @@
                       "value": 2177026350,
                       "raw": "0x81c2c92e",
                       "range": [
-                        3101,
-                        3111
+                        2952,
+                        2962
                       ],
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 48,
                           "column": 28
                         },
                         "end": {
-                          "line": 51,
+                          "line": 48,
                           "column": 38
                         }
                       }
@@ -852,16 +796,16 @@
                       "value": 2456956037,
                       "raw": "0x92722c85",
                       "range": [
-                        3113,
-                        3123
+                        2964,
+                        2974
                       ],
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 48,
                           "column": 40
                         },
                         "end": {
-                          "line": 51,
+                          "line": 48,
                           "column": 50
                         }
                       }
@@ -871,16 +815,16 @@
                       "value": 2730485921,
                       "raw": "0xa2bfe8a1",
                       "range": [
-                        3130,
-                        3140
+                        2981,
+                        2991
                       ],
                       "loc": {
                         "start": {
-                          "line": 52,
+                          "line": 49,
                           "column": 4
                         },
                         "end": {
-                          "line": 52,
+                          "line": 49,
                           "column": 14
                         }
                       }
@@ -890,16 +834,16 @@
                       "value": 2820302411,
                       "raw": "0xa81a664b",
                       "range": [
-                        3142,
-                        3152
+                        2993,
+                        3003
                       ],
                       "loc": {
                         "start": {
-                          "line": 52,
+                          "line": 49,
                           "column": 16
                         },
                         "end": {
-                          "line": 52,
+                          "line": 49,
                           "column": 26
                         }
                       }
@@ -909,16 +853,16 @@
                       "value": 3259730800,
                       "raw": "0xc24b8b70",
                       "range": [
-                        3154,
-                        3164
+                        3005,
+                        3015
                       ],
                       "loc": {
                         "start": {
-                          "line": 52,
+                          "line": 49,
                           "column": 28
                         },
                         "end": {
-                          "line": 52,
+                          "line": 49,
                           "column": 38
                         }
                       }
@@ -928,16 +872,16 @@
                       "value": 3345764771,
                       "raw": "0xc76c51a3",
                       "range": [
-                        3166,
-                        3176
+                        3017,
+                        3027
                       ],
                       "loc": {
                         "start": {
-                          "line": 52,
+                          "line": 49,
                           "column": 40
                         },
                         "end": {
-                          "line": 52,
+                          "line": 49,
                           "column": 50
                         }
                       }
@@ -947,16 +891,16 @@
                       "value": 3516065817,
                       "raw": "0xd192e819",
                       "range": [
-                        3183,
-                        3193
+                        3034,
+                        3044
                       ],
                       "loc": {
                         "start": {
-                          "line": 53,
+                          "line": 50,
                           "column": 4
                         },
                         "end": {
-                          "line": 53,
+                          "line": 50,
                           "column": 14
                         }
                       }
@@ -966,16 +910,16 @@
                       "value": 3600352804,
                       "raw": "0xd6990624",
                       "range": [
-                        3195,
-                        3205
+                        3046,
+                        3056
                       ],
                       "loc": {
                         "start": {
-                          "line": 53,
+                          "line": 50,
                           "column": 16
                         },
                         "end": {
-                          "line": 53,
+                          "line": 50,
                           "column": 26
                         }
                       }
@@ -985,16 +929,16 @@
                       "value": 4094571909,
                       "raw": "0xf40e3585",
                       "range": [
-                        3207,
-                        3217
+                        3058,
+                        3068
                       ],
                       "loc": {
                         "start": {
-                          "line": 53,
+                          "line": 50,
                           "column": 28
                         },
                         "end": {
-                          "line": 53,
+                          "line": 50,
                           "column": 38
                         }
                       }
@@ -1004,16 +948,16 @@
                       "value": 275423344,
                       "raw": "0x106aa070",
                       "range": [
-                        3219,
-                        3229
+                        3070,
+                        3080
                       ],
                       "loc": {
                         "start": {
-                          "line": 53,
+                          "line": 50,
                           "column": 40
                         },
                         "end": {
-                          "line": 53,
+                          "line": 50,
                           "column": 50
                         }
                       }
@@ -1023,16 +967,16 @@
                       "value": 430227734,
                       "raw": "0x19a4c116",
                       "range": [
-                        3236,
-                        3246
+                        3087,
+                        3097
                       ],
                       "loc": {
                         "start": {
-                          "line": 54,
+                          "line": 51,
                           "column": 4
                         },
                         "end": {
-                          "line": 54,
+                          "line": 51,
                           "column": 14
                         }
                       }
@@ -1042,16 +986,16 @@
                       "value": 506948616,
                       "raw": "0x1e376c08",
                       "range": [
-                        3248,
-                        3258
+                        3099,
+                        3109
                       ],
                       "loc": {
                         "start": {
-                          "line": 54,
+                          "line": 51,
                           "column": 16
                         },
                         "end": {
-                          "line": 54,
+                          "line": 51,
                           "column": 26
                         }
                       }
@@ -1061,16 +1005,16 @@
                       "value": 659060556,
                       "raw": "0x2748774c",
                       "range": [
-                        3260,
-                        3270
+                        3111,
+                        3121
                       ],
                       "loc": {
                         "start": {
-                          "line": 54,
+                          "line": 51,
                           "column": 28
                         },
                         "end": {
-                          "line": 54,
+                          "line": 51,
                           "column": 38
                         }
                       }
@@ -1080,16 +1024,16 @@
                       "value": 883997877,
                       "raw": "0x34b0bcb5",
                       "range": [
-                        3272,
-                        3282
+                        3123,
+                        3133
                       ],
                       "loc": {
                         "start": {
-                          "line": 54,
+                          "line": 51,
                           "column": 40
                         },
                         "end": {
-                          "line": 54,
+                          "line": 51,
                           "column": 50
                         }
                       }
@@ -1099,16 +1043,16 @@
                       "value": 958139571,
                       "raw": "0x391c0cb3",
                       "range": [
-                        3289,
-                        3299
+                        3140,
+                        3150
                       ],
                       "loc": {
                         "start": {
-                          "line": 55,
+                          "line": 52,
                           "column": 4
                         },
                         "end": {
-                          "line": 55,
+                          "line": 52,
                           "column": 14
                         }
                       }
@@ -1118,16 +1062,16 @@
                       "value": 1322822218,
                       "raw": "0x4ed8aa4a",
                       "range": [
-                        3301,
-                        3311
+                        3152,
+                        3162
                       ],
                       "loc": {
                         "start": {
-                          "line": 55,
+                          "line": 52,
                           "column": 16
                         },
                         "end": {
-                          "line": 55,
+                          "line": 52,
                           "column": 26
                         }
                       }
@@ -1137,16 +1081,16 @@
                       "value": 1537002063,
                       "raw": "0x5b9cca4f",
                       "range": [
-                        3313,
-                        3323
+                        3164,
+                        3174
                       ],
                       "loc": {
                         "start": {
-                          "line": 55,
+                          "line": 52,
                           "column": 28
                         },
                         "end": {
-                          "line": 55,
+                          "line": 52,
                           "column": 38
                         }
                       }
@@ -1156,16 +1100,16 @@
                       "value": 1747873779,
                       "raw": "0x682e6ff3",
                       "range": [
-                        3325,
-                        3335
+                        3176,
+                        3186
                       ],
                       "loc": {
                         "start": {
-                          "line": 55,
+                          "line": 52,
                           "column": 40
                         },
                         "end": {
-                          "line": 55,
+                          "line": 52,
                           "column": 50
                         }
                       }
@@ -1175,16 +1119,16 @@
                       "value": 1955562222,
                       "raw": "0x748f82ee",
                       "range": [
-                        3342,
-                        3352
+                        3193,
+                        3203
                       ],
                       "loc": {
                         "start": {
-                          "line": 56,
+                          "line": 53,
                           "column": 4
                         },
                         "end": {
-                          "line": 56,
+                          "line": 53,
                           "column": 14
                         }
                       }
@@ -1194,16 +1138,16 @@
                       "value": 2024104815,
                       "raw": "0x78a5636f",
                       "range": [
-                        3354,
-                        3364
+                        3205,
+                        3215
                       ],
                       "loc": {
                         "start": {
-                          "line": 56,
+                          "line": 53,
                           "column": 16
                         },
                         "end": {
-                          "line": 56,
+                          "line": 53,
                           "column": 26
                         }
                       }
@@ -1213,16 +1157,16 @@
                       "value": 2227730452,
                       "raw": "0x84c87814",
                       "range": [
-                        3366,
-                        3376
+                        3217,
+                        3227
                       ],
                       "loc": {
                         "start": {
-                          "line": 56,
+                          "line": 53,
                           "column": 28
                         },
                         "end": {
-                          "line": 56,
+                          "line": 53,
                           "column": 38
                         }
                       }
@@ -1232,16 +1176,16 @@
                       "value": 2361852424,
                       "raw": "0x8cc70208",
                       "range": [
-                        3378,
-                        3388
+                        3229,
+                        3239
                       ],
                       "loc": {
                         "start": {
-                          "line": 56,
+                          "line": 53,
                           "column": 40
                         },
                         "end": {
-                          "line": 56,
+                          "line": 53,
                           "column": 50
                         }
                       }
@@ -1251,16 +1195,16 @@
                       "value": 2428436474,
                       "raw": "0x90befffa",
                       "range": [
-                        3395,
-                        3405
+                        3246,
+                        3256
                       ],
                       "loc": {
                         "start": {
-                          "line": 57,
+                          "line": 54,
                           "column": 4
                         },
                         "end": {
-                          "line": 57,
+                          "line": 54,
                           "column": 14
                         }
                       }
@@ -1270,16 +1214,16 @@
                       "value": 2756734187,
                       "raw": "0xa4506ceb",
                       "range": [
-                        3407,
-                        3417
+                        3258,
+                        3268
                       ],
                       "loc": {
                         "start": {
-                          "line": 57,
+                          "line": 54,
                           "column": 16
                         },
                         "end": {
-                          "line": 57,
+                          "line": 54,
                           "column": 26
                         }
                       }
@@ -1289,16 +1233,16 @@
                       "value": 3204031479,
                       "raw": "0xbef9a3f7",
                       "range": [
-                        3419,
-                        3429
+                        3270,
+                        3280
                       ],
                       "loc": {
                         "start": {
-                          "line": 57,
+                          "line": 54,
                           "column": 28
                         },
                         "end": {
-                          "line": 57,
+                          "line": 54,
                           "column": 38
                         }
                       }
@@ -1308,16 +1252,16 @@
                       "value": 3329325298,
                       "raw": "0xc67178f2",
                       "range": [
-                        3431,
-                        3441
+                        3282,
+                        3292
                       ],
                       "loc": {
                         "start": {
-                          "line": 57,
+                          "line": 54,
                           "column": 40
                         },
                         "end": {
-                          "line": 57,
+                          "line": 54,
                           "column": 50
                         }
                       }
@@ -1325,7 +1269,7 @@
                   ],
                   "range": [
                     2446,
-                    3443
+                    3294
                   ],
                   "loc": {
                     "start": {
@@ -1333,7 +1277,7 @@
                       "column": 50
                     },
                     "end": {
-                      "line": 58,
+                      "line": 55,
                       "column": 1
                     }
                   }
@@ -1341,7 +1285,7 @@
               ],
               "range": [
                 2430,
-                3444
+                3295
               ],
               "loc": {
                 "start": {
@@ -1349,14 +1293,14 @@
                   "column": 34
                 },
                 "end": {
-                  "line": 58,
+                  "line": 55,
                   "column": 2
                 }
               }
             },
             "range": [
               2409,
-              3444
+              3295
             ],
             "loc": {
               "start": {
@@ -1364,7 +1308,7 @@
                 "column": 13
               },
               "end": {
-                "line": 58,
+                "line": 55,
                 "column": 2
               }
             }
@@ -1373,7 +1317,7 @@
         "kind": "const",
         "range": [
           2403,
-          3445
+          3296
         ],
         "loc": {
           "start": {
@@ -1381,7 +1325,7 @@
             "column": 7
           },
           "end": {
-            "line": 58,
+            "line": 55,
             "column": 3
           }
         },
@@ -2059,7 +2003,7 @@
       "source": null,
       "range": [
         2396,
-        3445
+        3296
       ],
       "loc": {
         "start": {
@@ -2067,7 +2011,7 @@
           "column": 0
         },
         "end": {
-          "line": 58,
+          "line": 55,
           "column": 3
         }
       },
@@ -2744,7 +2688,7 @@
   "sourceType": "module",
   "range": [
     2396,
-    3445
+    3296
   ],
   "loc": {
     "start": {
@@ -2752,7 +2696,7 @@
       "column": 0
     },
     "end": {
-      "line": 58,
+      "line": 55,
       "column": 3
     }
   },
@@ -3420,60 +3364,6 @@
         "end": {
           "line": 37,
           "column": 17
-        }
-      }
-    },
-    {
-      "type": "Line",
-      "value": "/ P[i] = [2, 3, 5, 7, 11, ..., 311];",
-      "range": [
-        2452,
-        2490
-      ],
-      "loc": {
-        "start": {
-          "line": 39,
-          "column": 4
-        },
-        "end": {
-          "line": 39,
-          "column": 42
-        }
-      }
-    },
-    {
-      "type": "Line",
-      "value": "/ K[i] = Math.pow(P[i], 1/3).toString(16);",
-      "range": [
-        2495,
-        2539
-      ],
-      "loc": {
-        "start": {
-          "line": 40,
-          "column": 4
-        },
-        "end": {
-          "line": 40,
-          "column": 48
-        }
-      }
-    },
-    {
-      "type": "Line",
-      "value": "/ K[i] = parseInt(K[i].split(\".\")[1].slice(0, 8));",
-      "range": [
-        2544,
-        2596
-      ],
-      "loc": {
-        "start": {
-          "line": 41,
-          "column": 4
-        },
-        "end": {
-          "line": 41,
-          "column": 56
         }
       }
     }

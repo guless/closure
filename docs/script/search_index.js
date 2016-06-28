@@ -342,6 +342,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/crypto/ripemd256.js~ripemd256",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html",
+    "<span>RIPEMD256</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD256.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/ripemd320.js~ripemd320",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html",
+    "<span>RIPEMD320</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD320.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/crypto/sha0.js~sha0",
     "class/src/data/crypto/SHA0.js~SHA0.html",
     "<span>SHA0</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA0.js</span>",
@@ -1237,13 +1249,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
   [
     "src/data/core/sharedable.js~sharedable#shared",
-    "class/src/data/core/Sharedable.js~Sharedable.html#instance-get-shared",
+    "class/src/data/core/Sharedable.js~Sharedable.html#instance-set-shared",
     "src/data/core/Sharedable.js~Sharedable#shared",
     "member"
   ],
@@ -1731,6 +1743,66 @@ window.esdocSearchIndex = [
     "src/data/crypto/ripemd160.js~ripemd160#update",
     "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-update",
     "src/data/crypto/RIPEMD160.js~RIPEMD160#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js",
+    "file/src/data/crypto/RIPEMD256.js.html",
+    "src/data/crypto/RIPEMD256.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#constructor",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#final",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-method-final",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#reset",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-method-reset",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#update",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-method-update",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js",
+    "file/src/data/crypto/RIPEMD320.js.html",
+    "src/data/crypto/RIPEMD320.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#constructor",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#final",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-method-final",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#reset",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-method-reset",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#update",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-method-update",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#update",
     "method"
   ],
   [
