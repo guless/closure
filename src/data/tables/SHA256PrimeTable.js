@@ -36,9 +36,6 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 export const SHA256_PRIME_TABLE = new Uint32Array([
-    /// P[i] = [2, 3, 5, 7, 11, ..., 311];
-    /// K[i] = Math.pow(P[i], 1/3).toString(16);
-    /// K[i] = parseInt(K[i].split(".")[1].slice(0, 8));
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 
     0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5, 
     0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 
