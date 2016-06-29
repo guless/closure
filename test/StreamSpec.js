@@ -35,70 +35,37 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import UTF8Spec from "../test/UTF8Spec";
-import Base16Spec from "../test/Base16Spec";
-import Base32Spec from "../test/Base32Spec";
-import Base64Spec from "../test/Base64Spec";
-import MD2Spec from "../test/MD2Spec";
-import MD4Spec from "../test/MD4Spec";
-import MD5Spec from "../test/MD5Spec";
-import SHA1Spec from "../test/SHA1Spec";
-import SHA0Spec from "../test/SHA0Spec";
-import SHA224Spec from "../test/SHA224Spec";
-import SHA256Spec from "../test/SHA256Spec";
-import SHA384Spec from "../test/SHA384Spec";
-import SHA512Spec from "../test/SHA512Spec";
-import SHA512t224Spec from "../test/SHA512t224Spec";
-import SHA512t256Spec from "../test/SHA512t256Spec";
-import RIPEMD128Spec from "../test/RIPEMD128Spec";
-import RIPEMD160Spec from "../test/RIPEMD160Spec";
-import RIPEMD256Spec from "../test/RIPEMD256Spec";
-import RIPEMD320Spec from "../test/RIPEMD320Spec";
-import StreamSpec from "../test/StreamSpec";
-import CRCSpec from "../test/CRCSpec";
+import assert from "../src/core/assert";
+import MD5 from "../src/data/crypto/MD5";
+import hexof from "../src/data/utils/hexof";
+import ascii from "../src/data/utils/ascii";
+import passlog from "./helper/passlog";
 
-var clc = require("cli-color");
-var testSuite = [];
-var errorCount = 0;
+const MD5API = new MD5();
 
-testSuite.push( 
-    UTF8Spec,
-    Base16Spec,
-    Base32Spec,
-    Base64Spec,
-    MD2Spec,
-    MD4Spec,
-    MD5Spec,
-    SHA0Spec,
-    SHA1Spec,
-    SHA224Spec,
-    SHA256Spec,
-    SHA384Spec,
-    SHA512Spec,
-    SHA512t224Spec,
-    SHA512t256Spec,
-    RIPEMD128Spec,
-    RIPEMD160Spec,
-    RIPEMD256Spec,
-    RIPEMD320Spec,
-    StreamSpec,
-    CRCSpec
-);
+export default function () {
+    console.log("[Start MD5-Stream Test Suite]:");
 
-for ( var i = 0; i < testSuite.length; ++i ) {
-    try {
-        testSuite[i]();
-    }
-    catch( e ) {
-        ++errorCount;
-        console.log(clc.red("\n" + e.stack));
-    }
-    
-    console.log("");
+    test_md5_stream("", "d41d8cd98f00b204e9800998ecf8427e");
+    test_md5_stream("a", "0cc175b9c0f1b6a831c399e269772661");
+    test_md5_stream("abc", "900150983cd24fb0d6963f7d28e17f72");
+    test_md5_stream("message digest", "f96b697d7cb7938d525a2f31aaf161d0");
+    test_md5_stream("abcdefghijklmnopqrstuvwxyz", "c3fcd3d76192e4007dfb496cca67e13b");
+    test_md5_stream("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d174ab98d277d9f5a5611c2c9f419d9f");
+    test_md5_stream("12345678901234567890123456789012345678901234567890123456789012345678901234567890", "57edf4a22be3c955ac49da2e2107b67a");
 }
 
-console.log(`Total: ${clc.cyan("(" + testSuite.length + ")")}, Error: ${clc.red("(" + errorCount + ")")}, Passed: ${clc.green("(" + (testSuite.length - errorCount) + ")")}`);
-
-if ( errorCount > 0 ) {
-    throw new Error("One or more error occurs, See more detail from the error log above.");
+function test_md5_stream( input, expect ) {
+    MD5API.reset();
+    
+    var block = ascii(input);
+    var chunk = 2;
+    
+    for ( var i = 0; i < block.length; i += chunk ) {
+        MD5API.update(block.subarray(i, i + chunk));
+    }
+    
+    var result = hexof(MD5API.final());
+    assert(result == expect, "Streamable does not match." + ` { input="${input}", expect="${expect}", result="${result}" }`);
+    passlog(`"${input}"`, `"${result}"`);
 }
