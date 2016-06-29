@@ -64,10 +64,9 @@ export default class Streamable {
         if ( bytes.length >= this._buffer.remain ) {
             if ( this._buffer.offset != 0 ) {
                 copy(bytes, this._buffer.buffer, this._buffer.offset);
-                bytes = bytes.subarray(this._buffer.remain);
-
-                this._transfrom(bytes);
+                
                 this._transfrom(this._buffer.buffer);
+                this._transfrom(bytes.subarray(this._buffer.remain));
             }
             
             else {
