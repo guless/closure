@@ -1,6 +1,9 @@
 # node modules directory.
 node_modules/
 
+# build targets
+dist/
+
 # visual studio code hidden files.
 .vscode/
 
