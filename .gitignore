@@ -1,7 +1,11 @@
+# node modules directory.
 node_modules/
-npm-debug.log
-.vscode/
-.backup/
-docs/
-tmp/
 
+# visual studio code hidden files.
+.vscode/
+
+# project backups.
+.backup/
+
+# npm debug log.
+npm-debug.log
