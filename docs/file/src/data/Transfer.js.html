@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/data/tables/CRC16ModBusTable.js | API Document</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/data/Transfer.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -61,7 +61,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/data/tables/CRC16ModBusTable.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/data/Transfer.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /// @Copyright ~2016 &#x261C;Samlv9&#x261E; and other contributors
 /// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
@@ -100,41 +100,149 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-/// Origin: https://github.com/alexgorbatchev/node-crc/blob/master/src/crc16_modbus.js
-export const CRC16_MODBUS_TABLE = new Uint16Array([
-    0x0000, 0xc0c1, 0xc181, 0x0140, 0xc301, 0x03c0, 0x0280, 0xc241,
-    0xc601, 0x06c0, 0x0780, 0xc741, 0x0500, 0xc5c1, 0xc481, 0x0440,
-    0xcc01, 0x0cc0, 0x0d80, 0xcd41, 0x0f00, 0xcfc1, 0xce81, 0x0e40,
-    0x0a00, 0xcac1, 0xcb81, 0x0b40, 0xc901, 0x09c0, 0x0880, 0xc841,
-    0xd801, 0x18c0, 0x1980, 0xd941, 0x1b00, 0xdbc1, 0xda81, 0x1a40,
-    0x1e00, 0xdec1, 0xdf81, 0x1f40, 0xdd01, 0x1dc0, 0x1c80, 0xdc41,
-    0x1400, 0xd4c1, 0xd581, 0x1540, 0xd701, 0x17c0, 0x1680, 0xd641,
-    0xd201, 0x12c0, 0x1380, 0xd341, 0x1100, 0xd1c1, 0xd081, 0x1040,
-    0xf001, 0x30c0, 0x3180, 0xf141, 0x3300, 0xf3c1, 0xf281, 0x3240,
-    0x3600, 0xf6c1, 0xf781, 0x3740, 0xf501, 0x35c0, 0x3480, 0xf441,
-    0x3c00, 0xfcc1, 0xfd81, 0x3d40, 0xff01, 0x3fc0, 0x3e80, 0xfe41,
-    0xfa01, 0x3ac0, 0x3b80, 0xfb41, 0x3900, 0xf9c1, 0xf881, 0x3840,
-    0x2800, 0xe8c1, 0xe981, 0x2940, 0xeb01, 0x2bc0, 0x2a80, 0xea41,
-    0xee01, 0x2ec0, 0x2f80, 0xef41, 0x2d00, 0xedc1, 0xec81, 0x2c40,
-    0xe401, 0x24c0, 0x2580, 0xe541, 0x2700, 0xe7c1, 0xe681, 0x2640,
-    0x2200, 0xe2c1, 0xe381, 0x2340, 0xe101, 0x21c0, 0x2080, 0xe041,
-    0xa001, 0x60c0, 0x6180, 0xa141, 0x6300, 0xa3c1, 0xa281, 0x6240,
-    0x6600, 0xa6c1, 0xa781, 0x6740, 0xa501, 0x65c0, 0x6480, 0xa441,
-    0x6c00, 0xacc1, 0xad81, 0x6d40, 0xaf01, 0x6fc0, 0x6e80, 0xae41,
-    0xaa01, 0x6ac0, 0x6b80, 0xab41, 0x6900, 0xa9c1, 0xa881, 0x6840,
-    0x7800, 0xb8c1, 0xb981, 0x7940, 0xbb01, 0x7bc0, 0x7a80, 0xba41,
-    0xbe01, 0x7ec0, 0x7f80, 0xbf41, 0x7d00, 0xbdc1, 0xbc81, 0x7c40,
-    0xb401, 0x74c0, 0x7580, 0xb541, 0x7700, 0xb7c1, 0xb681, 0x7640,
-    0x7200, 0xb2c1, 0xb381, 0x7340, 0xb101, 0x71c0, 0x7080, 0xb041,
-    0x5000, 0x90c1, 0x9181, 0x5140, 0x9301, 0x53c0, 0x5280, 0x9241,
-    0x9601, 0x56c0, 0x5780, 0x9741, 0x5500, 0x95c1, 0x9481, 0x5440,
-    0x9c01, 0x5cc0, 0x5d80, 0x9d41, 0x5f00, 0x9fc1, 0x9e81, 0x5e40,
-    0x5a00, 0x9ac1, 0x9b81, 0x5b40, 0x9901, 0x59c0, 0x5880, 0x9841,
-    0x8801, 0x48c0, 0x4980, 0x8941, 0x4b00, 0x8bc1, 0x8a81, 0x4a40,
-    0x4e00, 0x8ec1, 0x8f81, 0x4f40, 0x8d01, 0x4dc0, 0x4c80, 0x8c41,
-    0x4400, 0x84c1, 0x8581, 0x4540, 0x8701, 0x47c0, 0x4680, 0x8641,
-    0x8201, 0x42c0, 0x4380, 0x8341, 0x4100, 0x81c1, 0x8081, 0x4040
-]);</code></pre>
+/**
+ * Transfer &#x5B9A;&#x4E49;&#x5177;&#x5907;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x80FD;&#x529B;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x3002;
+ */
+export default class Transfer {
+    /**
+     * &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x5668;&#x5BF9;&#x8C61;&#x3002;
+     * 
+     * @param {Uint8Array|Uint16Array|Uint32Array} [buffer=null] - &#x63D0;&#x4F9B;&#x7528;&#x4E8E;&#x7F13;&#x51B2;&#x6570;&#x636E;&#x7684; TypedArray &#x5BF9;&#x8C61;&#x3002;
+     * @param {Boolean} [enabled=true] - &#x6307;&#x793A;&#x6570;&#x636E;&#x7ECF;&#x8FC7;&#x7F13;&#x51B2;&#x5668;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7F13;&#x51B2;&#x5E76;&#x5206;&#x5757;&#x3002;
+     */
+    constructor( buffer = null, enabled = true ) {
+        /** @private */
+        this._offset = 0;
+        
+        /** @private */
+        this._totalChunks = 0;
+        
+        /** @private */
+        this._chunkList = buffer ? new Array(2) : null;
+        
+        /** @private */
+        this._buffer = buffer;
+        
+        /** @private */
+        this._enabled = enabled;
+    }
+    
+    /**
+     * &#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;
+     * @type {Uint8Array|Uint16Array|Uint32Array}
+     */
+    get buffer() {
+        return this._buffer;
+    }
+    
+    /**
+     * &#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x5F53;&#x524D;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x3002;
+     * @type {Number}
+     */
+    get offset() {
+        return this._offset;
+    }
+    
+    /**
+     * &#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x3002;
+     * @type {Number}
+     */
+    get remain() {
+        return this._buffer ? this._buffer.length - this._offset : 0;
+    }
+    
+    /**
+     * &#x83B7;&#x53D6;&#x6570;&#x636E;&#x7ECF;&#x8FC7;&#x7F13;&#x51B2;(update)&#x540E;&#x7684;&#x6570;&#x636E;&#x5206;&#x5757;&#x5217;&#x8868;&#x3002;
+     * @type {Uint8Array[]|Uint16Array[]|Uint32Array[]}
+     */
+    get chunkList() {
+        return this._chunkList;
+    }
+    
+    /**
+     * &#x83B7;&#x53D6;&#x6570;&#x636E;&#x7ECF;&#x8FC7;&#x7F13;&#x51B2;(update)&#x540E;&#x7684;&#x6570;&#x636E;&#x5757;&#x7684;&#x603B;&#x4E2A;&#x6570;&#x3002;
+     * @type {Number}
+     */
+    get totalChunks() {
+        return this._totalChunks;
+    }
+    
+    /**
+     * &#x6307;&#x793A;&#x6570;&#x636E;&#x7ECF;&#x8FC7;&#x7F13;&#x51B2;&#x5668;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7F13;&#x51B2;&#x5E76;&#x5206;&#x5757;&#x3002;
+     * @type {Boolean}
+     */
+    get enabled() {
+        return this._enabled;
+    }
+    
+    /**
+     * &#x5C06;&#x6570;&#x636E;&#x5757;&#x4F20;&#x5165;&#x7F13;&#x51B2;&#x5668;&#x8FDB;&#x884C;&#x7F13;&#x51B2;&#x5E76;&#x5206;&#x5757;&#x3002;
+     * 
+     * @param {Uint8Array|Uint16Array|Uint32Array} bytes - &#x6307;&#x5B9A;&#x88AB;&#x4F20;&#x8F93;&#x7684;&#x5B57;&#x8282;&#x6570;&#x636E;&#x3002;
+     */
+    update( bytes ) {
+        this._totalChunks = 0;
+        
+        if ( !this._buffer || !this._enabled ) {
+            /// &#x5F53;&#x6CA1;&#x6709;&#x4E3A;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x5EFA;&#x7ACB;&#x7F13;&#x51B2;&#x533A;&#x6216;&#x8005;&#x662F;&#x7981;&#x7528;&#x4E86;&#x6570;&#x636E;&#x7F13;&#x51B2;&#x529F;&#x80FD;&#x65F6;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x5C06;&#x539F;&#x59CB;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x51FA;&#x53BB;&#x3002;
+            this._chunkList[this._totalChunks++] = bytes;
+            return;
+        }
+        
+        if ( bytes.length &gt;= this.remain ) {
+            /// &#x5982;&#x679C;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x6CA1;&#x6709;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F20;&#x8F93;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5757;&#x3002;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x6570;&#x636E;&#x88AB;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;
+            /// &#x81F3;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x3002;
+            if ( this._offset == 0 /* || this._buffer.length == this.remain */ ) {
+                /// &#x9700;&#x8981;&#x786E;&#x4FDD;&#x6240;&#x5EFA;&#x7ACB;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4E3A; 0&#x3002;
+                if ( this._buffer.length &gt; 0 ) { 
+                    this._offset = bytes.length % this._buffer.length;
+                    this._buffer.set(bytes.subarray(-this._offset), 0);
+                }
+                
+                this._chunkList[this._totalChunks++] = bytes;
+            }
+            
+            else if ( bytes.length == this.remain ) {
+                this._buffer.set(bytes, this._offset);
+                this._offset = 0;
+                
+                this._chunkList[this._totalChunks++] = this._buffer;
+            }
+            
+            else {
+                this._buffer.set(bytes.subarray(0, this.remain), this._offset);
+                
+                this._chunkList[this._totalChunks++] = this._buffer;
+                this._chunkList[this._totalChunks++] = bytes.subarray(this.remain);
+                
+                this._offset = (this._offset + bytes.length) % this._buffer.length;
+                this._buffer.set(bytes.subarray(-this._offset), 0);
+            }
+        }
+        
+        else {
+            this._buffer.set(bytes, this._offset);
+            this._offset = this._offset + bytes.length;
+        }
+    }
+    
+    /**
+     * &#x91CD;&#x7F6E;&#x7F13;&#x51B2;&#x5668;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x3002;
+     */
+    reset() {
+        this._offset = 0;
+        this._totalChunks = 0;
+    }
+    
+    /**
+     * &#x4F20;&#x8F93;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x6570;&#x636E;(&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x8986;&#x76D6;&#x5B9E;&#x73B0;)&#x3002;
+     * @abstract
+     */
+    final() {
+        throw new Error(&quot;Method must be implements by sub classes.&quot;);
+    }
+}
+</code></pre>
 
 </div>
 
