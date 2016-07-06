@@ -96,6 +96,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/crc1.js~crc1",
+    "class/src/data/crypto/CRC1.js~CRC1.html",
+    "<span>CRC1</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC1.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/crc24defaulttable.js~crc24_default_table",
     "variable/index.html#static-variable-CRC24_DEFAULT_TABLE",
     "<span>CRC24_DEFAULT_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/CRC24DefaultTable.js</span>",
@@ -118,6 +124,12 @@ window.esdocSearchIndex = [
     "variable/index.html#static-variable-CRC8_DEFAULT_TABLE",
     "<span>CRC8_DEFAULT_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/CRC8DefaultTable.js</span>",
     "variable"
+  ],
+  [
+    "guless-closure/src/data/crypto/crcbase.js~crcbase",
+    "class/src/data/crypto/CRCBase.js~CRCBase.html",
+    "<span>CRCBase</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRCBase.js</span>",
+    "class"
   ],
   [
     "guless-closure/src/data/crypto/hash.js~hash",
@@ -148,6 +160,12 @@ window.esdocSearchIndex = [
     "class/src/data/Transfer.js~Transfer.html",
     "<span>Transfer</span> <span class=\"search-result-import-path\">guless-closure/src/data/Transfer.js</span>",
     "class"
+  ],
+  [
+    "guless-closure/src/data/utils/ascii.js~ascii",
+    "function/index.html#static-function-ascii",
+    "<span>ascii</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/ascii.js</span>",
+    "function"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~array",
@@ -546,6 +564,54 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/crypto/crc1.js",
+    "file/src/data/crypto/CRC1.js.html",
+    "src/data/crypto/CRC1.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc1.js~crc1#constructor",
+    "class/src/data/crypto/CRC1.js~CRC1.html#instance-constructor-constructor",
+    "src/data/crypto/CRC1.js~CRC1#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc1.js~crc1#update",
+    "class/src/data/crypto/CRC1.js~CRC1.html#instance-method-update",
+    "src/data/crypto/CRC1.js~CRC1#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crcbase.js",
+    "file/src/data/crypto/CRCBase.js.html",
+    "src/data/crypto/CRCBase.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crcbase.js~crcbase#constructor",
+    "class/src/data/crypto/CRCBase.js~CRCBase.html#instance-constructor-constructor",
+    "src/data/crypto/CRCBase.js~CRCBase#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crcbase.js~crcbase#final",
+    "class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-final",
+    "src/data/crypto/CRCBase.js~CRCBase#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/crcbase.js~crcbase#reset",
+    "class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-reset",
+    "src/data/crypto/CRCBase.js~CRCBase#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/crcbase.js~crcbase#update",
+    "class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-update",
+    "src/data/crypto/CRCBase.js~CRCBase#update",
+    "method"
+  ],
+  [
     "src/data/crypto/hash.js",
     "file/src/data/crypto/Hash.js.html",
     "src/data/crypto/Hash.js",
@@ -663,6 +729,12 @@ window.esdocSearchIndex = [
     "src/data/tables/sha512primetable.js",
     "file/src/data/tables/SHA512PrimeTable.js.html",
     "src/data/tables/SHA512PrimeTable.js",
+    "file"
+  ],
+  [
+    "src/data/utils/ascii.js",
+    "file/src/data/utils/ascii.js.html",
+    "src/data/utils/ascii.js",
     "file"
   ]
 ]
