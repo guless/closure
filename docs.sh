@@ -19,4 +19,4 @@ mv ./tmp/docs ./
 git add ./docs
 git commit -m "Update api docs."
 git push
-git checkout $(na)
+git checkout $na
