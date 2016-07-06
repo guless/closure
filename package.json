@@ -1,0 +1,31 @@
+{
+  "name": "guless-closure",
+  "version": "2.0.0",
+  "description": "基于 ES6 语法实现的通用的底层 Javascript 模块。",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "bc -s -m -e ./src/guless.js -o ./dist/guless.js",
+    "start": "npm run build && node ./dist/guless.js",
+    "debug": "babel-node ./test/debug.js",
+    "docs": "./docs.sh",
+    "test": "echo \"test success.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guless/closure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guless/closure/issues"
+  },
+  "homepage": "https://github.com/guless/closure#readme",
+  "dependencies": {
+    "babel-compiler": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-compiler": "^1.0.6",
+    "esdoc": "^0.4.7"
+  }
+}
