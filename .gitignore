@@ -4,11 +4,17 @@ node_modules/
 # build targets
 dist/
 
-# visual studio code hidden files.
+# docs target directory
+docs/
+
+# istanbul coverage reports
+coverage/
+
+# visual studio code hidden files
 .vscode/
 
-# project backups.
+# project backups
 .backup/
 
-# npm debug log.
+# npm debug log
 npm-debug.log

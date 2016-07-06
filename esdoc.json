@@ -1,0 +1,5 @@
+{
+  "source": "./src",
+  "excludes": [ "guless.js" ],
+  "destination": "./docs"
+}

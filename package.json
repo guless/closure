@@ -4,11 +4,9 @@
   "description": "基于 ES6 语法实现的通用的底层 Javascript 模块。",
   "main": "dist/bundle.js",
   "scripts": {
+    "docs" : "./docs.sh",
     "build": "bc -s -m -e ./src/guless.js -o ./dist/guless.js",
-    "start": "npm run build && node ./dist/guless.js",
-    "debug": "babel-node ./test/debug.js",
-    "docs": "./docs.sh",
-    "test": "echo \"test success.\""
+    "test" : "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --recursive"
   },
   "repository": {
     "type": "git",
@@ -26,6 +24,9 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-compiler": "^1.0.6",
-    "esdoc": "^0.4.7"
+    "babel-istanbul": "^0.11.0",
+    "babel-register": "^6.9.0",
+    "esdoc": "^0.4.7",
+    "mocha": "^2.5.3"
   }
 }
