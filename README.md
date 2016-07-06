@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/guless/closure.svg?branch=rc2.0)](https://travis-ci.org/guless/closure)
+## [![Build Status](https://travis-ci.org/guless/closure.svg?branch=rc2.0)](https://travis-ci.org/guless/closure) ##
+
 
 ### API 概览 ###
 请移步： 
