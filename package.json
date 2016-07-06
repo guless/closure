@@ -4,7 +4,7 @@
   "description": "基于 ES6 语法实现的通用的底层 Javascript 模块。",
   "main": "dist/bundle.js",
   "scripts": {
-    "docs" : "./docs.sh",
+    "docs" : "esdoc -c esdoc.json",
     "build": "bc -s -m -e ./src/guless.js -o ./dist/guless.js",
     "test" : "babel-node ./node_modules/.bin/babel-istanbul cover _mocha -- --recursive"
   },
