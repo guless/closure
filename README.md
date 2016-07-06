@@ -2,7 +2,6 @@
 
 
 ### API 概览 ###
-请移步： 
 - [API 参考文档](http://docs.guless.com/)
 
 ### 下载/安装 ###
