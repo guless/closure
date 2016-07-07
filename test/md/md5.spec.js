@@ -127,4 +127,16 @@ describe("[ MD5 ] Test Suite:", function() {
         
     //     assert.equal(hexof(MD5API.final()), "7707d6ae4e027c70eea2a935c2296f21");
     // });
+    
+    it(`update one by one byte. => "57edf4a22be3c955ac49da2e2107b67a"`, function() {
+        MD5API.reset();
+        
+        var bytes  = ascii("12345678901234567890123456789012345678901234567890123456789012345678901234567890");
+        
+        for ( var i = 0; i < bytes.length; ++i ) {
+            MD5API.update(bytes.subarray(i, i + 1));
+        }
+        
+        assert.equal(hexof(MD5API.final()), "57edf4a22be3c955ac49da2e2107b67a");
+    });
 });
