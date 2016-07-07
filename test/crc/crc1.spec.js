@@ -39,27 +39,31 @@ import CRC1  from "../../src/data/crypto/CRC1";
 import ascii from "../../src/data/utils/ascii";
 
 var assert = require("assert");
+var expect = [0, 13, 11];
+// test_crc1("", 0);
+// test_crc1("0123456789", 13);
+// test_crc1("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", 11);
 var crc = new CRC1();
 
-describe("CRC-1 Test Suite:", function() {
-    it("\"\"(string empty)", function() {
+describe("[ CRC-1 ] Test Suite:", function() {
+    it(`""(string empty) => ${expect[0]}`, function() {
         crc.reset();
         crc.update(ascii(""));
         
-        assert(0 === crc.final());
+        assert.equal(crc.final(), expect[0]);
     });
     
-    it("\"0123456789\"", function() {
+    it(`"0123456789" => ${expect[1]}`, function() {
         crc.reset();
         crc.update(ascii("0123456789"));
         
-        assert(13 === crc.final());
+        assert.equal(crc.final(), expect[1]);
     });
     
-    it("\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\"", function() {
+    it(`"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" => ${expect[2]}`, function() {
         crc.reset();
         crc.update(ascii("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"));
         
-        assert(11 === crc.final());
+        assert.equal(crc.final(), expect[2]);
     });
 });
