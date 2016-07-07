@@ -35,7 +35,8 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Hash from "./Hash";
+import Hash   from "./Hash";
+import swap32 from "../utils/swap32";
 
 const H = new Uint32Array([0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476]);
 const P = new Uint32Array(64); P[0] = 0x80;
@@ -44,7 +45,6 @@ const W = new Uint32Array(16);
 const L = new Uint32Array(2);
 
 function AC( w, x ) { var t = x << 3 >>> 0; w[0] += t; w[1] += (x >>> 29) + (w[0] < t); }
-function SW( d ) { for ( var k = 0; k < d.length; ++k ) { d[k] = ((d[k] << 8 | d[k] >>> 24) & 0x00FF00FF) | ((d[k] << 24 | d[k] >>> 8) & 0xFF00FF00); } return d; }
 function FF( a, b, c, d, x, s, ac ) { a += ((b & c) | ((~b) & d)) + x + ac; a = ((a << s) | (a >>> (32 - s))); return a + b; }
 function GG( a, b, c, d, x, s, ac ) { a += ((b & d) | (c & (~d))) + x + ac; a = ((a << s) | (a >>> (32 - s))); return a + b; }
 function HH( a, b, c, d, x, s, ac ) { a += (b ^ c ^ d) + x + ac; a = ((a << s) | (a >>> (32 - s))); return a + b; }
@@ -69,7 +69,7 @@ export default class MD5 extends Hash {
     }
     
     final() {
-        this.buffer.set(P, this.offset);
+        this.buffer.set(P.subarray(0, this.remain), this.offset);
         
         if ( this.offset < 56 ) {
             this.buffer.set(new Uint8Array(this._length.buffer), 56);
@@ -82,7 +82,7 @@ export default class MD5 extends Hash {
             this._transfrom(X);
         }
         
-        return SW(this._digest);
+        return swap32(this._digest);
     }
     
     _transfrom( bytes ) {
