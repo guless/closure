@@ -44,7 +44,7 @@ const X = new Uint32Array(64);
 const W = new Uint32Array(16);
 const L = new Uint32Array(2);
 
-function AC( w, x ) { var t = x << 3 >>> 0; w[0] += t; w[1] += (x >>> 29) + (w[0] < t); }
+function AC( w, s ) { var t = s << 3 >>> 0; w[0] += t; w[1] += (s >>> 29) + (w[0] < t); }
 function FF( a, b, c, d, x, s, ac ) { a += ((b & c) | ((~b) & d)) + x + ac; a = ((a << s) | (a >>> (32 - s))); return a + b; }
 function GG( a, b, c, d, x, s, ac ) { a += ((b & d) | (c & (~d))) + x + ac; a = ((a << s) | (a >>> (32 - s))); return a + b; }
 function HH( a, b, c, d, x, s, ac ) { a += (b ^ c ^ d) + x + ac; a = ((a << s) | (a >>> (32 - s))); return a + b; }
