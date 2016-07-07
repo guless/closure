@@ -64,4 +64,12 @@ describe("[ hexof() ] Test Suite:", function() {
             assert.equal(hexof(inputs[this.i]), expect[this.i]);
         }.bind({i:i}));
     }
+    
+    it("should consider bytes as 8bits word.", function() {
+        assert.equal(hexof([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]), "000102030405060708090a0b0c0d0e0f");
+    });
+    
+    it("should allow change to 16bits word.", function() {
+        assert.equal(hexof([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 2), "0000000100020003000400050006000700080009000a000b000c000d000e000f");
+    });
 });
