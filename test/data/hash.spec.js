@@ -39,7 +39,7 @@ import Hash from "../../src/data/crypto/Hash";
 
 var assert = require("assert");
 
-describe("[ Transfer ] Test Suite:", function() {
+describe("[ Hash ] Test Suite:", function() {
     it("should throws method does not implements error.", function() {
         assert.throws(function() {
             (new Hash()).update(new Uint8Array(0));
