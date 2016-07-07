@@ -1,4 +1,4 @@
-## [![Build Status](https://travis-ci.org/guless/closure.svg?branch=rc2.0)](https://travis-ci.org/guless/closure) ##
+## [![Build Status](https://travis-ci.org/guless/closure.svg?branch=rc2.0)](https://travis-ci.org/guless/closure) [![Coverage Status](https://coveralls.io/repos/github/guless/closure/badge.svg?branch=master)](https://coveralls.io/github/guless/closure?branch=master) ##
 
 
 ### API 概览 ###
