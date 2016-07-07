@@ -192,6 +192,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "guless-closure/src/data/utils/swap32.js~swap32",
+    "function/index.html#static-function-swap32",
+    "<span>swap32</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/swap32.js</span>",
+    "function"
+  ],
+  [
     "guless-closure/src/data/utils/ucs2.js~ucs2",
     "function/index.html#static-function-ucs2",
     "<span>ucs2</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/ucs2.js</span>",
@@ -825,6 +831,12 @@ window.esdocSearchIndex = [
     "src/data/utils/strof.js",
     "file/src/data/utils/strof.js.html",
     "src/data/utils/strof.js",
+    "file"
+  ],
+  [
+    "src/data/utils/swap32.js",
+    "file/src/data/utils/swap32.js.html",
+    "src/data/utils/swap32.js",
     "file"
   ],
   [

@@ -1,6 +1,6 @@
 {
-  "coverage": "19.29%",
-  "expectCount": 57,
+  "coverage": "18.96%",
+  "expectCount": 58,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -197,6 +197,13 @@
       ]
     },
     "src/data/utils/strof.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/swap32.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [

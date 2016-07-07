@@ -64,6 +64,7 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexof">hexof</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucs2">ucs2</a></span></span></li>
 </ul>
 </div>
@@ -204,7 +205,7 @@ export default class Transfer {
                 /// &#x9700;&#x8981;&#x786E;&#x4FDD;&#x6240;&#x5EFA;&#x7ACB;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4E3A; 0&#x3002;
                 if ( this._buffer.length &gt; 0 ) { 
                     this._offset = bytes.length % this._buffer.length;
-                    this._buffer.set(bytes.subarray(-this._offset), 0);
+                    this._offset &amp;&amp; this._buffer.set(bytes.subarray(-this._offset), 0);
                 }
                 
                 this._chunkList[this._totalChunks++] = bytes;
@@ -224,7 +225,7 @@ export default class Transfer {
                 this._chunkList[this._totalChunks++] = bytes.subarray(this.remain);
                 
                 this._offset = (this._offset + bytes.length) % this._buffer.length;
-                this._buffer.set(bytes.subarray(-this._offset), 0);
+                this._offset &amp;&amp; this._buffer.set(bytes.subarray(-this._offset), 0);
             }
         }
         
