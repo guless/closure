@@ -1,7 +1,7 @@
 ## [![Build Status](https://travis-ci.org/guless/closure.svg?branch=dev)](https://travis-ci.org/guless/closure) [![Coverage Status](https://coveralls.io/repos/github/guless/closure/badge.svg?branch=dev)](https://coveralls.io/github/guless/closure?branch=dev) [![Dependency Status](https://www.versioneye.com/user/projects/577df14391aab50027c6ca56/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/577df14391aab50027c6ca56) ##
 
 
-### API 概览 ###
+### 概览 ###
 - [API 参考文档](http://docs.guless.com/)
 
 ### 下载/安装 ###
