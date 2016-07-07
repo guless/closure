@@ -61,8 +61,8 @@ export default function hexof( bytes, sizet = bytes.BYTES_PER_ELEMENT ) {
     for ( var i = 0, len = bytes.length; i < len; ++i ) { 
         (result += 
         ( sizet == 1 ? HEX[bytes[i] & 0xFF] :
-        ( sizet == 2 ? HEX[bytes[i] >>> 8  & 0xFF] + HEX[bytes[i] & 0xFF] :
-        ( sizet == 3 ? HEX[bytes[i] >>> 16 & 0xFF] + HEX[bytes[i] >>> 8  & 0xFF] + HEX[bytes[i] & 0xFF] :
+        ( sizet == 2 ? HEX[bytes[i] >>>  8 & 0xFF] + HEX[bytes[i] & 0xFF] :
+        ( sizet == 3 ? HEX[bytes[i] >>> 16 & 0xFF] + HEX[bytes[i] >>>  8 & 0xFF] + HEX[bytes[i] & 0xFF] :
         ( sizet == 4 ? HEX[bytes[i] >>> 24 & 0xFF] + HEX[bytes[i] >>> 16 & 0xFF] + HEX[bytes[i] >>> 8 & 0xFF] + HEX[bytes[i] & 0xFF] : HEX[bytes[i] & 0xFF])))));
     }
     
