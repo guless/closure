@@ -60,6 +60,9 @@ export default class Transfer {
         this._buffer = buffer;
         
         /** @private */
+        this._backup = buffer ? new buffer.constructor(buffer.length) : null;
+        
+        /** @private */
         this._enabled = enabled;
     }
     
@@ -146,9 +149,10 @@ export default class Transfer {
             }
             
             else {
-                this._buffer.set(bytes.subarray(0, this.remain), this._offset);
+                this._backup.set(this._buffer, 0);
+                this._backup.set(bytes.subarray(0, this.remain), this._offset);
                 
-                this._chunkList[this._totalChunks++] = this._buffer;
+                this._chunkList[this._totalChunks++] = this._backup;
                 this._chunkList[this._totalChunks++] = bytes.subarray(this.remain);
                 
                 this._offset = (this._offset + bytes.length) % this._buffer.length;
