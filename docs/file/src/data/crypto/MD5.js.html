@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/data/tables/Base16UpperCaseTable.js | API Document</title>
+  <title data-ice="title">src/data/crypto/MD5.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -69,7 +69,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/data/tables/Base16UpperCaseTable.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/data/crypto/MD5.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /// @Copyright ~2016 &#x261C;Samlv9&#x261E; and other contributors
 /// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
@@ -107,30 +107,146 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import Hash from &quot;./Hash&quot;;
 
-export const BASE16_UPPER_CASE_ENCODE_TABLE = new Int8Array([
-    /// [0-9] Numerics
-    48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-    /// [10-15] A-F
-    65, 66, 67, 68, 69, 70
-]);
+const H = new Uint32Array([0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476]);
+const P = new Uint32Array(64); P[0] = 0x80;
+const X = new Uint32Array(64);
+const W = new Uint32Array(16);
+const L = new Uint32Array(2);
 
-export const BASE16_UPPER_CASE_DECODE_TABLE = new Int8Array([
-    /// [0-47] Invalid
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    /// [48-57] Numerics
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    /// [58-64] Invalid
-    -1, -1, -1, -1, -1, -1, -1,
-    /// [65-70] A-F
-    10, 11, 12, 13, 14, 15,
-    /// [71-127] Invalid
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1
-]);</code></pre>
+function AC( w, x ) { var t = x &lt;&lt; 3 &gt;&gt;&gt; 0; w[0] += t; w[1] += (x &gt;&gt;&gt; 29) + (w[0] &lt; t); }
+function SW( d ) { for ( var k = 0; k &lt; d.length; ++k ) { d[k] = ((d[k] &lt;&lt; 8 | d[k] &gt;&gt;&gt; 24) &amp; 0x00FF00FF) | ((d[k] &lt;&lt; 24 | d[k] &gt;&gt;&gt; 8) &amp; 0xFF00FF00); } return d; }
+function FF( a, b, c, d, x, s, ac ) { a += ((b &amp; c) | ((~b) &amp; d)) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }
+function GG( a, b, c, d, x, s, ac ) { a += ((b &amp; d) | (c &amp; (~d))) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }
+function HH( a, b, c, d, x, s, ac ) { a += (b ^ c ^ d) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }
+function II( a, b, c, d, x, s, ac ) { a += (c ^ (b | (~d))) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }
+
+export default class MD5 extends Hash {
+    constructor() {
+        super(new Uint8Array(64));
+        this._digest = new Uint32Array(H);
+        this._length = new Uint32Array(L);
+    }
+    
+    reset() {
+        super.reset();
+        this._digest.set(H);
+        this._length.set(L);
+    }
+    
+    update( bytes ) {
+        super.update(bytes);
+        AC(this._length, bytes.length);
+    }
+    
+    final() {
+        this.buffer.set(P, this.offset);
+        
+        if ( this.offset &lt; 56 ) {
+            this.buffer.set(new Uint8Array(this._length.buffer), 56);
+            this._transfrom(this.buffer);
+        }
+        
+        else {
+            X.set(new Uint8Array(this._length.buffer), 56);
+            this._transfrom(this.buffer);
+            this._transfrom(X);
+        }
+        
+        return SW(this._digest);
+    }
+    
+    _transfrom( bytes ) {
+        for ( var start = 0; start + 64 &lt;= bytes.length; start += 64 ) {
+            var a = this._digest[0];
+            var b = this._digest[1];
+            var c = this._digest[2];
+            var d = this._digest[3];
+            
+            for ( var t = 0, k = start; t &lt; 16; ++t, k += 4 ) {
+                W[t] = (bytes[k]) | (bytes[k + 1] &lt;&lt; 8) | (bytes[k + 2] &lt;&lt; 16) | (bytes[k + 3] &lt;&lt; 24);
+            }
+            
+            /* Round 1 */
+            a = FF(a, b, c, d, W[ 0],  7, 0xd76aa478);
+            d = FF(d, a, b, c, W[ 1], 12, 0xe8c7b756);
+            c = FF(c, d, a, b, W[ 2], 17, 0x242070db);
+            b = FF(b, c, d, a, W[ 3], 22, 0xc1bdceee);
+            a = FF(a, b, c, d, W[ 4],  7, 0xf57c0faf);
+            d = FF(d, a, b, c, W[ 5], 12, 0x4787c62a);
+            c = FF(c, d, a, b, W[ 6], 17, 0xa8304613);
+            b = FF(b, c, d, a, W[ 7], 22, 0xfd469501);
+            a = FF(a, b, c, d, W[ 8],  7, 0x698098d8);
+            d = FF(d, a, b, c, W[ 9], 12, 0x8b44f7af);
+            c = FF(c, d, a, b, W[10], 17, 0xffff5bb1);
+            b = FF(b, c, d, a, W[11], 22, 0x895cd7be);
+            a = FF(a, b, c, d, W[12],  7, 0x6b901122);
+            d = FF(d, a, b, c, W[13], 12, 0xfd987193);
+            c = FF(c, d, a, b, W[14], 17, 0xa679438e);
+            b = FF(b, c, d, a, W[15], 22, 0x49b40821);
+
+            /* Round 2 */
+            a = GG(a, b, c, d, W[ 1],  5, 0xf61e2562);
+            d = GG(d, a, b, c, W[ 6],  9, 0xc040b340);
+            c = GG(c, d, a, b, W[11], 14, 0x265e5a51);
+            b = GG(b, c, d, a, W[ 0], 20, 0xe9b6c7aa);
+            a = GG(a, b, c, d, W[ 5],  5, 0xd62f105d);
+            d = GG(d, a, b, c, W[10],  9, 0x02441453);
+            c = GG(c, d, a, b, W[15], 14, 0xd8a1e681);
+            b = GG(b, c, d, a, W[ 4], 20, 0xe7d3fbc8);
+            a = GG(a, b, c, d, W[ 9],  5, 0x21e1cde6);
+            d = GG(d, a, b, c, W[14],  9, 0xc33707d6);
+            c = GG(c, d, a, b, W[ 3], 14, 0xf4d50d87);
+            b = GG(b, c, d, a, W[ 8], 20, 0x455a14ed);
+            a = GG(a, b, c, d, W[13],  5, 0xa9e3e905);
+            d = GG(d, a, b, c, W[ 2],  9, 0xfcefa3f8);
+            c = GG(c, d, a, b, W[ 7], 14, 0x676f02d9);
+            b = GG(b, c, d, a, W[12], 20, 0x8d2a4c8a);
+
+            /* Round 3 */
+            a = HH(a, b, c, d, W[ 5],  4, 0xfffa3942);
+            d = HH(d, a, b, c, W[ 8], 11, 0x8771f681);
+            c = HH(c, d, a, b, W[11], 16, 0x6d9d6122);
+            b = HH(b, c, d, a, W[14], 23, 0xfde5380c);
+            a = HH(a, b, c, d, W[ 1],  4, 0xa4beea44);
+            d = HH(d, a, b, c, W[ 4], 11, 0x4bdecfa9);
+            c = HH(c, d, a, b, W[ 7], 16, 0xf6bb4b60);
+            b = HH(b, c, d, a, W[10], 23, 0xbebfbc70);
+            a = HH(a, b, c, d, W[13],  4, 0x289b7ec6);
+            d = HH(d, a, b, c, W[ 0], 11, 0xeaa127fa);
+            c = HH(c, d, a, b, W[ 3], 16, 0xd4ef3085);
+            b = HH(b, c, d, a, W[ 6], 23, 0x04881d05);
+            a = HH(a, b, c, d, W[ 9],  4, 0xd9d4d039);
+            d = HH(d, a, b, c, W[12], 11, 0xe6db99e5);
+            c = HH(c, d, a, b, W[15], 16, 0x1fa27cf8);
+            b = HH(b, c, d, a, W[ 2], 23, 0xc4ac5665);
+
+            /* Round 4 */
+            a = II(a, b, c, d, W[ 0],  6, 0xf4292244);
+            d = II(d, a, b, c, W[ 7], 10, 0x432aff97);
+            c = II(c, d, a, b, W[14], 15, 0xab9423a7);
+            b = II(b, c, d, a, W[ 5], 21, 0xfc93a039);
+            a = II(a, b, c, d, W[12],  6, 0x655b59c3);
+            d = II(d, a, b, c, W[ 3], 10, 0x8f0ccc92);
+            c = II(c, d, a, b, W[10], 15, 0xffeff47d);
+            b = II(b, c, d, a, W[ 1], 21, 0x85845dd1);
+            a = II(a, b, c, d, W[ 8],  6, 0x6fa87e4f);
+            d = II(d, a, b, c, W[15], 10, 0xfe2ce6e0);
+            c = II(c, d, a, b, W[ 6], 15, 0xa3014314);
+            b = II(b, c, d, a, W[13], 21, 0x4e0811a1);
+            a = II(a, b, c, d, W[ 4],  6, 0xf7537e82);
+            d = II(d, a, b, c, W[11], 10, 0xbd3af235);
+            c = II(c, d, a, b, W[ 2], 15, 0x2ad7d2bb);
+            b = II(b, c, d, a, W[ 9], 21, 0xeb86d391);
+            
+            this._digest[0] += a;
+            this._digest[1] += b;
+            this._digest[2] += c;
+            this._digest[3] += d;
+        }
+    }
+}</code></pre>
 
 </div>
 

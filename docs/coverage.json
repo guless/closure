@@ -1,6 +1,6 @@
 {
-  "coverage": "21.15%",
-  "expectCount": 52,
+  "coverage": "19.29%",
+  "expectCount": 57,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -150,6 +150,17 @@
       "actualCount": 0,
       "undocumentLines": [
         39
+      ]
+    },
+    "src/data/crypto/MD5.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        53,
+        54,
+        71,
+        60,
+        66
       ]
     },
     "src/data/tables/SHA256PrimeTable.js": {
