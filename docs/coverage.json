@@ -1,6 +1,6 @@
 {
-  "coverage": "23.91%",
-  "expectCount": 46,
+  "coverage": "21.15%",
+  "expectCount": 52,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -102,6 +102,15 @@
         40
       ]
     },
+    "src/data/crypto/CRC8.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
     "src/data/tables/CRC8Dallas1WireTable.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -163,6 +172,27 @@
       "undocumentLines": []
     },
     "src/data/utils/ascii.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/hexof.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        58
+      ]
+    },
+    "src/data/utils/strof.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/ucs2.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [

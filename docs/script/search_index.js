@@ -114,6 +114,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/crc8.js~crc8",
+    "class/src/data/crypto/CRC8.js~CRC8.html",
+    "<span>CRC8</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC8.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/crc8dallas1wiretable.js~crc8_dallas_1_wire_table",
     "variable/index.html#static-variable-CRC8_DALLAS_1_WIRE_TABLE",
     "<span>CRC8_DALLAS_1_WIRE_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/CRC8Dallas1WireTable.js</span>",
@@ -165,6 +171,24 @@ window.esdocSearchIndex = [
     "guless-closure/src/data/utils/ascii.js~ascii",
     "function/index.html#static-function-ascii",
     "<span>ascii</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/ascii.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/hexof.js~hexof",
+    "function/index.html#static-function-hexof",
+    "<span>hexof</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/hexof.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/strof.js~strof",
+    "function/index.html#static-function-strof",
+    "<span>strof</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/strof.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/ucs2.js~ucs2",
+    "function/index.html#static-function-ucs2",
+    "<span>ucs2</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/ucs2.js</span>",
     "function"
   ],
   [
@@ -582,6 +606,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/crypto/crc8.js",
+    "file/src/data/crypto/CRC8.js.html",
+    "src/data/crypto/CRC8.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc8.js~crc8#constructor",
+    "class/src/data/crypto/CRC8.js~CRC8.html#instance-constructor-constructor",
+    "src/data/crypto/CRC8.js~CRC8#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc8.js~crc8#update",
+    "class/src/data/crypto/CRC8.js~CRC8.html#instance-method-update",
+    "src/data/crypto/CRC8.js~CRC8#update",
+    "method"
+  ],
+  [
     "src/data/crypto/crcbase.js",
     "file/src/data/crypto/CRCBase.js.html",
     "src/data/crypto/CRCBase.js",
@@ -735,6 +777,24 @@ window.esdocSearchIndex = [
     "src/data/utils/ascii.js",
     "file/src/data/utils/ascii.js.html",
     "src/data/utils/ascii.js",
+    "file"
+  ],
+  [
+    "src/data/utils/hexof.js",
+    "file/src/data/utils/hexof.js.html",
+    "src/data/utils/hexof.js",
+    "file"
+  ],
+  [
+    "src/data/utils/strof.js",
+    "file/src/data/utils/strof.js.html",
+    "src/data/utils/strof.js",
+    "file"
+  ],
+  [
+    "src/data/utils/ucs2.js",
+    "file/src/data/utils/ucs2.js.html",
+    "src/data/utils/ucs2.js",
     "file"
   ]
 ]

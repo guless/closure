@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">Hash | API Document</title>
+  <title data-ice="title">CRC8 | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -69,23 +69,23 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Hash from &apos;<span><a href="file/src/data/crypto/Hash.js.html#lineNumber40">guless-closure/src/data/crypto/Hash.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import CRC8 from &apos;<span><a href="file/src/data/crypto/CRC8.js.html#lineNumber41">guless-closure/src/data/crypto/CRC8.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/data/crypto/Hash.js.html#lineNumber40">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/data/crypto/CRC8.js.html#lineNumber41">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">Hash</h1>
+  <h1 data-ice="name">CRC8</h1>
 
   
 
   
   
-  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span> &#x2192; Hash</div></div>
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span> &#x2192; <span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span> &#x2192; CRC8</div></div>
   
   
   
@@ -123,7 +123,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/Hash.js~Hash.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(buffer: <span>*</span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html#instance-constructor-constructor">constructor</a></span></span>
         </p>
       </div>
       <div>
@@ -156,7 +156,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/Hash.js~Hash.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -414,6 +414,88 @@
   </tr>
 </tbody>
 </table>
+
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-final">final</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
 </div>
 
 
@@ -427,11 +509,11 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(buffer: <span>*</span>)</span>
+    <span data-ice="name">constructor</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/crypto/Hash.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/crypto/CRC8.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -440,26 +522,9 @@
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/Transfer.js~Transfer.html#instance-constructor-constructor">Transfer#constructor</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-constructor-constructor">CRCBase#constructor</a></span></div>
 
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">buffer</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: null</li></ul></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
+  <div data-ice="properties">
 </div>
 
   
@@ -492,7 +557,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/crypto/Hash.js.html#lineNumber45">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/crypto/CRC8.js.html#lineNumber46">source</a></span></span>
     </span>
   </h3>
 
@@ -501,7 +566,7 @@
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/Transfer.js~Transfer.html#instance-method-update">Transfer#update</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-update">CRCBase#update</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
