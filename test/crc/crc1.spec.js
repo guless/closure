@@ -46,7 +46,7 @@ var expect = [0, 13, 11];
 var crc = new CRC1();
 
 describe("[ CRC-1 ] Test Suite:", function() {
-    it(`""(string empty) => ${expect[0]}`, function() {
+    it(`""(empty string) => ${expect[0]}`, function() {
         crc.reset();
         crc.update(ascii(""));
         
