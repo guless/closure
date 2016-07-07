@@ -132,7 +132,7 @@ export default class Transfer {
                 /// 需要确保所建立的缓冲区的大小不为 0。
                 if ( this._buffer.length > 0 ) { 
                     this._offset = bytes.length % this._buffer.length;
-                    this._buffer.set(bytes.subarray(-this._offset), 0);
+                    this._offset && this._buffer.set(bytes.subarray(-this._offset), 0);
                 }
                 
                 this._chunkList[this._totalChunks++] = bytes;
@@ -152,7 +152,7 @@ export default class Transfer {
                 this._chunkList[this._totalChunks++] = bytes.subarray(this.remain);
                 
                 this._offset = (this._offset + bytes.length) % this._buffer.length;
-                this._buffer.set(bytes.subarray(-this._offset), 0);
+                this._offset && this._buffer.set(bytes.subarray(-this._offset), 0);
             }
         }
         
