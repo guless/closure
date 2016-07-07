@@ -54,7 +54,7 @@ export default class Transfer {
         this._totalChunks = 0;
         
         /** @private */
-        this._chunkList = buffer ? new Array(2) : null;
+        this._chunkList = new Array(2);
         
         /** @private */
         this._buffer = buffer;
