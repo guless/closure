@@ -128,7 +128,7 @@ describe("[ MD5 ] Test Suite:", function() {
     //     assert.equal(hexof(MD5API.final()), "7707d6ae4e027c70eea2a935c2296f21");
     // });
     
-    it(`update one by one byte. => "57edf4a22be3c955ac49da2e2107b67a"`, function() {
+    it(`update one by one bytes. => "57edf4a22be3c955ac49da2e2107b67a"`, function() {
         MD5API.reset();
         
         var bytes  = ascii("12345678901234567890123456789012345678901234567890123456789012345678901234567890");
@@ -138,5 +138,21 @@ describe("[ MD5 ] Test Suite:", function() {
         }
         
         assert.equal(hexof(MD5API.final()), "57edf4a22be3c955ac49da2e2107b67a");
+    });
+    
+    it(`update one by one chunks. => "bc1263baf8f9937474bf1195e9bee385"`, function() {
+        MD5API.reset();
+        
+        var chunks = [];
+        
+        for ( var i = 0; i < 2; ++i ) {
+            chunks.push(ascii("12345678901234567890123456789012345678901234567890123456789012345678901234567890"));
+        }
+        
+        for ( var i = 0; i < chunks.length; ++i ) {
+            MD5API.update(chunks[i]);
+        }
+        
+        assert.equal(hexof(MD5API.final()), "268c7919189d85e276d74b8c60b2f84f");
     });
 });
