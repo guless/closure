@@ -145,7 +145,7 @@ describe("[ MD5 ] Test Suite:", function() {
         
         var chunks = [];
         
-        for ( var i = 0; i < 2; ++i ) {
+        for ( var i = 0; i < 10; ++i ) {
             chunks.push(ascii("12345678901234567890123456789012345678901234567890123456789012345678901234567890"));
         }
         
@@ -153,6 +153,6 @@ describe("[ MD5 ] Test Suite:", function() {
             MD5API.update(chunks[i]);
         }
         
-        assert.equal(hexof(MD5API.final()), "268c7919189d85e276d74b8c60b2f84f");
+        assert.equal(hexof(MD5API.final()), "bc1263baf8f9937474bf1195e9bee385");
     });
 });

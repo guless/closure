@@ -49,4 +49,12 @@ describe("[ Transfer ] Test Suite:", function() {
             (new Transfer()).final();
         }, /Method must be implements by sub classes./);
     });
+    
+    it("should return the same bytes array.", function() {
+        var bytes = new Uint8Array(1);
+        var transfer = new Transfer(new Uint8Array(8), false);
+            transfer.update(bytes);
+        
+        assert.strictEqual(transfer.chunkList[0], bytes);
+    });
 });

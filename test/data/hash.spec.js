@@ -35,3 +35,14 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import Hash from "../../src/data/crypto/Hash";
+
+var assert = require("assert");
+
+describe("[ Transfer ] Test Suite:", function() {
+    it("should throws method does not implements error.", function() {
+        assert.throws(function() {
+            (new Hash()).update(new Uint8Array(0));
+        }, /Method must be implements by sub classes./);
+    });
+});
