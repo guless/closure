@@ -40,8 +40,6 @@ import hexof  from "../../src/data/utils/hexof";
 import ascii  from "../../src/data/utils/ascii";
 import swap32 from "../../src/data/utils/swap32";
 
-import MD5_2  from "../../.backup/src/data/crypto/MD5";
-
 var assert = require("assert");
 var inputs = [
     "",
