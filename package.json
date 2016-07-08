@@ -6,6 +6,7 @@
   "scripts": {
     "docs" : "esdoc -c esdoc.json",
     "build": "bc -s -m -e ./src/guless.js -o ./dist/guless.js",
+    "start": "npm run build && node ./dist/guless.js",
     "test" : "babel-node ./node_modules/.bin/babel-istanbul cover _mocha --report lcovonly -- --recursive && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
