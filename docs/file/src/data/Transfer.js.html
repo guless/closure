@@ -32,7 +32,9 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Converter.js~Converter.html">Converter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/crypto</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html">CRC8</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span></span></li>
@@ -127,10 +129,13 @@ export default class Transfer {
         this._totalChunks = 0;
         
         /** @private */
-        this._chunkList = buffer ? new Array(2) : null;
+        this._chunkList = new Array(2);
         
         /** @private */
         this._buffer = buffer;
+        
+        /** @private */
+        this._backup = buffer ? new buffer.constructor(buffer.length) : null;
         
         /** @private */
         this._enabled = enabled;
@@ -219,9 +224,10 @@ export default class Transfer {
             }
             
             else {
-                this._buffer.set(bytes.subarray(0, this.remain), this._offset);
+                this._backup.set(this._buffer, 0);
+                this._backup.set(bytes.subarray(0, this.remain), this._offset);
                 
-                this._chunkList[this._totalChunks++] = this._buffer;
+                this._chunkList[this._totalChunks++] = this._backup;
                 this._chunkList[this._totalChunks++] = bytes.subarray(this.remain);
                 
                 this._offset = (this._offset + bytes.length) % this._buffer.length;

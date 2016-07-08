@@ -72,6 +72,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/codec/base16encoder.js~base16encoder",
+    "class/src/data/codec/Base16Encoder.js~Base16Encoder.html",
+    "<span>Base16Encoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base16Encoder.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/crc16ccitttable.js~crc16_ccitt_table",
     "variable/index.html#static-variable-CRC16_CCITT_TABLE",
     "<span>CRC16_CCITT_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/CRC16CCITTTable.js</span>",
@@ -135,6 +141,12 @@ window.esdocSearchIndex = [
     "guless-closure/src/data/crypto/crcbase.js~crcbase",
     "class/src/data/crypto/CRCBase.js~CRCBase.html",
     "<span>CRCBase</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRCBase.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/converter.js~converter",
+    "class/src/data/Converter.js~Converter.html",
+    "<span>Converter</span> <span class=\"search-result-import-path\">guless-closure/src/data/Converter.js</span>",
     "class"
   ],
   [
@@ -534,6 +546,42 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/data/converter.js",
+    "file/src/data/Converter.js.html",
+    "src/data/Converter.js",
+    "file"
+  ],
+  [
+    "src/data/converter.js~converter#connect",
+    "class/src/data/Converter.js~Converter.html#instance-method-connect",
+    "src/data/Converter.js~Converter#connect",
+    "method"
+  ],
+  [
+    "src/data/converter.js~converter#constructor",
+    "class/src/data/Converter.js~Converter.html#instance-constructor-constructor",
+    "src/data/Converter.js~Converter#constructor",
+    "method"
+  ],
+  [
+    "src/data/converter.js~converter#destination",
+    "class/src/data/Converter.js~Converter.html#instance-get-destination",
+    "src/data/Converter.js~Converter#destination",
+    "member"
+  ],
+  [
+    "src/data/converter.js~converter#sizeof",
+    "class/src/data/Converter.js~Converter.html#instance-method-sizeof",
+    "src/data/Converter.js~Converter#sizeof",
+    "method"
+  ],
+  [
+    "src/data/converter.js~converter#update",
+    "class/src/data/Converter.js~Converter.html#instance-method-update",
+    "src/data/Converter.js~Converter#update",
+    "method"
+  ],
+  [
     "src/data/transfer.js",
     "file/src/data/Transfer.js.html",
     "src/data/Transfer.js",
@@ -597,6 +645,30 @@ window.esdocSearchIndex = [
     "src/data/transfer.js~transfer#update",
     "class/src/data/Transfer.js~Transfer.html#instance-method-update",
     "src/data/Transfer.js~Transfer#update",
+    "method"
+  ],
+  [
+    "src/data/codec/base16encoder.js",
+    "file/src/data/codec/Base16Encoder.js.html",
+    "src/data/codec/Base16Encoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base16encoder.js~base16encoder#constructor",
+    "class/src/data/codec/Base16Encoder.js~Base16Encoder.html#instance-constructor-constructor",
+    "src/data/codec/Base16Encoder.js~Base16Encoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/base16encoder.js~base16encoder#final",
+    "class/src/data/codec/Base16Encoder.js~Base16Encoder.html#instance-method-final",
+    "src/data/codec/Base16Encoder.js~Base16Encoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/base16encoder.js~base16encoder#sizeof",
+    "class/src/data/codec/Base16Encoder.js~Base16Encoder.html#instance-method-sizeof",
+    "src/data/codec/Base16Encoder.js~Base16Encoder#sizeof",
     "method"
   ],
   [

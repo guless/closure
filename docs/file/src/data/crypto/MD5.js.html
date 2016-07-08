@@ -32,7 +32,9 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Converter.js~Converter.html">Converter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/crypto</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html">CRC8</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span></span></li>
@@ -117,7 +119,7 @@ const X = new Uint32Array(64);
 const W = new Uint32Array(16);
 const L = new Uint32Array(2);
 
-function AC( w, x ) { var t = x &lt;&lt; 3 &gt;&gt;&gt; 0; w[0] += t; w[1] += (x &gt;&gt;&gt; 29) + (w[0] &lt; t); }
+function AC( w, s ) { var t = s &lt;&lt; 3 &gt;&gt;&gt; 0; w[0] += t; w[1] += (s &gt;&gt;&gt; 29) + (w[0] &lt; t); }
 function FF( a, b, c, d, x, s, ac ) { a += ((b &amp; c) | ((~b) &amp; d)) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }
 function GG( a, b, c, d, x, s, ac ) { a += ((b &amp; d) | (c &amp; (~d))) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }
 function HH( a, b, c, d, x, s, ac ) { a += (b ^ c ^ d) + x + ac; a = ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); return a + b; }

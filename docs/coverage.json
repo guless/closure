@@ -1,6 +1,6 @@
 {
-  "coverage": "18.96%",
-  "expectCount": 58,
+  "coverage": "16.17%",
+  "expectCount": 68,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -49,6 +49,16 @@
       "undocumentLines": [
         52,
         39
+      ]
+    },
+    "src/data/codec/Base16Encoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        43,
+        44,
+        49,
+        53
       ]
     },
     "src/data/crypto/CRC1.js": {
@@ -134,6 +144,18 @@
         56,
         48,
         52
+      ]
+    },
+    "src/data/Converter.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        50,
+        41,
+        46,
+        67,
+        54
       ]
     },
     "src/data/crypto/Hash.js": {
