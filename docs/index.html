@@ -68,6 +68,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucs2">ucs2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf8">utf8</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -77,14 +78,39 @@
 <ul>
 <li><a href="http://docs.guless.com/">API &#x53C2;&#x8003;&#x6587;&#x6863;</a></li>
 </ul>
-<h3 id="-">&#x4E0B;&#x8F7D;/&#x5B89;&#x88C5;</h3>
+<h3 id="-">&#x4E0B;&#x8F7D;&amp;&#x5B89;&#x88C5;</h3>
 <pre><code class="lang-shell"><code class="source-code prettyprint">git clone https://github.com/guless/closure.git
 cd closure &amp;&amp; npm install</code>
 </code></pre>
-<h3 id="-">&#x7F16;&#x8BD1;/&#x6D4B;&#x8BD5;</h3>
+<h3 id="-">&#x7F16;&#x8BD1;&amp;&#x6D4B;&#x8BD5;</h3>
 <pre><code class="lang-shell"><code class="source-code prettyprint">npm run build #- &#x7528;&#x4E8E;&#x7F16;&#x8BD1; src/guless.js &#x81F3; dist/guless.js&#x3002;
+npm run start #- &#x7528;&#x4E8E;&#x7F16;&#x8BD1; src/guless.js &#x5E76;&#x76F4;&#x63A5;&#x5728;&#x73AF;&#x5883;(node)&#x4E0B;&#x6267;&#x884C;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x3002;
 npm run docs  #- &#x751F;&#x6210;&#x672C;&#x5730; API &#x53C2;&#x8003;&#x6587;&#x6863;&#x3002;
 npm run test  #- &#x8FD0;&#x884C;&#x6240;&#x6709;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x3002;</code>
+</code></pre>
+<h3 id="-">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">/// @file: src/guless.js
+/// &#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7B80;&#x5355;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x7C7B;&#x5E93;&#x63D0;&#x4F9B;&#x7684; MD5 &#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x3002;
+/// &#x901A;&#x8FC7;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165; `npm start` &#x5E76;&#x56DE;&#x8F66;&#x4EE5;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;
+import MD5   from &quot;./data/crypto/MD5&quot;;
+import utf8  from &quot;./data/utils/utf8&quot;;
+import ascii from &quot;./data/utils/ascii&quot;;
+import hexof from &quot;./data/utils/hexof&quot;;
+
+const MD5API = new MD5();
+/// 1) =========================================================================
+MD5API.reset();
+MD5API.update(ascii(&quot;abc&quot;));
+
+console.log(`MD5(&quot;abc&quot;) =&gt; &quot;${ hexof(MD5API.final()) }&quot;`); 
+/// output: &quot;900150983cd24fb0d6963f7d28e17f72&quot;
+
+/// 2) =========================================================================
+MD5API.reset();
+MD5API.update(utf8(&quot;&#x4E2D;&#x56FD;&quot;)); // &#x4E2D;&#x6587;&#x9700;&#x8981;&#x7F16;&#x7801;&#x6210; utf-8 &#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;
+
+console.log(`MD5(&quot;&#x4E2D;&#x56FD;&quot;) =&gt; &quot;${ hexof(MD5API.final()) }&quot;`);
+/// output: &quot;c13dceabcb143acd6c9298265d618a9f&quot;</code>
 </code></pre>
 </div>
 </div>

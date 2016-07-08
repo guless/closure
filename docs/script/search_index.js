@@ -216,6 +216,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "guless-closure/src/data/utils/utf8.js~utf8",
+    "function/index.html#static-function-utf8",
+    "<span>utf8</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/utf8.js</span>",
+    "function"
+  ],
+  [
     "builtinexternal/ecmascriptexternal.js~array",
     "external/index.html",
     "BuiltinExternal/ECMAScriptExternal.js~Array",
@@ -915,6 +921,12 @@ window.esdocSearchIndex = [
     "src/data/utils/ucs2.js",
     "file/src/data/utils/ucs2.js.html",
     "src/data/utils/ucs2.js",
+    "file"
+  ],
+  [
+    "src/data/utils/utf8.js",
+    "file/src/data/utils/utf8.js.html",
+    "src/data/utils/utf8.js",
     "file"
   ]
 ]

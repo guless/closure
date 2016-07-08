@@ -2941,7 +2941,80 @@
     "generator": false
   },
   {
+    "__docId__": 140,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/data/utils/utf8.js",
+    "memberof": null,
+    "longname": "src/data/utils/utf8.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 39,
+    "content": "/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/// @Copyright ~2016 ☜Samlv9☞ and other contributors\n/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/\n/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n///                                              }|\n///                                              }|\n///                                              }|     　 へ　　　 ／|    \n///      _______     _______         ______      }|      /　│　　 ／ ／\n///     /  ___  |   |_   __ \\      .' ____ '.    }|     │　Z ＿,＜　／　　 /`ヽ\n///    |  (__ \\_|     | |__) |     | (____) |    }|     │　　　　　ヽ　　 /　　〉\n///     '.___`-.      |  __ /      '_.____. |    }|      Y　　　　　`　 /　　/\n///    |`\\____) |    _| |  \\ \\_    | \\____| |    }|    ｲ●　､　●　　⊂⊃〈　　/\n///    |_______.'   |____| |___|    \\______,'    }|    ()　 v　　　　|　＼〈\n///    |=========================================\\|    　>ｰ ､_　 ィ　 │ ／／\n///    |> LESS IS MORE                           ||     / へ　　 /　ﾉ＜|＼＼\n///    `=========================================/|    ヽ_ﾉ　　(_／　 │／／\n///                                              }|     7　　　　　　  |／\n///                                              }|     ＞―r￣￣`ｰ―＿`\n///                                              }|\n///                                              }|\n/// Permission is hereby granted, free of charge, to any person obtaining a copy\n/// of this software and associated documentation files (the \"Software\"), to deal\n/// in the Software without restriction, including without limitation the rights\n/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n/// copies of the Software, and to permit persons to whom the Software is\n/// furnished to do so, subject to the following conditions:\n///\n/// The above copyright notice and this permission notice shall be included in all\n/// copies or substantial portions of the Software.\n///\n/// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n/// THE SOFTWARE.\n\nfunction sizeof( s ) {\n    var total = 0\n    \n    for ( var start = 0; start < s.length; ++start ) { \n        var charcode = s.charCodeAt(start); \n        \n        total += (charcode >= 0xD800) && (charcode <= 0xDBFF) \n              ?  (++start >= s.length ? -1 : 2) : (charcode > 0x7F) ? (charcode <= 0x7FF ? 1 : 2) : 0; \n    }\n    \n    return s.length + total;\n}\n\nexport default function utf8( s ) {\n    var output = new Uint8Array(sizeof(s));\n\n    for ( var start = 0, offset = 0; start < s.length; ++start ) {\n        var charcode = s.charCodeAt(start);\n        \n        if ( (charcode >= 0xDC00) && (charcode <= 0xDFFF) ) {\n            throw new Error(`Encounter an unpaired surrogate. [charcode=\"${charcode}\"]`);\n        }\n        \n        if ( (charcode >= 0xD800) && (charcode <= 0xDBFF) ) {\n            if ( ++start >= s.length ) {\n                throw new Error(`Encounter an unpaired surrogate. [charcode=\"${charcode}\"]`);\n            }\n            \n            var tailcode = s.charCodeAt(start);\n            \n            if ( (tailcode < 0xDC00) || (tailcode > 0xDFFF) ) {\n                throw new Error(`Encounter an unpaired surrogate. [charcode=\"${charcode}\", tailcode=\"${tailcode}\"]`);\n            }\n            \n            charcode = ((charcode & 0x3FF) << 10 | (tailcode & 0x3FF)) + 0x10000;\n        }\n        \n        if ( charcode <= 0x7F ) {\n            output[offset++] = (charcode);\n        }\n\n        else if ( charcode <= 0x7FF ) {\n            output[offset++] = ((charcode >>>  6) + 0xC0);\n            output[offset++] = ((charcode & 0x3F) + 0x80);\n        }\n\n        else if ( charcode <= 0xFFFF ) {\n            output[offset++] = ((charcode  >>> 12) + 0xE0);\n            output[offset++] = (((charcode >>>  6) & 0x3F) + 0x80);\n            output[offset++] = ((charcode  & 0x3F) + 0x80);\n        }\n\n        else {\n            output[offset++] = ((charcode  >>> 18) + 0xF0);\n            output[offset++] = (((charcode >>> 12) & 0x3F) + 0x80);\n            output[offset++] = (((charcode >>>  6) & 0x3F) + 0x80);\n            output[offset++] = ((charcode  & 0x3F) + 0x80);\n        }\n    }\n    \n    return output;\n}"
+  },
+  {
     "__docId__": 141,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "sizeof",
+    "memberof": "src/data/utils/utf8.js",
+    "longname": "src/data/utils/utf8.js~sizeof",
+    "access": null,
+    "export": false,
+    "importPath": "guless-closure/src/data/utils/utf8.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "params": [
+      {
+        "name": "s",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 142,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "utf8",
+    "memberof": "src/data/utils/utf8.js",
+    "longname": "src/data/utils/utf8.js~utf8",
+    "access": null,
+    "export": true,
+    "importPath": "guless-closure/src/data/utils/utf8.js",
+    "importStyle": "utf8",
+    "description": null,
+    "lineNumber": 52,
+    "undocument": true,
+    "params": [
+      {
+        "name": "s",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 144,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2954,7 +3027,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 142,
+    "__docId__": 145,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2967,7 +3040,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 143,
+    "__docId__": 146,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2980,7 +3053,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 144,
+    "__docId__": 147,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2993,7 +3066,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 145,
+    "__docId__": 148,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3006,7 +3079,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 146,
+    "__docId__": 149,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3019,7 +3092,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 147,
+    "__docId__": 150,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3032,7 +3105,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 148,
+    "__docId__": 151,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3045,7 +3118,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 149,
+    "__docId__": 152,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3058,7 +3131,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 150,
+    "__docId__": 153,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3071,7 +3144,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 151,
+    "__docId__": 154,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3084,7 +3157,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 152,
+    "__docId__": 155,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3097,7 +3170,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 153,
+    "__docId__": 156,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3110,7 +3183,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 154,
+    "__docId__": 157,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3123,7 +3196,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 155,
+    "__docId__": 158,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3136,7 +3209,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 156,
+    "__docId__": 159,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3149,7 +3222,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 157,
+    "__docId__": 160,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3162,7 +3235,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 158,
+    "__docId__": 161,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3175,7 +3248,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 159,
+    "__docId__": 162,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3188,7 +3261,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 160,
+    "__docId__": 163,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3201,7 +3274,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 161,
+    "__docId__": 164,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3214,7 +3287,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 162,
+    "__docId__": 165,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3227,7 +3300,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 163,
+    "__docId__": 166,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3240,7 +3313,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 164,
+    "__docId__": 167,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3253,7 +3326,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 165,
+    "__docId__": 168,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3266,7 +3339,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 166,
+    "__docId__": 169,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3279,7 +3352,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 167,
+    "__docId__": 170,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3292,7 +3365,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 168,
+    "__docId__": 171,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3305,7 +3378,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 169,
+    "__docId__": 172,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3318,7 +3391,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 170,
+    "__docId__": 173,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3331,7 +3404,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 171,
+    "__docId__": 174,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3344,7 +3417,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 172,
+    "__docId__": 175,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3357,7 +3430,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 173,
+    "__docId__": 176,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3370,7 +3443,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 174,
+    "__docId__": 177,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3383,7 +3456,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 175,
+    "__docId__": 178,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3396,7 +3469,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 176,
+    "__docId__": 179,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3409,7 +3482,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 177,
+    "__docId__": 180,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3422,7 +3495,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 178,
+    "__docId__": 181,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3435,7 +3508,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 179,
+    "__docId__": 182,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3448,7 +3521,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 180,
+    "__docId__": 183,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3461,7 +3534,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 181,
+    "__docId__": 184,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3474,7 +3547,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 182,
+    "__docId__": 185,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3487,7 +3560,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 183,
+    "__docId__": 186,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3500,7 +3573,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 184,
+    "__docId__": 187,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3513,7 +3586,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 185,
+    "__docId__": 188,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3526,7 +3599,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 186,
+    "__docId__": 189,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3539,7 +3612,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 187,
+    "__docId__": 190,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3552,7 +3625,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 189,
+    "__docId__": 192,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3565,7 +3638,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 190,
+    "__docId__": 193,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3578,7 +3651,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 191,
+    "__docId__": 194,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3591,7 +3664,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 192,
+    "__docId__": 195,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3604,7 +3677,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 193,
+    "__docId__": 196,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3617,7 +3690,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 194,
+    "__docId__": 197,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3630,7 +3703,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 195,
+    "__docId__": 198,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -3643,7 +3716,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 196,
+    "__docId__": 199,
     "kind": "external",
     "static": true,
     "variation": null,
