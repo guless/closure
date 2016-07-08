@@ -36,3 +36,22 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import MD5   from "./data/crypto/MD5";
+import utf8  from "./data/utils/utf8";
+import ascii from "./data/utils/ascii";
+import hexof from "./data/utils/hexof";
+
+const MD5API = new MD5();
+/// 1) =========================================================================
+MD5API.reset();
+MD5API.update(ascii("abc"));
+
+console.log(`MD5("abc") => "${ hexof(MD5API.final()) }"`); 
+/// output: "900150983cd24fb0d6963f7d28e17f72"
+
+/// 2) =========================================================================
+MD5API.reset();
+MD5API.update(utf8("中国")); // 中文需要编码成 utf-8 格式的字符串。
+
+console.log(`MD5("中国") => "${ hexof(MD5API.final()) }"`);
+/// output: "c13dceabcb143acd6c9298265d618a9f"
