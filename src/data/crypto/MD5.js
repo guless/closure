@@ -40,7 +40,7 @@ import swap32 from "../utils/swap32";
 
 const H = new Uint32Array([0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476]);
 const P = new Uint32Array(64); P[0] = 0x80;
-const X = new Uint32Array(64);
+const A = new Uint32Array(64);
 const W = new Uint32Array(16);
 const L = new Uint32Array(2);
 
@@ -77,9 +77,9 @@ export default class MD5 extends Hash {
         }
         
         else {
-            X.set(new Uint8Array(this._length.buffer), 56);
+            A.set(new Uint8Array(this._length.buffer), 56);
             this._transfrom(this.buffer);
-            this._transfrom(X);
+            this._transfrom(A);
         }
         
         return swap32(this._digest);
