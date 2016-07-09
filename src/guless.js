@@ -41,6 +41,19 @@ import utf8  from "./data/utils/utf8";
 import ascii from "./data/utils/ascii";
 import hexof from "./data/utils/hexof";
 
+/// 如果需要在其它的脚本中使用编译后的模块，则可以公开内部的 `require()` 函数给其它的脚本使用。
+/// 外部使用使用与该文件所在位置相同的路径查找依赖项，如：
+/// <example>
+///   /* 这里语句末尾的 `default` 属性是由于 ES6 中 export default 的原因。*/
+///   var MD5   = require("./data/crypto/MD5" ).default;
+///   var utf8  = require("./data/utils/utf8" ).default;
+///   var hexof = require("./data/utils/hexof").default;
+///   var ascii = require("./data/utils/ascii").default;
+/// </example>
+if ( typeof window != "undefined" ) {
+    window.require = require;
+}
+
 const MD5API = new MD5();
 /// 1) =========================================================================
 MD5API.reset();
