@@ -2,7 +2,15 @@
 
 
 ### 概览 ###
-- [API 参考文档](http://docs.guless.com/)
+> closure 是一个基于 ES6 语法实现的通用的底层 Javascript 库。
+
+该库主要为其它项目提供底层的类型、函数、接口支持。提供统一的使用方式，并最大程度的减少由于代码依赖导致的冗余问题。
+
+
+**相关资源**：
+- [使用指南](http://docs.guless.com/tutorial/)
+- [参考文档](http://docs.guless.com/)
+- [问题反馈](https://github.com/guless/closure/issues)
 
 ### 下载&安装 ###
 ```shell
@@ -28,6 +36,19 @@ import utf8  from "./data/utils/utf8";
 import ascii from "./data/utils/ascii";
 import hexof from "./data/utils/hexof";
 
+/// 如果需要在其它的脚本中使用编译后的模块，则可以公开内部的 `require()` 函数给其它的脚本使用。
+/// 外部使用使用与该文件所在位置相同的路径查找依赖项，如：
+/// <example>
+///   /* 这里语句末尾的 `default` 属性是由于 ES6 中 export default 的原因。*/
+///   var MD5   = require("./data/crypto/MD5" ).default;
+///   var utf8  = require("./data/utils/utf8" ).default;
+///   var hexof = require("./data/utils/hexof").default;
+///   var ascii = require("./data/utils/ascii").default;
+/// </example>
+if ( typeof window != "undefined" ) {
+    window.require = require;
+}
+
 const MD5API = new MD5();
 /// 1) =========================================================================
 MD5API.reset();
@@ -44,3 +65,40 @@ console.log(`MD5("中国") => "${ hexof(MD5API.final()) }"`);
 /// output: "c13dceabcb143acd6c9298265d618a9f"
 ```
 
+```html
+<!-- @file: html/require.html -->
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>How to use bundle's definition in other scripts</title>
+</head>
+<body>
+    <script src="../dist/guless.js"></script>
+    <script>
+        /* 1) 这里使用与(guless)源文件所在位置相同的路径查找依赖项。*/
+        /* 2) 这里语句末尾的 `default` 属性是由于 ES6 中 export default 的原因。*/
+        var MD5   = require("./data/crypto/MD5" ).default;
+        var utf8  = require("./data/utils/utf8" ).default;
+        var hexof = require("./data/utils/hexof").default;
+        var ascii = require("./data/utils/ascii").default;
+        
+        var MD5API = new MD5();
+        
+        MD5API.reset();
+        MD5API.update(ascii("abc"));
+        
+        console.log("MD5(\"abc\") => \"" + hexof(MD5API.final()) + "\" (html script)"); 
+        /// output: "900150983cd24fb0d6963f7d28e17f72"
+        
+        MD5API.reset();
+        MD5API.update(utf8("中国"));
+
+        console.log("MD5(\"中国\") => \"" + hexof(MD5API.final()) + "\" (html script)"); 
+        /// output: "c13dceabcb143acd6c9298265d618a9f"
+    </script>
+</body>
+</html>
+```
