@@ -1,24 +1,22 @@
-## [![Build Status](https://travis-ci.org/guless/closure.svg?branch=dev)](https://travis-ci.org/guless/closure) [![Coverage Status](https://coveralls.io/repos/github/guless/closure/badge.svg?branch=dev)](https://coveralls.io/github/guless/closure?branch=dev) [![Dependency Status](https://www.versioneye.com/user/projects/577df14391aab50027c6ca56/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/577df14391aab50027c6ca56) ##
+[![Build Status](https://travis-ci.org/guless/closure.svg?branch=dev)](https://travis-ci.org/guless/closure) [![Coverage Status](https://coveralls.io/repos/github/guless/closure/badge.svg?branch=dev)](https://coveralls.io/github/guless/closure?branch=dev) [![Dependency Status](https://www.versioneye.com/user/projects/577df14391aab50027c6ca56/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/577df14391aab50027c6ca56)
 
 
-### 概览 ###
-> closure 是一个基于 ES6 语法实现的通用的底层 Javascript 库。
-
-该库主要为其它项目提供底层的类型、函数、接口支持。提供统一的使用方式，并最大程度的减少由于代码依赖导致的冗余问题。
-
+## 概览 ##
+> closure 是一个基于 ES6 语法实现的通用的底层 Javascript 库。该库主要为其它项目提供底层的类型、函数、接口支持。
+> 提供统一的使用方式，并最大程度的减少由于代码依赖导致的冗余问题。
 
 **相关资源**：
 - [使用指南](http://docs.guless.com/tutorial/)
 - [参考文档](http://docs.guless.com/)
 - [问题反馈](https://github.com/guless/closure/issues)
 
-### 下载&安装 ###
+## 下载&安装 ##
 ```shell
 git clone https://github.com/guless/closure.git
 cd closure && npm install
 ```
 
-### 编译&测试 ###
+## 编译&测试 ##
 ```shell
 npm run build #- 用于编译 src/guless.js 至 dist/guless.js。
 npm run start #- 用于编译 src/guless.js 并直接在环境(node)下执行编译后的文件。
@@ -26,9 +24,9 @@ npm run docs  #- 生成本地 API 参考文档。
 npm run test  #- 运行所有的测试用例。
 ```
 
-### 示例代码 ###
+## 示例代码 ##
+@file: `src/guless.js`
 ```javascript
-/// @file: src/guless.js
 /// 下面这段代码简单展示了如何使用类库提供的 MD5 函数计算字符串的哈希值。
 /// 通过在命令行输入 `npm start` 并回车以查看代码执行结果。
 import MD5   from "./data/crypto/MD5";
@@ -65,8 +63,8 @@ console.log(`MD5("中国") => "${ hexof(MD5API.final()) }"`);
 /// output: "c13dceabcb143acd6c9298265d618a9f"
 ```
 
+@file: `html/require.html`
 ```html
-<!-- @file: html/require.html -->
 <!doctype html>
 <html>
 <head>
