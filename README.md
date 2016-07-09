@@ -25,7 +25,7 @@ npm run test  #- 运行所有的测试用例。
 ```
 
 ## 示例代码 ##
-@file: `src/guless.js`
+`@file: src/guless.js`
 ```javascript
 /// 下面这段代码简单展示了如何使用类库提供的 MD5 函数计算字符串的哈希值。
 /// 通过在命令行输入 `npm start` 并回车以查看代码执行结果。
@@ -63,7 +63,7 @@ console.log(`MD5("中国") => "${ hexof(MD5API.final()) }"`);
 /// output: "c13dceabcb143acd6c9298265d618a9f"
 ```
 
-@file: `html/require.html`
+`@file: html/require.html`
 ```html
 <!doctype html>
 <html>
