@@ -48,7 +48,7 @@ Usage: bc -e <file> [-o "file"] [-s][-m][-q][-?]
 对于 MD5 类型相对路径为 `./data/crypto/MD5`（文件扩展名称是可选的）。然后在你应用程序
 入口点中导入该类型或函数：
 
-> 任何一个类型或函数的定义可以在 [参考文档](http://docs.guless.com/) 中找到。
+> _任何一个类型或函数的定义可以在 [参考文档](http://docs.guless.com/) 中找到。_
 
 ```javascript
 import MD5   from "./data/crypto/MD5";
@@ -60,8 +60,8 @@ import MD5   from "./data/crypto/MD5";
 自定义入口点的话，只需要编辑 `src/guless.js` 并添加一行 `import` 语句导入你需要的类型。最终
 编译好的文件会输出至 `dist/` 目录中。
 
-> 下面两段代码演示了如何使用 MD5 计算一个字符串的哈希值。
 
+#### 下面两段代码演示了如何使用 MD5 计算一个字符串的哈希值。####
 `@file: src/guless.js`
 ```javascript
 /// 下面这段代码简单展示了如何使用类库提供的 MD5 函数计算字符串的哈希值。
