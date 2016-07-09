@@ -51,7 +51,7 @@ Usage: bc -e <file> [-o "file"] [-s][-m][-q][-?]
 > _任何一个类型或函数的定义可以在 [参考文档](http://docs.guless.com/) 中找到。_
 
 ```javascript
-import MD5   from "./data/crypto/MD5";
+import MD5 from "./data/crypto/MD5";
 ```
 
 最后，在命令行运行 `npm run build` 编译你的源代码。
