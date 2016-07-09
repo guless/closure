@@ -24,7 +24,7 @@ npm run docs  #- 生成本地 API 参考文档。
 npm run test  #- 运行所有的测试用例。
 ```
 
-其中 `build` 任务使用的是 [babel-compiler](https://github.com/guless/babel-compiler)，
+其中 `build` 任务使用的是 [babel-compiler](https://github.com/guless/babel-compiler) 模块，
 下面列出了所有的编译选项:
 ```
 Usage: bc -e <file> [-o "file"] [-s][-m][-q][-?]
@@ -43,19 +43,25 @@ Usage: bc -e <file> [-o "file"] [-s][-m][-q][-?]
 ```
 
 ## 示例代码 ##
-在使用之前，首先你需要明确你要使用的类型或函数是什么，比如：你想要使用 `MD5()` 来计算一段字符串的
-哈希值。然后找到该类型或函数定义相对与你应用程序入口点(默认为：`src/guless.js`)所在的位置。
-对于 `MD5()` 类型相对路径为 `./data/crypto/MD5`（文件扩展名称是可选的）。最后在你应用程序入口
-点中导入该类型或函数并编译。 
+在使用之前，你需要明确你要使用的类型或函数是什么（比如：你想要使用 MD5 来计算一段字符串的
+哈希值），首先找到该类型或函数相对于你应用程序入口点(默认为：`src/guless.js`)所在的位置。
+对于 MD5 类型相对路径为 `./data/crypto/MD5`（文件扩展名称是可选的）。然后在你应用程序
+入口点中导入该类型或函数：
 
 > 任何一个类型或函数的定义可以在 [参考文档](http://docs.guless.com/) 中找到。
 
-在 `package.json` 定义的 `build` 任务，默认编译 `src/guless.js` 这个文件。如果你不打算自定义
-入口点的话，只需要编辑 `src/guless.js` 并添加一行 `import` 语句导入你需要的类型。
-如：`import MD5   from "./data/crypto/MD5";` 然后在命令行执行 `npm run build` 命令，最终
-编译好的文件会生成至 `dist/` 目录中。
+```javascript
+import MD5   from "./data/crypto/MD5";
+```
 
-**完整的示例代码**
+最后，在命令行运行 `npm run build` 编译你的源代码。
+
+在 `package.json` 定义的 `build` 任务，默认编译 `src/guless.js` 这个文件。如果你不打算
+自定义入口点的话，只需要编辑 `src/guless.js` 并添加一行 `import` 语句导入你需要的类型。最终
+编译好的文件会输出至 `dist/` 目录中。
+
+> 下面两段代码演示了如何使用 MD5 计算一个字符串的哈希值。
+
 `@file: src/guless.js`
 ```javascript
 /// 下面这段代码简单展示了如何使用类库提供的 MD5 函数计算字符串的哈希值。
