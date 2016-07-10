@@ -51,7 +51,7 @@ export default class Base16Encoder extends Converter {
     }
     
     sizeof( bytes ) {
-        return (bytes.length << 1 >>> 0);
+        return (bytes.length << 1) >>> 0;
     }
     
     _createOutput( bytes ) {
