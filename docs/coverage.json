@@ -1,6 +1,6 @@
 {
-  "coverage": "15.94%",
-  "expectCount": 69,
+  "coverage": "11.82%",
+  "expectCount": 93,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -70,6 +70,51 @@
         45
       ]
     },
+    "src/data/crypto/CRC16.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
+    "src/data/crypto/CRC16CCITT.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
+    "src/data/crypto/CRC16Kermit.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
+    "src/data/crypto/CRC16ModBus.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
+    "src/data/crypto/CRC16XModem.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        45
+      ]
+    },
     "src/data/tables/CRC16CCITTTable.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -98,11 +143,29 @@
         40
       ]
     },
+    "src/data/crypto/CRC24.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
     "src/data/tables/CRC24DefaultTable.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         40
+      ]
+    },
+    "src/data/crypto/CRC32.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
       ]
     },
     "src/data/tables/CRC32DefaultTable.js": {
@@ -113,6 +176,15 @@
       ]
     },
     "src/data/crypto/CRC8.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        46
+      ]
+    },
+    "src/data/crypto/CRC8Dallas1Wire.js": {
       "expectCount": 3,
       "actualCount": 0,
       "undocumentLines": [

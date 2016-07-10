@@ -1229,7 +1229,7 @@
           "type": "VariableDeclarator",
           "id": {
             "type": "Identifier",
-            "name": "X",
+            "name": "A",
             "range": [
               2591,
               2592
@@ -7249,7 +7249,7 @@
                                 "computed": false,
                                 "object": {
                                   "type": "Identifier",
-                                  "name": "X",
+                                  "name": "A",
                                   "range": [
                                     3941,
                                     3942
@@ -7677,7 +7677,7 @@
                               "arguments": [
                                 {
                                   "type": "Identifier",
-                                  "name": "X",
+                                  "name": "A",
                                   "range": [
                                     4059,
                                     4060

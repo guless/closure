@@ -78,6 +78,36 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/crypto/crc16.js~crc16",
+    "class/src/data/crypto/CRC16.js~CRC16.html",
+    "<span>CRC16</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC16.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/crc16ccitt.js~crc16ccitt",
+    "class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html",
+    "<span>CRC16CCITT</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC16CCITT.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/crc16kermit.js~crc16kermit",
+    "class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html",
+    "<span>CRC16Kermit</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC16Kermit.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/crc16modbus.js~crc16modbus",
+    "class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html",
+    "<span>CRC16ModBus</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC16ModBus.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/crc16xmodem.js~crc16xmodem",
+    "class/src/data/crypto/CRC16XModem.js~CRC16XModem.html",
+    "<span>CRC16XModem</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC16XModem.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/crc16ccitttable.js~crc16_ccitt_table",
     "variable/index.html#static-variable-CRC16_CCITT_TABLE",
     "<span>CRC16_CCITT_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/CRC16CCITTTable.js</span>",
@@ -108,10 +138,22 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/crypto/crc24.js~crc24",
+    "class/src/data/crypto/CRC24.js~CRC24.html",
+    "<span>CRC24</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC24.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/crc24defaulttable.js~crc24_default_table",
     "variable/index.html#static-variable-CRC24_DEFAULT_TABLE",
     "<span>CRC24_DEFAULT_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/CRC24DefaultTable.js</span>",
     "variable"
+  ],
+  [
+    "guless-closure/src/data/crypto/crc32.js~crc32",
+    "class/src/data/crypto/CRC32.js~CRC32.html",
+    "<span>CRC32</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC32.js</span>",
+    "class"
   ],
   [
     "guless-closure/src/data/tables/crc32defaulttable.js~crc32_default_table",
@@ -123,6 +165,12 @@ window.esdocSearchIndex = [
     "guless-closure/src/data/crypto/crc8.js~crc8",
     "class/src/data/crypto/CRC8.js~CRC8.html",
     "<span>CRC8</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC8.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/crc8dallas1wire.js~crc8dallas1wire",
+    "class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html",
+    "<span>CRC8Dallas1Wire</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/CRC8Dallas1Wire.js</span>",
     "class"
   ],
   [
@@ -696,6 +744,132 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/crypto/crc16.js",
+    "file/src/data/crypto/CRC16.js.html",
+    "src/data/crypto/CRC16.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc16.js~crc16#constructor",
+    "class/src/data/crypto/CRC16.js~CRC16.html#instance-constructor-constructor",
+    "src/data/crypto/CRC16.js~CRC16#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16.js~crc16#update",
+    "class/src/data/crypto/CRC16.js~CRC16.html#instance-method-update",
+    "src/data/crypto/CRC16.js~CRC16#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16ccitt.js",
+    "file/src/data/crypto/CRC16CCITT.js.html",
+    "src/data/crypto/CRC16CCITT.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc16ccitt.js~crc16ccitt#constructor",
+    "class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html#instance-constructor-constructor",
+    "src/data/crypto/CRC16CCITT.js~CRC16CCITT#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16ccitt.js~crc16ccitt#update",
+    "class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html#instance-method-update",
+    "src/data/crypto/CRC16CCITT.js~CRC16CCITT#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16kermit.js",
+    "file/src/data/crypto/CRC16Kermit.js.html",
+    "src/data/crypto/CRC16Kermit.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc16kermit.js~crc16kermit#constructor",
+    "class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html#instance-constructor-constructor",
+    "src/data/crypto/CRC16Kermit.js~CRC16Kermit#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16kermit.js~crc16kermit#update",
+    "class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html#instance-method-update",
+    "src/data/crypto/CRC16Kermit.js~CRC16Kermit#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16modbus.js",
+    "file/src/data/crypto/CRC16ModBus.js.html",
+    "src/data/crypto/CRC16ModBus.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc16modbus.js~crc16modbus#constructor",
+    "class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html#instance-constructor-constructor",
+    "src/data/crypto/CRC16ModBus.js~CRC16ModBus#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16modbus.js~crc16modbus#update",
+    "class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html#instance-method-update",
+    "src/data/crypto/CRC16ModBus.js~CRC16ModBus#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16xmodem.js",
+    "file/src/data/crypto/CRC16XModem.js.html",
+    "src/data/crypto/CRC16XModem.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc16xmodem.js~crc16xmodem#constructor",
+    "class/src/data/crypto/CRC16XModem.js~CRC16XModem.html#instance-constructor-constructor",
+    "src/data/crypto/CRC16XModem.js~CRC16XModem#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc16xmodem.js~crc16xmodem#update",
+    "class/src/data/crypto/CRC16XModem.js~CRC16XModem.html#instance-method-update",
+    "src/data/crypto/CRC16XModem.js~CRC16XModem#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc24.js",
+    "file/src/data/crypto/CRC24.js.html",
+    "src/data/crypto/CRC24.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc24.js~crc24#constructor",
+    "class/src/data/crypto/CRC24.js~CRC24.html#instance-constructor-constructor",
+    "src/data/crypto/CRC24.js~CRC24#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc24.js~crc24#update",
+    "class/src/data/crypto/CRC24.js~CRC24.html#instance-method-update",
+    "src/data/crypto/CRC24.js~CRC24#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc32.js",
+    "file/src/data/crypto/CRC32.js.html",
+    "src/data/crypto/CRC32.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc32.js~crc32#constructor",
+    "class/src/data/crypto/CRC32.js~CRC32.html#instance-constructor-constructor",
+    "src/data/crypto/CRC32.js~CRC32#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc32.js~crc32#update",
+    "class/src/data/crypto/CRC32.js~CRC32.html#instance-method-update",
+    "src/data/crypto/CRC32.js~CRC32#update",
+    "method"
+  ],
+  [
     "src/data/crypto/crc8.js",
     "file/src/data/crypto/CRC8.js.html",
     "src/data/crypto/CRC8.js",
@@ -711,6 +885,24 @@ window.esdocSearchIndex = [
     "src/data/crypto/crc8.js~crc8#update",
     "class/src/data/crypto/CRC8.js~CRC8.html#instance-method-update",
     "src/data/crypto/CRC8.js~CRC8#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc8dallas1wire.js",
+    "file/src/data/crypto/CRC8Dallas1Wire.js.html",
+    "src/data/crypto/CRC8Dallas1Wire.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/crc8dallas1wire.js~crc8dallas1wire#constructor",
+    "class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html#instance-constructor-constructor",
+    "src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/crc8dallas1wire.js~crc8dallas1wire#update",
+    "class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html#instance-method-update",
+    "src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire#update",
     "method"
   ],
   [
