@@ -43,7 +43,7 @@ export default class CRC16XModem extends CRCBase {
     }
     
     update( bytes ) {
-        for ( var i = 0, len = bytes.length; i < len; ++i ) {
+        for ( var i = 0; i < bytes.length; ++i ) {
             var code = this._digest >>> 8 & 0xFF;
 
             code ^= bytes[i] & 0xFF;

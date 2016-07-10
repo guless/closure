@@ -46,7 +46,7 @@ export default class CRC32 extends CRCBase {
     update( bytes ) {
         this._digest ^= -1;
         
-        for ( var i = 0, len = bytes.length; i < len; ++i ) {
+        for ( var i = 0; i < bytes.length; ++i ) {
             this._digest = TABLE[(this._digest ^ bytes[i]) & 0xFF] ^ (this._digest >>> 8);
         }
         

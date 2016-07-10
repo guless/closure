@@ -44,7 +44,7 @@ export default class CRC16CCITT extends CRCBase {
     }
     
     update( bytes ) {
-        for ( var i = 0, len = bytes.length; i < len; ++i ) {
+        for ( var i = 0; i < bytes.length; ++i ) {
             this._digest = (TABLE[((this._digest >> 8) ^ bytes[i]) & 0xFF] ^ (this._digest << 8)) & 0xFFFF;
         }
     }

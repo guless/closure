@@ -45,7 +45,7 @@ export default class Hash extends Transfer {
     update( bytes ) {
         super.update(bytes);
         
-        for ( var i = 0, len = this.totalChunks; i < len; ++i ) {
+        for ( var i = 0; i < this.totalChunks; ++i ) {
             this._transfrom(this.chunkList[i]);
         }
     }
