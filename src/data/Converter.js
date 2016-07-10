@@ -68,7 +68,7 @@ export default class Converter extends Transfer {
         return (offset < output.length ? output.subarray(0, offset) : output);
     }
     
-    sizeof( bytes, include = true ) {
+    sizeof( bytes ) {
         throw new Error("Method must be implements by sub classes.");
     }
     

@@ -50,7 +50,7 @@ export default class Base16Encoder extends Converter {
         return EMPTY_ARRAY;
     }
     
-    sizeof( bytes, include = true ) {
+    sizeof( bytes ) {
         return (bytes.length << 1 >>> 0);
     }
     
