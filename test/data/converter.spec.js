@@ -63,4 +63,15 @@ describe("[ Converter ] Test Suite:", function() {
         
         assert.strictEqual((new Converter()).connect(a).destination, a);
     });
+    
+    it("should throws out of memory error.", function() {
+        assert.throws(function () {
+            var convert = new Converter();
+            
+            convert._transfrom = function() { return 1; }
+            convert.connect(new Uint8Array(0));
+            convert.update(new Uint8Array(0));
+            
+        }, /Out of memory./);
+    });
 });
