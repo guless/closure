@@ -55,7 +55,7 @@ export default class Base16Encoder extends Converter {
     }
     
     _createOutput( bytes ) {
-        return new Uint8Array(this.sizeof(bytes, true));
+        return new Uint8Array(this.sizeof(bytes));
     }
     
     _transfrom( bytes, output, offset ) {
