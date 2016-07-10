@@ -3092,60 +3092,6 @@
                         "column": 17
                       }
                     }
-                  },
-                  {
-                    "type": "AssignmentPattern",
-                    "left": {
-                      "type": "Identifier",
-                      "name": "include",
-                      "range": [
-                        3316,
-                        3323
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 71,
-                          "column": 19
-                        },
-                        "end": {
-                          "line": 71,
-                          "column": 26
-                        }
-                      }
-                    },
-                    "right": {
-                      "type": "Literal",
-                      "value": true,
-                      "raw": "true",
-                      "range": [
-                        3326,
-                        3330
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 71,
-                          "column": 29
-                        },
-                        "end": {
-                          "line": 71,
-                          "column": 33
-                        }
-                      }
-                    },
-                    "range": [
-                      3316,
-                      3330
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 71,
-                        "column": 19
-                      },
-                      "end": {
-                        "line": 71,
-                        "column": 33
-                      }
-                    }
                   }
                 ],
                 "body": {
@@ -3159,8 +3105,8 @@
                           "type": "Identifier",
                           "name": "Error",
                           "range": [
-                            3353,
-                            3358
+                            3337,
+                            3342
                           ],
                           "loc": {
                             "start": {
@@ -3179,8 +3125,8 @@
                             "value": "Method must be implements by sub classes.",
                             "raw": "\"Method must be implements by sub classes.\"",
                             "range": [
-                              3359,
-                              3402
+                              3343,
+                              3386
                             ],
                             "loc": {
                               "start": {
@@ -3195,8 +3141,8 @@
                           }
                         ],
                         "range": [
-                          3349,
-                          3403
+                          3333,
+                          3387
                         ],
                         "loc": {
                           "start": {
@@ -3210,8 +3156,8 @@
                         }
                       },
                       "range": [
-                        3343,
-                        3404
+                        3327,
+                        3388
                       ],
                       "loc": {
                         "start": {
@@ -3226,13 +3172,13 @@
                     }
                   ],
                   "range": [
-                    3333,
-                    3410
+                    3317,
+                    3394
                   ],
                   "loc": {
                     "start": {
                       "line": 71,
-                      "column": 36
+                      "column": 20
                     },
                     "end": {
                       "line": 73,
@@ -3244,7 +3190,7 @@
                 "expression": false,
                 "range": [
                   3307,
-                  3410
+                  3394
                 ],
                 "loc": {
                   "start": {
@@ -3261,7 +3207,7 @@
               "computed": false,
               "range": [
                 3301,
-                3410
+                3394
               ],
               "loc": {
                 "start": {
@@ -3281,8 +3227,8 @@
                 "type": "Identifier",
                 "name": "_transfrom",
                 "range": [
-                  3420,
-                  3430
+                  3404,
+                  3414
                 ],
                 "loc": {
                   "start": {
@@ -3303,8 +3249,8 @@
                     "type": "Identifier",
                     "name": "bytes",
                     "range": [
-                      3432,
-                      3437
+                      3416,
+                      3421
                     ],
                     "loc": {
                       "start": {
@@ -3321,8 +3267,8 @@
                     "type": "Identifier",
                     "name": "output",
                     "range": [
-                      3439,
-                      3445
+                      3423,
+                      3429
                     ],
                     "loc": {
                       "start": {
@@ -3339,8 +3285,8 @@
                     "type": "Identifier",
                     "name": "offset",
                     "range": [
-                      3447,
-                      3453
+                      3431,
+                      3437
                     ],
                     "loc": {
                       "start": {
@@ -3365,8 +3311,8 @@
                           "type": "Identifier",
                           "name": "Error",
                           "range": [
-                            3476,
-                            3481
+                            3460,
+                            3465
                           ],
                           "loc": {
                             "start": {
@@ -3385,8 +3331,8 @@
                             "value": "Method must be implements by sub classes.",
                             "raw": "\"Method must be implements by sub classes.\"",
                             "range": [
-                              3482,
-                              3525
+                              3466,
+                              3509
                             ],
                             "loc": {
                               "start": {
@@ -3401,8 +3347,8 @@
                           }
                         ],
                         "range": [
-                          3472,
-                          3526
+                          3456,
+                          3510
                         ],
                         "loc": {
                           "start": {
@@ -3416,8 +3362,8 @@
                         }
                       },
                       "range": [
-                        3466,
-                        3527
+                        3450,
+                        3511
                       ],
                       "loc": {
                         "start": {
@@ -3432,8 +3378,8 @@
                     }
                   ],
                   "range": [
-                    3456,
-                    3533
+                    3440,
+                    3517
                   ],
                   "loc": {
                     "start": {
@@ -3449,8 +3395,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3430,
-                  3533
+                  3414,
+                  3517
                 ],
                 "loc": {
                   "start": {
@@ -3466,8 +3412,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                3420,
-                3533
+                3404,
+                3517
               ],
               "loc": {
                 "start": {
@@ -3487,8 +3433,8 @@
                 "type": "Identifier",
                 "name": "_createOutput",
                 "range": [
-                  3543,
-                  3556
+                  3527,
+                  3540
                 ],
                 "loc": {
                   "start": {
@@ -3509,8 +3455,8 @@
                     "type": "Identifier",
                     "name": "bytes",
                     "range": [
-                      3558,
-                      3563
+                      3542,
+                      3547
                     ],
                     "loc": {
                       "start": {
@@ -3535,8 +3481,8 @@
                           "type": "Identifier",
                           "name": "Error",
                           "range": [
-                            3586,
-                            3591
+                            3570,
+                            3575
                           ],
                           "loc": {
                             "start": {
@@ -3555,8 +3501,8 @@
                             "value": "Method must be implements by sub classes.",
                             "raw": "\"Method must be implements by sub classes.\"",
                             "range": [
-                              3592,
-                              3635
+                              3576,
+                              3619
                             ],
                             "loc": {
                               "start": {
@@ -3571,8 +3517,8 @@
                           }
                         ],
                         "range": [
-                          3582,
-                          3636
+                          3566,
+                          3620
                         ],
                         "loc": {
                           "start": {
@@ -3586,8 +3532,8 @@
                         }
                       },
                       "range": [
-                        3576,
-                        3637
+                        3560,
+                        3621
                       ],
                       "loc": {
                         "start": {
@@ -3602,8 +3548,8 @@
                     }
                   ],
                   "range": [
-                    3566,
-                    3643
+                    3550,
+                    3627
                   ],
                   "loc": {
                     "start": {
@@ -3619,8 +3565,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3556,
-                  3643
+                  3540,
+                  3627
                 ],
                 "loc": {
                   "start": {
@@ -3636,8 +3582,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                3543,
-                3643
+                3527,
+                3627
               ],
               "loc": {
                 "start": {
@@ -3654,7 +3600,7 @@
           ],
           "range": [
             2480,
-            3645
+            3629
           ],
           "loc": {
             "start": {
@@ -3669,7 +3615,7 @@
         },
         "range": [
           2447,
-          3645
+          3629
         ],
         "loc": {
           "start": {
@@ -3686,7 +3632,7 @@
       },
       "range": [
         2432,
-        3645
+        3629
       ],
       "loc": {
         "start": {
@@ -3703,7 +3649,7 @@
   "sourceType": "module",
   "range": [
     2396,
-    3645
+    3629
   ],
   "loc": {
     "start": {

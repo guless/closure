@@ -1,6 +1,6 @@
 {
-  "coverage": "11.82%",
-  "expectCount": 93,
+  "coverage": "9.64%",
+  "expectCount": 114,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -51,14 +51,59 @@
         39
       ]
     },
+    "src/data/codec/Base16Decoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        47,
+        55
+      ]
+    },
     "src/data/codec/Base16Encoder.js": {
       "expectCount": 4,
       "actualCount": 0,
       "undocumentLines": [
+        41,
+        42,
+        47,
+        51
+      ]
+    },
+    "src/data/codec/Base32Decoder.js": {
+      "expectCount": 7,
+      "actualCount": 0,
+      "undocumentLines": [
+        42,
         43,
-        44,
+        61,
         49,
-        53
+        53,
+        146,
+        57
+      ]
+    },
+    "src/data/codec/Base32Encoder.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        65,
+        57,
+        61,
+        49,
+        53,
+        116
+      ]
+    },
+    "src/data/utils/BaseUtil.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        38,
+        39
       ]
     },
     "src/data/crypto/CRC1.js": {

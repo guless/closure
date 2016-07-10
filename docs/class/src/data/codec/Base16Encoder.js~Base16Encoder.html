@@ -34,7 +34,10 @@
     
   <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Converter.js~Converter.html">Converter</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Decoder.js~Base16Decoder.html">Base16Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Decoder.js~Base32Decoder.html">Base32Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Encoder.js~Base32Encoder.html">Base32Encoder</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/crypto</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16.js~CRC16.html">CRC16</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html">CRC16CCITT</a></span></span></li>
@@ -71,7 +74,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA256_PRIME_TABLE">SHA256_PRIME_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA512_PRIME_TABLE">SHA512_PRIME_TABLE</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/utils/BaseUtil.js~BaseUtil.html">BaseUtil</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexof">hexof</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
@@ -82,13 +86,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Base16Encoder from &apos;<span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber43">guless-closure/src/data/codec/Base16Encoder.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Base16Encoder from &apos;<span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber41">guless-closure/src/data/codec/Base16Encoder.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber43">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber41">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -194,7 +198,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html#instance-method-sizeof">sizeof</a></span></span><span data-ice="signature">(bytes: <span>*</span>, include: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>): <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html#instance-method-sizeof">sizeof</a></span></span><span data-ice="signature">(bytes: <span>*</span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -518,7 +522,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/Converter.js~Converter.html#instance-method-sizeof">sizeof</a></span></span><span data-ice="signature">(bytes: <span>*</span>, include: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/Converter.js~Converter.html#instance-method-sizeof">sizeof</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -576,7 +580,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber44">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -637,7 +641,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber49">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber47">source</a></span></span>
     </span>
   </h3>
 
@@ -683,11 +687,11 @@
     
     
     
-    <span data-ice="name">sizeof</span><span data-ice="signature">(bytes: <span>*</span>, include: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>): <span>*</span></span>
+    <span data-ice="name">sizeof</span><span data-ice="signature">(bytes: <span>*</span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber53">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/codec/Base16Encoder.js.html#lineNumber51">source</a></span></span>
     </span>
   </h3>
 
@@ -710,13 +714,6 @@
       <td data-ice="name" data-depth="0">bytes</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">include</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: true</li></ul></td>
       <td data-ice="description"></td>
     </tr>
 </tbody>
