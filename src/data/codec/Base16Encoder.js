@@ -38,8 +38,6 @@
 import Converter from "../Converter";
 import { BASE16_LOWER_CASE_ENCODE_TABLE } from "../tables/Base16LowerCaseTable";
 
-const EMPTY_ARRAY = new Uint8Array(0);
-
 export default class Base16Encoder extends Converter {
     constructor( table = BASE16_LOWER_CASE_ENCODE_TABLE ) {
         super(null, false);
@@ -47,7 +45,7 @@ export default class Base16Encoder extends Converter {
     }
     
     final() {
-        return EMPTY_ARRAY;
+        return new Uint8Array(0);;
     }
     
     sizeof( bytes ) {
