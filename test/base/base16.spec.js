@@ -36,10 +36,13 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import Base16Encoder from "../../src/data/codec/Base16Encoder";
+import Bsae16Decoder from "../../src/data/codec/Base16Decoder";
 import strof         from "../../src/data/utils/strof";
+import ascii         from "../../src/data/utils/ascii";
 
 var assert = require("assert");
 var apiEncoder = new Base16Encoder();
+var apiDecoder = new Bsae16Decoder();
 
 var inputs = [
     new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
@@ -49,6 +52,29 @@ var expect = [
     "000102030405060708090a0b0c0d0e0f"
 ];
 
+function concat( a ) {
+    var t = 0;
+    for ( var i = 0; i < a.length; ++i ) { t += a[i].length; }
+    var o = new a[0].constructor(t);
+    var t = 0;
+    for ( var i = 0; i < a.length; ++i ) {
+        o.set(a[i], t);
+        t += a[i].length;
+    }
+    return o;
+}
+
+function equal( a, b ) {
+    if ( a.length != b.length ) {
+        return false;
+    }
+    
+    for ( var i = 0; i < a.length; ++i ) {
+        if ( a[i] != b[i] ) return false;
+    }
+    
+    return true;
+}
 
 describe("[ Base16-Encode ] Test Suite:", function() {
     it(`[${inputs[0].slice(0,5).join(",")}...${inputs[0].slice(-2).join(",")}] => "${expect[0]}"`, function() {
@@ -58,6 +84,17 @@ describe("[ Base16-Encode ] Test Suite:", function() {
             result += strof(apiEncoder.final());
         
         assert.equal(result, expect[0]);
+    });
+    
+    it(`"${expect[0]}" => [${inputs[0].slice(0,5).join(",")}...${inputs[0].slice(-2).join(",")}]`, function() {
+        apiDecoder.reset();
+        
+        var result = [
+            apiDecoder.update(ascii(expect[0])),
+            apiDecoder.final()
+        ];
+        
+        assert(equal(concat(result), inputs[0]));
     });
     
     it(`update one by one bytes. => "000102030405060708090a0b0c0d0e0f"`, function() {
