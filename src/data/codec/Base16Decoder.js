@@ -49,7 +49,7 @@ export default class Base16Decoder extends Converter {
             throw new Error(`Wrong size of base16 decoder's final chunk. [offset=${this.offset}]`);
         }
         
-        return new Uint8Array(0);;
+        return new Uint8Array(0);
     }
     
     sizeof( bytes ) {

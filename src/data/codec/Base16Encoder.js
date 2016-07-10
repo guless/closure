@@ -45,7 +45,7 @@ export default class Base16Encoder extends Converter {
     }
     
     final() {
-        return new Uint8Array(0);;
+        return new Uint8Array(0);
     }
     
     sizeof( bytes ) {
