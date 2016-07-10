@@ -61,6 +61,10 @@ export default class Converter extends Transfer {
             offset = this._transfrom(this.chunkList[i], output, offset);
         }
         
+        if ( offset > output.length ) {
+            throw new Error(`Out of memory. [offset=${offset}]`);
+        }
+        
         return (offset < output.length ? output.subarray(0, offset) : output);
     }
     
