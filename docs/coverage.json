@@ -1,6 +1,6 @@
 {
-  "coverage": "7.97%",
-  "expectCount": 138,
+  "coverage": "7.69%",
+  "expectCount": 143,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -78,8 +78,8 @@
         42,
         43,
         61,
-        49,
         53,
+        49,
         146,
         57
       ]
@@ -91,8 +91,8 @@
         41,
         42,
         65,
-        57,
         61,
+        57,
         53,
         49,
         116
@@ -118,10 +118,10 @@
         41,
         42,
         69,
-        57,
         61,
-        53,
+        57,
         49,
+        53,
         65
       ]
     },
@@ -318,6 +318,17 @@
         39
       ]
     },
+    "src/data/crypto/MD4.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        52,
+        53,
+        70,
+        59,
+        65
+      ]
+    },
     "src/data/crypto/MD5.js": {
       "expectCount": 5,
       "actualCount": 0,
@@ -348,16 +359,6 @@
       "actualCount": 11,
       "undocumentLines": []
     },
-    "src/data/codec/UTF8Decoder.js": {
-      "expectCount": 4,
-      "actualCount": 0,
-      "undocumentLines": [
-        40,
-        41,
-        61,
-        45
-      ]
-    },
     "src/data/codec/UTF8Encoder.js": {
       "expectCount": 4,
       "actualCount": 0,
@@ -365,6 +366,16 @@
         40,
         41,
         59,
+        45
+      ]
+    },
+    "src/data/codec/UTF8Decoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        61,
         45
       ]
     },

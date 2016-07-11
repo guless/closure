@@ -246,6 +246,12 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
+    "guless-closure/src/data/crypto/md4.js~md4",
+    "class/src/data/crypto/MD4.js~MD4.html",
+    "<span>MD4</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/MD4.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/crypto/md5.js~md5",
     "class/src/data/crypto/MD5.js~MD5.html",
     "<span>MD5</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/MD5.js</span>",
@@ -913,13 +919,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base64decoder.js~base64decoder#padchar",
-    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-get-padchar",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-set-padchar",
     "src/data/codec/Base64Decoder.js~Base64Decoder#padchar",
     "member"
   ],
   [
     "src/data/codec/base64decoder.js~base64decoder#padchar",
-    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-set-padchar",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-get-padchar",
     "src/data/codec/Base64Decoder.js~Base64Decoder#padchar",
     "member"
   ],
@@ -955,25 +961,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base64encoder.js~base64encoder#omitpad",
-    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-omitPad",
-    "src/data/codec/Base64Encoder.js~Base64Encoder#omitPad",
-    "member"
-  ],
-  [
-    "src/data/codec/base64encoder.js~base64encoder#omitpad",
     "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-omitPad",
     "src/data/codec/Base64Encoder.js~Base64Encoder#omitPad",
     "member"
   ],
   [
-    "src/data/codec/base64encoder.js~base64encoder#padchar",
-    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-padchar",
-    "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
+    "src/data/codec/base64encoder.js~base64encoder#omitpad",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-omitPad",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#omitPad",
     "member"
   ],
   [
     "src/data/codec/base64encoder.js~base64encoder#padchar",
     "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-padchar",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
+    "member"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#padchar",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-padchar",
     "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
     "member"
   ],
@@ -1257,6 +1263,36 @@ window.esdocSearchIndex = [
     "src/data/crypto/hash.js~hash#update",
     "class/src/data/crypto/Hash.js~Hash.html#instance-method-update",
     "src/data/crypto/Hash.js~Hash#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/md4.js",
+    "file/src/data/crypto/MD4.js.html",
+    "src/data/crypto/MD4.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/md4.js~md4#constructor",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-constructor-constructor",
+    "src/data/crypto/MD4.js~MD4#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/md4.js~md4#final",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-method-final",
+    "src/data/crypto/MD4.js~MD4#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/md4.js~md4#reset",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-method-reset",
+    "src/data/crypto/MD4.js~MD4#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/md4.js~md4#update",
+    "class/src/data/crypto/MD4.js~MD4.html#instance-method-update",
+    "src/data/crypto/MD4.js~MD4#update",
     "method"
   ],
   [

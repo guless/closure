@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">CRC8 | API Document</title>
+  <title data-ice="title">MD4 | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -92,23 +92,23 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import CRC8 from &apos;<span><a href="file/src/data/crypto/CRC8.js.html#lineNumber41">guless-closure/src/data/crypto/CRC8.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import MD4 from &apos;<span><a href="file/src/data/crypto/MD4.js.html#lineNumber52">guless-closure/src/data/crypto/MD4.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/data/crypto/CRC8.js.html#lineNumber41">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/data/crypto/MD4.js.html#lineNumber52">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">CRC8</h1>
+  <h1 data-ice="name">MD4</h1>
 
   
 
   
   
-  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span> &#x2192; <span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span> &#x2192; CRC8</div></div>
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span> &#x2192; <span><a href="class/src/data/crypto/Hash.js~Hash.html">Hash</a></span> &#x2192; MD4</div></div>
   
   
   
@@ -146,7 +146,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html#instance-constructor-constructor">constructor</a></span></span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html#instance-constructor-constructor">constructor</a></span></span>
         </p>
       </div>
       <div>
@@ -179,7 +179,57 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html#instance-method-final">final</a></span></span><span data-ice="signature">(): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -439,7 +489,7 @@
 </table>
 
 <table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span></td></tr></thead>
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/data/crypto/Hash.js~Hash.html">Hash</a></span></td></tr></thead>
   <tbody>
   
   <tr data-ice="target">
@@ -453,57 +503,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-final">final</a></span></span><span data-ice="signature">(): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-reset">reset</a></span></span><span data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
+           <span data-ice="name"><span><a href="class/src/data/crypto/Hash.js~Hash.html#instance-method-update">update</a></span></span><span data-ice="signature">(bytes: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -536,7 +536,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/crypto/CRC8.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/crypto/MD4.js.html#lineNumber53">source</a></span></span>
     </span>
   </h3>
 
@@ -545,7 +545,7 @@
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-constructor-constructor">CRCBase#constructor</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/Hash.js~Hash.html#instance-constructor-constructor">Hash#constructor</a></span></div>
 
   <div data-ice="properties">
 </div>
@@ -570,6 +570,96 @@
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-final">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">final</span><span data-ice="signature">(): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/data/crypto/MD4.js.html#lineNumber70">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/Transfer.js~Transfer.html#instance-method-final">Transfer#final</a></span></div>
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>*</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-reset">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">reset</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/data/crypto/MD4.js.html#lineNumber59">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/Transfer.js~Transfer.html#instance-method-reset">Transfer#reset</a></span></div>
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-update">
     <span class="access" data-ice="access">public</span>
     
@@ -580,7 +670,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/data/crypto/CRC8.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/data/crypto/MD4.js.html#lineNumber65">source</a></span></span>
     </span>
   </h3>
 
@@ -589,7 +679,7 @@
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html#instance-method-update">CRCBase#update</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/data/crypto/Hash.js~Hash.html#instance-method-update">Hash#update</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>

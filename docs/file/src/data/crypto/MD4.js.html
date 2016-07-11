@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/data/codec/Base64Encoder.js | API Document</title>
+  <title data-ice="title">src/data/crypto/MD4.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -91,7 +91,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/data/codec/Base64Encoder.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/data/crypto/MD4.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /// @Copyright ~2016 &#x261C;Samlv9&#x261E; and other contributors
 /// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
@@ -129,86 +129,125 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-import Converter from &quot;../Converter&quot;;
-import { BASE64_DEFAULT_ENCODE_TABLE } from &quot;../tables/Base64DefaultTable&quot;;
+import Hash   from &quot;./Hash&quot;;
+import swap32 from &quot;../utils/swap32&quot;;
 
-export default class Base64Encoder extends Converter {
-    constructor( table = BASE64_DEFAULT_ENCODE_TABLE, padchar = 61/* character(=) */, omitPad = false ) {
-        super(new Uint8Array(3), true);
-        this._table = table;
-        this._padchar = padchar;
-        this._omitPad = omitPad;
+const H = new Uint32Array([0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476]);
+const P = new Uint32Array(64); P[0] = 0x80;
+const A = new Uint32Array(64);
+const W = new Uint32Array(16);
+const L = new Uint32Array(2);
+
+function AC( w, s ) { var t = s &lt;&lt; 3 &gt;&gt;&gt; 0; w[0] += t; w[1] += (s &gt;&gt;&gt; 29) + (w[0] &lt; t); }
+function FF( a, b, c, d, x, s ) { a += ((b &amp; c) | ((~b) &amp; d)) + x; return ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); }
+function GG( a, b, c, d, x, s ) { a += ((b &amp; c) | (b &amp; d) | (c &amp; d)) + x + 0x5a827999; return ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); }
+function HH( a, b, c, d, x, s ) { a += (b ^ c ^ d) + x + 0x6ed9eba1; return ((a &lt;&lt; s) | (a &gt;&gt;&gt; (32 - s))); }
+
+export default class MD4 extends Hash {
+    constructor() {
+        super(new Uint8Array(64));
+        this._digest = new Uint32Array(H);
+        this._length = new Uint32Array(L);
     }
     
-    get padchar() {
-        return this._padchar;
+    reset() {
+        super.reset();
+        this._digest.set(H);
+        this._length.set(L);
     }
     
-    set padchar( value ) {
-        this._padchar = value;
-    }
-    
-    get omitPad() {
-        return this._omitPad;
-    }
-    
-    set omitPad( value ) {
-        this._omitPad = value;
-    }
-    
-    sizeof( bytes ) {
-        return ((this.offset + bytes.length) / 3 &lt;&lt; 2) &gt;&gt;&gt; 0;
+    update( bytes ) {
+        super.update(bytes);
+        AC(this._length, bytes.length);
     }
     
     final() {
-        if ( this.offset == 0 ) {
-            return new Uint8Array(0);
+        this.buffer.set(P.subarray(0, this.remain), this.offset);
+        
+        if ( this.offset &lt; 56 ) {
+            this.buffer.set(new Uint8Array(this._length.buffer), 56);
+            this._transfrom(this.buffer);
         }
         
-        var output = new Uint8Array(4);
-        var offset = 0;
-        
-        for ( var i = 0; i &lt; output.length; ++i ) {
-            output[i] = this._padchar;
+        else {
+            A.set(new Uint8Array(this._length.buffer), 56);
+            this._transfrom(this.buffer);
+            this._transfrom(A);
         }
         
-        switch( this.offset ) {
-            
-            case (1):
-                output[offset++] = this._table[(this.buffer[0] &gt;&gt;&gt; 2) &amp; 0x3F];
-                output[offset++] = this._table[(this.buffer[0] &amp; 0x03) &lt;&lt; 4];
-                break;
-                
-            case (2):
-                output[offset++] = this._table[((this.buffer[0] &gt;&gt;&gt; 2) &amp; 0x3F)];
-                output[offset++] = this._table[((this.buffer[0] &amp; 0x03) &lt;&lt; 4) | ((this.buffer[1] &gt;&gt;&gt; 4) &amp; 0x0F)];
-                output[offset++] = this._table[((this.buffer[1] &amp; 0x0F) &lt;&lt; 2)];
-                break;
-                
-            default:
-                throw new Error(`Wrong size of base32 encoder&apos;s final chunk. [offset=${this.offset}]`);
-        }
-        
-        return (this.omitPad ? output.subarray(0, offset) : output);
+        return swap32(this._digest);
     }
     
-    _createOutput( bytes ) {
-        return new Uint8Array(this.sizeof(bytes));
-    }
-    
-    _transfrom( bytes, output, offset ) {
-        for ( var start = 0; start + 3 &lt;= bytes.length; start += 3 ) {
-            var a = bytes[start    ];
-            var b = bytes[start + 1];
-            var c = bytes[start + 2];
+    _transfrom( bytes ) {
+        for ( var start = 0; start + 64 &lt;= bytes.length; start += 64 ) {
+            var a = this._digest[0];
+            var b = this._digest[1];
+            var c = this._digest[2];
+            var d = this._digest[3];
             
-            output[offset++] = this._table[(a &gt;&gt;&gt; 2) &amp; 0x3F];
-            output[offset++] = this._table[((a &amp; 0x03) &lt;&lt; 4) | ((b &gt;&gt;&gt; 4) &amp; 0x0F)];
-            output[offset++] = this._table[((b &amp; 0x0F) &lt;&lt; 2) | ((c &gt;&gt;&gt; 6) &amp; 0x03)];
-            output[offset++] = this._table[c &amp; 0x3F];
-        }
+            for ( var t = 0, k = start; t &lt; 16; ++t, k += 4 ) {
+                W[t] = (bytes[k]) | (bytes[k + 1] &lt;&lt; 8) | (bytes[k + 2] &lt;&lt; 16) | (bytes[k + 3] &lt;&lt; 24);
+            }
+            
+            /* Round 1 */
+            a = FF(a, b, c, d, W[ 0],  3);
+            d = FF(d, a, b, c, W[ 1],  7);
+            c = FF(c, d, a, b, W[ 2], 11);
+            b = FF(b, c, d, a, W[ 3], 19);
+            a = FF(a, b, c, d, W[ 4],  3);
+            d = FF(d, a, b, c, W[ 5],  7);
+            c = FF(c, d, a, b, W[ 6], 11);
+            b = FF(b, c, d, a, W[ 7], 19);
+            a = FF(a, b, c, d, W[ 8],  3);
+            d = FF(d, a, b, c, W[ 9],  7);
+            c = FF(c, d, a, b, W[10], 11);
+            b = FF(b, c, d, a, W[11], 19);
+            a = FF(a, b, c, d, W[12],  3);
+            d = FF(d, a, b, c, W[13],  7);
+            c = FF(c, d, a, b, W[14], 11);
+            b = FF(b, c, d, a, W[15], 19);
 
-        return offset;
+            /* Round 2 */
+            a = GG(a, b, c, d, W[ 0],  3);
+            d = GG(d, a, b, c, W[ 4],  5);
+            c = GG(c, d, a, b, W[ 8],  9);
+            b = GG(b, c, d, a, W[12], 13);
+            a = GG(a, b, c, d, W[ 1],  3);
+            d = GG(d, a, b, c, W[ 5],  5);
+            c = GG(c, d, a, b, W[ 9],  9);
+            b = GG(b, c, d, a, W[13], 13);
+            a = GG(a, b, c, d, W[ 2],  3);
+            d = GG(d, a, b, c, W[ 6],  5);
+            c = GG(c, d, a, b, W[10],  9);
+            b = GG(b, c, d, a, W[14], 13);
+            a = GG(a, b, c, d, W[ 3],  3);
+            d = GG(d, a, b, c, W[ 7],  5);
+            c = GG(c, d, a, b, W[11],  9);
+            b = GG(b, c, d, a, W[15], 13);
+            
+            /* Round 3 */
+            a = HH(a, b, c, d, W[ 0],  3);
+            d = HH(d, a, b, c, W[ 8],  9);
+            c = HH(c, d, a, b, W[ 4], 11);
+            b = HH(b, c, d, a, W[12], 15);
+            a = HH(a, b, c, d, W[ 2],  3);
+            d = HH(d, a, b, c, W[10],  9);
+            c = HH(c, d, a, b, W[ 6], 11);
+            b = HH(b, c, d, a, W[14], 15);
+            a = HH(a, b, c, d, W[ 1],  3);
+            d = HH(d, a, b, c, W[ 9],  9);
+            c = HH(c, d, a, b, W[ 5], 11);
+            b = HH(b, c, d, a, W[13], 15);
+            a = HH(a, b, c, d, W[ 3],  3);
+            d = HH(d, a, b, c, W[11],  9);
+            c = HH(c, d, a, b, W[ 7], 11);
+            b = HH(b, c, d, a, W[15], 15);
+            
+            this._digest[0] += a;
+            this._digest[1] += b;
+            this._digest[2] += c;
+            this._digest[3] += d;
+        }
     }
 }</code></pre>
 
