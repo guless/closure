@@ -42,8 +42,8 @@ function sizeof( s ) {
     for ( var start = 0; start < s.length; ++start ) { 
         var charcode = s.charCodeAt(start); 
         
-        total += (charcode >= 0xD800) && (charcode <= 0xDBFF) 
-              ?  (++start >= s.length ? -1 : 2) : (charcode > 0x7F) ? (charcode <= 0x7FF ? 1 : 2) : 0; 
+        total += (charcode >= 0xD800) && (charcode <= 0xDBFF) ? (++start >= length ? -1 : 2) : 
+                 (charcode > 0x7F) ? (charcode <= 0x7FF ? 1 : 2) : 0;
     }
     
     return s.length + total;
