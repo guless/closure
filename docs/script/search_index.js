@@ -240,6 +240,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/crypto/md2.js~md2",
+    "class/src/data/crypto/MD2.js~MD2.html",
+    "<span>MD2</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/MD2.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/md2pitable.js~md2_pi_table",
     "variable/index.html#static-variable-MD2_PI_TABLE",
     "<span>MD2_PI_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/MD2PITable.js</span>",
@@ -255,6 +261,30 @@ window.esdocSearchIndex = [
     "guless-closure/src/data/crypto/md5.js~md5",
     "class/src/data/crypto/MD5.js~MD5.html",
     "<span>MD5</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/MD5.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/ripemd128.js~ripemd128",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html",
+    "<span>RIPEMD128</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD128.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/ripemd160.js~ripemd160",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html",
+    "<span>RIPEMD160</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD160.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/ripemd256.js~ripemd256",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html",
+    "<span>RIPEMD256</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD256.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/ripemd320.js~ripemd320",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html",
+    "<span>RIPEMD320</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/RIPEMD320.js</span>",
     "class"
   ],
   [
@@ -829,13 +859,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base32decoder.js~base32decoder#padchar",
-    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-set-padchar",
+    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-get-padchar",
     "src/data/codec/Base32Decoder.js~Base32Decoder#padchar",
     "member"
   ],
   [
     "src/data/codec/base32decoder.js~base32decoder#padchar",
-    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-get-padchar",
+    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-set-padchar",
     "src/data/codec/Base32Decoder.js~Base32Decoder#padchar",
     "member"
   ],
@@ -871,13 +901,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base32encoder.js~base32encoder#omitpad",
-    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-set-omitPad",
+    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-get-omitPad",
     "src/data/codec/Base32Encoder.js~Base32Encoder#omitPad",
     "member"
   ],
   [
     "src/data/codec/base32encoder.js~base32encoder#omitpad",
-    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-get-omitPad",
+    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-set-omitPad",
     "src/data/codec/Base32Encoder.js~Base32Encoder#omitPad",
     "member"
   ],
@@ -919,13 +949,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base64decoder.js~base64decoder#padchar",
-    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-set-padchar",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-get-padchar",
     "src/data/codec/Base64Decoder.js~Base64Decoder#padchar",
     "member"
   ],
   [
     "src/data/codec/base64decoder.js~base64decoder#padchar",
-    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-get-padchar",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-set-padchar",
     "src/data/codec/Base64Decoder.js~Base64Decoder#padchar",
     "member"
   ],
@@ -1266,6 +1296,30 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/crypto/md2.js",
+    "file/src/data/crypto/MD2.js.html",
+    "src/data/crypto/MD2.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/md2.js~md2#constructor",
+    "class/src/data/crypto/MD2.js~MD2.html#instance-constructor-constructor",
+    "src/data/crypto/MD2.js~MD2#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/md2.js~md2#final",
+    "class/src/data/crypto/MD2.js~MD2.html#instance-method-final",
+    "src/data/crypto/MD2.js~MD2#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/md2.js~md2#reset",
+    "class/src/data/crypto/MD2.js~MD2.html#instance-method-reset",
+    "src/data/crypto/MD2.js~MD2#reset",
+    "method"
+  ],
+  [
     "src/data/crypto/md4.js",
     "file/src/data/crypto/MD4.js.html",
     "src/data/crypto/MD4.js",
@@ -1323,6 +1377,126 @@ window.esdocSearchIndex = [
     "src/data/crypto/md5.js~md5#update",
     "class/src/data/crypto/MD5.js~MD5.html#instance-method-update",
     "src/data/crypto/MD5.js~MD5#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js",
+    "file/src/data/crypto/RIPEMD128.js.html",
+    "src/data/crypto/RIPEMD128.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#constructor",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#final",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-method-final",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#reset",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-method-reset",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd128.js~ripemd128#update",
+    "class/src/data/crypto/RIPEMD128.js~RIPEMD128.html#instance-method-update",
+    "src/data/crypto/RIPEMD128.js~RIPEMD128#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js",
+    "file/src/data/crypto/RIPEMD160.js.html",
+    "src/data/crypto/RIPEMD160.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#constructor",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#final",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-final",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#reset",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-reset",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd160.js~ripemd160#update",
+    "class/src/data/crypto/RIPEMD160.js~RIPEMD160.html#instance-method-update",
+    "src/data/crypto/RIPEMD160.js~RIPEMD160#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js",
+    "file/src/data/crypto/RIPEMD256.js.html",
+    "src/data/crypto/RIPEMD256.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#constructor",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#final",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-method-final",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#reset",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-method-reset",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd256.js~ripemd256#update",
+    "class/src/data/crypto/RIPEMD256.js~RIPEMD256.html#instance-method-update",
+    "src/data/crypto/RIPEMD256.js~RIPEMD256#update",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js",
+    "file/src/data/crypto/RIPEMD320.js.html",
+    "src/data/crypto/RIPEMD320.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#constructor",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-constructor-constructor",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#final",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-method-final",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#reset",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-method-reset",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/ripemd320.js~ripemd320#update",
+    "class/src/data/crypto/RIPEMD320.js~RIPEMD320.html#instance-method-update",
+    "src/data/crypto/RIPEMD320.js~RIPEMD320#update",
     "method"
   ],
   [
