@@ -37,5 +37,8 @@
 /// THE SOFTWARE.
 
 export default function ucs2( s ) {
-    return Uint16Array.from(s, item => item.charCodeAt(0));
+    for ( var i = 0, a = new Uint16Array(s.length); i < a.length; ++i ) { 
+        a[i] = s.charCodeAt(i); 
+    } 
+    return a;
 }
