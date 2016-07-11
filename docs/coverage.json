@@ -1,6 +1,6 @@
 {
-  "coverage": "9.64%",
-  "expectCount": 114,
+  "coverage": "7.97%",
+  "expectCount": 138,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -93,9 +93,36 @@
         65,
         57,
         61,
-        49,
         53,
+        49,
         116
+      ]
+    },
+    "src/data/codec/Base64Decoder.js": {
+      "expectCount": 7,
+      "actualCount": 0,
+      "undocumentLines": [
+        42,
+        43,
+        65,
+        53,
+        49,
+        57,
+        61
+      ]
+    },
+    "src/data/codec/Base64Encoder.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        41,
+        42,
+        69,
+        57,
+        61,
+        53,
+        49,
+        65
       ]
     },
     "src/data/utils/BaseUtil.js": {
@@ -321,7 +348,34 @@
       "actualCount": 11,
       "undocumentLines": []
     },
+    "src/data/codec/UTF8Decoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        61,
+        45
+      ]
+    },
+    "src/data/codec/UTF8Encoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        59,
+        45
+      ]
+    },
     "src/data/utils/ascii.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/concat.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [

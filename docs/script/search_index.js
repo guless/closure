@@ -96,6 +96,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/codec/base64decoder.js~base64decoder",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html",
+    "<span>Base64Decoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base64Decoder.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/codec/base64encoder.js~base64encoder",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html",
+    "<span>Base64Encoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/Base64Encoder.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/utils/baseutil.js~baseutil",
     "class/src/data/utils/BaseUtil.js~BaseUtil.html",
     "<span>BaseUtil</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/BaseUtil.js</span>",
@@ -258,9 +270,27 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/codec/utf8decoder.js~utf8encoder",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Encoder.html",
+    "<span>UTF8Encoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/UTF8Decoder.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/codec/utf8encoder.js~utf8encoder",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html",
+    "<span>UTF8Encoder</span> <span class=\"search-result-import-path\">guless-closure/src/data/codec/UTF8Encoder.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/utils/ascii.js~ascii",
     "function/index.html#static-function-ascii",
     "<span>ascii</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/ascii.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/concat.js~concat",
+    "function/index.html#static-function-concat",
+    "<span>concat</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/concat.js</span>",
     "function"
   ],
   [
@@ -864,6 +894,144 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/codec/base64decoder.js",
+    "file/src/data/codec/Base64Decoder.js.html",
+    "src/data/codec/Base64Decoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#constructor",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-constructor-constructor",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#final",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-method-final",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#padchar",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-get-padchar",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#padchar",
+    "member"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#padchar",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-set-padchar",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#padchar",
+    "member"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#sizeof",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-method-sizeof",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#sizeof",
+    "method"
+  ],
+  [
+    "src/data/codec/base64decoder.js~base64decoder#update",
+    "class/src/data/codec/Base64Decoder.js~Base64Decoder.html#instance-method-update",
+    "src/data/codec/Base64Decoder.js~Base64Decoder#update",
+    "method"
+  ],
+  [
+    "src/data/codec/base64encoder.js",
+    "file/src/data/codec/Base64Encoder.js.html",
+    "src/data/codec/Base64Encoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#constructor",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-constructor-constructor",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#final",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-method-final",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#omitpad",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-omitPad",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#omitPad",
+    "member"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#omitpad",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-omitPad",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#omitPad",
+    "member"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#padchar",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-padchar",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
+    "member"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#padchar",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-padchar",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
+    "member"
+  ],
+  [
+    "src/data/codec/base64encoder.js~base64encoder#sizeof",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-method-sizeof",
+    "src/data/codec/Base64Encoder.js~Base64Encoder#sizeof",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8decoder.js",
+    "file/src/data/codec/UTF8Decoder.js.html",
+    "src/data/codec/UTF8Decoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/utf8decoder.js~utf8encoder#constructor",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Encoder.html#instance-constructor-constructor",
+    "src/data/codec/UTF8Decoder.js~UTF8Encoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8decoder.js~utf8encoder#final",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Encoder.html#instance-method-final",
+    "src/data/codec/UTF8Decoder.js~UTF8Encoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8decoder.js~utf8encoder#sizeof",
+    "class/src/data/codec/UTF8Decoder.js~UTF8Encoder.html#instance-method-sizeof",
+    "src/data/codec/UTF8Decoder.js~UTF8Encoder#sizeof",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8encoder.js",
+    "file/src/data/codec/UTF8Encoder.js.html",
+    "src/data/codec/UTF8Encoder.js",
+    "file"
+  ],
+  [
+    "src/data/codec/utf8encoder.js~utf8encoder#constructor",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html#instance-constructor-constructor",
+    "src/data/codec/UTF8Encoder.js~UTF8Encoder#constructor",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8encoder.js~utf8encoder#final",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html#instance-method-final",
+    "src/data/codec/UTF8Encoder.js~UTF8Encoder#final",
+    "method"
+  ],
+  [
+    "src/data/codec/utf8encoder.js~utf8encoder#sizeof",
+    "class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html#instance-method-sizeof",
+    "src/data/codec/UTF8Encoder.js~UTF8Encoder#sizeof",
+    "method"
+  ],
+  [
     "src/data/crypto/crc1.js",
     "file/src/data/crypto/CRC1.js.html",
     "src/data/crypto/CRC1.js",
@@ -1239,6 +1407,12 @@ window.esdocSearchIndex = [
     "src/data/utils/ascii.js",
     "file/src/data/utils/ascii.js.html",
     "src/data/utils/ascii.js",
+    "file"
+  ],
+  [
+    "src/data/utils/concat.js",
+    "file/src/data/utils/concat.js.html",
+    "src/data/utils/concat.js",
     "file"
   ],
   [
