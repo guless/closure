@@ -39,6 +39,7 @@ import Base16Encoder from "../../src/data/codec/Base16Encoder";
 import Bsae16Decoder from "../../src/data/codec/Base16Decoder";
 import strof         from "../../src/data/utils/strof";
 import ascii         from "../../src/data/utils/ascii";
+import concat        from "../../src/data/utils/concat";
 
 var assert = require("assert");
 var apiEncoder = new Base16Encoder();
@@ -51,18 +52,6 @@ var inputs = [
 var expect = [
     "000102030405060708090a0b0c0d0e0f"
 ];
-
-function concat( a ) {
-    var t = 0;
-    for ( var i = 0; i < a.length; ++i ) { t += a[i].length; }
-    var o = new a[0].constructor(t);
-    var t = 0;
-    for ( var i = 0; i < a.length; ++i ) {
-        o.set(a[i], t);
-        t += a[i].length;
-    }
-    return o;
-}
 
 function equal( a, b ) {
     if ( a.length != b.length ) {
