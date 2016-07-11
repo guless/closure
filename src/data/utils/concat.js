@@ -36,11 +36,19 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-export default function ucs2( s ) {
-    var result = new Uint16Array(s.length);
+export default function concat( a ) {
+    var count = 0;
     
-    for ( var i = 0; i < s.length; ++i ) {
-        result[i] = s.charCodeAt(i);
+    for ( var i = 0; i < a.length; ++i ) {
+        count += a[i].length;
+    }
+    
+    var offset = 0;
+    var result = count && new a[0].constructor(count);
+    
+    for ( var i = 0; i < a.length; ++i ) {
+        result.set(a[i], offset);
+        offset += a[i].length;
     }
     
     return result;

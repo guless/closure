@@ -37,8 +37,11 @@
 /// THE SOFTWARE.
 
 export default function ascii( s ) {
-    for ( var i = 0, a = new Uint8Array(s.length); i < a.length; ++i ) { 
-        a[i] = s.charCodeAt(i); 
-    } 
-    return a;
+    var result = new Uint8Array(s.length);
+    
+    for ( var i = 0; i < s.length; ++i ) {
+        result[i] = s.charCodeAt(i);
+    }
+    
+    return result;
 }
