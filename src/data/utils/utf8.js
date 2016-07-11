@@ -42,11 +42,11 @@ function sizeof( s ) {
     for ( var start = 0; start < s.length; ++start ) { 
         var charcode = s.charCodeAt(start); 
         
-        total += (charcode >= 0xD800) && (charcode <= 0xDBFF) ? (++start >= length ? -1 : 2) : 
-                 (charcode > 0x7F) ? (charcode <= 0x7FF ? 1 : 2) : 0;
+        total += (charcode >= 0xD800)  && (charcode <= 0xDBFF) ? (++start >= s.length ? 0 : 4) : 
+                 (charcode <= 0x7F) ? 1 : (charcode <= 0x7FF ? 2 : 3);
     }
     
-    return s.length + total;
+    return total;
 }
 
 export default function utf8( s ) {
