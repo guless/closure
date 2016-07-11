@@ -36,13 +36,13 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import Base32Encoder from "../../src/data/codec/Base32Encoder";
-import Bsae32Decoder from "../../src/data/codec/Base32Decoder";
+import Base32Decoder from "../../src/data/codec/Base32Decoder";
 import strof         from "../../src/data/utils/strof";
 import ascii         from "../../src/data/utils/ascii";
 
 var assert = require("assert");
 var apiEncoder = new Base32Encoder();
-var apiDecoder = new Bsae32Decoder();
+var apiDecoder = new Base32Decoder();
 var inputs = [
     "",
     "f",
