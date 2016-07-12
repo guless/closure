@@ -40,16 +40,13 @@ export default function swap128( a ) {
     if ( a.length % 4 != 0 ) {
         throw new Error("buffer size must be mutiple of 4 in 32bit word."); 
     }
-    
-    for ( var k = 0, v = 0, t = 0; k < a.length; k += 2 ) { 
-        t = ((a[k] << 8 | a[k] >>> 24) & 0x00FF00FF) | ((a[k] << 24 | a[k] >>> 8) & 0xFF00FF00);
-        v = ((a[k + 2] << 8 | a[k + 2] >>> 24) & 0x00FF00FF) | ((a[k + 2] << 24 | a[k + 2] >>> 8) & 0xFF00FF00);
-        
-        a[k] = ((a[k + 4] << 8 | a[k + 4] >>> 24) & 0x00FF00FF) | ((a[k + 4] << 24 | a[k + 4] >>> 8) & 0xFF00FF00);
-        a[k + 2] = ((a[k + 3] << 8 | a[k + 3] >>> 24) & 0x00FF00FF) | ((a[k + 3] << 24 | a[k + 3] >>> 8) & 0xFF00FF00);
-        a[k + 3] = v;
-        a[k + 4] = t;
+    for ( var k = 0, t = 0; k < a.length; k += 4 ) { 
+        t = a[k+0]; a[k+0] = a[k+3]; a[k+3] = t;
+        t = a[k+1]; a[k+1] = a[k+2]; a[k+2] = t;
+        a[k  ] = ((a[k  ] << 8 | a[k  ] >>> 24) & 0x00FF00FF) | ((a[k  ] << 24 | a[k  ] >>> 8) & 0xFF00FF00);
+        a[k+1] = ((a[k+1] << 8 | a[k+1] >>> 24) & 0x00FF00FF) | ((a[k+1] << 24 | a[k+1] >>> 8) & 0xFF00FF00);
+        a[k+2] = ((a[k+2] << 8 | a[k+2] >>> 24) & 0x00FF00FF) | ((a[k+2] << 24 | a[k+2] >>> 8) & 0xFF00FF00);
+        a[k+3] = ((a[k+3] << 8 | a[k+3] >>> 24) & 0x00FF00FF) | ((a[k+3] << 24 | a[k+3] >>> 8) & 0xFF00FF00);
     }
-    
     return a;
 }
