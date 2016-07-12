@@ -288,6 +288,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "guless-closure/src/data/crypto/sha0.js~sha0",
+    "class/src/data/crypto/SHA0.js~SHA0.html",
+    "<span>SHA0</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA0.js</span>",
+    "class"
+  ],
+  [
+    "guless-closure/src/data/crypto/sha1.js~sha1",
+    "class/src/data/crypto/SHA1.js~SHA1.html",
+    "<span>SHA1</span> <span class=\"search-result-import-path\">guless-closure/src/data/crypto/SHA1.js</span>",
+    "class"
+  ],
+  [
     "guless-closure/src/data/tables/sha256primetable.js~sha256_prime_table",
     "variable/index.html#static-variable-SHA256_PRIME_TABLE",
     "<span>SHA256_PRIME_TABLE</span> <span class=\"search-result-import-path\">guless-closure/src/data/tables/SHA256PrimeTable.js</span>",
@@ -339,6 +351,12 @@ window.esdocSearchIndex = [
     "guless-closure/src/data/utils/strof.js~strof",
     "function/index.html#static-function-strof",
     "<span>strof</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/strof.js</span>",
+    "function"
+  ],
+  [
+    "guless-closure/src/data/utils/swap2.js~swap2",
+    "function/index.html#static-function-swap2",
+    "<span>swap2</span> <span class=\"search-result-import-path\">guless-closure/src/data/utils/swap2.js</span>",
     "function"
   ],
   [
@@ -859,13 +877,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base32decoder.js~base32decoder#padchar",
-    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-get-padchar",
+    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-set-padchar",
     "src/data/codec/Base32Decoder.js~Base32Decoder#padchar",
     "member"
   ],
   [
     "src/data/codec/base32decoder.js~base32decoder#padchar",
-    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-set-padchar",
+    "class/src/data/codec/Base32Decoder.js~Base32Decoder.html#instance-get-padchar",
     "src/data/codec/Base32Decoder.js~Base32Decoder#padchar",
     "member"
   ],
@@ -913,13 +931,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base32encoder.js~base32encoder#padchar",
-    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-get-padchar",
+    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-set-padchar",
     "src/data/codec/Base32Encoder.js~Base32Encoder#padchar",
     "member"
   ],
   [
     "src/data/codec/base32encoder.js~base32encoder#padchar",
-    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-set-padchar",
+    "class/src/data/codec/Base32Encoder.js~Base32Encoder.html#instance-get-padchar",
     "src/data/codec/Base32Encoder.js~Base32Encoder#padchar",
     "member"
   ],
@@ -1003,13 +1021,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/data/codec/base64encoder.js~base64encoder#padchar",
-    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-padchar",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-padchar",
     "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
     "member"
   ],
   [
     "src/data/codec/base64encoder.js~base64encoder#padchar",
-    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-set-padchar",
+    "class/src/data/codec/Base64Encoder.js~Base64Encoder.html#instance-get-padchar",
     "src/data/codec/Base64Encoder.js~Base64Encoder#padchar",
     "member"
   ],
@@ -1500,6 +1518,48 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/data/crypto/sha0.js",
+    "file/src/data/crypto/SHA0.js.html",
+    "src/data/crypto/SHA0.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/sha0.js~sha0#constructor",
+    "class/src/data/crypto/SHA0.js~SHA0.html#instance-constructor-constructor",
+    "src/data/crypto/SHA0.js~SHA0#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha1.js",
+    "file/src/data/crypto/SHA1.js.html",
+    "src/data/crypto/SHA1.js",
+    "file"
+  ],
+  [
+    "src/data/crypto/sha1.js~sha1#constructor",
+    "class/src/data/crypto/SHA1.js~SHA1.html#instance-constructor-constructor",
+    "src/data/crypto/SHA1.js~SHA1#constructor",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha1.js~sha1#final",
+    "class/src/data/crypto/SHA1.js~SHA1.html#instance-method-final",
+    "src/data/crypto/SHA1.js~SHA1#final",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha1.js~sha1#reset",
+    "class/src/data/crypto/SHA1.js~SHA1.html#instance-method-reset",
+    "src/data/crypto/SHA1.js~SHA1#reset",
+    "method"
+  ],
+  [
+    "src/data/crypto/sha1.js~sha1#update",
+    "class/src/data/crypto/SHA1.js~SHA1.html#instance-method-update",
+    "src/data/crypto/SHA1.js~SHA1#update",
+    "method"
+  ],
+  [
     "src/data/tables/base16lowercasetable.js",
     "file/src/data/tables/Base16LowerCaseTable.js.html",
     "src/data/tables/Base16LowerCaseTable.js",
@@ -1635,6 +1695,12 @@ window.esdocSearchIndex = [
     "src/data/utils/strof.js",
     "file/src/data/utils/strof.js.html",
     "src/data/utils/strof.js",
+    "file"
+  ],
+  [
+    "src/data/utils/swap2.js",
+    "file/src/data/utils/swap2.js.html",
+    "src/data/utils/swap2.js",
     "file"
   ],
   [

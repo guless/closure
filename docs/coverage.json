@@ -1,6 +1,6 @@
 {
-  "coverage": "6.58%",
-  "expectCount": 167,
+  "coverage": "6.28%",
+  "expectCount": 175,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -93,8 +93,8 @@
         65,
         57,
         61,
-        53,
         49,
+        53,
         116
       ]
     },
@@ -105,8 +105,8 @@
         42,
         43,
         65,
-        49,
         53,
+        49,
         57,
         61
       ]
@@ -120,8 +120,8 @@
         69,
         61,
         57,
-        53,
         49,
+        53,
         65
       ]
     },
@@ -394,6 +394,25 @@
         76
       ]
     },
+    "src/data/crypto/SHA0.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41
+      ]
+    },
+    "src/data/crypto/SHA1.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        50,
+        51,
+        69,
+        58,
+        64
+      ]
+    },
     "src/data/tables/SHA256PrimeTable.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -413,16 +432,6 @@
       "actualCount": 11,
       "undocumentLines": []
     },
-    "src/data/codec/UTF8Encoder.js": {
-      "expectCount": 4,
-      "actualCount": 0,
-      "undocumentLines": [
-        40,
-        41,
-        59,
-        45
-      ]
-    },
     "src/data/codec/UTF8Decoder.js": {
       "expectCount": 4,
       "actualCount": 0,
@@ -430,6 +439,16 @@
         40,
         41,
         61,
+        45
+      ]
+    },
+    "src/data/codec/UTF8Encoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        59,
         45
       ]
     },
@@ -455,6 +474,13 @@
       ]
     },
     "src/data/utils/strof.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/swap2.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
