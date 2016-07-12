@@ -103,11 +103,6 @@ function ADD( R, i, y, j ) {
     R[i] += y[j] + (R[i + 1] < y[j + 1]);
 }
 
-function MOV( R, i, y, j ) {
-    R[i] = y[j];
-    R[i + 1] = y[j + 1];
-}
-
 function ROTR( R, bits, w, i ) {
     SHR(ROTR_T1, bits, w, i);
     SHL(ROTR_T2, 64 - bits, w, i);
