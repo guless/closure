@@ -36,8 +36,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import Hash   from "./Hash";
-import swap32 from "../utils/swap32";
-import swap2  from "../utils/swap2";
+import swap64 from "../utils/swap64";
 
 const H = new Uint32Array([0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0]);
 const P = new Uint32Array(64); P[0] = 0x80;
@@ -70,12 +69,12 @@ export default class SHA1 extends Hash {
         this.buffer.set(P.subarray(0, this.remain), this.offset);
         
         if ( this.offset < 56 ) {
-            this.buffer.set(new Uint8Array(swap2(swap32(this._length)).buffer), 56);
+            this.buffer.set(new Uint8Array(swap64(this._length).buffer), 56);
             this._transfrom(this.buffer);
         }
         
         else {
-            A.set(new Uint8Array(swap2(swap32(this._length)).buffer), 56);
+            A.set(new Uint8Array(swap64(this._length).buffer), 56);
             this._transfrom(this.buffer);
             this._transfrom(A);
         }
