@@ -40,12 +40,10 @@ export default function swap64( a ) {
     if ( a.length & 0x01 ) {
         throw new Error("Can't swap an non-even 32bit buffer."); 
     }
-    
     for ( var k = 0, t = 0; k < a.length; k += 2 ) { 
-        t = ((a[k] << 8 | a[k] >>> 24) & 0x00FF00FF) | ((a[k] << 24 | a[k] >>> 8) & 0xFF00FF00);
-        a[k] = ((a[k + 1] << 8 | a[k + 1] >>> 24) & 0x00FF00FF) | ((a[k + 1] << 24 | a[k + 1] >>> 8) & 0xFF00FF00);
-        a[k + 1] = t;
+        t = a[k]; a[k] = a[k+1]; a[k+1] = t;
+        a[k  ] = ((a[k  ] << 8 | a[k  ] >>> 24) & 0x00FF00FF) | ((a[k  ] << 24 | a[k  ] >>> 8) & 0xFF00FF00);
+        a[k+1] = ((a[k+1] << 8 | a[k+1] >>> 24) & 0x00FF00FF) | ((a[k+1] << 24 | a[k+1] >>> 8) & 0xFF00FF00);
     }
-    
     return a;
 }
