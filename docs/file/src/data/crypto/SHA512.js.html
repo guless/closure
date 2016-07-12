@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/data/crypto/SHA512.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/guless/closure" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Converter.js~Converter.html">Converter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/Transfer.js~Transfer.html">Transfer</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/codec</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Decoder.js~Base16Decoder.html">Base16Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base16Encoder.js~Base16Encoder.html">Base16Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Decoder.js~Base32Decoder.html">Base32Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base32Encoder.js~Base32Encoder.html">Base32Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Decoder.js~Base64Decoder.html">Base64Decoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/Base64Encoder.js~Base64Encoder.html">Base64Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/UTF8Decoder.js~UTF8Encoder.html">UTF8Encoder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/codec/UTF8Encoder.js~UTF8Encoder.html">UTF8Encoder</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/crypto</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC1.js~CRC1.html">CRC1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16.js~CRC16.html">CRC16</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16CCITT.js~CRC16CCITT.html">CRC16CCITT</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16Kermit.js~CRC16Kermit.html">CRC16Kermit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16ModBus.js~CRC16ModBus.html">CRC16ModBus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC16XModem.js~CRC16XModem.html">CRC16XModem</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC24.js~CRC24.html">CRC24</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC32.js~CRC32.html">CRC32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8.js~CRC8.html">CRC8</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRC8Dallas1Wire.js~CRC8Dallas1Wire.html">CRC8Dallas1Wire</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/CRCBase.js~CRCBase.html">CRCBase</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/Hash.js~Hash.html">Hash</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD2.js~MD2.html">MD2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD4.js~MD4.html">MD4</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/MD5.js~MD5.html">MD5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD128.js~RIPEMD128.html">RIPEMD128</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD160.js~RIPEMD160.html">RIPEMD160</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD256.js~RIPEMD256.html">RIPEMD256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD320.js~RIPEMD320.html">RIPEMD320</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html">SHA0</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA384.js~SHA384.html">SHA384</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html">SHA512</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512224.js~SHA512224.html">SHA512224</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512256.js~SHA512256.html">SHA512256</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_ENCODE_TABLE">BASE16_UPPER_CASE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_DECODE_TABLE">BASE32_DEFAULT_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_DEFAULT_ENCODE_TABLE">BASE32_DEFAULT_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_DECODE_TABLE">BASE32_EXTENDED_HEX_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE32_EXTENDED_HEX_ENCODE_TABLE">BASE32_EXTENDED_HEX_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_DECODE_TABLE">BASE64_DEFAULT_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_DEFAULT_ENCODE_TABLE">BASE64_DEFAULT_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_DECODE_TABLE">BASE64_URLSAFE_DECODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE64_URLSAFE_ENCODE_TABLE">BASE64_URLSAFE_ENCODE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_CCITT_TABLE">CRC16_CCITT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_DEFAULT_TABLE">CRC16_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_KERMIT_TABLE">CRC16_KERMIT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC16_MODBUS_TABLE">CRC16_MODBUS_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC24_DEFAULT_TABLE">CRC24_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC32_DEFAULT_TABLE">CRC32_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DALLAS_1_WIRE_TABLE">CRC8_DALLAS_1_WIRE_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-CRC8_DEFAULT_TABLE">CRC8_DEFAULT_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MD2_PI_TABLE">MD2_PI_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA256_PRIME_TABLE">SHA256_PRIME_TABLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SHA512_PRIME_TABLE">SHA512_PRIME_TABLE</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/utils/BaseUtil.js~BaseUtil.html">BaseUtil</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ascii">ascii</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-concat">concat</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexof">hexof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap128">swap128</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap64">swap64</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucs2">ucs2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf8">utf8</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/data/crypto/SHA512.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/// @Copyright ~2016 &#x261C;Samlv9&#x261E; and other contributors
+/// @MIT-LICENSE | 1.0.0 | http://apidev.guless.com/
+/// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+///                                              }|
+///                                              }|
+///                                              }|     &#x3000; &#x3078;&#x3000;&#x3000;&#x3000; &#xFF0F;|    
+///      _______     _______         ______      }|      /&#x3000;&#x2502;&#x3000;&#x3000; &#xFF0F; &#xFF0F;
+///     /  ___  |   |_   __ \      .&apos; ____ &apos;.    }|     &#x2502;&#x3000;Z &#xFF3F;,&#xFF1C;&#x3000;&#xFF0F;&#x3000;&#x3000; /`&#x30FD;
+///    |  (__ \_|     | |__) |     | (____) |    }|     &#x2502;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x30FD;&#x3000;&#x3000; /&#x3000;&#x3000;&#x3009;
+///     &apos;.___`-.      |  __ /      &apos;_.____. |    }|      Y&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;`&#x3000; /&#x3000;&#x3000;/
+///    |`\____) |    _| |  \ \_    | \____| |    }|    &#xFF72;&#x25CF;&#x3000;&#xFF64;&#x3000;&#x25CF;&#x3000;&#x3000;&#x2282;&#x2283;&#x3008;&#x3000;&#x3000;/
+///    |_______.&apos;   |____| |___|    \______,&apos;    }|    ()&#x3000; v&#x3000;&#x3000;&#x3000;&#x3000;|&#x3000;&#xFF3C;&#x3008;
+///    |=========================================\|    &#x3000;&gt;&#xFF70; &#xFF64;_&#x3000; &#x30A3;&#x3000; &#x2502; &#xFF0F;&#xFF0F;
+///    |&gt; LESS IS MORE                           ||     / &#x3078;&#x3000;&#x3000; /&#x3000;&#xFF89;&#xFF1C;|&#xFF3C;&#xFF3C;
+///    `=========================================/|    &#x30FD;_&#xFF89;&#x3000;&#x3000;(_&#xFF0F;&#x3000; &#x2502;&#xFF0F;&#xFF0F;
+///                                              }|     7&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;  |&#xFF0F;
+///                                              }|     &#xFF1E;&#x2015;r&#xFFE3;&#xFFE3;`&#xFF70;&#x2015;&#xFF3F;`
+///                                              }|
+///                                              }|
+/// Permission is hereby granted, free of charge, to any person obtaining a copy
+/// of this software and associated documentation files (the &quot;Software&quot;), to deal
+/// in the Software without restriction, including without limitation the rights
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+/// copies of the Software, and to permit persons to whom the Software is
+/// furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in all
+/// copies or substantial portions of the Software.
+///
+/// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+/// THE SOFTWARE.
+import Hash    from &quot;./Hash&quot;;
+import swap128 from &quot;../utils/swap128&quot;;
+import { SHA512_PRIME_TABLE } from &quot;../tables/SHA512PrimeTable&quot;;
+
+const H = new Uint32Array([
+    0x6A09E667, 0xF3BCC908, 0xBB67AE85, 0x84CAA73B, 
+    0x3C6EF372, 0xFE94F82B, 0xA54FF53A, 0x5F1D36F1,
+    0x510E527F, 0xADE682D1, 0x9B05688C, 0x2B3E6C1F,
+    0x1F83D9AB, 0xFB41BD6B, 0x5BE0CD19, 0x137E2179
+]);
+
+const P = new Uint32Array(128); P[0] = 0x80;
+const A = new Uint32Array(128);
+const W = new Uint32Array(160);
+const L = new Uint32Array(4);
+const C = new Uint32Array(3);
+const T = new Uint32Array(2);
+const S = new Uint32Array(16);
+
+const ROTR_T1 = new Uint32Array(2);
+const ROTR_T2 = new Uint32Array(2);
+
+const SIGMA10_T1 = new Uint32Array(2);
+const SIGMA10_T2 = new Uint32Array(2);
+const SIGMA10_T3 = new Uint32Array(2);
+
+const SIGMA11_T1 = new Uint32Array(2);
+const SIGMA11_T2 = new Uint32Array(2);
+const SIGMA11_T3 = new Uint32Array(2);
+
+const SIGMA20_T1 = new Uint32Array(2);
+const SIGMA20_T2 = new Uint32Array(2);
+const SIGMA20_T3 = new Uint32Array(2);
+
+const SIGMA21_T1 = new Uint32Array(2);
+const SIGMA21_T2 = new Uint32Array(2);
+const SIGMA21_T3 = new Uint32Array(2);
+
+function AC ( R, s ) { 
+    C[0]  = R[1]; C[1] = R[2]; C[2] = s &lt;&lt; 3 &gt;&gt;&gt; 0; 
+    R[0] += C[2]; R[1] += (s &gt;&gt;&gt; 29) + (R[0] &lt; C[2]); R[2] += R[1] &lt; C[0]; R[3] += R[2] &lt; C[1]; 
+}
+
+function CH ( R, x, i, y, j, z, k ) { 
+    R[0] = ((x[i] &amp; y[j]) ^ (~x[i] &amp; z[k]));
+    R[1] = ((x[i + 1] &amp; y[j + 1]) ^ (~x[i + 1] &amp; z[k + 1]));
+}
+
+function MAJ( R, x, i, y, j, z, k ) { 
+    R[0] = ((x[i] &amp; y[j]) ^ (x[i] &amp; z[k]) ^ (y[j] &amp; z[k]));
+    R[1] = ((x[i + 1] &amp; y[j + 1]) ^ (x[i + 1] &amp; z[k + 1]) ^ (y[j + 1] &amp; z[k + 1]));
+}
+
+function SHR( R, bits, w, i ) {
+    R[0] = (bits &lt; 32 &amp;&amp; bits &gt;= 0) ? w[i] &gt;&gt;&gt; bits : 0;
+    R[1] = (bits &gt; 32 ? w[i] &gt;&gt;&gt; (bits - 32) : bits == 32 ? w[i] : bits &gt;= 0 ? (w[i] &lt;&lt; (32 - bits)) | (w[i + 1] &gt;&gt;&gt; bits) : 0);
+}
+
+function SHL( R, bits, w, i ) {
+    R[0] = (bits &gt; 32 ? w[i + 1] &lt;&lt; (bits - 32) : bits == 32 ? w[i + 1] : bits &gt;= 0 ? (w[i] &lt;&lt; bits) | (w[i + 1] &gt;&gt;&gt; (32 - bits)) : 0);
+    R[1] = (bits &lt; 32 &amp;&amp; bits &gt;= 0) ? w[i + 1] &lt;&lt; bits : 0;
+}
+
+function ADD( R, i, y, j ) {
+    R[i + 1] += y[j + 1];
+    R[i] += y[j] + (R[i + 1] &lt; y[j + 1]);
+}
+
+function MOV( R, i, y, j ) {
+    R[i] = y[j];
+    R[i + 1] = y[j + 1];
+}
+
+function ROTR( R, bits, w, i ) {
+    SHR(ROTR_T1, bits, w, i);
+    SHL(ROTR_T2, 64 - bits, w, i);
+    
+    R[0] = ROTR_T1[0] | ROTR_T2[0];
+    R[1] = ROTR_T1[1] | ROTR_T2[1];
+}
+
+function SIGMA10( R, w, i ) {
+    ROTR(SIGMA10_T1, 1, w, i);
+    ROTR(SIGMA10_T2, 8, w, i);
+    SHR (SIGMA10_T3, 7, w, i);
+    
+    R[0] = SIGMA10_T1[0] ^ SIGMA10_T2[0] ^ SIGMA10_T3[0];
+    R[1] = SIGMA10_T1[1] ^ SIGMA10_T2[1] ^ SIGMA10_T3[1];
+}
+
+function SIGMA11( R, w, i ) {
+    ROTR(SIGMA11_T1, 19, w, i);
+    ROTR(SIGMA11_T2, 61, w, i);
+    SHR (SIGMA11_T3,  6, w, i);
+    
+    R[0] = SIGMA11_T1[0] ^ SIGMA11_T2[0] ^ SIGMA11_T3[0];
+    R[1] = SIGMA11_T1[1] ^ SIGMA11_T2[1] ^ SIGMA11_T3[1];
+}
+
+function SIGMA20( R, w, i ) {
+    ROTR(SIGMA20_T1, 28, w, i);
+    ROTR(SIGMA20_T2, 34, w, i);
+    ROTR(SIGMA20_T3, 39, w, i);
+    
+    R[0] = SIGMA20_T1[0] ^ SIGMA20_T2[0] ^ SIGMA20_T3[0];
+    R[1] = SIGMA20_T1[1] ^ SIGMA20_T2[1] ^ SIGMA20_T3[1];
+}
+
+function SIGMA21( R, w, i ) {
+    ROTR(SIGMA21_T1, 14, w, i);
+    ROTR(SIGMA21_T2, 18, w, i);
+    ROTR(SIGMA21_T3, 41, w, i);
+    
+    R[0] = SIGMA21_T1[0] ^ SIGMA21_T2[0] ^ SIGMA21_T3[0];
+    R[1] = SIGMA21_T1[1] ^ SIGMA21_T2[1] ^ SIGMA21_T3[1];
+}
+
+export default class SHA512 extends Hash {
+    constructor( initValues = H ) {
+        super(new Uint8Array(128));
+        this._values = initValues;
+        this._digest = new Uint32Array(this._values);
+        this._length = new Uint32Array(L);
+    }
+    
+    reset() {
+        super.reset();
+        this._digest.set(this._values);
+        this._length.set(L);
+    }
+    
+    update( bytes ) {
+        super.update(bytes);
+        AC(this._length, bytes.length);
+    }
+    
+    final() {
+        this.buffer.set(P.subarray(0, this.remain), this.offset);
+        
+        if ( this.offset &lt; 112 ) {
+            this.buffer.set(new Uint8Array(swap128(this._length).buffer), 112);
+            this._transfrom(this.buffer);
+        }
+        
+        else {
+            A.set(new Uint8Array(swap128(this._length).buffer), 112);
+            this._transfrom(this.buffer);
+            this._transfrom(A);
+        }
+        
+        return this._digest;
+    }
+    
+    _transfrom( bytes ) {
+        for ( var start = 0; start + 128 &lt;= bytes.length; start += 128 ) {
+            for ( var t = 0, k = start; t &lt; 32; ++t, k += 4 ) {
+                W[t] = (bytes[k] &lt;&lt; 24) | (bytes[k + 1] &lt;&lt; 16) | (bytes[k + 2] &lt;&lt; 8) | (bytes[k + 3]);
+            }
+            
+            for ( var t = 32; t &lt; 160; t += 2 ) { 
+                W[t] = W[t - 14];
+                W[t + 1] = W[t - 13];
+                
+                ADD(W, t, W, t - 32);
+                
+                SIGMA11(T, W, t -  4); 
+                ADD(W, t, T, 0);
+                
+                SIGMA10(T, W, t - 30); 
+                ADD(W, t, T, 0);
+            }
+            
+            S.set(this._digest);
+            
+            for ( var t = 0; t &lt; 160; t += 2 ) {
+                ADD(W, t, S, 14);
+                ADD(W, t, SHA512_PRIME_TABLE, t);
+                
+                SIGMA21(T, S, 8); 
+                ADD(W, t, T, 0);
+                
+                CH(T, S, 8, S, 10, S, 12);
+                ADD(W, t, T, 0);
+                
+                ADD(S, 6, W, t);
+                
+                SIGMA20(T, S, 0);
+                ADD(W, t, T, 0);
+                
+                MAJ(T, S, 0, S, 2, S, 4);
+                ADD(W, t, T, 0);
+                
+                S[14] = S[12];
+                S[15] = S[13];
+                S[12] = S[10];
+                S[13] = S[11];
+                S[10] = S[ 8];
+                S[11] = S[ 9];
+                S[ 8] = S[ 6];
+                S[ 9] = S[ 7];
+                S[ 6] = S[ 4];
+                S[ 7] = S[ 5];
+                S[ 4] = S[ 2];
+                S[ 5] = S[ 3];
+                S[ 2] = S[ 0];
+                S[ 3] = S[ 1];
+                S[ 0] = W[t ];
+                S[ 1] = W[t + 1];
+            }
+            
+            ADD(this._digest,  0, S,  0);
+            ADD(this._digest,  2, S,  2);
+            ADD(this._digest,  4, S,  4);
+            ADD(this._digest,  6, S,  6);
+            ADD(this._digest,  8, S,  8);
+            ADD(this._digest, 10, S, 10);
+            ADD(this._digest, 12, S, 12);
+            ADD(this._digest, 14, S, 14);
+        }
+    }
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

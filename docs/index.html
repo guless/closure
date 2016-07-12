@@ -63,6 +63,12 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/RIPEMD320.js~RIPEMD320.html">RIPEMD320</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA0.js~SHA0.html">SHA0</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA1.js~SHA1.html">SHA1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA224.js~SHA224.html">SHA224</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA256.js~SHA256.html">SHA256</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA384.js~SHA384.html">SHA384</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512.js~SHA512.html">SHA512</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512224.js~SHA512224.html">SHA512224</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/data/crypto/SHA512256.js~SHA512256.html">SHA512256</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">data/tables</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_DECODE_TABLE">BASE16_LOWER_CASE_DECODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_LOWER_CASE_ENCODE_TABLE">BASE16_LOWER_CASE_ENCODE_TABLE</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BASE16_UPPER_CASE_DECODE_TABLE">BASE16_UPPER_CASE_DECODE_TABLE</a></span></span></li>
@@ -91,8 +97,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-concat">concat</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hexof">hexof</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-strof">strof</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap2">swap2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap128">swap128</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap32">swap32</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap64">swap64</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ucs2">ucs2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-utf8">utf8</a></span></span></li>
 </ul>
@@ -150,7 +157,7 @@ npm run test  #- &#x8FD0;&#x884C;&#x6240;&#x6709;&#x7684;&#x6D4B;&#x8BD5;&#x7528
 <p>&#x5728; <code>package.json</code> &#x5B9A;&#x4E49;&#x7684; <code>build</code> &#x4EFB;&#x52A1;&#xFF0C;&#x9ED8;&#x8BA4;&#x7F16;&#x8BD1; <code>src/guless.js</code> &#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x6253;&#x7B97;
 &#x81EA;&#x5B9A;&#x4E49;&#x5165;&#x53E3;&#x70B9;&#x7684;&#x8BDD;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7F16;&#x8F91; <code>src/guless.js</code> &#x5E76;&#x6DFB;&#x52A0;&#x4E00;&#x884C; <code>import</code> &#x8BED;&#x53E5;&#x5BFC;&#x5165;&#x4F60;&#x9700;&#x8981;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x6700;&#x7EC8;
 &#x7F16;&#x8BD1;&#x597D;&#x7684;&#x6587;&#x4EF6;&#x4F1A;&#x8F93;&#x51FA;&#x81F3; <code>dist/</code> &#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
-<h3 id="-md5-">&#x4E0B;&#x9762;&#x4E24;&#x6BB5;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528; MD5 &#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x3002;</h3>
+<h4 id="-md5-">&#x4E0B;&#x9762;&#x4E24;&#x6BB5;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528; MD5 &#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x3002;</h4>
 <p><code>@file: src/guless.js</code></p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">/// &#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7B80;&#x5355;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x7C7B;&#x5E93;&#x63D0;&#x4F9B;&#x7684; MD5 &#x51FD;&#x6570;&#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x54C8;&#x5E0C;&#x503C;&#x3002;
 /// &#x901A;&#x8FC7;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165; `npm start` &#x5E76;&#x56DE;&#x8F66;&#x4EE5;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;

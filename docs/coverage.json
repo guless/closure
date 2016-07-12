@@ -1,6 +1,6 @@
 {
-  "coverage": "6.28%",
-  "expectCount": 175,
+  "coverage": "5.55%",
+  "expectCount": 198,
   "actualCount": 11,
   "files": {
     "src/data/tables/Base16LowerCaseTable.js": {
@@ -93,8 +93,8 @@
         65,
         57,
         61,
-        49,
         53,
+        49,
         116
       ]
     },
@@ -120,8 +120,8 @@
         69,
         61,
         57,
-        49,
         53,
+        49,
         65
       ]
     },
@@ -406,11 +406,31 @@
       "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
+        49,
         50,
-        51,
+        68,
+        57,
+        63
+      ]
+    },
+    "src/data/crypto/SHA224.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        45,
+        46,
+        50
+      ]
+    },
+    "src/data/crypto/SHA256.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        61,
+        62,
+        80,
         69,
-        58,
-        64
+        75
       ]
     },
     "src/data/tables/SHA256PrimeTable.js": {
@@ -418,6 +438,44 @@
       "actualCount": 0,
       "undocumentLines": [
         38
+      ]
+    },
+    "src/data/crypto/SHA384.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        47,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/SHA512.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        155,
+        156,
+        174,
+        163,
+        169
+      ]
+    },
+    "src/data/crypto/SHA512224.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        47,
+        48,
+        52
+      ]
+    },
+    "src/data/crypto/SHA512256.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        47,
+        48,
+        52
       ]
     },
     "src/data/tables/SHA512PrimeTable.js": {
@@ -432,16 +490,6 @@
       "actualCount": 11,
       "undocumentLines": []
     },
-    "src/data/codec/UTF8Decoder.js": {
-      "expectCount": 4,
-      "actualCount": 0,
-      "undocumentLines": [
-        40,
-        41,
-        61,
-        45
-      ]
-    },
     "src/data/codec/UTF8Encoder.js": {
       "expectCount": 4,
       "actualCount": 0,
@@ -449,6 +497,16 @@
         40,
         41,
         59,
+        45
+      ]
+    },
+    "src/data/codec/UTF8Decoder.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        40,
+        41,
+        61,
         45
       ]
     },
@@ -480,7 +538,7 @@
         39
       ]
     },
-    "src/data/utils/swap2.js": {
+    "src/data/utils/swap128.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -488,6 +546,13 @@
       ]
     },
     "src/data/utils/swap32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        39
+      ]
+    },
+    "src/data/utils/swap64.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
