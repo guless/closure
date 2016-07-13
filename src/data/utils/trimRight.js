@@ -35,13 +35,12 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-export default class BaseUtil {
-    static trimRight( bytes, charcode = 61/* character(=) */, maxCount = 0xFFFFFFFF ) {
-        var count = 0;
-        for ( var i = bytes.length - 1; i >= 0 && count < maxCount; --i ) {
-            if ( bytes[i] !== charcode ) { break; } 
-            ++count;
-        }
-        return count > 0 ? bytes.subarray(0, bytes.length - count) : bytes;
+
+export default function trimRight( bytes, charcode = 61/* character(=) */, maxCount = 0xFFFFFFFF ) {
+    var count = 0;
+    for ( var i = bytes.length - 1; i >= 0 && count < maxCount; --i ) {
+        if ( bytes[i] !== charcode ) { break; } 
+        ++count;
     }
+    return count > 0 ? bytes.subarray(0, bytes.length - count) : bytes;
 }

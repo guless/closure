@@ -36,7 +36,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 import Converter from "../Converter";
-import BaseUtil  from "../utils/BaseUtil";
+import trimRight from "../utils/trimRight";
 import { BASE64_DEFAULT_DECODE_TABLE } from "../tables/Base64DefaultTable";
 
 export default class Base64Decoder extends Converter {
@@ -59,7 +59,7 @@ export default class Base64Decoder extends Converter {
     }
     
     update( bytes ) {
-        return super.update(BaseUtil.trimRight(bytes, this.padchar, 6));
+        return super.update(trimRight(bytes, this.padchar, 6));
     }
     
     final() {
