@@ -37,7 +37,7 @@
 /// THE SOFTWARE.
 import Converter from "../Converter";
 
-export default class UTF8Encoder extends Converter {
+export default class UTF8Decoder extends Converter {
     constructor() {
         super(new Uint8Array(4), false);
     }
