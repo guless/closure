@@ -1,0 +1,9 @@
+{
+  "name": "guless-closure",
+  "version": "2.0.0",
+  "description": "基于 ES6 语法实现的通用的底层 Javascript 模块。",
+  "main": "dist/bundle.js",
+  "authors": [ "Samlv9 <Samlv9@live.com>" ],
+  "license": "ISC",
+  "homepage": "https://github.com/guless/closure"
+}
